@@ -1,0 +1,5 @@
+MMSC=http://mms.itelcel.com/servlets/mms
+WAPGateway=148.233.151.240
+APN=mms.itelcel.com
+APNAccount=mmsgprs
+APNPassword=mmsgprs2003

@@ -1,0 +1,5 @@
+MMSC=http://mms.e-ideas.com.sg:10021/mmsc
+WAPGateway=165.21.42.84
+APN=e-ideas
+APNAccount=65eideas
+APNPassword=eideas

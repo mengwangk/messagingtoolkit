@@ -1,0 +1,5 @@
+MMSC=http://mmc.digiceljamaica.com/servlets/mms
+WAPGateway=172.16.7.12
+APN=wap.digicelbarbados.com
+APNAccount=wapbarb
+APNPassword=wap03barb

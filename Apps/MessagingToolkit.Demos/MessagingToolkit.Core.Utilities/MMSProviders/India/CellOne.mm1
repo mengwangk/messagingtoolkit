@@ -1,0 +1,5 @@
+MMSC=http://10.31.53.18/mms/
+WAPGateway=10.31.54.2
+APN=bsnlmms
+APNAccount=ppp
+APNPassword=ppp123

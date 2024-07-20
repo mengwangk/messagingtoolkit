@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codepages>
+<codepage number="0" publicID="-//WAPFORUM//DTD WML 1.1//EN" default_encoding="utf-8">
+   <tag-tokens>
+      <tag name="a" token-value="1C" />
+<!-- anchor tag since WML 1.1 -->
+      <tag name="anchor" token-value="22" /> 
+
+      <tag name="access" token-value="23" />
+
+      <tag name="b" token-value="24" />
+
+      <tag name="big" token-value="25" />
+
+      <tag name="br" token-value="26" />
+
+      <tag name="card" token-value="27" />
+
+      <tag name="do" token-value="28" />
+
+      <tag name="em" token-value="29" />
+
+      <tag name="fieldset" token-value="2A" />
+
+      <tag name="go" token-value="2B" />
+
+      <tag name="head" token-value="2C" />
+
+      <tag name="i" token-value="2D" />
+
+      <tag name="img" token-value="2E" />
+
+      <tag name="input" token-value="2F" />
+
+      <tag name="meta" token-value="30" />
+
+      <tag name="noop" token-value="31" />
+<!-- p tag since WML 1.1 -->
+      <tag name="p" token-value="20" />
+<!-- postfield tag since WML 1.1 -->
+      <tag name="postfield" token-value="21" />
+
+      <tag name="prev" token-value="32" />
+
+      <tag name="onevent" token-value="33" />
+
+      <tag name="optgroup" token-value="34" />
+
+      <tag name="option" token-value="35" />
+
+      <tag name="refresh" token-value="36" />
+
+      <tag name="select" token-value="37" />
+
+<!-- setvar tag since WML 1.1 -->
+      <tag name="setvar" token-value="3E" />
+
+      <tag name="small" token-value="38" />
+
+      <tag name="strong" token-value="39" />
+
+<!-- table tag since WML 1.1 -->
+      <tag name="table" token-value="1F" />
+
+<!-- td tag since WML 1.1 -->
+      <tag name="td" token-value="1D" />
+
+      <tag name="template" token-value="3B" />
+
+      <tag name="timer" token-value="3C" />
+
+<!-- tr tag since WML 1.1 -->
+      <tag name="tr" token-value="1E" />
+
+      <tag name="u" token-value="3D" />
+
+      <tag name="wml" token-value="3F" />
+   </tag-tokens>
+
+   <attribute-start-tokens>
+      <attribute-start name="accept-charset" token-value="5" />
+
+<!-- align attribute since WML 1.1 -->
+     <attribute-start name="align" token-value="52" />
+
+      <attribute-start name="align" prefix="bottom" token-value="6" />
+
+      <attribute-start name="align" prefix="center" token-value="7" />
+
+      <attribute-start name="align" prefix="left" token-value="8" />
+
+      <attribute-start name="align" prefix="middle" token-value="9" />
+
+      <attribute-start name="align" prefix="right" token-value="A" />
+
+      <attribute-start name="align" prefix="top" token-value="B" />
+
+      <attribute-start name="alt" token-value="C" />
+<!-- class attribute since WML 1.1 -->
+      <attribute-start name="class" token-value="54" />
+<!-- columns attribute since WML 1.1 -->
+      <attribute-start name="columns" token-value="53" />
+
+      <attribute-start name="content" token-value="D" />
+<!-- content attribute (with prefix ) since WML 1.1 -->
+      <attribute-start name="content" prefix="application/vnd.wap.wmlc;charset=" token-value="5C" />
+
+      <attribute-start name="domain" token-value="F" />
+
+      <attribute-start name="emptyok" prefix="false" token-value="10" />
+
+      <attribute-start name="emptyok" prefix="true" token-value="11" />
+
+      <attribute-start name="enctype" token-value="5F" />
+
+      <attribute-start name="enctype" prefix="application/x-www-form-urlencoded" token-value="60" />
+
+      <attribute-start name="enctype" prefix="multipart/form-data" token-value="61" />
+
+      <attribute-start name="format" token-value="12" />
+
+<!-- forua attribute since WML 1.1 -->
+      <attribute-start name="forua" prefix="false" token-value="56" />
+<!-- forua attribute since WML 1.1 -->
+      <attribute-start name="forua" prefix="true" token-value="57" />
+
+      <attribute-start name="height" token-value="13" />
+<!-- href attribute since WML 1.1 -->
+      <attribute-start name="href" token-value="4A" />
+<!-- href attribute since WML 1.1 -->
+      <attribute-start name="href" prefix="http://" token-value="4B" />
+<!-- href attribute since WML 1.1 -->
+      <attribute-start name="href" prefix="https://" token-value="4C" />
+
+      <attribute-start name="hspace" token-value="14" />
+<!-- http-equiv attribute since WML 1.1 -->
+      <attribute-start name="http-equiv" token-value="5A" />
+<!-- http-equiv attribute since WML 1.1 -->
+      <attribute-start name="http-equiv" prefix="Content-Type" token-value="5B" />
+<!-- http-equiv attribute since WML 1.1 -->
+      <attribute-start name="http-equiv" prefix="Expires" token-value="5D" />
+<!-- id attribute since WML 1.1 -->
+      <attribute-start name="id" token-value="55" />
+<!-- ivalue attribute since WML 1.1 -->
+      <attribute-start name="ivalue" token-value="15" />
+<!-- iname attribute since WML 1.1 -->
+      <attribute-start name="iname" token-value="16" />
+
+      <attribute-start name="label" token-value="18" />
+
+      <attribute-start name="localsrc" token-value="19" />
+
+      <attribute-start name="maxlength" token-value="1A" />
+
+      <attribute-start name="method" prefix="get" token-value="1B" />
+
+      <attribute-start name="method" prefix="post" token-value="1C" />
+
+      <attribute-start name="mode" prefix="nowrap" token-value="1D" />
+
+      <attribute-start name="mode" prefix="wrap" token-value="1E" />
+
+      <attribute-start name="multiple" prefix="false" token-value="1F" />
+
+      <attribute-start name="multiple" prefix="true" token-value="20" />
+
+      <attribute-start name="name" token-value="21" />
+
+      <attribute-start name="newcontext" prefix="false" token-value="22" />
+
+      <attribute-start name="newcontext" prefix="true" token-value="23" />
+
+      <attribute-start name="onenterbackward" token-value="25" />
+
+      <attribute-start name="onenterforward" token-value="26" />
+
+<!-- onpick attribute since WML 1.1 -->
+      <attribute-start name="onpick" token-value="24" />
+
+      <attribute-start name="ontimer" token-value="27" />
+
+      <attribute-start name="optional" prefix="false" token-value="28" />
+
+      <attribute-start name="optional" prefix="true" token-value="29" />
+
+      <attribute-start name="path" token-value="2A" />
+
+      <attribute-start name="scheme" token-value="2E" />
+
+      <attribute-start name="sendreferer" prefix="false" token-value="2F" />
+
+      <attribute-start name="sendreferer" prefix="true" token-value="30" />
+
+      <attribute-start name="size" token-value="31" />
+
+      <attribute-start name="src" token-value="32" />
+
+<!-- src attribute since WML 1.1 -->
+      <attribute-start name="src" prefix="http://" token-value="58" />
+<!-- src attribute since WML 1.1 -->
+      <attribute-start name="src" prefix="https://" token-value="59" />
+<!-- ordered attribute since WML 1.1 -->
+      <attribute-start name="ordered" prefix="true" token-value="33" />
+<!-- ordered attribute since WML 1.1 -->
+      <attribute-start name="ordered" prefix="false" token-value="34" />
+
+      <attribute-start name="tabindex" token-value="35" />
+
+      <attribute-start name="title" token-value="36" />
+
+      <attribute-start name="type" token-value="37" />
+
+      <attribute-start name="type" prefix="accept" token-value="38" />
+
+      <attribute-start name="type" prefix="delete" token-value="39" />
+
+      <attribute-start name="type" prefix="help" token-value="3A" />
+
+      <attribute-start name="type" prefix="password" token-value="3B" />
+
+      <attribute-start name="type" prefix="onpick" token-value="3C" />
+
+      <attribute-start name="type" prefix="onenterbackward" token-value="3D" />
+
+      <attribute-start name="type" prefix="onenterforward" token-value="3E" />
+
+      <attribute-start name="type" prefix="ontimer" token-value="3F" />
+
+      <attribute-start name="type" prefix="options" token-value="45" />
+
+      <attribute-start name="type" prefix="prev" token-value="46" />
+
+      <attribute-start name="type" prefix="reset" token-value="47" />
+
+      <attribute-start name="type" prefix="text" token-value="48" />
+
+      <attribute-start name="type" prefix="vnd." token-value="49" />
+
+      <attribute-start name="value" token-value="4D" />
+
+      <attribute-start name="vspace" token-value="4E" />
+
+      <attribute-start name="width" token-value="4F" />
+
+      <attribute-start name="xml:lang" token-value="50" />
+   </attribute-start-tokens>
+
+   <attribute-value-tokens>
+      <attribute-value name=".com/" token-value="85" />
+
+      <attribute-value name=".edu/" token-value="86" />
+
+      <attribute-value name=".net/" token-value="87" />
+
+      <attribute-value name=".org/" token-value="88" />
+
+      <attribute-value name="accept" token-value="89" />
+
+      <attribute-value name="bottom" token-value="8A" />
+
+      <attribute-value name="clear" token-value="8B" />
+
+      <attribute-value name="delete" token-value="8C" />
+
+      <attribute-value name="help" token-value="8D" />
+
+      <attribute-value name="http://" token-value="8E" />
+
+      <attribute-value name="http://www." token-value="8F" />
+
+      <attribute-value name="https://" token-value="90" />
+
+      <attribute-value name="https://www." token-value="91" />
+
+      <attribute-value name="middle" token-value="93" />
+
+      <attribute-value name="nowrap" token-value="94" />
+
+      <attribute-value name="onenterbackward" token-value="96" />
+
+      <attribute-value name="onenterforward" token-value="97" />
+
+<!-- attribute value onpick since WML 1.1 -->
+      <attribute-value name="onpick" token-value="95" />
+
+      <attribute-value name="ontimer" token-value="98" />
+
+      <attribute-value name="options" token-value="99" />
+
+      <attribute-value name="password" token-value="9A" />
+
+      <attribute-value name="reset" token-value="9B" />
+
+      <attribute-value name="text" token-value="9D" />
+
+      <attribute-value name="top" token-value="9E" />
+
+      <attribute-value name="unknown" token-value="9F" />
+
+      <attribute-value name="wrap" token-value="A0" />
+
+      <attribute-value name="www." token-value="A1" />
+   </attribute-value-tokens>
+</codepage>
+</codepages>

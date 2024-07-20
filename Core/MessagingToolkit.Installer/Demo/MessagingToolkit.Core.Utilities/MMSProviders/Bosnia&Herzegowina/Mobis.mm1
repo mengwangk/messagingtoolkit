@@ -1,0 +1,5 @@
+MMSC=http://mms.065mobis.com/mms/wapenc
+WAPGateway=192.168.61.11
+APN=mms
+APNAccount=
+APNPassword=

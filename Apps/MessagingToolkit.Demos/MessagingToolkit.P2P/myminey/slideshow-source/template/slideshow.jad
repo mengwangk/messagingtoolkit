@@ -1,0 +1,15 @@
+MIDlet-1: Slideshow, /icon.png, com.astrientlabs.fotomica.Slideshow
+MIDlet-Jar-Size: @size
+MIDlet-Jar-URL: slideshow.jar
+MIDlet-Name: Slideshow
+MIDlet-Permissions: javax.microedition.io.Connector.http,javax.microedition.io.Connector.comm,javax.microedition.io.Connector.socket
+MIDlet-Vendor: Astrient Labs
+MIDlet-Version: @version
+MicroEdition-Configuration: CLDC-1.0
+MicroEdition-Profile: MIDP-2.0
+MIDlet-Install-Notify: http://fotomica.astrientlabs.com/installlog.jsp
+client.guid: 1234567890
+fotomica.host: @server
+fotomica.cachesize: 5
+astrientlabs-build-date: @date
+astrientlabs-build-bid: @bid

@@ -1,0 +1,5 @@
+MMSC=http://mmsc.m3-access.com/
+WAPGateway=10.19.19.19
+APN=mms.indosat-m3.net
+APNAccount=mms
+APNPassword=im3

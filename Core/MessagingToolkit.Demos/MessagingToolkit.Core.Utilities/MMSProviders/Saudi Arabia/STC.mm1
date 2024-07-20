@@ -1,0 +1,5 @@
+MMSC=http://mms.net.sa:8002/
+WAPGateway=10.1.1.1
+APN=mms.net.sa
+APNAccount=
+APNPassword=

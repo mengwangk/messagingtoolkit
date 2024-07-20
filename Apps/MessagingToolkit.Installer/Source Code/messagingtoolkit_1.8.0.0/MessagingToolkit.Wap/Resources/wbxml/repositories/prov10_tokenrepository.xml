@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codepages>
+<codepage number="0" publicID="-//WAPFORUM//DTD PROV 1.0//EN"  default_encoding="utf-8">
+
+   <tag-tokens>
+
+      <tag name="wap-provisioningdoc" token-value="5" />
+      <tag name="characteristic" token-value="6" />
+         <tag name="parm" token-value="7" />
+ 
+   </tag-tokens>
+
+   <attribute-start-tokens>
+
+    <!-- Parm -->
+<attribute-start name="name" token-value="05" />
+<attribute-start name="value" token-value="06" />
+<attribute-start name="name" prefix="NAME" token-value="07" />
+<attribute-start name="name" prefix="NAP-ADDRESS"         token-value="08" />
+<attribute-start name="name" prefix="NAP-ADDRTYPE"        token-value="09" />
+<attribute-start name="name" prefix="CALLTYPE"            token-value="0a" />
+<attribute-start name="name" prefix="VALIDUNTIL"          token-value="0b" />
+<attribute-start name="name" prefix="AUTHTYPE"            token-value="0c" />
+<attribute-start name="name" prefix="AUTHNAME"            token-value="0d" />
+<attribute-start name="name" prefix="AUTHSECRET"          token-value="0e" />
+<attribute-start name="name" prefix="LINGER"              token-value="0f" />
+<attribute-start name="name" prefix="BEARER"              token-value="10" />
+<attribute-start name="name" prefix="NAPID"               token-value="11" />
+<attribute-start name="name" prefix="COUNTRY"             token-value="12" />
+<attribute-start name="name" prefix="NETWORK"             token-value="13" />
+<attribute-start name="name" prefix="INTERNET"            token-value="14" />
+<attribute-start name="name" prefix="PROXY-ID"            token-value="15" />
+<attribute-start name="name" prefix="PROXY-PROVIDER-ID"   token-value="16" />
+<attribute-start name="name" prefix="DOMAIN"              token-value="17" />
+<attribute-start name="name" prefix="PROVURL"             token-value="18" />
+<attribute-start name="name" prefix="PXAUTH-TYPE"         token-value="19" />
+<attribute-start name="name" prefix="PXAUTH-ID"           token-value="1a" />
+<attribute-start name="name" prefix="PXAUTH-PW"           token-value="1b" />
+<attribute-start name="name" prefix="STARTPAGE"           token-value="1c" />
+<attribute-start name="name" prefix="BASAUTH-ID"          token-value="1d" />
+<attribute-start name="name" prefix="BASAUTH-PW"          token-value="1e" />
+<attribute-start name="name" prefix="PUSHENABLED"         token-value="1f" />
+<attribute-start name="name" prefix="PXADDR"              token-value="20" />
+<attribute-start name="name" prefix="PXADDRTYPE"          token-value="21" />
+<attribute-start name="name" prefix="TO-NAPID"            token-value="22" />
+<attribute-start name="name" prefix="PORTNBR"             token-value="23" />
+<attribute-start name="name" prefix="SERVICE"             token-value="24" />
+<attribute-start name="name" prefix="LINKSPEED"           token-value="25" />
+<attribute-start name="name" prefix="DNLINKSPEED"         token-value="26" />
+<attribute-start name="name" prefix="LOCAL-ADDR"          token-value="27" />
+<attribute-start name="name" prefix="LOCAL-ADDRTYPE"      token-value="28" />
+<attribute-start name="name" prefix="CONTEXT-ALLOW"       token-value="29" />
+<attribute-start name="name" prefix="TRUST"               token-value="2a" />
+<attribute-start name="name" prefix="MASTER"              token-value="2b" />
+<attribute-start name="name" prefix="SID"  token-value="2c" />
+<attribute-start name="name" prefix="SOC"  token-value="2d" />
+<attribute-start name="name" prefix="WSP-VERSION"         token-value="2e" />
+<attribute-start name="name" prefix="PHYSICAL-PROXY-ID"   token-value="2f" />
+<attribute-start name="name" prefix="CLIENT-ID"           token-value="30" />
+<attribute-start name="name" prefix="DELIVERY-ERR-SDU"    token-value="31" />
+<attribute-start name="name" prefix="DELIVERY-ORDER"      token-value="32" />
+<attribute-start name="name" prefix="TRAFFIC-CLASS"       token-value="33" />
+<attribute-start name="name" prefix="MAX-SDU-SIZE"        token-value="34" />
+<attribute-start name="name" prefix="MAX-BITRATE-UPLINK"  token-value="35" />
+<attribute-start name="name" prefix="MAX-BITRATE-DNLINK"  token-value="36" />
+<attribute-start name="name" prefix="RESIDUAL-BER"        token-value="37" />
+<attribute-start name="name" prefix="SDU-ERROR-RATIO"     token-value="38" />
+<attribute-start name="name" prefix="TRAFFIC-HANDL-PRIO"  token-value="39" />
+<attribute-start name="name" prefix="TRANSFER-DELAY"      token-value="3a" />
+<attribute-start name="name" prefix="GUARANTEED-BITRATE-UPLINK"   token-value="3b" />
+<attribute-start name="name" prefix="GUARANTEED-BITRATE-DNLINK"   token-value="3c" />
+<!-- OMA -->
+<attribute-start name="name" prefix="PXADDR-FQDN"         token-value="3d" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="PROXY-PW"            token-value="3e" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="PPGAUTH-TYPE"        token-value="3f" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="PULLENABLED"         token-value="47" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="DNS-ADDR"            token-value="48" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="MAX-NUM-RETRY"       token-value="49" />
+ <!-- OMA -->
+<attribute-start name="name" prefix="FIRST-RETRY-TIMEOUT" token-value="4a" />
+ <!-- OMA -->
+<attribute-start name="name" prefix="REREG-THRESHOLD"     token-value="4b" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="T-BIT"               token-value="4c" />
+ <!-- OMA -->
+<attribute-start name="name" prefix="AUTH-ENTITY"         token-value="4e" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="SPI"  token-value="4f" /> 
+
+     <attribute-start name="version" token-value="45" />
+    <attribute-start name="version" prefix="1.0" token-value="46" />
+<!-- Characteristic -->
+      <attribute-start name="type" token-value="50" />
+      <attribute-start name="type" prefix="PXLOGICAL" token-value="51" />
+      <attribute-start name="type" prefix="PXPHYSICAL" token-value="52" />
+      <attribute-start name="type" prefix="PORT" token-value="53" />
+      <attribute-start name="type" prefix="VALIDITY" token-value="54" />
+      <attribute-start name="type" prefix="NAPDEF" token-value="55" />
+      <attribute-start name="type" prefix="BOOTSTRAP" token-value="56" />
+      <attribute-start name="type" prefix="VENDORCONFIG" token-value="57" />
+      <attribute-start name="type" prefix="CLIENTIDENTITY" token-value="58" />
+      <attribute-start name="type" prefix="PXAUTHINFO" token-value="59" />
+      <attribute-start name="type" prefix="NAPAUTHINFO" token-value="5A" />
+<!-- OMA -->
+     <attribute-start name="type" prefix="ACCESS" token-value="5B" />
+   </attribute-start-tokens>
+
+   <attribute-value-tokens>
+        <!--ADDRTYPE -->
+    <attribute-value name="IPV4"                  token-value="85" />
+    <attribute-value name="IPV6"                  token-value="86" />
+    <attribute-value name="E164"                  token-value="87" />
+    <attribute-value name="ALPHA"                 token-value="88" />
+    <attribute-value name="APN"                   token-value="89" />
+    <attribute-value name="SCODE"                 token-value="8a" />
+    <attribute-value name="TETRA-ITSI"            token-value="8b" />
+    <attribute-value name="MAN"                   token-value="8c" />
+    
+    <!--CALLTYPE -->
+    <attribute-value name="ANALOG-MODEM"          token-value="90" />
+    <attribute-value name="V.120"                 token-value="91" />
+    <attribute-value name="V.110"                 token-value="92" />
+    <attribute-value name="X.31"                  token-value="93" />
+    <attribute-value name="BIT-TRANSPARENT"       token-value="94" />
+    <attribute-value name="DIRECT-ASYNCHRONOUS-DATA-SERVICE"   token-value="95" />
+
+    <!--AUTHTYPE/PXAUTH-TYPE -->
+    <attribute-value name="PAP"                   token-value="9a" />
+    <attribute-value name="CHAP"                  token-value="9b" />
+    <attribute-value name="HTTP-BASIC"            token-value="9c" />
+    <attribute-value name="HTTP-DIGEST"           token-value="9d" />
+    <attribute-value name="WTLS-SS"               token-value="9e" />
+<!--OMA -->
+    <attribute-value name="MD5"                   token-value="9f" /> 
+
+    <!--BEARER -->
+    <attribute-value name="GSM-USSD"              token-value="a2" />
+    <attribute-value name="GSM-SMS"               token-value="a3" />
+    <attribute-value name="ANSI-136-GUTS"         token-value="a4" />
+    <attribute-value name="IS-95-CDMA-SMS"        token-value="a5" />
+    <attribute-value name="IS-95-CDMA-CSD"        token-value="a6" />
+    <attribute-value name="IS-95-CDMA-PACKET"     token-value="a7" />
+    <attribute-value name="ANSI-136-CSD"          token-value="a8" />
+    <attribute-value name="ANSI-136-GPRS"         token-value="a9" />
+    <attribute-value name="GSM-CSD"               token-value="aa" />
+    <attribute-value name="GSM-GPRS"              token-value="ab" />
+    <attribute-value name="AMPS-CDPD"             token-value="ac" />
+    <attribute-value name="PDC-CSD"               token-value="ad" />
+    <attribute-value name="PDC-PACKET"            token-value="ae" />
+    <attribute-value name="IDEN-SMS"              token-value="af" />
+    <attribute-value name="IDEN-CSD"              token-value="b0" />
+    <attribute-value name="IDEN-PACKET"           token-value="b1" />
+    <attribute-value name="FLEX/REFLEX"           token-value="b2" />
+    <attribute-value name="PHS-SMS"               token-value="b3" />
+    <attribute-value name="PHS-CSD"               token-value="b4" />
+    <attribute-value name="TRETRA-SDS"            token-value="b5" />
+    <attribute-value name="TRETRA-PACKET"         token-value="b6" />
+    <attribute-value name="ANSI-136-GHOST"        token-value="b7" />
+    <attribute-value name="MOBITEX-MPAK"          token-value="b8" />
+<!--OMA -->
+    <attribute-value name="CDMA2000-1X-SIMPLE-IP" token-value="b9" /> 
+<!--OMA -->
+    <attribute-value name="CDMA2000-1X-MOBILE-IP" token-value="ba" /> 
+
+    <!--LINKSPEED -->
+    <attribute-value name="AUTOBAUDING"           token-value="c5" />
+
+    <!--SERVICE -->
+    <attribute-value name="CL-WSP"                token-value="ca" />
+    <attribute-value name="CO-WSP"                token-value="cb" />
+    <attribute-value name="CL-SEC-WSP"            token-value="cc" />
+    <attribute-value name="CO-SEC-WSP"            token-value="cd" />
+    <attribute-value name="CL-SEC-WTA"            token-value="ce" />
+    <attribute-value name="CO-SEC-WTA"            token-value="cf" />
+<!--OMA -->
+    <attribute-value name="OTA-HTTP-TO"           token-value="d0" /> 
+<!--OMA -->
+    <attribute-value name="OTA-HTTP-TLS-TO"       token-value="d1" /> 
+<!--OMA -->
+    <attribute-value name="OTA-HTTP-PO"           token-value="d2" /> 
+<!--OMA -->
+    <attribute-value name="OTA-HTTP-TLS-PO"       token-value="d3" /> 
+
+    <!--AUTH-ENTITY -->
+<!--OMA -->
+    <attribute-value name="AAA"                   token-value="e0" /> 
+<!--OMA -->
+    <attribute-value name="HA"                    token-value="e1" /> 
+   </attribute-value-tokens>
+
+</codepage>
+
+
+<codepage number="1" publicID="-//WAPFORUM//DTD PROV 1.0//EN"  default_encoding="utf-8">
+   <tag-tokens>
+<!-- OMA -->
+      <tag name="characteristic" token-value="6" /> 
+<!-- OMA -->
+      <tag name="parm" token-value="7" />
+   </tag-tokens>
+   <attribute-start-tokens>
+<!-- OMA -->
+<attribute-start name="name" token-value="05" /> 
+<!-- OMA -->
+<attribute-start name="value"  token-value="06" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="NAME" token-value="07" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="INTERNET"            token-value="14" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="STARTPAGE"           token-value="1c" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="TO-NAPID"            token-value="22" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="PORTNBR"             token-value="23" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="SERVICE"             token-value="24" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="AACCEPT"             token-value="2e" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="AAUTHDATA"           token-value="2f" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="AAUTHLEVEL"          token-value="30" />
+ <!-- OMA -->
+<attribute-start name="name" prefix="AAUTHNAME"           token-value="31" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="AAUTHSECRET"         token-value="32" />
+ <!-- OMA -->
+<attribute-start name="name" prefix="AAUTHTYPE"           token-value="33" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="ADDR" token-value="34" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="ADDRTYPE"            token-value="35" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="APPID"               token-value="36" />
+ <!-- OMA -->
+<attribute-start name="name" prefix="APROTOCOL"           token-value="37" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="PROVIDER-ID"         token-value="38" />
+ <!-- OMA -->
+<attribute-start name="name" prefix="TO-PROXY"            token-value="39" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="URI"  token-value="3a" /> 
+<!-- OMA -->
+<attribute-start name="name" prefix="RULE" token-value="3b" /> 
+       </attribute-start-tokens>
+
+
+   <attribute-value-tokens>
+<!--OMA -->
+    <attribute-value name="IPV6"                  token-value="86" /> 
+<!--OMA -->
+    <attribute-value name="E164"                  token-value="87" /> 
+<!--OMA -->
+    <attribute-value name="ALPHA"                 token-value="88" /> 
+<!--OMA -->
+    <attribute-value name="APPSRV"                token-value="8d" /> 
+<!--OMA -->
+    <attribute-value name="OBEX"                  token-value="8e" /> 
+
+    <!--AAUTHTYPE -->
+<!--OMA -->
+    <attribute-value name=","                     token-value="80" /> 
+<!--OMA -->
+    <attribute-value name="HTTP-"                 token-value="81" />
+ <!--OMA -->
+    <attribute-value name="BASIC"                 token-value="82" />
+ <!--OMA -->
+    <attribute-value name="DIGEST"                token-value="83" /> 
+   </attribute-value-tokens>
+
+</codepage>
+
+</codepages>

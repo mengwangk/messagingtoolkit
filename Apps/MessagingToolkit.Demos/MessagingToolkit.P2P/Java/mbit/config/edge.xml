@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<opml version="1.1">
+<head><title>Channels</title>
+<dateCreated>2006-04-02T00:20:26Z</dateCreated>
+<dateModified>2006-04-02T00:20:26Z</dateModified>
+<ownerName>Innity</ownerName>
+<ownerEmail>mengwangk@gmail.com</ownerEmail>
+<expansionState></expansionState>
+<vertScrollState></vertScrollState>
+<windowTop></windowTop>
+<windowLeft></windowLeft>
+<windowBottom></windowBottom>
+<windowRight></windowRight>
+</head>
+<body>
+
+<outline id="1" name="Economy and Finance"
+url="http://www.voanews.com/english/customCF/RecentStoriesRSS.cfm?keyword=Economy%20and%20Finance" adUrl="" 
+image="edge_finance.jpg"/>
+
+<outline id="2" name="Art and Entertainment"
+url="http://www.voanews.com/english/customCF/RecentStoriesRSS.cfm?keyword=Arts%20and%20Entertainment" adUrl="" 
+image="edge_entertainment.jpg"/>
+
+
+</body> 
+
+</opml>

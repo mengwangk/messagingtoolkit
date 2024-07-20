@@ -1,0 +1,5 @@
+MMSC=http://176.0.0.1/
+WAPGateway=176.0.0.65
+APN=pps
+APNAccount=annyway
+APNPassword=online

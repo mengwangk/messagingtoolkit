@@ -1,0 +1,5 @@
+MMSC=http://mmsc/
+WAPGateway=10.150.0.22
+APN=mms-gprs.mtel.bg
+APNAccount=mtel
+APNPassword=mtel

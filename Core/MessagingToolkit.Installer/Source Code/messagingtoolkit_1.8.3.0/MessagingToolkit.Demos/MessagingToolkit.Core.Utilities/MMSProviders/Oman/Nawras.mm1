@@ -1,0 +1,5 @@
+MMSC=http://10.128.240.16/servlets/mms
+WAPGateway=10.128.240.16
+APN=mms.nawras.com.om
+APNAccount=
+APNPassword=

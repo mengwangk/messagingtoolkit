@@ -1,0 +1,645 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:fb="http://www.facebook.com/2008/fbml" xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="alternate" title="Devx: Latest Published Articles" href="http://services.devx.com/outgoing/devxfeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Latest Java Articles" href="http://services.devx.com/outgoing/javafeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Latest .NET Content" href="http://services.devx.com/outgoing/dotnet.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Latest XML Content" href="http://services.devx.com/outgoing/xmlfeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Latest Database Content" href="http://services.devx.com/outgoing/databasefeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Latest Enterprise Content" href="http://services.devx.com/outgoing/enterprisefeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Latest C++ Content" href="http://services.devx.com/outgoing/cplusfeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Latest Web Development Content" href="http://services.devx.com/outgoing/webdevfeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Latest Wireless Content" href="http://services.devx.com/outgoing/wirelessfeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Recent Tips" href="http://services.devx.com/outgoing/recentTipsFeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Open Source Articles" href="http://services.devx.com/outgoing/openSourceFeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Premier Club Only Content" href="http://services.devx.com/outgoing/PCpreviewFeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Office Professional Developer" href="http://services.devx.com/outgoing/officefeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Intel Optimizing Center" href="http://services.devx.com/outgoing/intelOptimizingCenterFeed.xml" type="application/rss+xml">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="verify-v1" content="/9rV7xCYeHHdHCIEVkdpwmwtyjgHYKWKu+yeezQHucQ=">
+<title>Roll Your Own SMS Gateway</title>
+<link rel="stylesheet" type="text/css" href="1954_files/cps.css">
+<link rel="stylesheet" type="text/css" href="1954_files/pf.css">
+<meta name="keywords" content="">
+<meta name="Description" content="You can do a lot of fun applications using an SMS gateway but unless you work for a major television network, good luck getting a return on your investment. In this article, we'll show you a great alternative to an expensive SMS gateway using a Pocket PC and a Bluetooth connection. ">
+<meta name="Topic" content="1170 SMS -- Application Environments :: Mobile Computing :: Wireless :: Wireless Messaging :: SMS">
+<script language="javascript" src="1954_files/globalFuncs.js"></script>
+<script language="javascript">
+function forgotPassword(email) {
+var theURL = "/passwordLookup.cfm?emailAddr=" + email;
+popUpWindow(theURL, 300,320);
+}
+</script>
+<script language="javascript">
+document.domain = document.domain.substring(document.domain.indexOf('.') + 1);
+</script>
+<meta name="verify-v1" content="ELZ51Fh77MWc87+TaubOV8o+m4QF63H+7ASncs+2wWs=">
+<meta name="verify-v1" content="LNXivCWfc+2KKSf4unKngJ2vyOJAxexIWY3pAyM9Qlo=">
+</head><body bgcolor="#fafae6">
+
+
+
+
+<script language="javascript">
+function showSupportItem(itemName)
+{
+if( articleSpptItems[itemName] )
+{
+var theURL = 'http://www.devx.com/wireless/Article/34023/1763';
+theURL += '?supportItem='+articleSpptItems[itemName].number;
+popUpWindow(theURL, articleSpptItems[itemName].width, articleSpptItems[itemName].height);
+}
+else
+alert("Sorry, "+itemName+" could not be found.");
+}
+function SupportItem(number, width, height)
+{
+this.number = number;
+this.width = width;
+this.height = height;
+return this;
+}
+articleSpptItems = new Object();
+articleSpptItems.figure1 = new SupportItem(1,463,495);
+articleSpptItems.figure2 = new SupportItem(2,598,553);
+articleSpptItems.figure3 = new SupportItem(3,342,295);
+articleSpptItems.figure4 = new SupportItem(4,340,539);
+articleSpptItems.figure5 = new SupportItem(5,614,355);
+articleSpptItems.figure6 = new SupportItem(6,554,360);
+articleSpptItems.figure7 = new SupportItem(7,467,411);
+</script>
+<center><div style="width: 90%; text-align: left; font-family: Arial,Helvetica,Sans-Serif; font-size: 12px; font-weight: normal; line-height: 18px;">
+<a href="http://www.devx.com/"><img alt="DevX HomePage" src="1954_files/4055.gif" border="0"></a>
+<br>
+<div class="topPrintHeader" style="float: left;"><a href="http://www.devx.com/">http://www.devx.com</a></div>
+<div class="topPrintHeader" style="text-align: right;">Printed from <a href="http://www.devx.com/wireless/Article/34023/1954">http://www.devx.com/wireless/Article/34023/1954</a></div>
+<br>
+<div class="articleTitle">Roll Your Own SMS Gateway</div>
+<div class="articleDek"><br>You can do a lot of fun applications using
+an SMS gateway but unless you work for a major television network, good
+luck getting a return on your investment. In this article, we'll show
+you a great alternative to an expensive SMS gateway using a Pocket PC
+and a Bluetooth connection. </div>
+<div class="articleAuthor">
+by
+Wei-Meng Lee
+</div>
+
+				<img src="1954_files/3578.gif">n the last few years, SMS
+(Short Message Service) has made a big impact on the way we communicate
+(or at least the youngsters). Instead of communicating over the phone
+using voice, more and more people are turning to using SMS for
+messaging. One of the popular uses of SMS is for voting. For example,
+you can vote for your favorite contestant on the television program
+"American Idol" by simply sending an SMS message to a particular phone
+number. This is then automatically tabulated into a final vote count
+for each participant. Traditionally, to implement such a system, you
+needed to buy an expensive SMS gateway, which is overkill for a small
+project with limited budget. <p>
+In this article, I will show you how you can use a Windows Mobile 5.0 Pocket PC device as an SMS gateway for voting purposes. <a href="javascript:showSupportItem('figure1');">Figure 1</a> shows the architecture of the example system you will build. 
+</p><p>
+The following steps show the communication protocol between the Pocket PC application and the server application: 
+</p><ol>
+<li>The user (phone number <b>+123456789</b>) sends an SMS message to the Pocket PC, e.g. "<b>VOTE A 987-65-4329</b>." The message format is: VOTE &lt;Choice&gt; &lt;Social Security Number&gt;.
+</li><li>The Pocket PC receives the message from the user and forwards
+it to the server application along with the phone number. The server
+receives the SMS message and tallies the vote count. The communication
+between the Pocket PC and the server is conducted over a Bluetooth
+connection.
+</li><li>The server sends a command "<b>SEND:+123456789:Thank you for your vote!</b>" to the Pocket PC application.
+</li><li>The Pocket PC receives the command from server and sends an SMS message "<b>Thank you for your vote!</b>" to the phone number <b>+123456789</b>.</li>
+</ol>
+
+In this system, there are altogether two components:
+<ul>
+<li>A Pocket PC application that sends and receives SMS messages
+</li><li>A Windows application that communicates with the Pocket PC application and keeps track of the number of votes.</li>
+</ul>
+<p>
+<b>What You Need</b><br>
+To build the SMS Gateway system described in this article, you need the following:
+</p><ul>
+<li>A Windows Mobile 5.0 Pocket PC Phone Edition device (with Bluetooth
+capability). You would also need to have a valid SIM card that allows
+you to send and receive SMS messages. </li><li>A Bluetooth USB adapter to connect to your PC. 
+</li></ul>
+<p>
+</p><p>
+			
+<br><br>
+<br>
+
+				<b>Developing the Pocket PC Application</b><br>
+Let's start by first developing the Pocket PC application. In Visual
+Studio 2005, create a new Windows Mobile 5.0 Pocket PC application and
+name it SMS. Populate the default Form1 with the controls shown in <a href="javascript:showSupportItem('figure2');">Figure 2</a>. 
+</p><p>
+</p><p></p><table align="center" border="0" cellpadding="3" width="95%">
+<tbody><tr>
+<td valign="top">
+<a href="javascript:showSupportItem('figure1')"><img alt="" src="1954_files/18700.jpg" border="0" height="150" width="220"></a><br>
+<span class="caption"><a href="javascript:showSupportItem('figure1')"><b>Figure 1</b></a>. The architecture of the SMS gateway system is shown.</span>
+</td>
+<td width="12">&nbsp;</td>
+<td valign="top"><a href="javascript:showSupportItem('figure2')"><img alt="" src="1954_files/18701.jpg" border="0" height="150" width="220"></a><br>
+<span class="caption"><a href="javascript:showSupportItem('figure2')"><b>Figure 2</b></a>. Populate Form1 with the various controls as shown.</span></td></tr></tbody></table>
+
+For the TextBox1 and TextBox2 controls, set their properties as follows:<ul>
+<li>Multiline—True 
+</li><li>ScrollBars—Both</li>
+</ul>
+
+Add the following references to the project:<ul>
+<li>Microsoft.WindowsMobile
+</li><li>Microsoft.WindowsMobile.PocketOutlook</li>
+</ul>
+Switch to the code-behind of Form1 and import the following required namespaces:
+<pre><code>
+Imports Microsoft.WindowsMobile.PocketOutlook
+Imports Microsoft.WindowsMobile.PocketOutlook.MessageInterception
+</code></pre>
+Declare the following constants and variables:
+<pre><code>
+Public Class Form1
+    '---the constants for the commands---
+    Const VOTE_COMMAND As String = "VOTE"
+    Const SEND_COMMAND As String = "SEND"
+
+    Private msgInterceptor As MessageInterceptor
+    Private WithEvents serialPort As New IO.Ports.SerialPort
+</code></pre>
+The first constant, <span class="pf">VOTE_COMMAND</span>,
+is used to filter out SMS messages sent by the user. For example, if
+the user wants to vote for participant A, then his SMS message will be
+sent in the following format:
+<pre><code>
+VOTE &lt;Choice&gt; &lt;Social Security Number&gt;
+</code></pre>
+An example would be "<b>VOTE A 987-65-4329</b>." All incoming SMS messages beginning with the word <b>VOTE</b> would be filtered and processed by this application. 
+<p>The second constant is used to filter the command sent by the
+server. When the server receives a SMS vote, it will send a command to
+the Pocket PC application so that it can send an acknowledgment SMS
+message back to the user. For example, the server might send the
+following command to the Pocket PC application: "<b>SEND:+123456789:Thank you for your vote!</b>." The Pocket PC will then send an SMS message to the user. 
+</p><p>
+The msgInterceptor object is used for intercepting incoming SMS
+messages. The serialPort object is used for communicating with the
+server over a Bluetooth connection. </p><p>
+In the Form1_Load event, create an instance of the MessageInterceptor
+class and set its filter to intercept for incoming SMS messages that
+start with the word "<b>VOTE</b>"
+(regardless of casing). Then, set an event handler to service this
+event (when a message is intercepted). At the same time, you will also
+open a serial connection (over Bluetooth) to connect with the server:
+</p><pre><code>
+    Private Sub Form1_Load( _
+       ByVal sender As System.Object, _
+       ByVal e As System.EventArgs) _
+       Handles MyBase.Load
+
+        '---create an instance of the MessageInterceptor class---
+        msgInterceptor = New MessageInterceptor( _
+           InterceptionAction.NotifyAndDelete, True)
+
+        '---set the filter for the message---
+        msgInterceptor.MessageCondition = _
+           New MessageCondition( _
+           MessageProperty.Body, _
+           MessagePropertyComparisonType.StartsWith, _
+           VOTE_COMMAND, False)
+
+        '---set the event handler for the message interceptor
+        AddHandler msgInterceptor.MessageReceived, _
+           AddressOf SMSInterceptor_MessageReceived
+
+        '---close the serial port if open---
+        If serialPort.IsOpen Then
+            serialPort.Close()
+        End If
+
+        '---open the serial port to connect to server---
+        Try
+            With serialPort
+                .PortName = "COM6"
+                .BaudRate = 9600
+                .Parity = IO.Ports.Parity.None
+                .DataBits = 8
+                .StopBits = IO.Ports.StopBits.One
+                .Handshake = IO.Ports.Handshake.None
+            End With
+            serialPort.Open()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+</code></pre>
+<p>
+</p><table style="background: white none repeat scroll 0% 0%; font-family: Verdana,Arial,Helvetica,Sans-Serif; font-size: small; color: red; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;" align="center" border="1" cellpadding="3" width="95%">
+<tbody><tr>
+<td>Author's Note: I am assuming that COM6 is used by the Bluetooth
+serial port on the Pocket PC. Change this COM port according to the
+port number used on your Pocket PC. </td>
+</tr></tbody></table>
+<p>
+When an SMS message is intercepted, the <span class="pf">SMSInterceptor_MessageReceived</span> event handler will be fired:
+</p><pre><code>
+    '---event handler for the MessageReceived event---
+    Private Sub SMSInterceptor_MessageReceived( _
+       ByVal sender As Object, _
+       ByVal e As MessageInterceptorEventArgs)
+
+        '---extract the message received---
+        Dim msg As SmsMessage = e.Message
+
+        '---format as "+123456789,VOTE A 987-65-4329"---
+        Dim s As String = msg.From.Name &amp; "," &amp; msg.Body
+
+        '---update the textbox with the above data---
+        TextBox1.BeginInvoke(New _
+           myDelegate(AddressOf updateTextBox1), _
+           New Object() {s})
+    End Sub
+</code></pre>
+Here, you will extract the sender's phone number as well as the content
+of the SMS message. You need to cast the e.Message object into a
+SmsMessage object in order to retrieve the detailed information of the
+sender. The received data is then displayed in the TextBox1 control. <p>
+</p><table style="background: white none repeat scroll 0% 0%; font-family: Verdana,Arial,Helvetica,Sans-Serif; font-size: small; color: red; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;" align="center" border="1" cellpadding="3" width="95%">
+<tbody><tr>
+<td>Author's Note: Interestingly, if the sender's phone number has
+already been saved in Contacts, the From.Name property will return the
+sender's name (as saved in Contacts) instead of his phone number. In
+this case, you need to do some additional work to find out the sender’s
+phone number. </td>
+</tr></tbody></table>
+<p>
+The delegate and the subroutine to update the TextBox control are defined as follows:
+</p><pre><code>
+    '---delegate for updating the two TextBox controls---
+Public Delegate Sub myDelegate(ByVal str As String)
+
+    '---display received SMS data---
+    Public Sub updateTextBox1(ByVal str As String)
+        '---show the received data in the TextBox---
+        TextBox1.Text = str &amp; vbCrLf &amp; TextBox1.Text
+
+        '---Send the data to the server---
+        SendDatatoServer(str)
+    End Sub
+</code></pre>
+<a href="javascript:showSupportItem('figure3');">Figure 3</a> shows the application when SMS messages are received. 
+
+<p></p><table align="center" border="0" cellpadding="3" width="95%">
+<tbody><tr>
+<td valign="top">
+<a href="javascript:showSupportItem('figure3')"><img alt="" src="1954_files/18702.jpg" border="0" height="150" width="220"></a><br>
+<span class="caption"><a href="javascript:showSupportItem('figure3')"><b>Figure 3</b></a>. SMS messages have been received by the application.</span>
+</td>
+<td width="12">&nbsp;</td>
+<td valign="top"><a href="javascript:showSupportItem('figure4')"><img alt="" src="1954_files/18703.jpg" border="0" height="150" width="220"></a><br>
+<span class="caption"><a href="javascript:showSupportItem('figure4')"><b>Figure 4</b></a>. Messages from users and from the server are shown.</span></td></tr></tbody></table>
+<p>
+When the SMS message is shown on the TextBox control, it is also sent to the server, through the <span class="pf">SendDatatoServer()</span> subroutine:
+</p><pre><code>
+    '---sends the received SMS data to the server---
+    Private Sub SendDatatoServer(ByVal str As String)
+        Try
+            '---write to the serial port---
+            serialPort.Write(str &amp; vbCrLf)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+</code></pre>
+When the server receives the SMS message sent by the Pocket PC
+application, it will also send a command to the Pocket PC, asking it to
+send an acknowledgement message back to the sender. In this case, the
+command will be received on the Pocket PC via the serial port
+connection. Essentially, you will service the DataReceived event of the
+serialPort object:
+<pre><code>
+    '---data received by the serial port (from server)---
+    Private Sub DataReceived( _
+           ByVal sender As Object, _
+           ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) _
+           Handles serialPort.DataReceived
+
+        Dim data As String = serialPort.ReadLine()
+
+        '---update the textbox with the data from server---
+        TextBox2.BeginInvoke(New _
+           myDelegate(AddressOf updateTextBox2), _
+           New Object() {data})
+    End Sub
+</code></pre>
+The received command is displayed in the TextBox2 control:
+<pre><code>
+    '---update the TextBox with the data received from server---
+    Public Sub updateTextBox2(ByVal str As String)
+        '---show the received data in the TextBox---
+        TextBox2.Text = str &amp; vbCrLf &amp; TextBox2.Text
+
+        If str.StartsWith(SEND_COMMAND) Then
+            Dim fields() As String = str.Split(":")
+            '---.e.g. SEND:+123456789:Thank you for your vote!
+            '---fields(0) is SEND, fields(1) is +123456789, 
+            '---fields(2) is "Thank you for your vote!"
+            '---send SMS to user---
+            SendSMS(fields(1), fields(2))
+        End If
+    End Sub
+</code></pre>
+The Pocket PC application then sends an acknowledgement SMS message back to the sender using the SmsMessage class:
+<pre><code>
+    '---send a SMS message to a recipient---
+    Private Sub SendSMS( _
+       ByVal receiptnumber As String, _
+       ByVal message As String)
+        '---from the Microsoft.WindowsMobile.PocketOutlook namespace---
+
+        '---compose a new SMS message---
+        Dim SMS As New SmsMessage
+        '---set the body of the message---
+        SMS.Body = message
+        '---add the recipient---
+        SMS.To.Add(New Recipient(receiptnumber))
+        '---send the message---
+        SMS.Send()
+    End Sub
+</code></pre>
+<a href="javascript:showSupportItem('figure4');">Figure 4</a> shows messages received from users as well as commands sent by the server (more on this in the next section). 
+<p>
+</p><p>
+			
+<br><br>
+<br>
+
+				<b>Developing the Server</b><br>Now that we have developed
+the Pocket PC application, let’s turn our attention to the server
+application. Using Visual Studio 2005, create a new Windows application
+and name it SMS_Desktop. Populate the default Form1 with the controls
+shown in <a href="javascript:showSupportItem('figure5');">Figure 5</a>. 
+</p><p>
+For the TextBox control, set the ScrollBars property to Vertical and the Multiline property to True. 
+</p><p>
+The four ProgressBar controls are used to show the number of votes for each choice (participant)—A, B, C, or D. 
+</p><p>
+For simplicity's sake, you will use the Application Settings feature of
+Windows Forms 2.0 to store the vote count for each choice (in real-life
+you would use a database). Right-click on the project name in Solution
+Explorer and select Properties. Select the Settings tab and add the
+four application settings as shown in <a href="javascript:showSupportItem('figure6');">Figure 6</a>. 
+</p><p>
+</p><p></p><table align="center" border="0" cellpadding="3" width="95%">
+<tbody><tr>
+<td valign="top">
+<a href="javascript:showSupportItem('figure5')"><img alt="" src="1954_files/4289.jpg" border="0" height="150" width="220"></a><br>
+<span class="caption"><a href="javascript:showSupportItem('figure5')"><b>Figure 5</b></a>. Populate Form1 with the various controls as shown. </span>
+</td>
+<td width="12">&nbsp;</td>
+<td valign="top"><a href="javascript:showSupportItem('figure6')"><img alt="" src="1954_files/18705.jpg" border="0" height="150" width="220"></a><br>
+<span class="caption"><a href="javascript:showSupportItem('figure6')"><b>Figure 6</b></a>. Add four application settings to the project.</span></td></tr></tbody></table>
+
+In the code-behind of Form1, declare the following constants and variable:
+<pre><code>
+Public Class Form1
+    '---the constants for the commands---
+    Const VOTE_COMMAND As String = "VOTE"
+    Const SEND_COMMAND As String = "SEND"
+
+    Private WithEvents serialPort As New IO.Ports.SerialPort
+</code></pre>
+In the Form1_Load event, you will first call the <span class="pf">UpdateBars()</span>
+subroutine to initialize the progress bars with the current vote count
+for each choice (I will define this shortly). You will also open the
+serial connection with the Pocket PC over a Bluetooth connection:
+<pre><code>
+    Private Sub Form1_Load( _
+       ByVal sender As System.Object, _
+       ByVal e As System.EventArgs) _
+       Handles MyBase.Load
+        '---update the progressbars---
+        UpdateBars()
+
+        '---close the serial port if open---
+        If serialPort.IsOpen Then
+            serialPort.Close()
+        End If
+        '---open the serial port to connect to server---
+        Try
+            With serialPort
+                .PortName = "COM12"
+                .BaudRate = 9600
+                .Parity = IO.Ports.Parity.None
+                .DataBits = 8
+                .StopBits = IO.Ports.StopBits.One
+                .Handshake = IO.Ports.Handshake.None
+            End With
+            serialPort.Open()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+</code></pre>
+<p>
+</p><table style="background: white none repeat scroll 0% 0%; font-family: Verdana,Arial,Helvetica,Sans-Serif; font-size: small; color: red; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;" align="center" border="1" cellpadding="3" width="95%">
+<tbody><tr>
+<td>Author's Note: I am assuming that COM12 is used by the Bluetooth
+serial port on the computer. Change this COM port according to the port
+number used on your computer. </td>
+</tr></tbody></table>
+<p>
+Handle the DataReceived event when incoming data is received at the serial port:
+</p><pre><code>
+    '---data received from Pocket PC---
+    Private Sub DataReceived( _
+       ByVal sender As Object, _
+       ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) _
+       Handles serialPort.DataReceived
+        '---update it in the textbox---
+        TextBox1.BeginInvoke(New _
+           myDelegate(AddressOf updateTextBox), _
+           New Object() {})
+    End Sub
+</code></pre>
+In this case, you simply display the received data in the TextBox1 control. 
+<p>
+In the <span class="pf">updateTextBox()</span> control, incoming data is first read and then added to the TextBox1 control. You then write the data to a log file using the <span class="pf">WriteToLog()</span> subroutine. Finally, you will tabulate the vote count using the <span class="pf">ProcessData()</span> subroutine:
+</p><pre><code>
+    '---delegate for updating the TextBox control---
+    Public Delegate Sub myDelegate()
+
+    '---display data received from Pocket PC---
+    Public Sub updateTextBox()
+        '---for receiving plan ASCII text---
+        Dim data As String = serialPort.ReadLine
+        '---e.g. "+123456789,VOTE A 987-65-4329"---
+
+        '---append it to the TextBox control---
+        With TextBox1
+            .AppendText(data &amp; vbCrLf)
+            .ScrollToCaret()
+        End With
+
+        '---write to log file---
+        WriteToLog(data)
+
+        '---process the received data---
+        ProcessData(data)
+    End Sub
+</code></pre>
+In the <span class="pf">WriteToLog()</span> subroutine, you simply write the received data to a text file for archival purpose:
+<pre><code>
+    Private Sub WriteToLog(ByVal str As String)
+        My.Computer.FileSystem.WriteAllText("C:\SMSVotes.txt", _
+           str, True)
+    End Sub
+</code></pre>
+The <span class="pf">ProcessData()</span> subroutine
+splits the received data so as to extract the choice voted by the
+sender. It then updates the application setting for each choice:
+<pre><code>
+    '---tabulate the scores---
+    Private Sub ProcessData(ByVal str As String)
+        Dim fields() As String = str.Split(",")
+        '---fields(0) is caller number---
+        '---fields(1) contains the data, e.g. VOTE A 987-65-4329
+
+        Dim subFields() As String = fields(1).Split(" ")
+        '---subfields(0) is Vote, subfields(1) is choice---
+        With My.Settings
+            Select Case UCase(subFields(1))
+                Case "A"
+                    .ChoiceA += 1
+                Case "B"
+                    .ChoiceB += 1
+                Case "C"
+                    .ChoiceC += 1
+                Case "D"
+                    .ChoiceD += 1
+            End Select
+            .Save()
+        End With
+
+        '---send a reply to the user---
+        SendReply(fields(0), "Thank you for your vote!")
+
+        '---update the progress bars---
+        UpdateBars()
+    End Sub
+</code></pre>
+Upon tabulating the vote, you can also send a reply back to the sender. This is accomplished by the <span class="pf">SendReply()</span> subroutine. Here, you simply write a <b>SEND</b> command to the Pocket PC via the serial port:
+<pre><code>
+    '---send message to the Pocket PC to ask it 
+    ' to send a SMS to the user---
+    Private Sub SendReply( _
+       ByVal recipientNumber As String, _
+       ByVal message As String)
+        '---.e.g. "SEND:+123456789:Thank you for your vote!"---
+        serialPort.Write( _
+           SEND_COMMAND &amp; ":" &amp; recipientNumber &amp; _
+           ":" &amp; message &amp; vbCrLf)
+    End Sub
+</code></pre>
+The <span class="pf">UpdateBars()</span> subroutine updates the value of the four ProgressBar controls:
+<pre><code>
+    '---update the progressbars---
+    Private Sub UpdateBars()
+        With My.Settings
+            Label1.Text = "Choice A (" &amp; .ChoiceA &amp; " vote(s) )"
+            ProgressBar1.Value = .ChoiceA
+
+            Label2.Text = "Choice B (" &amp; .ChoiceB &amp; " vote(s) )"
+            ProgressBar2.Value = .ChoiceB
+
+            Label3.Text = "Choice C (" &amp; .ChoiceC &amp; " vote(s) )"
+            ProgressBar3.Value = .ChoiceC
+
+            Label4.Text = "Choice D (" &amp; .ChoiceD &amp; " vote(s) )"
+            ProgressBar4.Value = .ChoiceD
+        End With
+    End Sub
+</code></pre>
+Finally, the Reset button resets the vote count for each choice:
+<pre><code>
+    '---reset all the scores---
+    Private Sub btnReset_Click( _
+       ByVal sender As System.Object, _
+       ByVal e As System.EventArgs) _
+       Handles btnReset.Click
+        With My.Settings
+            .ChoiceA = 0
+            .ChoiceB = 0
+            .ChoiceC = 0
+            .ChoiceD = 0
+            .Save()
+        End With
+        UpdateBars()
+    End Sub
+</code></pre>
+<a href="javascript:showSupportItem('figure7');">Figure 7</a> shows data received from the Pocket PC and the various vote counts. 
+<p>
+</p><table align="right" border="0" cellpadding="5" cellspacing="0" width="239">
+<tbody><tr><td valign="top"><a href="javascript:showSupportItem('figure7')"><img alt="" src="1954_files/18706.jpg" border="0" height="150" width="220"></a></td><td width="12"> </td></tr>
+<tr><td class="smallfont"><a href="javascript:showSupportItem('figure7')"><b>Figure 7</b>.</a> The screen shot shows messages received by the server and the vote counts.</td></tr>
+</tbody></table>
+<p>
+<b>Testing the System</b><br>
+To test the system:
+</p><ul>
+<li>Pair up your Pocket PC with your computer using Bluetooth. 
+</li><li>Establish a serial connection between the Pocket PC and
+computer. This article assumes that your Pocket PC will use COM6 and
+your computer will use COM12. Remember to change it based on your own
+COM port number. </li><li>Deploy the Pocket PC application onto your Windows Mobile 5.0 Pocket PC and launch it. 
+</li><li>Ensure that the Pocket PC application is running before you launch the Windows application on the server computer.
+</li><li>Use another mobile phone and send an SMS message to the Pocket
+PC. After a while, you should be able to see the Pocket PC showing the
+received message. At the same time, the message would also be received
+by the application running on the server. </li><li>Upon showing the updated vote, you should be able to receive an acknowledgement message from the Pocket PC. 
+</li></ul>
+In this article, you have seen how to build a simple SMS gateway for
+tabulating vote count. With some creativity and exploration, you can
+build more interesting applications using the SMS gateway. If you have
+a good idea for using the SMS gateway, send it my way at the email
+address in my bio at the bottom of this page. <p>
+</p><p>
+			
+</p><div class=""><b>Wei-Meng Lee</b>(http://weimenglee.blogspot.com)
+is a Microsoft MVP and founder of Developer Learning Solutions
+(http://www.developerlearningsolutions.com), a technology company
+specializing in hands-on training on the latest Microsoft technologies.
+He is an established developer and trainer specializing in .NET and
+wireless technologies.
+<p>Wei-Meng speaks regularly at international conferences and has
+authored and co-authored numerous books on .NET, XML, and wireless
+technologies. He writes extensively on topics ranging from .NET to Mac
+OS X. He is also the author of the .NET Compact Framework Pocket Guide,
+ASP.NET 2.0: A Developer's Notebook (both from O'Reilly Media, Inc),
+and Programming Sudoku (Apress). </p></div>
+<br><br>
+</div></center>
+
+
+
+
+<table style="padding-top: 10px;" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td class="smallFont" align="center">DevX is a division of Jupitermedia Corporation <br>
+© Copyright 2007 Jupitermedia Corporation. All Rights Reserved. <a href="http://www.internet.com/corporate/legal.html">Legal Notices</a></td></tr>
+</tbody></table>
+
+</body></html>

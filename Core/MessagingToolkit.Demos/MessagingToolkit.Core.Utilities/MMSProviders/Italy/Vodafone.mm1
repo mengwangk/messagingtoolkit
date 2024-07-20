@@ -1,0 +1,5 @@
+MMSC=http://mms.vodafone.it/servlets/mms
+WAPGateway=10.128.224.10
+APN=mms.vodafone.it
+APNAccount=
+APNPassword=

@@ -1,0 +1,5 @@
+MMSC=http://10.0.3.70:8002/
+WAPGateway=10.1.1.155
+APN=telstra.mms
+APNAccount=
+APNPassword=

@@ -1,0 +1,928 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{580A02B7-1957-45B5-8B74-4D2CDEE0E6BC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MessagingToolkit.Barcode</RootNamespace>
+    <AssemblyName>MessagingToolkit.Barcode</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WPF;NET40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>MessagingToolkit.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\MessagingToolkit.Barcode\Aztec\AztecDecoder.cs">
+      <Link>Aztec\AztecDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Aztec\AztecDetectorResult.cs">
+      <Link>Aztec\AztecDetectorResult</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Aztec\Decoder\Decoder.cs">
+      <Link>Aztec\Decoder\Decoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Aztec\Detector\Detector.cs">
+      <Link>Aztec\Detector\Detector</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\BarcodeCommon.cs">
+      <Link>BarcodeCommon</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\BarcodeDecoder.cs">
+      <Link>BarcodeDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\BarcodeDecoderException.cs">
+      <Link>BarcodeDecoderException</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\BarcodeEncoder.cs">
+      <Link>BarcodeEncoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\BarcodeEncoderException.cs">
+      <Link>BarcodeEncoderException</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\BaseLuminanceSource.cs">
+      <Link>BaseLuminanceSource</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Binarizer.cs">
+      <Link>Binarizer</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\BinaryBitmap.cs">
+      <Link>BinaryBitmap</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\BitmapSourceLuminanceSource.cs">
+      <Link>BitmapSourceLuminanceSource.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\ChecksumException.cs">
+      <Link>ChecksumException</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\AbstractDoCoMoResultParser.cs">
+      <Link>Client\Results\AbstractDoCoMoResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\AddressBookAUResultParser.cs">
+      <Link>Client\Results\AddressBookAUResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\AddressBookDoCoMoResultParser.cs">
+      <Link>Client\Results\AddressBookDoCoMoResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\AddressBookParsedResult.cs">
+      <Link>Client\Results\AddressBookParsedResult</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\BizcardResultParser.cs">
+      <Link>Client\Results\BizcardResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\BookmarkDoCoMoResultParser.cs">
+      <Link>Client\Results\BookmarkDoCoMoResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\CalendarParsedResult.cs">
+      <Link>Client\Results\CalendarParsedResult</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\EmailAddressParsedResult.cs">
+      <Link>Client\Results\EmailAddressParsedResult</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\EmailAddressResultParser.cs">
+      <Link>Client\Results\EmailAddressResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\EmailDoCoMoResultParser.cs">
+      <Link>Client\Results\EmailDoCoMoResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\ExpandedProductParsedResult.cs">
+      <Link>Client\Results\ExpandedProductParsedResult</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\ExpandedProductResultParser.cs">
+      <Link>Client\Results\ExpandedProductResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\GeoParsedResult.cs">
+      <Link>Client\Results\GeoParsedResult</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\GeoResultParser.cs">
+      <Link>Client\Results\GeoResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\ISBNParsedResult.cs">
+      <Link>Client\Results\ISBNParsedResult</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\ISBNResultParser.cs">
+      <Link>Client\Results\ISBNResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\ParsedResult.cs">
+      <Link>Client\Results\ParsedResult</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\ParsedResultType.cs">
+      <Link>Client\Results\ParsedResultType</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\ProductParsedResult.cs">
+      <Link>Client\Results\ProductParsedResult</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\ProductResultParser.cs">
+      <Link>Client\Results\ProductResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\ResultParser.cs">
+      <Link>Client\Results\ResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\SMSMMSResultParser.cs">
+      <Link>Client\Results\SMSMMSResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\SMSParsedResult.cs">
+      <Link>Client\Results\SMSParsedResult</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\SmsToMmsToResultParser.cs">
+      <Link>Client\Results\SmsToMmsToResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\SmtpResultParser.cs">
+      <Link>Client\Results\SmtpResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\TelParsedResult.cs">
+      <Link>Client\Results\TelParsedResult</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\TelResultParser.cs">
+      <Link>Client\Results\TelResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\TextParsedResult.cs">
+      <Link>Client\Results\TextParsedResult</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\URIParsedResult.cs">
+      <Link>Client\Results\URIParsedResult</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\URIResultParser.cs">
+      <Link>Client\Results\URIResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\URLTOResultParser.cs">
+      <Link>Client\Results\URLTOResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\VCardResultParser.cs">
+      <Link>Client\Results\VCardResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\VEventResultParser.cs">
+      <Link>Client\Results\VEventResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\WifiParsedResult.cs">
+      <Link>Client\Results\WifiParsedResult</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Client\Results\WifiResultParser.cs">
+      <Link>Client\Results\WifiResultParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\BaseColor.cs">
+      <Link>Common\BaseColor</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\BitArray.cs">
+      <Link>Common\BitArray</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\BitMatrix.cs">
+      <Link>Common\BitMatrix</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\BitSource.cs">
+      <Link>Common\BitSource</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\CharacterSetECI.cs">
+      <Link>Common\CharacterSetECI</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\Collections.cs">
+      <Link>Common\Collections</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\Comparator.cs">
+      <Link>Common\Comparator</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\DecoderResult.cs">
+      <Link>Common\DecoderResult</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\DefaultGridSampler.cs">
+      <Link>Common\DefaultGridSampler</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\DetectorResult.cs">
+      <Link>Common\DetectorResult</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\Detector\MathUtils.cs">
+      <Link>Common\Detector\MathUtils</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\Detector\MonochromeRectangleDetector.cs">
+      <Link>Common\Detector\MonochromeRectangleDetector</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\Detector\WhiteRectangleDetector.cs">
+      <Link>Common\Detector\WhiteRectangleDetector</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\ECI.cs">
+      <Link>Common\ECI</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\GlobalHistogramBinarizer.cs">
+      <Link>Common\GlobalHistogramBinarizer</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\GridSampler.cs">
+      <Link>Common\GridSampler</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\HybridBinarizer.cs">
+      <Link>Common\HybridBinarizer</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\Margin.cs">
+      <Link>Common\Margin</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\PerspectiveTransform.cs">
+      <Link>Common\PerspectiveTransform</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\ReedSolomon\GenericGF.cs">
+      <Link>Common\ReedSolomon\GenericGF</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\ReedSolomon\GenericGFPoly.cs">
+      <Link>Common\ReedSolomon\GenericGFPoly</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\ReedSolomon\GF256.cs">
+      <Link>Common\ReedSolomon\GF256</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\ReedSolomon\GF256Poly.cs">
+      <Link>Common\ReedSolomon\GF256Poly</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\ReedSolomon\ReedSolomonDecoder.cs">
+      <Link>Common\ReedSolomon\ReedSolomonDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\ReedSolomon\ReedSolomonEncoder.cs">
+      <Link>Common\ReedSolomon\ReedSolomonEncoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\ReedSolomon\ReedSolomonException.cs">
+      <Link>Common\ReedSolomon\ReedSolomonException</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Common\StringHelper.cs">
+      <Link>Common\StringHelper</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\DataMatrixDecoder.cs">
+      <Link>DataMatrix\DataMatrixDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\DataMatrixEncoder.cs">
+      <Link>DataMatrix\DataMatrixEncoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\DataMatrixNewEncoder.cs">
+      <Link>DataMatrix\DataMatrixNewEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Decoder\BitMatrixParser.cs">
+      <Link>DataMatrix\Decoder\BitMatrixParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Decoder\DataBlock.cs">
+      <Link>DataMatrix\Decoder\DataBlock</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Decoder\DecodedBitStreamParser.cs">
+      <Link>DataMatrix\Decoder\DecodedBitStreamParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Decoder\Decoder.cs">
+      <Link>DataMatrix\Decoder\Decoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Decoder\Version.cs">
+      <Link>DataMatrix\Decoder\Version</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Detector\Detector.cs">
+      <Link>DataMatrix\Detector\Detector</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\ASCIIEncoder.cs">
+      <Link>DataMatrix\Encoder\ASCIIEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\Base256Encoder.cs">
+      <Link>DataMatrix\Encoder\Base256Encoder.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\C40Encoder.cs">
+      <Link>DataMatrix\Encoder\C40Encoder.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\C40TextState.cs">
+      <Link>DataMatrix\Encoder\C40TextState</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixBestLine.cs">
+      <Link>DataMatrix\Encoder\DataMatrixBestLine</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixBresLine.cs">
+      <Link>DataMatrix\Encoder\DataMatrixBresLine</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixChannel.cs">
+      <Link>DataMatrix\Encoder\DataMatrixChannel</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixCommon.cs">
+      <Link>DataMatrix\Encoder\DataMatrixCommon</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixConstants.cs">
+      <Link>DataMatrix\Encoder\DataMatrixConstants</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixDecode.cs">
+      <Link>DataMatrix\Encoder\DataMatrixDecode</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixEncode.cs">
+      <Link>DataMatrix\Encoder\DataMatrixEncode</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixFollow.cs">
+      <Link>DataMatrix\Encoder\DataMatrixFollow</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixImage.cs">
+      <Link>DataMatrix\Encoder\DataMatrixImage</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixImageEncoder.cs">
+      <Link>DataMatrix\Encoder\DataMatrixImageEncoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixImageEncoderOptions.cs">
+      <Link>DataMatrix\Encoder\DataMatrixImageEncoderOptions</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixMatrix3.cs">
+      <Link>DataMatrix\Encoder\DataMatrixMatrix3</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixMessage.cs">
+      <Link>DataMatrix\Encoder\DataMatrixMessage</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixMultiplet.cs">
+      <Link>DataMatrix\Encoder\DataMatrixMultiplet</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixPixelLoc.cs">
+      <Link>DataMatrix\Encoder\DataMatrixPixelLoc</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixRay2.cs">
+      <Link>DataMatrix\Encoder\DataMatrixRay2</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixRegion.cs">
+      <Link>DataMatrix\Encoder\DataMatrixRegion</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixScanGrid.cs">
+      <Link>DataMatrix\Encoder\DataMatrixScanGrid</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixSymbolInfo144.cs">
+      <Link>DataMatrix\Encoder\DataMatrixSymbolInfo144.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixtFlow.cs">
+      <Link>DataMatrix\Encoder\DataMatrixtFlow</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DataMatrixVector2.cs">
+      <Link>DataMatrix\Encoder\DataMatrixVector2</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\DefaultPlacement.cs">
+      <Link>DataMatrix\Encoder\DefaultPlacement.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\EdifactEncoder.cs">
+      <Link>DataMatrix\Encoder\EdifactEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\Encoder.cs">
+      <Link>DataMatrix\Encoder\Encoder.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\EncoderContext.cs">
+      <Link>DataMatrix\Encoder\EncoderContext.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\ErrorCorrection.cs">
+      <Link>DataMatrix\Encoder\ErrorCorrection.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\HighLevelEncoder.cs">
+      <Link>DataMatrix\Encoder\HighLevelEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\SymbolInfo.cs">
+      <Link>DataMatrix\Encoder\SymbolInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\SymbolShapeHint.cs">
+      <Link>DataMatrix\Encoder\SymbolShapeHint.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\TextEncoder.cs">
+      <Link>DataMatrix\Encoder\TextEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DataMatrix\Encoder\X12Encoder.cs">
+      <Link>DataMatrix\Encoder\X12Encoder.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\DefaultEncoder.cs">
+      <Link>DefaultEncoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Definition.cs">
+      <Link>Definition</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Dimension.cs">
+      <Link>Dimension.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\FormatException.cs">
+      <Link>FormatException</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Helper\BarcodeHelper.cs">
+      <Link>Helper\BarcodeHelper</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Helper\BitmapContext.cs">
+      <Link>Helper\BitmapContext.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Helper\BitmapFactory.cs">
+      <Link>Helper\BitmapFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Helper\ImageHelper.cs">
+      <Link>Helper\ImageHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Helper\MatrixToImageHelper.cs">
+      <Link>Helper\MatrixToImageHelper</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Helper\NativeMethods.cs">
+      <Link>Helper\NativeMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Helper\WriteableBitmapContextExtensions.cs">
+      <Link>Helper\WriteableBitmapContextExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Helper\WriteableBitmapConvertExtensions.cs">
+      <Link>Helper\WriteableBitmapConvertExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Helper\WriteableBitmapExtensions.cs">
+      <Link>Helper\WriteableBitmapExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Helper\WriteableBitmapTransformationExtensions.cs">
+      <Link>Helper\WriteableBitmapTransformationExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\IBarcode.cs">
+      <Link>IBarcode</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\IBarcodeDecoder.cs">
+      <Link>IBarcodeDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\IBarcodeEncoder.cs">
+      <Link>IBarcodeEncoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\IDecoder.cs">
+      <Link>IDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\IEncoder.cs">
+      <Link>IEncoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\LuminanceSource.cs">
+      <Link>LuminanceSource</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\MaxiCode\Decoder\BitMatrixParser.cs">
+      <Link>MaxiCode\Decoder\BitMatrixParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\MaxiCode\Decoder\DecodedBitStreamParser.cs">
+      <Link>MaxiCode\Decoder\DecodedBitStreamParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\MaxiCode\Decoder\Decoder.cs">
+      <Link>MaxiCode\Decoder\Decoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\MaxiCode\MaxiCodeDecoder.cs">
+      <Link>MaxiCode\MaxiCodeDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Multi\ByQuadrantDecoder.cs">
+      <Link>Multi\ByQuadrantDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Multi\GenericMultipleBarcodeDecoder.cs">
+      <Link>Multi\GenericMultipleBarcodeDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Multi\MultipleBarcodeDecoder.cs">
+      <Link>Multi\MultipleBarcodeDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Multi\QRCode\Detector\MultiDetector.cs">
+      <Link>Multi\QRCode\Detector\MultiDetector</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Multi\QRCode\Detector\MultiFinderPatternFinder.cs">
+      <Link>Multi\QRCode\Detector\MultiFinderPatternFinder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Multi\QRCode\QRCodeMultiDecoder.cs">
+      <Link>Multi\QRCode\QRCodeMultiDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\NotFoundException.cs">
+      <Link>NotFoundException</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\BarcodeOneDDecoder.cs">
+      <Link>OneD\BarcodeOneDDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\BarcodeUPCEANDecoder.cs">
+      <Link>OneD\BarcodeUPCEANDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Blank.cs">
+      <Link>OneD\Blank</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Codabar.cs">
+      <Link>OneD\Codabar</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\CodaBarDecoder.cs">
+      <Link>OneD\CodaBarDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\CodaBarEncoder.cs">
+      <Link>OneD\CodaBarEncoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Code11.cs">
+      <Link>OneD\Code11</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Code128.cs">
+      <Link>OneD\Code128</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Code128Decoder.cs">
+      <Link>OneD\Code128Decoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Code128Encoder.cs">
+      <Link>OneD\Code128Encoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Code39.cs">
+      <Link>OneD\Code39</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Code39Decoder.cs">
+      <Link>OneD\Code39Decoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Code39Encoder.cs">
+      <Link>OneD\Code39Encoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Code93.cs">
+      <Link>OneD\Code93</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Code93Decoder.cs">
+      <Link>OneD\Code93Decoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\EAN13.cs">
+      <Link>OneD\EAN13</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\EAN13Decoder.cs">
+      <Link>OneD\EAN13Decoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\EAN13Encoder.cs">
+      <Link>OneD\EAN13Encoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\EAN8.cs">
+      <Link>OneD\EAN8</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\EAN8Decoder.cs">
+      <Link>OneD\EAN8Decoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\EAN8Encoder.cs">
+      <Link>OneD\EAN8Encoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\EANManufacturerOrgSupport.cs">
+      <Link>OneD\EANManufacturerOrgSupport</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\FIM.cs">
+      <Link>OneD\FIM</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Interleaved2of5.cs">
+      <Link>OneD\Interleaved2of5</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\ISBN.cs">
+      <Link>OneD\ISBN</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\ITF14.cs">
+      <Link>OneD\ITF14</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\ITFDecoder.cs">
+      <Link>OneD\ITFDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\ITFEncoder.cs">
+      <Link>OneD\ITFEncoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\JAN13.cs">
+      <Link>OneD\JAN13</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\MSI.cs">
+      <Link>OneD\MSI</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\MsiDecoder.cs">
+      <Link>OneD\MsiDecoder.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\MsiEncoder.cs">
+      <Link>OneD\MsiEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\OneDDecoder.cs">
+      <Link>OneD\OneDDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\OneDEncoder.cs">
+      <Link>OneD\OneDEncoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\PlesseyEncoder.cs">
+      <Link>OneD\PlesseyEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Postnet.cs">
+      <Link>OneD\Postnet</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\AbstractRssDecoder.cs">
+      <Link>OneD\Rss\AbstractRssDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\DataCharacter.cs">
+      <Link>OneD\Rss\DataCharacter</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\BinaryUtil.cs">
+      <Link>OneD\Rss\Expanded\BinaryUtil</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\BitArrayBuilder.cs">
+      <Link>OneD\Rss\Expanded\BitArrayBuilder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\AbstractExpandedDecoder.cs">
+      <Link>OneD\Rss\Expanded\Decoders\AbstractExpandedDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\AI013103decoder.cs">
+      <Link>OneD\Rss\Expanded\Decoders\AI013103decoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\AI01320xDecoder.cs">
+      <Link>OneD\Rss\Expanded\Decoders\AI01320xDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\AI01392xDecoder.cs">
+      <Link>OneD\Rss\Expanded\Decoders\AI01392xDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\AI01393xDecoder.cs">
+      <Link>OneD\Rss\Expanded\Decoders\AI01393xDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\AI013x0x1xDecoder.cs">
+      <Link>OneD\Rss\Expanded\Decoders\AI013x0x1xDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\AI013x0xDecoder.cs">
+      <Link>OneD\Rss\Expanded\Decoders\AI013x0xDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\AI01AndOtherAIs.cs">
+      <Link>OneD\Rss\Expanded\Decoders\AI01AndOtherAIs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\AI01decoder.cs">
+      <Link>OneD\Rss\Expanded\Decoders\AI01decoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\AI01weightDecoder.cs">
+      <Link>OneD\Rss\Expanded\Decoders\AI01weightDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\AnyAIDecoder.cs">
+      <Link>OneD\Rss\Expanded\Decoders\AnyAIDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\BlockParsedResult.cs">
+      <Link>OneD\Rss\Expanded\Decoders\BlockParsedResult</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\CurrentParsingState.cs">
+      <Link>OneD\Rss\Expanded\Decoders\CurrentParsingState</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\DecodedChar.cs">
+      <Link>OneD\Rss\Expanded\Decoders\DecodedChar</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\DecodedInformation.cs">
+      <Link>OneD\Rss\Expanded\Decoders\DecodedInformation</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\DecodedNumeric.cs">
+      <Link>OneD\Rss\Expanded\Decoders\DecodedNumeric</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\DecodedObject.cs">
+      <Link>OneD\Rss\Expanded\Decoders\DecodedObject</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\FieldParser.cs">
+      <Link>OneD\Rss\Expanded\Decoders\FieldParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\Decoders\GeneralAppIdDecoder.cs">
+      <Link>OneD\Rss\Expanded\Decoders\GeneralAppIdDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\ExpandedPair.cs">
+      <Link>OneD\Rss\Expanded\ExpandedPair</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\ExpandedRow.cs">
+      <Link>OneD\Rss\Expanded\ExpandedRow.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Expanded\RssExpandedDecoder.cs">
+      <Link>OneD\Rss\Expanded\RssExpandedDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\FinderPattern.cs">
+      <Link>OneD\Rss\FinderPattern</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Pair.cs">
+      <Link>OneD\Rss\Pair</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\Rss14Decoder.cs">
+      <Link>OneD\Rss\Rss14Decoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Rss\RssUtils.cs">
+      <Link>OneD\Rss\RssUtils</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Standard2of5.cs">
+      <Link>OneD\Standard2of5</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\Telepen.cs">
+      <Link>OneD\Telepen</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\UPCA.cs">
+      <Link>OneD\UPCA</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\UPCADecoder.cs">
+      <Link>OneD\UPCADecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\UPCAEncoder.cs">
+      <Link>OneD\UPCAEncoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\UPCE.cs">
+      <Link>OneD\UPCE</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\UPCEANDecoder.cs">
+      <Link>OneD\UPCEANDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\UPCEANEncoder.cs">
+      <Link>OneD\UPCEANEncoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\UPCEANExtension2Support.cs">
+      <Link>OneD\UPCEANExtension2Support</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\UPCEANExtension5Support.cs">
+      <Link>OneD\UPCEANExtension5Support</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\UPCEANExtensionSupport.cs">
+      <Link>OneD\UPCEANExtensionSupport</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\UPCEDecoder.cs">
+      <Link>OneD\UPCEDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\UPCSupplement2.cs">
+      <Link>OneD\UPCSupplement2</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\OneD\UPCSupplement5.cs">
+      <Link>OneD\UPCSupplement5</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Decoder\BitMatrixParser.cs">
+      <Link>Pdf417\Decoder\BitMatrixParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Decoder\DecodedBitStreamParser.cs">
+      <Link>Pdf417\Decoder\DecodedBitStreamParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Decoder\Decoder.cs">
+      <Link>Pdf417\Decoder\Decoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Decoder\Ec\ErrorCorrection.cs">
+      <Link>Pdf417\Decoder\Ec\ErrorCorrection</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Decoder\Ec\ModulusGF.cs">
+      <Link>Pdf417\Decoder\Ec\ModulusGF</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Decoder\Ec\ModulusPoly.cs">
+      <Link>Pdf417\Decoder\Ec\ModulusPoly</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Decoder\Pdf417RsDecoder.cs">
+      <Link>Pdf417\Decoder\Pdf417RsDecoder.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Detector\Detector.cs">
+      <Link>Pdf417\Detector\Detector</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Detector\Detector2.cs">
+      <Link>Pdf417\Detector\Detector2.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Detector\Pdf417Barcode.cs">
+      <Link>Pdf417\Detector\Pdf417Barcode.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Detector\Pdf417Line.cs">
+      <Link>Pdf417\Detector\Pdf417Line.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Detector\Pdf417Symbol.cs">
+      <Link>Pdf417\Detector\Pdf417Symbol.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Encoder\BarcodeMatrix.cs">
+      <Link>Pdf417\Encoder\BarcodeMatrix</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Encoder\BarcodeRow.cs">
+      <Link>Pdf417\Encoder\BarcodeRow</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Encoder\Compaction.cs">
+      <Link>Pdf417\Encoder\Compaction</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Encoder\Dimensions.cs">
+      <Link>Pdf417\Encoder\Dimensions</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Encoder\PDF417.cs">
+      <Link>Pdf417\Encoder\PDF417</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Encoder\PDF417ErrorCorrection.cs">
+      <Link>Pdf417\Encoder\PDF417ErrorCorrection</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Encoder\PDF417HighLevelEncoder.cs">
+      <Link>Pdf417\Encoder\PDF417HighLevelEncoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Pdf417Decoder.cs">
+      <Link>Pdf417\Pdf417Decoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Pdf417\Pdf417Encoder.cs">
+      <Link>Pdf417\Pdf417Encoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\PlanarYUVLuminanceSource.cs">
+      <Link>PlanarYUVLuminanceSource</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Provider\BitmapProvider.cs">
+      <Link>Provider\BitmapProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Provider\EpsProvider.cs">
+      <Link>Provider\EpsProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Provider\IOutputProvider.cs">
+      <Link>Provider\IOutputProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Provider\SvgProvider.cs">
+      <Link>Provider\SvgProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Decoder\BitMatrixParser.cs">
+      <Link>QRCode\Decoder\BitMatrixParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Decoder\DataBlock.cs">
+      <Link>QRCode\Decoder\DataBlock</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Decoder\DataMask.cs">
+      <Link>QRCode\Decoder\DataMask</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Decoder\DecodedBitStreamParser.cs">
+      <Link>QRCode\Decoder\DecodedBitStreamParser</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Decoder\Decoder.cs">
+      <Link>QRCode\Decoder\Decoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Decoder\ErrorCorrectionLevel.cs">
+      <Link>QRCode\Decoder\ErrorCorrectionLevel</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Decoder\FormatInformation.cs">
+      <Link>QRCode\Decoder\FormatInformation</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Decoder\Mode.cs">
+      <Link>QRCode\Decoder\Mode</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Decoder\Version.cs">
+      <Link>QRCode\Decoder\Version</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Detector\AlignmentPattern.cs">
+      <Link>QRCode\Detector\AlignmentPattern</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Detector\AlignmentPatternFinder.cs">
+      <Link>QRCode\Detector\AlignmentPatternFinder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Detector\Detector.cs">
+      <Link>QRCode\Detector\Detector</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Detector\FinderPattern.cs">
+      <Link>QRCode\Detector\FinderPattern</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Detector\FinderPatternFinder.cs">
+      <Link>QRCode\Detector\FinderPatternFinder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Detector\FinderPatternInfo.cs">
+      <Link>QRCode\Detector\FinderPatternInfo</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Encoder\BlockPair.cs">
+      <Link>QRCode\Encoder\BlockPair</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Encoder\ByteMatrix.cs">
+      <Link>QRCode\Encoder\ByteMatrix</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Encoder\Encoder.cs">
+      <Link>QRCode\Encoder\Encoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Encoder\MaskUtil.cs">
+      <Link>QRCode\Encoder\MaskUtil</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Encoder\MatrixUtil.cs">
+      <Link>QRCode\Encoder\MatrixUtil</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\Encoder\QRCode.cs">
+      <Link>QRCode\Encoder\QRCode</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\QRCodeDecoder.cs">
+      <Link>QRCode\QRCodeDecoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\QRCode\QRCodeEncoder.cs">
+      <Link>QRCode\QRCodeEncoder</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\Result.cs">
+      <Link>Result</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\ResultPoint.cs">
+      <Link>ResultPoint</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\ResultPointCallback.cs">
+      <Link>ResultPointCallback</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Barcode\RGBLuminanceSource.cs">
+      <Link>RGBLuminanceSource</Link>
+    </Compile>
+    <Compile Include="..\Solution Items\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MessagingToolkit.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

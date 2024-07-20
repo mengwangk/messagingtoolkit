@@ -1,0 +1,5 @@
+MMSC=http://mmss/
+WAPGateway=193.209.134.132
+APN=mms.telia.se
+APNAccount=mms
+APNPassword=telia

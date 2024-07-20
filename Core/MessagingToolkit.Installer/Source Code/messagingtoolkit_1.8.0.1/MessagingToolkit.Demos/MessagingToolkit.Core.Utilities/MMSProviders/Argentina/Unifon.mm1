@@ -1,0 +1,5 @@
+MMSC=http://mms.tmovil.cl/
+WAPGateway=200.68.32.239
+APN=gprs.unifon.com.ar
+APNAccount=mms
+APNPassword=mms

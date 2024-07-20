@@ -1,0 +1,5 @@
+MMSC=http://mmstelenor
+WAPGateway=172.18.19.11
+APN=mms
+APNAccount=telenor
+APNPassword=telenor

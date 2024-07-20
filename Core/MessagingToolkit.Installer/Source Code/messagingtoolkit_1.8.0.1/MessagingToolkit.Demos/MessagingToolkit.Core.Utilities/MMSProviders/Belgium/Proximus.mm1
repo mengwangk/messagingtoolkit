@@ -1,0 +1,5 @@
+MMSC=http://mmsc.proximus.be/mms
+WAPGateway=10.55.14.75
+APN=event.proximus.be
+APNAccount=mms
+APNPassword=mms

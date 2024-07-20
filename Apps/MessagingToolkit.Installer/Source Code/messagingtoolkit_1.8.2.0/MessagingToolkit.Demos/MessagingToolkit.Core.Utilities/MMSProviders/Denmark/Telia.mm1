@@ -1,0 +1,5 @@
+MMSC=http://mms.telia.dk
+WAPGateway=193.209.134.131
+APN=www.mms.telia.dk
+APNAccount=telia
+APNPassword=1010

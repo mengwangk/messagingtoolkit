@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>MessagingToolkit Barcode Windows 8 JavaScript Demo</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+</head>
+<body>
+
+    <div>
+        <h1 id="pageTitle">MessagingToolkit Barcode Demo</h1>
+    </div>
+
+    <p>
+        <button id="btnShow">Show Decoder</button>
+    </p>
+
+
+    <div id="encoder" style="visibility: visible; display: block">
+        <h2>Encoder</h2>
+        <table style="width: 100%;">
+            <tr>
+                <td>Type:</td>
+                <td>
+                    <select id="barcodeType">
+                        <option>QR Code</option>
+                        <option>Data Matrix</option>
+                        <option>PDF417</option>
+                        <option>Codabar</option>
+                        <option>Code 128</option>
+                        <option>Code 39</option>
+                        <option>EAN 13</option>
+                        <option>EAN 8</option>
+                        <option>ITF 14</option>
+                        <option>UPC A</option>
+                        <option>MSI Mod 10</option>
+                    </select>
+            </tr>
+            <tr>
+                <td>Character Set:</td>
+                <td>
+                    <select id="barcodeCharacterSet">
+                        <option>ISO-8859-1</option>
+                        <option>UTF-8</option>
+                        <option>SHIFT-JIS</option>
+                        <option>CP437</option>
+                    </select>
+            </tr>
+            <tr>
+                <td>Error Correction Level:</td>
+                <td>
+                    <select id="barcodeErrorCorrectionLevel">
+                        <option>Low</option>
+                        <option>Medium Low</option>
+                        <option>Medium High</option>
+                        <option>High</option>
+                    </select>
+            </tr>
+
+            <tr>
+                <td>Quiet Zone:</td>
+                <td>
+                    <input id="barcodeQuietZone" type="number" value="4" /></td>
+            </tr>
+
+
+            <tr>
+                <td>Width:</td>
+                <td>
+                    <input id="barcodeWidth" type="number" value="250" /></td>
+            </tr>
+
+            <tr>
+                <td>Height:</td>
+                <td>
+                    <input id="barcodeHeight" type="number" value="250" /></td>
+            </tr>
+            <tr>
+                <td>Text:</td>
+                <td>
+                    <textarea id="txtContent" cols="20" rows="2">MessagingToolkit Barcode</textarea></td>
+            </tr>
+            <tr>
+                <td style="text-align: left" colspan="2">
+                    <button id="btnGenerateBarcode">Generate</button>
+
+                    <button id="btnSaveBarcode">Save</button>
+
+                    <button id="btnGenerateEPS">Generate EPS</button>
+
+                    <button id="btnGenerateSVG">Generate SVG</button>
+                <td>
+            </tr>
+            <tr>
+                <td style="text-align: left" colspan="2">Status:
+                    <textarea id="status" cols="150" rows="1"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center">
+                    <img alt="" src="images/logo.png" id="imgGeneratedBarcode" /></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="decoder" style="visibility: hidden; display: block">
+        <h2>Decoder</h2>
+        <table>
+            <tr>
+                <td>File: </td>
+                <td>
+                    <input type="text" id="txtFileName" size="100" /></td>
+                <td style="text-align: left">
+                    <button id="btnBrowse">Browse</button></td>
+            </tr>
+
+            <tr>
+                <td colspan="3" style="text-align: center">
+                    <img alt="" src="images/logo.png"  id="barcodeImageFile" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Result:</td>
+                <td colspan="2" style="text-align: left">
+                    <textarea id="barcodeResult" cols="150" rows="5"></textarea></td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html>

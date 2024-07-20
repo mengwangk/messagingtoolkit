@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Segoe UI" Size="9" />
+  <Class Name="bulksms.Bulksms" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>AAEAAGAQAQBAAQAAABAABQEAAAIBAAAQgAAAiAAAJAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="bulksms.Error" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>IEQDAEAAAAgAAgABIQIAAAABgAEEFCABBAAAACAFAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.Sysdiagram" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>IQQAAEAAAgAAOAAAIAIAYAQBgAEAACAAAAAAAAAqAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.MsgHistory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>ggQBBEAEBAAACIgAsSIAQCCJwEMgQGBAAAAAAAAFAAg=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.SenderId" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>AAQFAEAgAAgAAIMAIQIAAAUJhAEAECAAIQAAgAAAEAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.Country" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>AAUEAEAAAgAIAACAIACgAAAJgAEAACgAAAAAAAAAIAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.Operator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>AQQAAEIAISAAAAAAIAAgAAABgAMAACgAAEAAFSAIIAQ=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.MsgOutbox" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>BgQBAEAEAAAAOIAAIRIAAAAJgEEgACDCAAASQAAQgAg=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.MsgMain" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>AEQBCGEABABgQIIAIQIIAAMBgBERwSBRBYAAIABIBAg=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.MsgTemplates" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>AgQEIEAAAEAAAAAoIAEAAAABgAEAACAEAQAAAAAIBAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.PointHistory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>AAQBgEAIABBBAoABIQIQAAABsAkBACEBBAAAAAAAgAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.New" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>AAUAAEAIAAAgAECAIIAAACABgIkAACAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.Payment" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>AQRBBEAAAgAACBAAIAAAAAIhgAEAADAABIAAgMAigAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.MsgDetail" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>AAQABEAEAAQIEAAAMAAAJiCJgEEgACDADACAQAABAAg=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.GrpMain" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>AEQBiGEEAABAAIIEoQIABEMRgCEgQSBAAAAAKAAASAE=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.Prices" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>BAAAAAAAAQAAACAAIgAAAAABgAAAACAAAAAAAAAAIAQ=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.GrpDetail" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>AAQAAEAEgAAAAigAIAAAIASBkEkgACDAAAFgQAABCAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.Setting" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>AQIAAAACAQAAABAAIIIACAABgQiSAGAAAAABUAgAQAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.PriorityGroup" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>AAUAAGAAAAAIAIAAIBAAAAABgAGAACQAAEAAAQACAAE=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.User" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>IASAJmGAgjDBxgMY5x4UJAYJpRMZACAgkcACjAEJRBA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.Support" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAhAIAAAAAEBgBAEACAFBAAgIAAIAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bulksms.Admin" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\bulksms.cs</FileName>
+      <HashCode>AAQAAFAAAQAAAMAAIQIAABABgAEAAiACAAAAAAAIAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+</ClassDiagram>

@@ -1,0 +1,5 @@
+MMSC=http://10.10.111.1
+WAPGateway=192.168.52.3
+APN=nedjmamms
+APNAccount=mms
+APNPassword=mms

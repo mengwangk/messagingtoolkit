@@ -1,0 +1,5 @@
+MMSC=http://mms.orange.nl:8002/
+WAPGateway=10.250.255.183
+APN=MMS
+APNAccount=
+APNPassword=

@@ -1,0 +1,51 @@
+/** 
+  * This file defines changes to the default design 
+  * for all Nokia Series60 phones.
+  */
+
+/*
+title {
+	background {
+     color: menuBarColor
+    }
+	border: none;
+    font-face: proportional;
+	font-size: large;
+	font-style: bold;
+	font-color: white;
+}
+*/
+
+title {
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	font-face: proportional;
+	font-size: medium;
+	font-style: bold;
+	font-color: white;
+	background-color: black;
+	border: none;
+	layout: horizontal-center | horizontal-expand;
+    background {
+        type: image;
+		color: transparent;
+		image: url( top.png );
+        layout: left;
+    }
+}
+
+menu {
+	menubar-color: menuBarColor;
+}
+
+.mainScreen {
+	background {
+		type: image;
+		color: transparent;
+		image: url( bg.png );
+	}
+}
+

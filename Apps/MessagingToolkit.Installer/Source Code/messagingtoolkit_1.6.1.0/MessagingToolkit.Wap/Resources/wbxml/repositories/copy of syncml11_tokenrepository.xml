@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codepages>
+
+<codepage number="0" publicID="-//SYNCML//DTD SyncML 1.1//EN" urn="syncml:syncml">
+   <tag-tokens>
+    <tag name="Add"            token-value="5" />
+    <tag name="Alert"          token-value="6" />
+    <tag name="Archive"        token-value="7" />
+    <tag name="Atomic"         token-value="8" />
+    <tag name="Chal"           token-value="9" />
+    <tag name="Cmd"            token-value="a" />
+    <tag name="CmdID"          token-value="b" />
+    <tag name="CmdRef"         token-value="c" />
+    <tag name="Copy"           token-value="d" />
+    <tag name="Cred"           token-value="e" />
+    <tag name="Data"           token-value="f" />
+    <tag name="Delete"         token-value="10" />
+    <tag name="Exec"           token-value="11" />
+    <tag name="Final"          token-value="12" />
+    <tag name="Get"            token-value="13" />
+    <tag name="Item"           token-value="14" />
+    <tag name="Lang"           token-value="15" />
+    <tag name="LocName"        token-value="16" />
+    <tag name="LocURI"         token-value="17" />
+    <tag name="Map"            token-value="18" />
+    <tag name="MapItem"        token-value="19" />
+    <tag name="Meta"           token-value="1a" />
+    <tag name="MsgID"          token-value="1b" />
+    <tag name="MsgRef"         token-value="1c" />
+    <tag name="NoResp"         token-value="1d" />
+    <tag name="NoResults"      token-value="1e" />
+    <tag name="Put"            token-value="1f" />
+    <tag name="Replace"        token-value="20" />
+    <tag name="RespURI"        token-value="21" />
+    <tag name="Results"        token-value="22" />
+    <tag name="Search"         token-value="23" />
+    <tag name="Sequence"       token-value="24" />
+    <tag name="SessionID"      token-value="25" />
+    <tag name="SftDel"         token-value="26" />
+    <tag name="Source"         token-value="27" />
+    <tag name="SourceRef"      token-value="28" />
+    <tag name="Status"         token-value="29" />
+    <tag name="Sync"           token-value="2a" />
+    <tag name="SyncBody"       token-value="2b" />
+    <tag name="SyncHdr"        token-value="2c" />
+    <tag name="SyncML"         token-value="2d" />
+    <tag name="Target"         token-value="2e" />
+    <tag name="TargetRef"      token-value="2f" />
+    <tag name="Reserved for future use."    token-value="30" />
+    <tag name="VerDTD"         token-value="31" />
+    <tag name="VerProto"       token-value="32" />
+    <tag name="NumberOfChanged" token-value="33" />
+    <tag name="MoreData"       token-value="34" />
+    </tag-tokens>
+   <attribute-start-tokens>
+   
+   </attribute-start-tokens>
+
+   <attribute-value-tokens>
+ 
+   </attribute-value-tokens>
+</codepage>
+<!-- Code Page 1: metinf -->
+
+<codepage number="1" publicID="-//SYNCML//DTD MetInf 1.1//EN" urn="syncml:metinf">
+   <tag-tokens>
+   <tag name="Anchor"    token-value="5" />
+   <tag name="EMI"    token-value="6" />
+   <tag name="Format" token-value="7" />
+   <tag name="FreeID" token-value="8" />
+   <tag name="FreeMem"   token-value="9" />
+   <tag name="Last"   token-value="a" />
+   <tag name="Mark"   token-value="b" />
+   <tag name="MaxMsgSize"     token-value="c" />
+   <tag name="MaxObjSize"    token-value="15" />
+   <tag name="Mem"    token-value="d" />
+   <tag name="MetInf" token-value="e" />
+   <tag name="Next"   token-value="f" />
+   <tag name="NextNonce" token-value="10" />
+   <tag name="SharedMem" token-value="11" />
+   <tag name="Size"   token-value="12" />
+   <tag name="Type"   token-value="13" />
+   <tag name="Version"   token-value="14" />
+</tag-tokens>
+</codepage>
+
+
+<!-- Code Page 0: Devinf-->
+<codepage number="0" publicID="-//SYNCML//DTD DevInf 1.1//EN" urn="syncml:devinf">
+     <tag-tokens>
+
+     <tag name="CTCap"          token-value="5" />
+   <tag name="CTType"             token-value="6" />
+   <tag name="DataStore"          token-value="7" />
+   <tag name="DataType"          token-value="8" />
+   <tag name="DevID"         token-value="9" />
+   <tag name="DevInf"            token-value="a" />
+   <tag name="DevTyp"            token-value="b" />
+   <tag name="DisplayName"      token-value="c" />
+   <tag name="DSMem"             token-value="d" />
+   <tag name="Ext"          token-value="e" />
+   <tag name="FwV"            token-value="f" />
+   <tag name="HwV"       token-value="10" />
+   <tag name="Man"       token-value="11" />
+   <tag name="MaxGUIDSize"            token-value="12" />
+   <tag name="MaxID"            token-value="13" />
+   <tag name="MaxMem"         token-value="14" />
+   <tag name="Mod"         token-value="15" />
+  <tag name="OEM"         token-value="16" />
+  <tag name="ParamName"         token-value="17" />
+  <tag name="PropName"         token-value="18" />
+  <tag name="Rx"         token-value="19" />
+  <tag name="Rx-Pref"         token-value="1A" />
+  <tag name="SharedMem"         token-value="1B" />
+  <tag name="Size"         token-value="1C" />
+  <tag name="SourceRef"         token-value="1D" />
+  <tag name="SwV"         token-value="1E" />
+  <tag name="SyncCap"         token-value="1F" />
+  <tag name="SyncType"         token-value="20" />
+  <tag name="Tx"         token-value="21" />
+  <tag name="Tx-Pref"         token-value="22" />
+  <tag name="ValEnum"         token-value="23" />
+  <tag name="VerCT"         token-value="24" />
+  <tag name="VerDTD"         token-value="25" />
+  <tag name="Xnam"         token-value="26" />
+  <tag name="Xval"         token-value="27" />
+  <tag name="UTC"         token-value="28" />
+  <tag name="SupportNumberOfChanges"         token-value="29" />
+  <tag name="SupportLargeObjs"         token-value="2a" />
+ </tag-tokens>
+
+   <attribute-start-tokens/>
+   <attribute-value-tokens/>
+</codepage>
+
+
+</codepages>

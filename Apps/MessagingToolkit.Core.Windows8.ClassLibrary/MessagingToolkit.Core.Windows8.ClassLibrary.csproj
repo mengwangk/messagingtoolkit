@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DAEC5A69-6001-4877-A931-9BD0F5701CD7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MessagingToolkit.Core.Windows8.ClassLibrary</RootNamespace>
+    <AssemblyName>MessagingToolkit.Core.Windows8.ClassLibrary</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\MessagingToolkit.Core\Base\BaseClass.cs">
+      <Link>Base\BaseClass.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Base\BaseConfiguration.cs">
+      <Link>Base\BaseConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Base\BaseException.cs">
+      <Link>Base\BaseException.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Base\BaseGateway.cs">
+      <Link>Base\BaseGateway.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Base\BaseGatewayFactory.cs">
+      <Link>Base\BaseGatewayFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Base\BaseMessage.cs">
+      <Link>Base\BaseMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Base\IConfiguration.cs">
+      <Link>Base\IConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Base\IGateway.cs">
+      <Link>Base\IGateway.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Base\IGatewayFactory.cs">
+      <Link>Base\IGatewayFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Base\IMessage.cs">
+      <Link>Base\IMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Helper\APIError.cs">
+      <Link>Helper\APIError.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Helper\AsciiArt.cs">
+      <Link>Helper\AsciiArt.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Helper\GatewayHelper.cs">
+      <Link>Helper\GatewayHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Helper\IPHelper.cs">
+      <Link>Helper\IPHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Helper\PersistenceHelper.cs">
+      <Link>Helper\PersistenceHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Helper\SerialPortHelper.cs">
+      <Link>Helper\SerialPortHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Http\BulkSmsGateway.cs">
+      <Link>Http\BulkSmsGateway.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Http\ClickatellGateway.cs">
+      <Link>Http\ClickatellGateway.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Http\GoogleCalendar.cs">
+      <Link>Http\GoogleCalendar.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Http\HttpGateway.cs">
+      <Link>Http\HttpGateway.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Http\IHttpGateway.cs">
+      <Link>Http\IHttpGateway.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Http\SkypeGateway.cs">
+      <Link>Http\SkypeGateway.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\BaseContext.cs">
+      <Link>Mobile\BaseContext.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\BaseFeature.cs">
+      <Link>Mobile\BaseFeature.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\BaseGatewayConfiguration.cs">
+      <Link>Mobile\BaseGatewayConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\BaseMobileGateway.cs">
+      <Link>Mobile\BaseMobileGateway.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\BatteryCharge.cs">
+      <Link>Mobile\BatteryCharge.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\CallIndicationHandlers.cs">
+      <Link>Mobile\CallIndicationHandlers.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\CallInformation.cs">
+      <Link>Mobile\CallInformation.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\Command.cs">
+      <Link>Mobile\Command.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\Context.cs">
+      <Link>Mobile\Context.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\DefaultMobileGateway.cs">
+      <Link>Mobile\DefaultMobileGateway.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\Definition.cs">
+      <Link>Mobile\Definition.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\DelayedMessageQueue.cs">
+      <Link>Mobile\DelayedMessageQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\DelegateEngine.cs">
+      <Link>Mobile\DelegateEngine.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\DeviceInformation.cs">
+      <Link>Mobile\DeviceInformation.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\ICommand.cs">
+      <Link>Mobile\ICommand.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\IContext.cs">
+      <Link>Mobile\IContext.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\IFeature.cs">
+      <Link>Mobile\IFeature.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\IIndicationObject.cs">
+      <Link>Mobile\IIndicationObject.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\IMobileGateway.cs">
+      <Link>Mobile\IMobileGateway.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\IncomingDataQueue.cs">
+      <Link>Mobile\IncomingDataQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\IPGatewayConfiguration.cs">
+      <Link>Mobile\IPGatewayConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\MemoryLocation.cs">
+      <Link>Mobile\MemoryLocation.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\MemoryStatus.cs">
+      <Link>Mobile\MemoryStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\MemoryStatusWithStorage.cs">
+      <Link>Mobile\MemoryStatusWithStorage.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\MessageIndicationHandlers.cs">
+      <Link>Mobile\MessageIndicationHandlers.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\MessageIndicationSettings.cs">
+      <Link>Mobile\MessageIndicationSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\MessageIndicationSupport.cs">
+      <Link>Mobile\MessageIndicationSupport.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\MessageMemoryStatus.cs">
+      <Link>Mobile\MessageMemoryStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\MessageService.cs">
+      <Link>Mobile\MessageService.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\MessageStorageInfo.cs">
+      <Link>Mobile\MessageStorageInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\MmsConstants.cs">
+      <Link>Mobile\MmsConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\MobileGateway.cs">
+      <Link>Mobile\MobileGateway.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\MobileGatewayConfiguration.cs">
+      <Link>Mobile\MobileGatewayConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\MobileGatewayFactory.cs">
+      <Link>Mobile\MobileGatewayFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\NetworkOperator.cs">
+      <Link>Mobile\NetworkOperator.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\NetworkRegistration.cs">
+      <Link>Mobile\NetworkRegistration.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\NumberInformation.cs">
+      <Link>Mobile\NumberInformation.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\PdpConnection.cs">
+      <Link>Mobile\PdpConnection.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\PhoneBookEntry.cs">
+      <Link>Mobile\PhoneBookEntry.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\PhoneBookSize.cs">
+      <Link>Mobile\PhoneBookSize.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\PriorityQueue.cs">
+      <Link>Mobile\PriorityQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\ReceivedMessage.cs">
+      <Link>Mobile\ReceivedMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\ReceivedMessageFromPhone.cs">
+      <Link>Mobile\ReceivedMessageFromPhone.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\ResultParser.cs">
+      <Link>Mobile\ResultParser.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\SignalQuality.cs">
+      <Link>Mobile\SignalQuality.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\Statistics.cs">
+      <Link>Mobile\Statistics.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\Subscriber.cs">
+      <Link>Mobile\Subscriber.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\SupportedNetworkOperator.cs">
+      <Link>Mobile\SupportedNetworkOperator.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\UssdDatagram.cs">
+      <Link>Mobile\UssdDatagram.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\UssdDcs.cs">
+      <Link>Mobile\UssdDcs.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\UssdRequest.cs">
+      <Link>Mobile\UssdRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\UssdResponse.cs">
+      <Link>Mobile\UssdResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\UssdResponseQueue.cs">
+      <Link>Mobile\UssdResponseQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\UssdResultPresentation.cs">
+      <Link>Mobile\UssdResultPresentation.cs</Link>
+    </Compile>
+    <Compile Include="..\MessagingToolkit.Core\Mobile\UssdSessionStatus.cs">
+      <Link>Mobile\UssdSessionStatus.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

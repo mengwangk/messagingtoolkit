@@ -1,0 +1,5 @@
+MMSC=http://mms.bplmobile.com:8080
+WAPGateway=10.0.0.10
+APN=mizone
+APNAccount=
+APNPassword=

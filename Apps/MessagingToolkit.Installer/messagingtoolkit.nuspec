@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+ <metadata>
+   <version>1.8.2.0</version>
+   <authors>Twit88.com</authors>
+   <owners>Twit88.com</owners>
+   <licenseUrl>http://platform.twit88.com/projects/messagingtoolkit/wiki/Wiki_-_Licensing</licenseUrl>
+   <projectUrl>http://platform.twit88.com/projects/messagingtoolkit</projectUrl>
+   <id>MessagingToolkit</id>
+   <title>MessagingToolkit</title>
+   <requireLicenseAcceptance>false</requireLicenseAcceptance>
+   <summary>MessagingToolkit library is a SMS/MMS messaging library.</summary>
+   <description>
+messagingtoolkit is a .NET C# messaging library that can be used to send and receive messages using any ETSI 07.05 compliant GSM modem or phone handset connected to the PC serial port through serial cable, infrared or bluetooth. 
+
+It can also be used to send and receive MMS using MM1 protocol, and SMS using SMPP protocol.
+
+It also support sending and receiving SMS through your Android devices starting release 1.8.0.0. 
+You will need to install the Android app available at Google Play Store. Refer to http://www.mymobkit.com/ for more details.
+
+- Starting version 1.8.1.0, the library can be used with the Mono platform.
+- As of release 1.8.2.0, the library has been tested with Windows 10.
+
+Do run the demo under Administrator permission else certain features, e.g. MMS sending and receiving may not work due to system security constraints.
+
+Some of the features of the library
+
+* Send SMS
+* Read incoming SMS
+* Send MMS
+* Read MMS
+* Send WAP Push message
+* Send vCalendar, vCard
+* Send Flash SMS
+* Send Picture SMS
+* Send OTA bitmap, ringtone, operator logo, or custom Smart SMS
+* Send QR Code or any other kinds of barcodes like EAN-8 or EAN-13
+* Send and receive Class 1, Class 2, Class 3 7 bit ANSI, 8 bit-ANSI, or 16-bit Unicode messages
+* Send QRCode as Picture SMS
+* Send QRCode through MMS
+* Flexibility to set content as string or byte array for binary SMS
+* Read and set various information on the phones. E.g. SMSC, battery level, network parameters
+* Read and delete messages from the phones
+* Dial, answer and hang up call
+* Detect incoming call, and automatically hang up the call
+* Support USSD
+* Read and write to phone book
+* Export SMS from phone/GSM modem
+* Export phone book
+* Built-in multiple gateways suport, which means you can use more than 1 GSM modems at one time, and the messages are routed and load balanced among all the gateways
+* Basic routing and load balancing (round robin) are built-in, and you can define your own routing and load balancing rules by overriding the default class
+* Ability to define group of destination numbers so that messages can be sent in bulk easily
+* Ability to detect gateway disconnection and route message to active gateway
+* Delayed message sending
+* Run-time debug mode
+* Persisted queue
+
+There is also a demo program which shows all the essential features of the library.
+
+</description>
+  
+<releaseNotes>
+* 1.8.2.0 is released. Windows 10 is tested.
+* 1.8.1.0 is released. Mono is supported now.
+* 1.8.0.0 is released. This release supports using your Android phone for sending and receiving SMS.
+* 1.7.5.0 is released with few bug fixes. Now .NET 4.5 is supported.
+* 1.6.1.0 is released with few bug fixes.
+</releaseNotes>
+
+<tags>MessagingToolkit SMS MMS MM1 SMPP PDU USSD Flash_SMS USB_Modem GSM_Modem vCard vCalendar WAP_Push QRCode</tags>
+
+ </metadata>
+ 
+ <files>
+   
+   <file src="MessagingToolkit.chm" target="lib/" />
+   <!--<file src="*.dll" target="lib/net45/" />-->
+   <file src="Binaries\.net 4.6\any cpu\*.dll" target="lib/net46/" />
+   <file src="Binaries\.net 4.6\x64\*.dll" target="lib/net46/x64/" />
+   <file src="Binaries\.net 4.5\any cpu\*.dll" target="lib/net45/" />
+   <file src="Binaries\.net 4.5\x64\*.dll" target="lib/net45/x64/" />
+   <file src="Binaries\.net 4.0\any cpu\*.dll" target="lib/net40/" />
+   <file src="Binaries\.net 4.0\x64\*.dll" target="lib/net40/x64" />
+   <file src="MessagingToolkit.Core.xml" target="lib/net40/" />
+   <file src="MessagingToolkit.Core.xml" target="lib/net45/" />
+   <file src="MessagingToolkit.Core.xml" target="lib/net46/" />
+ </files>
+</package>

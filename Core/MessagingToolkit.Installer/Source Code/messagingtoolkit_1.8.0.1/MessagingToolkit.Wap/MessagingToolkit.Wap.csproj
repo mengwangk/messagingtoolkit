@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C058D53-126C-4400-BD8D-2E296904AE21}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MessagingToolkit.Wap</RootNamespace>
+    <AssemblyName>MessagingToolkit.Wap</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>modern-install.ico</ApplicationIcon>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>MessagingToolkit.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\output\debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\output\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>..\output\debug\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>..\output\release\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\output\debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\output\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Solution Items\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="BitArrayHelper.cs" />
+    <Compile Include="GetRequest.cs" />
+    <Compile Include="Helper\BitArrayOutputStream.cs" />
+    <Compile Include="Helper\TransTable.cs" />
+    <Compile Include="Helper\DebugUtils.cs" />
+    <Compile Include="IThreadRunnable.cs" />
+    <Compile Include="Log\Logger.cs" />
+    <Compile Include="Packet.cs" />
+    <Compile Include="PostRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Request.cs" />
+    <Compile Include="Response.cs" />
+    <Compile Include="ConnectionException.cs" />
+    <Compile Include="ThreadManager.cs" />
+    <Compile Include="Tokenizer.cs" />
+    <Compile Include="UdpSocket.cs" />
+    <Compile Include="ByteHelper.cs" />
+    <Compile Include="Helper\BitArrayInputStream.cs" />
+    <Compile Include="Helper\WbXml\AttributeNameToken.cs" />
+    <Compile Include="Helper\WbXml\AttributeValueToken.cs" />
+    <Compile Include="Helper\WbXml\GlobalTokens.cs" />
+    <Compile Include="Helper\WbXml\IANACharSet.cs" />
+    <Compile Include="Helper\WbXml\PublicIdentifiers.cs" />
+    <Compile Include="Helper\WbXml\TagToken.cs" />
+    <Compile Include="Helper\WbXml\Token.cs" />
+    <Compile Include="WAPClient.cs" />
+    <Compile Include="Wsp\CWSPMethodManager.cs" />
+    <Compile Include="Wsp\CWSPPushManager.cs" />
+    <Compile Include="Wsp\CWSPResult.cs" />
+    <Compile Include="Wsp\CWSPSession.cs" />
+    <Compile Include="Wsp\CWSPSocketAddress.cs" />
+    <Compile Include="Wsp\Headers\CodePage.cs" />
+    <Compile Include="Wsp\Headers\Encoding.cs" />
+    <Compile Include="Wsp\Headers\Header.cs" />
+    <Compile Include="Wsp\Headers\HeaderParseException.cs" />
+    <Compile Include="Wsp\Headers\HeaderToken.cs" />
+    <Compile Include="Wsp\Headers\WAPCodePage.cs" />
+    <Compile Include="Wsp\IWSPUpperLayer.cs" />
+    <Compile Include="Wsp\IWSPUpperLayer2.cs" />
+    <Compile Include="Wsp\Multipart\MultiPartData.cs" />
+    <Compile Include="Wsp\Multipart\MultiPartEntry.cs" />
+    <Compile Include="Wsp\Pdu\CWSPAddress.cs" />
+    <Compile Include="Wsp\Pdu\CWSPCapabilities.cs" />
+    <Compile Include="Wsp\Pdu\CWSPConnect.cs" />
+    <Compile Include="Wsp\Pdu\CWSPConnectReply.cs" />
+    <Compile Include="Wsp\Pdu\CWSPDataFragment.cs" />
+    <Compile Include="Wsp\Pdu\CWSPDisconnect.cs" />
+    <Compile Include="Wsp\Pdu\CWSPGet.cs" />
+    <Compile Include="Wsp\Pdu\CWSPHeaders.cs" />
+    <Compile Include="Wsp\Pdu\CWSPPDU.cs" />
+    <Compile Include="Wsp\Pdu\CWSPPost.cs" />
+    <Compile Include="Wsp\Pdu\CWSPPush.cs" />
+    <Compile Include="Wsp\Pdu\CWSPRedirect.cs" />
+    <Compile Include="Wsp\Pdu\CWSPReply.cs" />
+    <Compile Include="Wsp\Pdu\CWSPResume.cs" />
+    <Compile Include="Wsp\Pdu\CWSPSuspend.cs" />
+    <Compile Include="Wsp\Pdu\EWSPCorruptPDUException.cs" />
+    <Compile Include="Wsp\WSPDecoder.cs" />
+    <Compile Include="Wtp\CWTPEvent.cs" />
+    <Compile Include="Wtp\CWTPInitiator.cs" />
+    <Compile Include="Wtp\CWTPResponder.cs" />
+    <Compile Include="Wtp\CWTPSocket.cs" />
+    <Compile Include="Wtp\EWTPAbortedException.cs" />
+    <Compile Include="Wtp\IWTPTransaction.cs" />
+    <Compile Include="Wtp\IWTPUpperLayer.cs" />
+    <Compile Include="Wtp\Pdu\CWTPAbort.cs" />
+    <Compile Include="Wtp\Pdu\CWTPAck.cs" />
+    <Compile Include="Wtp\Pdu\CWTPInvoke.cs" />
+    <Compile Include="Wtp\Pdu\CWTPPDU.cs" />
+    <Compile Include="Wtp\Pdu\CWTPResult.cs" />
+    <Compile Include="Wtp\Pdu\CWTPSegmInvoke.cs" />
+    <Compile Include="Wtp\Pdu\CWTPSegmResult.cs" />
+    <Compile Include="Wtp\Pdu\EWTPCorruptPDUException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\wbxml\repositories\channel11_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\channel12_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\co10_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\copy of syncml11_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\drmrel10_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\otasettings70_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\prov10_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\sample_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\si10_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\sl10_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\syncml10_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\syncml11_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\syncmldevinf10_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\syncmldevinf11_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\wml10_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\wml11_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\wml12_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\wml13_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\wta10_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\repositories\wtawml12_tokenrepository.xml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-001.xml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-002.xml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-003.xml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-004.xml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-005.xml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-006.xml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-007.xml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-008.xml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-009.xml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-010.xml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-011.xml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-012.xml" />
+    <Content Include="modern-install.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\cache-control" />
+    <EmbeddedResource Include="Resources\charsets" />
+    <EmbeddedResource Include="Resources\content-encoding" />
+    <EmbeddedResource Include="Resources\content-types-1.1" />
+    <EmbeddedResource Include="Resources\content-types-1.2" />
+    <EmbeddedResource Include="Resources\content-types-1.3" />
+    <EmbeddedResource Include="Resources\content-types-1.4" />
+    <EmbeddedResource Include="Resources\content-types-1.5" />
+    <EmbeddedResource Include="Resources\http-status-codes" />
+    <EmbeddedResource Include="Resources\languages" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-001.wbxml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-002.wbxml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-003.wbxml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-004.wbxml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-005.wbxml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-006.wbxml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-007.wbxml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-008.wbxml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-009.wbxml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-010.wbxml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-011.wbxml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml-012.wbxml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml.wbxml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\input\syncml_represent_v11_20020213.dtd" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\syncml\syncml_represent_v11_20020213.dtd" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\wml\input\index.wbxml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\wml\input\index.wml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\wml\input\jamba.wbxml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\wml\input\jamba.wml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\wml\input\nokiawapcontent.wbxml" />
+    <EmbeddedResource Include="Resources\wbxml\testsuite\wml\input\nokiawapcontent.wml" />
+    <EmbeddedResource Include="Resources\wk-methods" />
+    <EmbeddedResource Include="Resources\wk-params-1.1" />
+    <EmbeddedResource Include="Resources\wk-params-1.2" />
+    <EmbeddedResource Include="Resources\wk-params-1.3" />
+    <EmbeddedResource Include="Resources\wk-params-1.4" />
+    <EmbeddedResource Include="Resources\wsp-headers-1.1" />
+    <EmbeddedResource Include="Resources\wsp-headers-1.2" />
+    <EmbeddedResource Include="Resources\wsp-headers-1.3" />
+    <EmbeddedResource Include="Resources\wsp-headers-1.4" />
+    <EmbeddedResource Include="Resources\wsp-headers-1.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\wbxml\tokenRepositoryMappings.resources" />
+    <EmbeddedResource Include="Resources\wbxml\urnCodepageMappings.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\wbxml\tokenRepositoryMappings.properties" />
+    <EmbeddedResource Include="Resources\wbxml\urnCodepageMappings.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MessagingToolkit.snk" />
+    <None Include="Resources\wsp-headers-2.0" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

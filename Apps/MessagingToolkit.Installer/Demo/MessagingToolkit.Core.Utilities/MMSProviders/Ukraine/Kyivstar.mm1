@@ -1,0 +1,5 @@
+MMSC=http://mms.kyivstar.net
+WAPGateway=10.10.10.10
+APN=mms.kyivstar.net
+APNAccount=mms
+APNPassword=mms

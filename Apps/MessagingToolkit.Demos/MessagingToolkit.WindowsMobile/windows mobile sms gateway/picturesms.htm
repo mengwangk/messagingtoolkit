@@ -1,0 +1,382 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:fb="http://www.facebook.com/2008/fbml" xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="alternate" title="Devx: Latest Published Articles" href="http://services.devx.com/outgoing/devxfeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Latest Java Articles" href="http://services.devx.com/outgoing/javafeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Latest .NET Content" href="http://services.devx.com/outgoing/dotnet.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Latest XML Content" href="http://services.devx.com/outgoing/xmlfeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Latest Database Content" href="http://services.devx.com/outgoing/databasefeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Latest Enterprise Content" href="http://services.devx.com/outgoing/enterprisefeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Latest C++ Content" href="http://services.devx.com/outgoing/cplusfeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Latest Web Development Content" href="http://services.devx.com/outgoing/webdevfeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Latest Wireless Content" href="http://services.devx.com/outgoing/wirelessfeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Recent Tips" href="http://services.devx.com/outgoing/recentTipsFeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Open Source Articles" href="http://services.devx.com/outgoing/openSourceFeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Premier Club Only Content" href="http://services.devx.com/outgoing/PCpreviewFeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Office Professional Developer" href="http://services.devx.com/outgoing/officefeed.xml" type="application/rss+xml">
+<link rel="alternate" title="DevX: Intel Optimizing Center" href="http://services.devx.com/outgoing/intelOptimizingCenterFeed.xml" type="application/rss+xml">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="verify-v1" content="/9rV7xCYeHHdHCIEVkdpwmwtyjgHYKWKu+yeezQHucQ=">
+<title>Picture SMS Using the .NET Compact Framework 2.0</title>
+<link rel="stylesheet" type="text/css" href="picturesms_files/cps.css">
+<link rel="stylesheet" type="text/css" href="picturesms_files/pf.css">
+<meta name="keywords" content="">
+<meta name="Description" content="Got a client that's asking to send messages via SMS? If so, you know there's no easy way to do it without third-party software. Learn how to build your own image-sending SMS application using only the .NET Compact Framework. ">
+<meta name="Topic" content="1170 SMS -- Application Environments :: Mobile Computing :: Wireless :: Wireless Messaging :: SMS">
+<script language="javascript" src="picturesms_files/globalFuncs.js"></script>
+<script language="javascript">
+function forgotPassword(email) {
+var theURL = "/passwordLookup.cfm?emailAddr=" + email;
+popUpWindow(theURL, 300,320);
+}
+</script>
+<script language="javascript">
+d=document.domain.split('.');document.domain = d[d.length-2]+"."+d[d.length-1];
+</script>
+<meta name="verify-v1" content="ELZ51Fh77MWc87+TaubOV8o+m4QF63H+7ASncs+2wWs=">
+<meta name="verify-v1" content="LNXivCWfc+2KKSf4unKngJ2vyOJAxexIWY3pAyM9Qlo=">
+</head><body bgcolor="#fafae6">
+
+
+
+
+<script language="javascript">
+function showSupportItem(itemName)
+{
+if( articleSpptItems[itemName] )
+{
+var theURL = 'http://www.devx.com/wireless/Article/35757/1763';
+theURL += '?supportItem='+articleSpptItems[itemName].number;
+popUpWindow(theURL, articleSpptItems[itemName].width, articleSpptItems[itemName].height);
+}
+else
+alert("Sorry, "+itemName+" could not be found.");
+}
+function SupportItem(number, width, height)
+{
+this.number = number;
+this.width = width;
+this.height = height;
+return this;
+}
+articleSpptItems = new Object();
+articleSpptItems.figure1 = new SupportItem(1,613,155);
+articleSpptItems.figure2 = new SupportItem(2,614,495);
+articleSpptItems.figure3 = new SupportItem(3,614,506);
+articleSpptItems.figure4 = new SupportItem(4,546,834);
+articleSpptItems.listing1 = new SupportItem(5,700,500);
+articleSpptItems.listing2 = new SupportItem(6,700,500);
+articleSpptItems.listing3 = new SupportItem(7,700,500);
+articleSpptItems.listing4 = new SupportItem(8,700,500);
+articleSpptItems.listing5 = new SupportItem(9,700,500);
+</script>
+<center><div style="width: 90%; text-align: left; font-family: Arial,Helvetica,Sans-Serif; font-size: 12px; font-weight: normal; line-height: 18px;">
+<a href="http://www.devx.com/"><img alt="DevX HomePage" src="picturesms_files/4055.gif" border="0"></a>
+<br>
+<div class="topPrintHeader" style="float: left;"><a href="http://www.devx.com/">http://www.devx.com</a></div>
+<div class="topPrintHeader" style="text-align: right;">Printed from <a href="http://www.devx.com/wireless/Article/35757/1954">http://www.devx.com/wireless/Article/35757/1954</a></div>
+<br>
+<div class="articleTitle">Picture SMS Using the .NET Compact Framework 2.0</div>
+<div class="articleDek"><br>
+Got a client that's asking to send messages via SMS? If so, you know
+there's no easy way to do it without third-party software. Learn how to
+build your own image-sending SMS application using only the .NET
+Compact Framework. </div>
+<div class="articleAuthor">
+by
+Wei-Meng Lee
+</div>
+
+				<img src="picturesms_files/3589.gif">ecently, I was
+consulting on a Windows Mobile project where the client asked if it is
+possible to send images using SMS messaging. After searching high and
+low for a solution, I concluded that there is no easy way to do it
+unless you want to buy some fanciful third-party software. Basically,
+my client wanted to build a security system to alert security guards
+when someone who is under monitoring leaves the compound under
+surveillance. To do so, they would automate the process by sending a
+SMS message to the guards, with the image of the person attached. The
+image would be a small mug shot of that person, which is relatively
+small in size. <p>
+This article details the solution that I proposed and will hopefully be
+of use to readers who are comtemplating such implementations. </p><p>
+<b>How It Works</b><br>
+Before you can build the application, you need to understand how to
+embed both text and image into an SMS message. As SMS messaging is
+inherently text-based, sending images (binary data) poses a challenge. </p><p>
+Basically, you need to "flatten" the binary data into a string of
+printable characters so that you can send them via SMS. Base64 encoding
+is well suited for this purpose; the only draw back is that it inflates
+your data size by about 33 percent. Hence, after encoding your binary
+data (image) into base64, you should optionally perform a compression
+to reduce the size of the data. However, do note that images (such as
+the <span class="pf">.jpg</span>
+format) normally do not compress well, and in some instances, the
+compressed data is actually much larger than the original data. <a href="javascript:showSupportItem('figure1')">Figure 1</a> summarizes the action you need to perform in order to send an image over SMS. 
+</p><p>
+</p><table width="239" align="right" border="0" cellpadding="5" cellspacing="0"><tbody><tr><td valign="top"><a href="javascript:showSupportItem('figure1')"><img alt="" src="picturesms_files/21049.jpg" width="150" border="0" height="150"></a></td><td width="12"></td></tr><tr><td class="smallfont"><a href="javascript:showSupportItem('figure1')"><b>Figure 1.</b></a><b> Image Manipulation Lifecycle:</b> First, flatten an image into base64 and then compress it.</td></tr></tbody></table>
+<p>
+Note that you cannot simply convert a byte array into a string using the <span class="pf">ASCII.GetString()</span> method found in the <span class="pf">System.Text.ASCIIEncoding</span> class because it may return non-printable characters, which cannot be represented in an SMS message's body. 
+</p><p>
+For text data, you can optionlly compress it before sending (in order
+to reduce its size). Generally, if you're sending a small amount of
+text, compression doesn't help much—in fact, this usually increases
+data size. However, text data that contains a lot of repeating patterms
+generally compresses well. </p><p>
+One restriction with SMS messaging is the 160-character limit. If the
+message length exceeds 160 characters, the message will be split into
+multiple messages and sent separately, then assembled on the receiving
+end. Fortunately, all this takes place behind the scenes. What you need
+to know is that when you send a 1000-character SMS message, the
+recipient will get the 1000-character message. </p><p>
+The downside is that SMS messaging is charged based number of messages
+sent. And you will be charged seven SMS messages when you send a
+1000-character message (1000/160). For this reason, this application
+works best if you have a unlimited SMS plan for your mobile phone. </p><p>
+
+</p><p>
+			
+<br><br>
+<br>
+
+				<b>Defining the Message Format</b><br>
+After the text and image are encoded, they need to be packaged properly
+so that they can be sent as an SMS message. In this application, the
+body of a SMS message can contain either text or an image (or both). </p><p>
+The preamble of the message's body is prefixed by the <span class="pf">&lt;*&gt;</span> tag. Text content is enclosed within the <span class="pf">&lt;t&gt;</span> element. Text data that is compressed is enclosed within the <span class="pf">&lt;c&gt;</span> element. For images, content is enclosed within the <span class="pf">&lt;i&gt;</span> element and, if it is compressed, enclosed within the <span class="pf">&lt;c&gt;</span> element. Here are some message samples:
+</p><ul>
+<li> <span class="pf">&lt;*&gt;&lt;t&gt;&lt;c&gt;.........&lt;/c&gt;&lt;/t&gt;</span>: Text only (compressed)</li>
+<li> <span class="pf">&lt;*&gt;&lt;t&gt;.........&lt;/t&gt;</span>: Text only (uncompressed)</li>
+<li> <span class="pf">&lt;*&gt;&lt;i&gt;&lt;c&gt;.........&lt;/c&gt;&lt;/i&gt;</span>: Image only (compressed)</li>
+<li> <span class="pf">&lt;*&gt;&lt;i&gt;.........&lt;/i&gt;</span>: Image only (uncompressed)</li>
+<li> <span class="pf">&lt;*&gt;&lt;t&gt;&lt;c&gt;.........&lt;/c&gt;&lt;/t&gt;&lt;i&gt;&lt;c&gt;....&lt;/c&gt;&lt;/i&gt;</span>: Text and Image compressed</li>
+<li> <span class="pf">&lt;*&gt;&lt;t&gt;.........&lt;/t&gt;&lt;i&gt;&lt;c&gt;....&lt;/c&gt;&lt;/i&gt;</span>: Text uncompressed and Image compressed</li>
+</ul>
+<b>Creating the Application</b><br>
+Using Visual Studio 2005, create a new Windows Mobile 5.0 Pocket PC application and name it as <span class="pf">SMS_Pictures</span>. In the default <span class="pf">Form1</span>, populate it with the following controls shown in <a href="javascript:showSupportItem('figure2')">Figure 2</a> and <a href="javascript:showSupportItem('figure3')">3</a>.
+<p>
+</p><table width="75%" align="center" border="0" cellpadding="3"><tbody><tr><td valign="top">
+<a href="javascript:showSupportItem('figure2')"><img alt="" src="picturesms_files/21050.jpg" width="150" border="0" height="150"></a><br>
+<span class="caption"><a href="javascript:showSupportItem('figure2')"><b>Figure 2.</b></a><b> <i>TabPage1</i>:</b> Populating the controls in <i>TabPage1</i>.</span></td><td width="12">&nbsp;</td><td valign="top"><a href="javascript:showSupportItem('figure3')"><img alt="" src="picturesms_files/21051.jpg" width="150" border="0" height="150"></a><br><span class="caption"><a href="javascript:showSupportItem('figure3')"><b>Figure 3.</b></a><b> <i>TabPage2</i>:</b> Populating the controls in <i>TabPage2</i>.</span></td></tr></tbody></table>
+<p>
+Until .NET Compact Framework 3.5 is released, you have to rely on
+third-party components for compression. For compression using the .NET
+Compact Framework 2.0, I used the "ComponentOne Zip for Mobile Devices
+- Subscription - 2007v1" (check out their <a href="http://www.componentsource.com/products/componentone-zip-mobile-devices/index.html" target="_blank">web site</a> for pricing information). For this article, I used the available trial edition. 
+</p><p>
+Once the "ComponentOne Zip for Mobile Devices" is downloaded and installed on your computer, add a reference to the <span class="pf">C1.CF.C1Zip.2.dll</span> library, which by default is located in <span class="pf">C:\Program Files\ComponentOne Studio.NET 2.0\bin\</span>. 
+</p><p>
+Switch to the code-behind of <span class="pf">Form1</span> and import the following namespaces:
+</p><pre><code>
+Imports System.IO
+Imports Microsoft.WindowsMobile.PocketOutlook
+Imports Microsoft.WindowsMobile.PocketOutlook.MessageInterception
+Imports C1.C1Zip
+</code></pre>
+Declare the following two member variables:
+<pre><code>
+Public Class Form1
+    Private msgInterceptor As MessageInterceptor
+    Private SMS_Message As New SmsMessage
+</code></pre>
+Define the <span class="pf">CompressString()</span> and <span class="pf">ExpandString()</span> functions respectively to compress and expand a string (see <a href="javascript:showSupportItem('listing1')">Listing 1</a>).
+<p>
+</p><table style="background: white none repeat scroll 0% 0%; font-family: Verdana,Arial,Helvetica,Sans-Serif; font-size: x-small; color: black; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;" width="95%" align="center" border="1" cellpadding="3">
+<tbody><tr><td> Author's Note: These two functions are taken from the sample code accompanying the "ComponentOne Zip for Mobile Devices."</td>
+</tr></tbody></table> 
+<p>
+
+
+</p><p>
+			
+<br><br>
+<br>
+
+				<b>Sending Messages</b><br>
+First write the code to send messages. Double-click on the Select File
+button and code the following so that users can select a file to attach
+to the SMS (see <a href="javascript:showSupportItem('listing2')">Listing 2</a>).
+</p><p>
+When a file has been selected, the <span class="pf">ConvertFileContentToBase64()</span>
+function is called so that it can convert the file content into base64
+encoding. It is then compressed to potentially reduce its size and
+encoded back into base64 encoding again. A check is then made to see if
+there is a reduction in file size. If there is, the compressed base64
+image is used, else the original base64 encoding of the image data is
+used instead. </p><p>
+The <span class="pf">ConvertFileContentToBase64()</span> function is defined as in <a href="javascript:showSupportItem('listing3')">Listing 3</a>, and the <span class="pf">DisplayStatus()</span> subroutine is defined as follows:
+</p><pre><code>
+    Public Sub DisplayStatus(ByVal str As String)
+        txtStatus.Text = str &amp; vbCrLf &amp; txtStatus.Text
+        Application.DoEvents()
+    End Sub
+</code></pre>
+Next, double-click on the Send SMS menu item and code it like in <a href="javascript:showSupportItem('listing4')">Listing 4</a>.
+<p>
+Here, you try to compress the text (if any) and see if there is a
+reduction in data size. As usual, if there is no reduction in size, you
+will use the original uncompressed text. Else, use the compressed text.
+After that, prompt the user to confirm sending the message. The message
+containing the text and image will then be sent. </p><p>
+<b>Receiving Messages</b><br>
+When a picture SMS message is received, you need to intercept it and take the appropriate action to decode its content. 
+</p><p>
+Code the following in the <span class="pf">Form1_Load</span> event:
+</p><pre><code>
+Private Sub Form1_Load( _
+       ByVal sender As System.Object, _
+       ByVal e As System.EventArgs) _
+       Handles MyBase.Load
+
+        msgInterceptor = _
+           New MessageInterceptor( _
+              InterceptionAction.NotifyAndDelete, _
+              True)
+
+        '---set the filter for the message---
+        msgInterceptor.MessageCondition = _
+           New MessageCondition( _
+              MessageProperty.Body, _
+              MessagePropertyComparisonType.StartsWith, _
+              "&lt;*&gt;", True)
+
+        '---set the event handler for the message interceptor---
+        AddHandler msgInterceptor.MessageReceived, _
+           AddressOf smsInterceptor_MessageReceived
+
+    End Sub
+</code></pre>
+Basically, you are intercepting all incoming SMS messages whose body begins with the <span class="pf">&lt;*&gt;</span> string. When messages are intercepted, the <span class="pf">smsInterceptor_MessageReceived()</span> subroutine is called, which is defined as shown in <a href="javascript:showSupportItem('listing5')">Listing 5</a>.
+<p>
+When a message is intercepted, you first cast the message into a <span class="pf">SmsMessage</span>
+object so that you can retrieve the details of the message (such as the
+sender phone number, message content, etc). You then decode the body of
+the message and extract the text and image accordingly. </p><p>
+The two delegates and the two subroutines for displaying the text and image content are defined as follows:
+</p><pre><code>
+Private Delegate Sub delDisplayText(ByVal str As String)
+    Private Sub DisplayText(ByVal str As String)
+        Try
+            txtMessageReceived.Text = str
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+    Private Delegate Sub delDisplayImage(ByVal img As Byte())
+    Private Sub DisplayImage(ByVal img As Byte())
+        Try
+            Dim ms As MemoryStream = New MemoryStream(img)
+            PictureBox1.Image = New Bitmap(ms)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+</code></pre>
+The <span class="pf">ConvertBase64ToByteArray()</span> function converts a base64 string into a byte array:
+<pre><code>
+Private Function ConvertBase64ToByteArray( _
+   ByVal base64string As String) As Byte()
+        Dim binaryData() As Byte
+        Try
+            binaryData = _
+               System.Convert.FromBase64String(base64string)
+        Catch ex As Exception
+            Console.WriteLine("Error decoding content")
+            Return (Nothing)
+        End Try
+        Return binaryData
+    End Function
+</code></pre>
+<p>
+</p><p>
+			
+<br><br>
+<br>
+
+				<b>Testing the Application</b><br>
+You can now test out the application and see how it works! Deploy the
+application onto a Windows Mobile 5.0 device (with a valid SIM card for
+sending and receiving SMS messages). Enter the recipient number and
+type in some text. To add an image to the message, click the Select
+File button and select a <span class="pf">.jpg</span>
+file. Click the Send SMS menu item to send the message. When prompted,
+click Yes to send the message. The recipient (also running the
+application) will now receive the message. <a href="javascript:showSupportItem('figure4')">Figure 4</a> outlines the steps just described. 
+</p><p>
+</p><table style="background: white none repeat scroll 0% 0%; font-family: Verdana,Arial,Helvetica,Sans-Serif; font-size: x-small; color: black; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;" width="95%" align="center" border="1" cellpadding="3">
+<tbody><tr><td> Author's Note: The easiest way to test the application is to send a message to yourself.</td>
+</tr></tbody></table> 
+<p>
+</p><table width="239" align="right" border="0" cellpadding="5" cellspacing="0"><tbody><tr><td valign="top"><a href="javascript:showSupportItem('figure4')"><img alt="" src="picturesms_files/21052.jpg" width="150" border="0" height="150"></a></td><td width="12"></td></tr><tr><td class="smallfont"><a href="javascript:showSupportItem('figure4')"><b>Figure 4.</b></a><b> Test It!:</b> These are the steps for testing the application.</td></tr></tbody></table>
+<p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+<b>Use with Some Consideration</b><br>
+The solution presented in this article shows one way of sending images
+using SMS. While theoretically you can send images of any size using
+this method, there is actually a limit to the size of the SMS message
+that you can send. Also, sending an image using this method uses a
+large number of SMS messages, which can be quite costly depending on
+your data plans. However, if your purpose is to send images to
+recipients quickly, this is a viable solution that you can adopt. Have
+fun—and let me know if you have an innovative use for this application.
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+			
+</p><div class=""><b>Wei-Meng Lee</b> is a Microsoft MVP and founder of <a href="http://www.developerlearningsolutions.com/" target="_blank">Developer Learning Solutions</a>,
+a technology company specializing in hands-on training on the latest
+Microsoft technologies. He is an established developer and trainer
+specializing in .NET and wireless technologies. Wei-Meng speaks
+regularly at international conferences and has authored and coauthored
+numerous books on .NET, XML, and wireless technologies. He writes
+extensively on topics ranging from .NET to Mac OS X. He is also the
+author of the .NET Compact Framework Pocket Guide, ASP.NET 2.0: A
+Developer's Notebook (both from O'Reilly Media, Inc.), and Programming
+Sudoku (Apress). Here is Wei-Meng's <a href="http://weimenglee.blogspot.com/" target="_blank">blog</a>. </div>
+<br><br>
+</div></center>
+
+
+
+
+<table style="padding-top: 10px;" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td class="smallFont" align="center">DevX is a division of Jupitermedia Corporation <br>
+© Copyright 2007 Jupitermedia Corporation. All Rights Reserved. <a href="http://www.internet.com/corporate/legal.html">Legal Notices</a></td></tr>
+</tbody></table>
+
+</body></html>

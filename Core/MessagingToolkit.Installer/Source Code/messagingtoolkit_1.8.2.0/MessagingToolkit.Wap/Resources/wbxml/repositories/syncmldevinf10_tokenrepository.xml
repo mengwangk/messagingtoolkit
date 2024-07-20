@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codepages>
+
+<codepage number="0" publicID="-//SYNCML//DTD DevInf 1.0//EN" wbxmlVersion="1.3" default_encoding="utf-8">
+   <tag-tokens>
+     <tag name="CTCap"          token-value="5" />
+   <tag name="CTType"             token-value="6" />
+   <tag name="DataStore"          token-value="7" />
+   <tag name="DataType"          token-value="8" />
+   <tag name="DevID"         token-value="9" />
+   <tag name="DevInf"            token-value="a" />
+   <tag name="DevTyp"            token-value="b" />
+   <tag name="DisplayName"      token-value="c" />
+   <tag name="DSMem"             token-value="d" />
+   <tag name="Ext"          token-value="e" />
+   <tag name="FwV"            token-value="f" />
+   <tag name="HwV"       token-value="10" />
+   <tag name="Man"       token-value="11" />
+   <tag name="MaxGUIDSize"            token-value="12" />
+   <tag name="MaxID"            token-value="13" />
+   <tag name="MaxMem"         token-value="14" />
+   <tag name="Mod"         token-value="15" />
+  <tag name="OEM"         token-value="16" />
+  <tag name="ParamName"         token-value="17" />
+  <tag name="PropName"         token-value="18" />
+  <tag name="Rx"         token-value="19" />
+  <tag name="Rx-Pref"         token-value="1A" />
+  <tag name="SharedMem"         token-value="1B" />
+  <tag name="Size"         token-value="1C" />
+  <tag name="SourceRef"         token-value="1D" />
+  <tag name="SwV"         token-value="1E" />
+  <tag name="SyncCap"         token-value="1F" />
+  <tag name="SyncType"         token-value="20" />
+  <tag name="Tx"         token-value="21" />
+  <tag name="Tx-Pref"         token-value="22" />
+  <tag name="ValEnum"         token-value="23" />
+  <tag name="VerCT"         token-value="24" />
+  <tag name="VerDTD"         token-value="25" />
+  <tag name="Xnam"         token-value="26" />
+  <tag name="Xval"         token-value="27" />
+ </tag-tokens>
+   <attribute-start-tokens/>
+   <attribute-value-tokens/>
+</codepage>
+
+</codepages>

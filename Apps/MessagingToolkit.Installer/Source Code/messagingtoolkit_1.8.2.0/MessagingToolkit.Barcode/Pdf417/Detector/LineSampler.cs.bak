@@ -1,0 +1,831 @@
+﻿using System;
+using System.Collections.Generic;
+
+using MessagingToolkit.Barcode.Common;
+using MessagingToolkit.Barcode.Common.Detector;
+using MessagingToolkit.Barcode.Pdf417.Decoder;
+
+namespace MessagingToolkit.Barcode.Pdf417.Detector
+{
+    /// <summary>
+    /// <p>Encapsulates logic that detects valid codewords from a deskewed lines matrix.
+    /// To sample the grid several properties of PDF417 are used:</p>
+    /// 
+    /// <ul>
+    ///   <li>each codeword/symbol has 17 modules</li>
+    ///   <li>each codeword/symbol begins with a black bar and ends with a white bar</li>
+    ///   <li>each codeword consists of 4 black bars + 4 white bars</li>
+    ///   <li>all valid codewords are known (obviously)</li>
+    /// </ul>
+    /// </summary>
+    public sealed class LinesSampler
+    {
+
+        private const int MODULES_IN_SYMBOL = 17;
+        private const int BARS_IN_SYMBOL = 8;
+        private const int BARCODE_START_OFFSET = 2;
+        private static readonly float[] RATIOS_TABLE;
+
+        internal static float[][] ReturnRectangularFloatArray(int size1, int size2)
+        {
+            float[][] array = new float[size1][];
+            for (int array1 = 0; array1 < size1; array1++)
+            {
+                array[array1] = new float[size2];
+            }
+            return array;
+        }
+
+        static LinesSampler()
+        {
+            // Pre-computes and outputs the symbol ratio table.
+            float[][] table = ReturnRectangularFloatArray(BitMatrixParser.SYMBOL_TABLE.Length, BARS_IN_SYMBOL);
+            RATIOS_TABLE = new float[BitMatrixParser.SYMBOL_TABLE.Length * BARS_IN_SYMBOL];
+            int x = 0;
+            for (int i = 0; i < BitMatrixParser.SYMBOL_TABLE.Length; i++)
+            {
+                int currentSymbol = BitMatrixParser.SYMBOL_TABLE[i];
+                int currentBit = currentSymbol & 0x1;
+                for (int j = 0; j < BARS_IN_SYMBOL; j++)
+                {
+                    float size = 0.0f;
+                    while ((currentSymbol & 0x1) == currentBit)
+                    {
+                        size += 1.0f;
+                        currentSymbol >>= 1;
+                    }
+                    currentBit = currentSymbol & 0x1;
+                    table[i][BARS_IN_SYMBOL - j - 1] = size / MODULES_IN_SYMBOL;
+                }
+                for (int j = 0; j < BARS_IN_SYMBOL; j++)
+                {
+                    RATIOS_TABLE[x] = table[i][j];
+                    x++;
+                }
+            }
+        }
+
+        private readonly BitMatrix linesMatrix;
+        private readonly int symbolsPerLine;
+        private readonly int dimension;
+
+        public LinesSampler(BitMatrix linesMatrix, int dimension)
+        {
+            this.linesMatrix = linesMatrix;
+            this.symbolsPerLine = dimension / MODULES_IN_SYMBOL;
+            this.dimension = dimension;
+        }
+
+        /// <summary>
+        /// Samples a grid from a lines matrix.
+        /// </summary>
+        /// <returns> the potentially decodable bit matrix. </returns>
+        public BitMatrix Sample()
+        {
+            IList<float> symbolWidths = FindSymbolWidths();
+
+            int[][] codewords = new int[linesMatrix.Height][];
+            int[][] clusterNumbers = new int[linesMatrix.Height][];
+            LinesMatrixToCodewords(codewords, clusterNumbers, symbolWidths);
+
+            IList<IList<IDictionary<int, int>>> votes = DistributeVotes(codewords, clusterNumbers);
+
+            IList<IList<int>> detectedCodeWords = new List<IList<int>>();
+            Resize3(detectedCodeWords, votes.Count);
+            for (int i = 0; i < votes.Count; i++)
+            {
+                Resize4(detectedCodeWords[i], votes[i].Count);
+                for (int j = 0; j < votes[i].Count; j++)
+                {
+                    if (votes[i][j].Count > 0)
+                    {
+                        detectedCodeWords[i][j] = GetValueWithMaxVotes(votes[i][j]).Vote;
+                    }
+                }
+            }
+
+            IList<int> insertLinesAt = FindMissingLines(detectedCodeWords);
+
+            int rowCount = DecodeRowCount(detectedCodeWords, insertLinesAt);
+            Resize3(detectedCodeWords, rowCount);
+
+            return CodewordsToBitMatrix(detectedCodeWords, dimension, detectedCodeWords.Count);
+        }
+
+        /// <summary>
+        /// Use the following property of PDF417 barcodes to detect symbols:
+        /// Every symbol starts with a black module and every symbol is 17 modules 
+        /// wide, therefore there have to be columns in the line matrix that are 
+        /// completely composed of black pixels.
+        /// </summary>
+        /// <returns> array containing with symbol widths. </returns>
+        private IList<float> FindSymbolWidths()
+        {
+            float expectedSymbolWidth;
+            if (symbolsPerLine > 0)
+            {
+                expectedSymbolWidth = linesMatrix.Width / (float)symbolsPerLine;
+            }
+            else
+            {
+                expectedSymbolWidth = linesMatrix.Width;
+            }
+
+            IList<float> symbolWidths = new List<float>();
+            int symbolStart = 0;
+            bool lastWasSymbolStart = true;
+            int[] blackCount = new int[linesMatrix.Width];
+            for (int x = BARCODE_START_OFFSET; x < linesMatrix.Width; x++)
+            {
+                for (int y = 0; y < linesMatrix.Height; y++)
+                {
+                    if (linesMatrix.Get(x, y))
+                    {
+                        blackCount[x]++;
+                    }
+                }
+                if (blackCount[x] == linesMatrix.Height)
+                {
+                    if (!lastWasSymbolStart)
+                    {
+                        float currentWidth = x - symbolStart;
+                        // Make sure we really found a symbol by asserting a minimal size of
+                        // 75% of the expected symbol width. This might break highly distorted
+                        // barcodes, but fixes an issue with barcodes where there is a full black 
+                        // column from top to bottom within a symbol.
+                        if (currentWidth > 0.75 * expectedSymbolWidth)
+                        {
+                            // The actual symbol width might be slightly bigger than the expected
+                            // symbol width, but if we are more than half an expected symbol width 
+                            // bigger, we assume that  we missed one or more symbols and assume that 
+                            // they were the expected symbol width.
+                            while (currentWidth > 1.5 * expectedSymbolWidth)
+                            {
+                                symbolWidths.Add(expectedSymbolWidth);
+                                currentWidth -= expectedSymbolWidth;
+                            }
+                            symbolWidths.Add(currentWidth);
+                            lastWasSymbolStart = true;
+                            symbolStart = x;
+                        }
+                    }
+                }
+                else
+                {
+                    if (lastWasSymbolStart)
+                    {
+                        lastWasSymbolStart = false;
+                    }
+                }
+            }
+
+            // The last symbol ends at the right edge of the matrix, where there usually is no black bar.
+            float currentWidth1 = linesMatrix.Width - symbolStart;
+            while (currentWidth1 > 1.5 * expectedSymbolWidth)
+            {
+                symbolWidths.Add(expectedSymbolWidth);
+                currentWidth1 -= expectedSymbolWidth;
+            }
+            symbolWidths.Add(currentWidth1);
+
+            return symbolWidths;
+        }
+
+        private void LinesMatrixToCodewords(int[][] codewords, int[][] clusterNumbers, IList<float> symbolWidths)
+        {
+
+            // Not sure if this is the right way to handle this but avoids an error:
+            if (symbolsPerLine > symbolWidths.Count)
+            {
+                throw NotFoundException.Instance;
+            }
+
+            for (int y = 0; y < linesMatrix.Height; y++)
+            {
+                codewords[y] = new int[symbolsPerLine];
+                clusterNumbers[y] = new int[symbolsPerLine];
+                for (int p = 0; p < clusterNumbers[y].Length; p++)
+                    clusterNumbers[y][p] = -1;
+                IList<int> barWidths = new List<int>();
+                // Run-length encode the bars in the scanned linesMatrix.
+                // We assume that the first bar is black, as determined by the PDF417 standard.
+                // Filter small white bars at the beginning of the barcode.
+                // Small white bars may occur due to small deviations in scan line sampling.
+                barWidths.Add(BARCODE_START_OFFSET);
+                bool isSetBar = true;
+                for (int x = BARCODE_START_OFFSET; x < linesMatrix.Width; x++)
+                {
+                    if (linesMatrix.Get(x, y))
+                    {
+                        if (!isSetBar)
+                        {
+                            isSetBar = true;
+                            barWidths.Add(0);
+                        }
+                    }
+                    else
+                    {
+                        if (isSetBar)
+                        {
+                            isSetBar = false;
+                            barWidths.Add(0);
+                        }
+
+                    }
+                    int lastIndex = barWidths.Count - 1;
+                    barWidths[lastIndex] = barWidths[lastIndex] + 1;
+                }
+
+                // Find the symbols in the line by counting bar lengths until we reach symbolWidth.
+                // We make sure, that the last bar of a symbol is always white, as determined by the PDF417 standard.
+                // This helps to reduce the amount of errors done during the symbol recognition.
+                // The symbolWidth usually is not constant over the width of the barcode.
+                int[] cwStarts = new int[symbolsPerLine];
+                cwStarts[0] = 0;
+                int cwCount = 1;
+                int cwWidth = 0;
+                for (int i = 0; i < barWidths.Count && cwCount < symbolsPerLine; i++)
+                {
+                    cwWidth += barWidths[i];
+                    if ((float)cwWidth > symbolWidths[cwCount - 1])
+                    {
+                        if ((i % 2) == 1) // check if bar is white
+                        {
+                            i++;
+                        }
+                        if (i < barWidths.Count)
+                        {
+                            cwWidth = barWidths[i];
+                        }
+                        cwStarts[cwCount] = i;
+                        cwCount++;
+                    }
+                }
+
+                float[][] cwRatios = ReturnRectangularFloatArray(symbolsPerLine, BARS_IN_SYMBOL);
+                // Distribute bar widths to modules of a codeword.
+                for (int i = 0; i < symbolsPerLine; i++)
+                {
+                    int cwStart = cwStarts[i];
+                    int cwEnd = (i == symbolsPerLine - 1) ? barWidths.Count : cwStarts[i + 1];
+                    int cwLength = cwEnd - cwStart;
+
+                    if (cwLength < 7 || cwLength > 9)
+                    {
+                        // We try to recover symbols with 7 or 9 bars and spaces with heuristics, but everything else is beyond repair.
+                        continue;
+                    }
+
+                    // For symbols with 9 bar length simply ignore the last bar.
+                    float cwWidthF = 0.0f;
+                    for (int j = 0; j < Math.Min(BARS_IN_SYMBOL, cwLength); ++j)
+                    {
+                        cwWidthF += (float)barWidths[cwStart + j];
+                    }
+
+                    // If there were only 7 bars and spaces detected use the following heuristic:
+                    // Assume the length of the symbol is symbolWidth and the last (unrecognized) bar uses all remaining space.
+                    if (cwLength == 7)
+                    {
+                        for (int j = 0; j < cwLength; ++j)
+                        {
+                            cwRatios[i][j] = (float)barWidths[cwStart + j] / symbolWidths[i];
+                        }
+                        cwRatios[i][7] = (symbolWidths[i] - cwWidthF) / symbolWidths[i];
+                    }
+                    else
+                    {
+                        for (int j = 0; j < cwRatios[i].Length; ++j)
+                        {
+                            cwRatios[i][j] = barWidths[cwStart + j] / cwWidthF;
+                        }
+                    }
+
+                    float bestMatchError = float.MaxValue;
+                    int bestMatch = 0;
+
+                    // Search for the most possible codeword by comparing the ratios of bar size to symbol width.
+                    // The sum of the squared differences is used as similarity metric.
+                    // (Picture it as the square euclidian distance in the space of eight tuples where a tuple represents the bar ratios.)
+                    for (int j = 0; j < BitMatrixParser.SYMBOL_TABLE.Length; j++)
+                    {
+                        float error = 0.0f;
+                        for (int k = 0; k < BARS_IN_SYMBOL; k++)
+                        {
+                            float diff = RATIOS_TABLE[j * BARS_IN_SYMBOL + k] - cwRatios[i][k];
+                            error += diff * diff;
+                        }
+                        if (error < bestMatchError)
+                        {
+                            bestMatchError = error;
+                            bestMatch = BitMatrixParser.SYMBOL_TABLE[j];
+                        }
+                    }
+                    codewords[y][i] = bestMatch;
+                    clusterNumbers[y][i] = CalculateClusterNumber(bestMatch);
+                }
+            }
+        }
+
+        private IList<IList<IDictionary<int, int>>> DistributeVotes(int[][] codewords, int[][] clusterNumbers)
+        {
+            // Matrix of votes for codewords which are possible at this position.
+            IList<IList<IDictionary<int, int>>> Votes = new List<IList<IDictionary<int, int>>>();
+            Votes.Add(new List<IDictionary<int, int>>());
+            Resize2(Votes[0], symbolsPerLine);
+
+            int currentRow = 0;
+            IDictionary<int, int> clusterNumberVotes = new Dictionary<int, int>();
+            int lastLineClusterNumber = -1;
+
+            for (int y = 0; y < codewords.Length; y++)
+            {
+                // Vote for the most probable cluster number for this row.
+                clusterNumberVotes.Clear();
+                for (int i = 0; i < codewords[y].Length; i++)
+                {
+                    if (clusterNumbers[y][i] != -1)
+                    {
+                        if (clusterNumberVotes.ContainsKey(clusterNumbers[y][i]))
+                            clusterNumberVotes[clusterNumbers[y][i]] = DefaultValue(clusterNumberVotes[clusterNumbers[y][i]], 0) + 1;
+                        else
+                            clusterNumberVotes.Add(clusterNumbers[y][i], 1);
+                    }
+                }
+
+                // Ignore lines where no codeword could be read.
+                if (clusterNumberVotes.Count > 0)
+                {
+                    VoteResult voteResult = GetValueWithMaxVotes(clusterNumberVotes);
+                    bool lineClusterNumberIsIndecisive = voteResult.Indecisive;
+                    int lineClusterNumber = voteResult.Vote;
+
+                    // If there are to few votes on the lines cluster number, we keep the old one.
+                    // This avoids switching lines because of damaged inter line readings, but
+                    // may cause problems for barcodes with four or less rows.
+                    if (lineClusterNumberIsIndecisive)
+                    {
+                        lineClusterNumber = lastLineClusterNumber;
+                    }
+
+                    if ((lineClusterNumber != ((lastLineClusterNumber + 3) % 9)) && (lastLineClusterNumber != -1))
+                    {
+                        lineClusterNumber = lastLineClusterNumber;
+                    }
+
+                    // Ignore broken lines at the beginning of the barcode.
+                    if ((lineClusterNumber == 0 && lastLineClusterNumber == -1) || (lastLineClusterNumber != -1))
+                    {
+                        if ((lineClusterNumber == ((lastLineClusterNumber + 3) % 9)) && (lastLineClusterNumber != -1))
+                        {
+                            currentRow++;
+                            if (Votes.Count < currentRow + 1)
+                            {
+                                Resize1(Votes, currentRow + 1);
+                                Resize2(Votes[currentRow], symbolsPerLine);
+                            }
+                        }
+
+                        if ((lineClusterNumber == ((lastLineClusterNumber + 6) % 9)) && (lastLineClusterNumber != -1))
+                        {
+                            currentRow += 2;
+                            if (Votes.Count < currentRow + 1)
+                            {
+                                Resize1(Votes, currentRow + 1);
+                                Resize2(Votes[currentRow], symbolsPerLine);
+                            }
+                        }
+
+                        for (int i = 0; i < codewords[y].Length; i++)
+                        {
+                            if (clusterNumbers[y][i] != -1)
+                            {
+                                if (clusterNumbers[y][i] == lineClusterNumber)
+                                {
+                                    IDictionary<int, int> votesMap = Votes[currentRow][i];
+                                    if (votesMap.ContainsKey(codewords[y][i]))
+                                        votesMap[codewords[y][i]] = DefaultValue(votesMap[codewords[y][i]], 0) + 1;
+                                    else
+                                        votesMap.Add(codewords[y][i], 1);
+                                }
+                                else if (clusterNumbers[y][i] == ((lineClusterNumber + 3) % 9))
+                                {
+                                    if (Votes.Count < currentRow + 2)
+                                    {
+                                        Resize1(Votes, currentRow + 2);
+                                        Resize2(Votes[currentRow + 1], symbolsPerLine);
+                                    }
+                                    IDictionary<int, int> votesMap = Votes[currentRow + 1][i];
+                                    if (votesMap.ContainsKey(codewords[y][i]))
+                                        votesMap[codewords[y][i]] = DefaultValue(votesMap[codewords[y][i]], 0) + 1;
+                                    else
+                                        votesMap.Add(codewords[y][i], 1);
+                                }
+                                else if ((clusterNumbers[y][i] == ((lineClusterNumber + 6) % 9)) && (currentRow > 0))
+                                {
+                                    IDictionary<int, int> votesMap = Votes[currentRow - 1][i];
+                                    if (votesMap.ContainsKey(codewords[y][i]))
+                                        votesMap[codewords[y][i]] = DefaultValue(votesMap[codewords[y][i]], 0) + 1;
+                                    else
+                                        votesMap.Add(codewords[y][i], 1);
+                                }
+                            }
+                        }
+                        lastLineClusterNumber = lineClusterNumber;
+                    }
+                }
+            }
+
+            return Votes;
+        }
+
+        private IList<int> FindMissingLines(IList<IList<int>> detectedCodeWords)
+        {
+            IList<int> insertLinesAt = new List<int>();
+            if (detectedCodeWords.Count > 1)
+            {
+                for (int i = 0; i < detectedCodeWords.Count - 1; i++)
+                {
+                    int clusterNumberRow = -1;
+                    for (int j = 0; j < detectedCodeWords[i].Count && clusterNumberRow == -1; j++)
+                    {
+                        int clusterNumber = CalculateClusterNumber(detectedCodeWords[i][j]);
+                        if (clusterNumber != -1)
+                        {
+                            clusterNumberRow = clusterNumber;
+                        }
+                    }
+                    if (i == 0)
+                    {
+                        // The first line must have the cluster number 0. Insert empty lines to match this.
+                        if (clusterNumberRow > 0)
+                        {
+                            insertLinesAt.Add(0);
+                            if (clusterNumberRow > 3)
+                            {
+                                insertLinesAt.Add(0);
+                            }
+                        }
+                    }
+                    int clusterNumberNextRow = -1;
+                    for (int j = 0; j < detectedCodeWords[i + 1].Count && clusterNumberNextRow == -1; j++)
+                    {
+                        int clusterNumber = CalculateClusterNumber(detectedCodeWords[i + 1][j]);
+                        if (clusterNumber != -1)
+                        {
+                            clusterNumberNextRow = clusterNumber;
+                        }
+                    }
+                    if ((clusterNumberRow + 3) % 9 != clusterNumberNextRow && clusterNumberRow != -1 && clusterNumberNextRow != -1)
+                    {
+                        // The cluster numbers are not consecutive. Insert an empty line between them.
+                        insertLinesAt.Add(i + 1);
+                        if (clusterNumberRow == clusterNumberNextRow)
+                        {
+                            // There may be two lines missing. This is detected when two consecutive lines have the same cluster number.
+                            insertLinesAt.Add(i + 1);
+                        }
+                    }
+                }
+            }
+
+            for (int i = 0; i < insertLinesAt.Count; i++)
+            {
+                IList<int> v = new List<int>();
+                for (int j = 0; j < symbolsPerLine; ++j)
+                {
+                    v.Add(0);
+                }
+                detectedCodeWords.Insert(insertLinesAt[i] + i, v);
+            }
+
+            return insertLinesAt;
+        }
+
+        private int DecodeRowCount(IList<IList<int>> detectedCodeWords, IList<int> insertLinesAt)
+        {
+            // Use the information in the first and last column to determin the number of rows and find more missing rows.
+            // For missing rows insert blank space, so the error correction can try to fill them in.
+
+            insertLinesAt.Clear();
+            IDictionary<int, int> rowCountVotes = new Dictionary<int, int>();
+            IDictionary<int, int> ecLevelVotes = new Dictionary<int, int>();
+            IDictionary<int, int> rowNumberVotes = new Dictionary<int, int>();
+            int lastRowNumber = -1;
+
+            for (int i = 0; i + 2 < detectedCodeWords.Count; i += 3)
+            {
+                rowNumberVotes.Clear();
+                int firstCodewordDecodedLeft = -1;
+                if (detectedCodeWords[i][0] != 0)
+                {
+                    firstCodewordDecodedLeft = BitMatrixParser.GetCodeword(detectedCodeWords[i][0]);
+                }
+                int secondCodewordDecodedLeft = -1;
+                if (detectedCodeWords[i + 1][0] != 0)
+                {
+                    secondCodewordDecodedLeft = BitMatrixParser.GetCodeword(detectedCodeWords[i + 1][0]);
+                }
+                int thirdCodewordDecodedLeft = -1;
+                if (detectedCodeWords[i + 2][0] != 0)
+                {
+                    thirdCodewordDecodedLeft = BitMatrixParser.GetCodeword(detectedCodeWords[i + 2][0]);
+                }
+
+                int firstCodewordDecodedRight = -1;
+                if (detectedCodeWords[i][detectedCodeWords[i].Count - 1] != 0)
+                {
+                    firstCodewordDecodedRight = BitMatrixParser.GetCodeword(detectedCodeWords[i][detectedCodeWords[i].Count - 1]);
+                }
+                int secondCodewordDecodedRight = -1;
+                if (detectedCodeWords[i + 1][detectedCodeWords[i + 1].Count - 1] != 0)
+                {
+                    secondCodewordDecodedRight = BitMatrixParser.GetCodeword(detectedCodeWords[i + 1][detectedCodeWords[i + 1].Count - 1]);
+                }
+                int thirdCodewordDecodedRight = -1;
+                if (detectedCodeWords[i + 2][detectedCodeWords[i + 2].Count - 1] != 0)
+                {
+                    thirdCodewordDecodedRight = BitMatrixParser.GetCodeword(detectedCodeWords[i + 2][detectedCodeWords[i + 2].Count - 1]);
+                }
+
+                if (firstCodewordDecodedLeft != -1 && secondCodewordDecodedLeft != -1)
+                {
+                    int leftRowCount = ((firstCodewordDecodedLeft % 30) * 3) + ((secondCodewordDecodedLeft % 30) % 3);
+                    int leftECLevel = (secondCodewordDecodedLeft % 30) / 3;
+
+                    if (rowCountVotes.ContainsKey(leftRowCount))
+                        rowCountVotes[leftRowCount] = DefaultValue(rowCountVotes[leftRowCount], 0) + 1;
+                    else
+                        rowCountVotes.Add(leftRowCount, 1);
+
+                    if (ecLevelVotes.ContainsKey(leftECLevel))
+                        ecLevelVotes[leftECLevel] = DefaultValue(ecLevelVotes[leftECLevel], 0) + 1;
+                    else
+                        ecLevelVotes.Add(leftECLevel, 1);
+                }
+
+                if (secondCodewordDecodedRight != -1 && thirdCodewordDecodedRight != -1)
+                {
+                    int rightRowCount = ((secondCodewordDecodedRight % 30) * 3) + ((thirdCodewordDecodedRight % 30) % 3);
+                    int rightECLevel = (thirdCodewordDecodedRight % 30) / 3;
+
+                    if (rowCountVotes.ContainsKey(rightRowCount))
+                        rowCountVotes[rightRowCount] = DefaultValue(rowCountVotes[rightRowCount], 0) + 1;
+                    else
+                        rowCountVotes.Add(rightRowCount, 1);
+
+                    if (ecLevelVotes.ContainsKey(rightECLevel))
+                        ecLevelVotes[rightECLevel] = DefaultValue(ecLevelVotes[rightECLevel], 0) + 1;
+                    else
+                        ecLevelVotes.Add(rightECLevel, 1);
+                }
+
+                if (firstCodewordDecodedLeft != -1)
+                {
+                    int rowNumber = firstCodewordDecodedLeft / 30;
+                    if (rowNumberVotes.ContainsKey(rowNumber))
+                        rowNumberVotes[rowNumber] = DefaultValue(rowNumberVotes[rowNumber], 0) + 1;
+                    else
+                        rowNumberVotes.Add(rowNumber, 1);
+                }
+                if (secondCodewordDecodedLeft != -1)
+                {
+                    int rowNumber = secondCodewordDecodedLeft / 30;
+                    if (rowNumberVotes.ContainsKey(rowNumber))
+                        rowNumberVotes[rowNumber] = DefaultValue(rowNumberVotes[rowNumber], 0) + 1;
+                    else
+                        rowNumberVotes.Add(rowNumber, 1);
+                }
+                if (thirdCodewordDecodedLeft != -1)
+                {
+                    int rowNumber = thirdCodewordDecodedLeft / 30;
+                    if (rowNumberVotes.ContainsKey(rowNumber))
+                        rowNumberVotes[rowNumber] = DefaultValue(rowNumberVotes[rowNumber], 0) + 1;
+                    else
+                        rowNumberVotes.Add(rowNumber, 1);
+                }
+                if (firstCodewordDecodedRight != -1)
+                {
+                    int rowNumber = firstCodewordDecodedRight / 30;
+                    if (rowNumberVotes.ContainsKey(rowNumber))
+                        rowNumberVotes[rowNumber] = DefaultValue(rowNumberVotes[rowNumber], 0) + 1;
+                    else
+                        rowNumberVotes.Add(rowNumber, 1);
+                }
+                if (secondCodewordDecodedRight != -1)
+                {
+                    int rowNumber = secondCodewordDecodedRight / 30;
+                    if (rowNumberVotes.ContainsKey(rowNumber))
+                        rowNumberVotes[rowNumber] = DefaultValue(rowNumberVotes[rowNumber], 0) + 1;
+                    else
+                        rowNumberVotes.Add(rowNumber, 1);
+                }
+                if (thirdCodewordDecodedRight != -1)
+                {
+                    int rowNumber = thirdCodewordDecodedRight / 30;
+                    if (rowNumberVotes.ContainsKey(rowNumber))
+                        rowNumberVotes[rowNumber] = DefaultValue(rowNumberVotes[rowNumber], 0) + 1;
+                    else
+                        rowNumberVotes.Add(rowNumber, 1);
+                }
+                int rowNumber1 = GetValueWithMaxVotes(rowNumberVotes).Vote;
+                if (lastRowNumber + 1 < rowNumber1)
+                {
+                    for (int j = lastRowNumber + 1; j < rowNumber1; j++)
+                    {
+                        insertLinesAt.Add(i);
+                        insertLinesAt.Add(i);
+                        insertLinesAt.Add(i);
+                    }
+                }
+                lastRowNumber = rowNumber1;
+            }
+
+            for (int i = 0; i < insertLinesAt.Count; i++)
+            {
+                IList<int> v = new List<int>();
+                for (int j = 0; j < symbolsPerLine; ++j)
+                {
+                    v.Add(0);
+                }
+                detectedCodeWords.Insert(insertLinesAt[i] + i, v);
+            }
+
+            int rowCount = GetValueWithMaxVotes(rowCountVotes).Vote;
+            //int ecLevel = getValueWithMaxVotes(ecLevelVotes).getVote();
+
+            rowCount += 1;
+            return rowCount;
+        }
+
+
+
+        private sealed class VoteResult
+        {
+            private bool indecisive;
+            private int vote;
+            internal bool Indecisive
+            {
+                get
+                {
+                    return indecisive;
+                }
+                set
+                {
+                    this.indecisive = value;
+                }
+            }
+            internal int Vote
+            {
+                get
+                {
+                    return vote;
+                }
+                set
+                {
+                    this.vote = value;
+                }
+            }
+        }
+
+        private static VoteResult GetValueWithMaxVotes(IDictionary<int, int> votes)
+        {
+            VoteResult result = new VoteResult();
+            int maxVotes = 0;
+            foreach (KeyValuePair<int, int> entry in votes)
+            {
+                if (entry.Value > maxVotes)
+                {
+                    maxVotes = entry.Value;
+                    result.Vote = entry.Key;
+                    result.Indecisive = false;
+                }
+                else if (entry.Value == maxVotes)
+                {
+                    result.Indecisive = true;
+                }
+            }
+            return result;
+        }
+
+        private static BitMatrix CodewordsToBitMatrix(IList<IList<int>> codewords, int dimension, int yDimension)
+        {
+            BitMatrix result = new BitMatrix(dimension, yDimension);
+            for (int i = 0; i < codewords.Count; i++)
+            {
+                for (int j = 0; j < codewords[i].Count; j++)
+                {
+                    int moduleOffset = j * MODULES_IN_SYMBOL;
+                    for (int k = 0; k < MODULES_IN_SYMBOL; k++)
+                    {
+                        if ((codewords[i][j] & (1 << (MODULES_IN_SYMBOL - k - 1))) > 0)
+                        {
+                            result.Set(moduleOffset + k, i);
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+
+        private static int CalculateClusterNumber(int codeword)
+        {
+            if (codeword == 0)
+            {
+                return -1;
+            }
+            int barNumber = 0;
+            bool blackBar = true;
+            int clusterNumber = 0;
+            for (int i = 0; i < MODULES_IN_SYMBOL; i++)
+            {
+                if ((codeword & (1 << i)) > 0)
+                {
+                    if (!blackBar)
+                    {
+                        blackBar = true;
+                        barNumber++;
+                    }
+                    if (barNumber % 2 == 0)
+                    {
+                        clusterNumber++;
+                    }
+                    else
+                    {
+                        clusterNumber--;
+                    }
+                }
+                else
+                {
+                    if (blackBar)
+                    {
+                        blackBar = false;
+                    }
+                }
+            }
+            return (clusterNumber + 9) % 9;
+        }
+
+        private static void Resize1(IList<IList<IDictionary<int, int>>> list, int size)
+        {
+            // Delete some
+            for (int i = size; i < list.Count; i++)
+            {
+                list.RemoveAt(i);
+            }
+            // Append some.
+            for (int i = list.Count; i < size; i++)
+            {
+                list.Add(new List<IDictionary<int, int>>());
+            }
+        }
+
+        private static void Resize2(IList<IDictionary<int, int>> list, int size)
+        {
+            // Delete some
+            for (int i = size; i < list.Count; i++)
+            {
+                list.RemoveAt(i);
+            }
+            // Append some.
+            for (int i = list.Count; i < size; i++)
+            {
+                list.Add(new Dictionary<int, int>());
+            }
+        }
+
+        private static void Resize3(IList<IList<int>> list, int size)
+        {
+            // Delete some
+            for (int i = size; i < list.Count; i++)
+            {
+                list.RemoveAt(i);
+            }
+            // Append some.
+            for (int i = list.Count; i < size; i++)
+            {
+                list.Add(new List<int>());
+            }
+        }
+
+        private static void Resize4(IList<int> list, int size)
+        {
+            // Delete some
+            for (int i = size; i < list.Count; i++)
+            {
+                list.RemoveAt(i);
+            }
+            // Append some.
+            for (int i = list.Count; i < size; i++)
+            {
+                list.Add(0);
+            }
+        }
+
+        private static T DefaultValue<T>(T value, T d)
+        {
+            return value == null ? d : value;
+        }
+
+    }
+}

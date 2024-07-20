@@ -1,0 +1,5 @@
+MMSC=http://mms.virginmobile.co.uk:8002
+WAPGateway=193.030.166.001
+APN=goto.virginmobile.uk
+APNAccount=user
+APNPassword=

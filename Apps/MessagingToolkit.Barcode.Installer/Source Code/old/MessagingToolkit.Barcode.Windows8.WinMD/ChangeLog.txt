@@ -1,0 +1,27 @@
+﻿
+August 31, 2011
+----------------
+Initial release. The code base is from zxing (http://code.google.com/p/zxing/)
+
+
+
+May 10, 2012
+-------------
+Synchronized with r2283
+
+
+
+Aug 25, 2012
+-------------
+Synchronized with r2393
+
+
+Nov 30, 2012
+------------
+Synchronized with r2521
+
+83406
+
+
+
+

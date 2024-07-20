@@ -1,0 +1,17 @@
+CBS-Message-Identifier: 50001
+MIDlet-2: MMS Receive, , messagingclient.MMSReceive
+MIDlet-1: MMS Send, , messagingclient.MMSSend
+MIDlet-Jar-URL: messagingclient.jar
+MIDlet-Push-3: mms://:example.mms.MMSDemo, example.mms.MMSReceive, *
+MicroEdition-Configuration: CLDC-1.0
+MIDlet-Push-2: cbs://:50001, example.cbs.CBSReceive, *
+MIDlet-Version: 1.0.0
+MIDlet-Push-1: sms://:50000, example.sms.SMSReceive, *
+MIDlet-Vendor: Sun Microsystems, Inc.
+MIDlet-Name: messagingclient MIDlet Suite
+MIDlet-Data-Size: 0
+MIDlet-Description: Messaging client
+MicroEdition-Profile: MIDP-2.0
+MIDlet-Permissions: 
+MMS-ApplicationID: messagingclient.MMSDemo
+SMS-Port: 50000

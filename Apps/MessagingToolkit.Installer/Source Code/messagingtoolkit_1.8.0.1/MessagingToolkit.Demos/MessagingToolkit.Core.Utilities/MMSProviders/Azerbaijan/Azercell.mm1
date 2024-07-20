@@ -1,0 +1,5 @@
+MMSC=http://mms.azercell.com/cMMSC/post
+WAPGateway=10.0.154.101
+APN=mms
+APNAccount=
+APNPassword=

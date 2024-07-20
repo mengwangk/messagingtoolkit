@@ -1,0 +1,5 @@
+MMSC=http://mmsc.btmms.co.uk:8002
+WAPGateway=62.239.21.123
+APN=mobile.bt.uk
+APNAccount=user
+APNPassword=btmms

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<advertisements>
+
+<advertisement id="1" text="this is ad1" image="http://lightspeedleader.com/mbit/ad_1.jpg" action_id="1" />
+<advertisement id="2" text="this is ad2" image="http://lightspeedleader.com/mbit/ad_2.jpg" action_id="2" />
+
+</advertisements>

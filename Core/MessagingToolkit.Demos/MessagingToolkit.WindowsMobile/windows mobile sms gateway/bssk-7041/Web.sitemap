@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode url="~/Default.aspx" title="Bulksms" description="" xmlns="">
+    <siteMapNode url="~/Errors.aspx" title="Errors" description="View/edit all items">
+      <siteMapNode url="~/NewError.aspx" title="New Error" description="Add new item" />
+      <siteMapNode url="~/ErrorDetail.aspx" title="Error Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/Sysdiagrams.aspx" title="Sysdiagrams" description="View/edit all items">
+      <siteMapNode url="~/NewSysdiagram.aspx" title="New Sysdiagram" description="Add new item" />
+      <siteMapNode url="~/SysdiagramDetail.aspx" title="Sysdiagram Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/MsgHistories.aspx" title="MsgHistories" description="View/edit all items">
+      <siteMapNode url="~/NewMsgHistory.aspx" title="New MsgHistory" description="Add new item" />
+      <siteMapNode url="~/MsgHistoryDetail.aspx" title="MsgHistory Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/SenderIds.aspx" title="SenderIds" description="View/edit all items">
+      <siteMapNode url="~/NewSenderId.aspx" title="New SenderId" description="Add new item" />
+      <siteMapNode url="~/SenderIdDetail.aspx" title="SenderId Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/Countries.aspx" title="Countries" description="View/edit all items">
+      <siteMapNode url="~/NewCountry.aspx" title="New Country" description="Add new item" />
+      <siteMapNode url="~/CountryDetail.aspx" title="Country Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/Operators.aspx" title="Operators" description="View/edit all items">
+      <siteMapNode url="~/NewOperator.aspx" title="New Operator" description="Add new item" />
+      <siteMapNode url="~/OperatorDetail.aspx" title="Operator Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/MsgOutboxes.aspx" title="MsgOutboxes" description="View/edit all items">
+      <siteMapNode url="~/NewMsgOutbox.aspx" title="New MsgOutbox" description="Add new item" />
+      <siteMapNode url="~/MsgOutboxDetail.aspx" title="MsgOutbox Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/MsgMains.aspx" title="MsgMains" description="View/edit all items">
+      <siteMapNode url="~/NewMsgMain.aspx" title="New MsgMain" description="Add new item" />
+      <siteMapNode url="~/MsgMainDetail.aspx" title="MsgMain Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/MsgTemplates.aspx" title="MsgTemplates" description="View/edit all items">
+      <siteMapNode url="~/NewMsgTemplates.aspx" title="New MsgTemplates" description="Add new item" />
+      <siteMapNode url="~/MsgTemplatesDetail.aspx" title="MsgTemplates Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/PointHistories.aspx" title="PointHistories" description="View/edit all items">
+      <siteMapNode url="~/NewPointHistory.aspx" title="New PointHistory" description="Add new item" />
+      <siteMapNode url="~/PointHistoryDetail.aspx" title="PointHistory Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/News.aspx" title="News" description="View/edit all items">
+      <siteMapNode url="~/NewNew.aspx" title="New New" description="Add new item" />
+      <siteMapNode url="~/NewDetail.aspx" title="New Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/Payments.aspx" title="Payments" description="View/edit all items">
+      <siteMapNode url="~/NewPayment.aspx" title="New Payment" description="Add new item" />
+      <siteMapNode url="~/PaymentDetail.aspx" title="Payment Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/MsgDetails.aspx" title="MsgDetails" description="View/edit all items">
+      <siteMapNode url="~/NewMsgDetail.aspx" title="New MsgDetail" description="Add new item" />
+      <siteMapNode url="~/MsgDetailDetail.aspx" title="MsgDetail Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/GrpMains.aspx" title="GrpMains" description="View/edit all items">
+      <siteMapNode url="~/NewGrpMain.aspx" title="New GrpMain" description="Add new item" />
+      <siteMapNode url="~/GrpMainDetail.aspx" title="GrpMain Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/GrpDetails.aspx" title="GrpDetails" description="View/edit all items">
+      <siteMapNode url="~/NewGrpDetail.aspx" title="New GrpDetail" description="Add new item" />
+      <siteMapNode url="~/GrpDetailDetail.aspx" title="GrpDetail Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/PriorityGroups.aspx" title="PriorityGroups" description="View/edit all items">
+      <siteMapNode url="~/NewPriorityGroup.aspx" title="New PriorityGroup" description="Add new item" />
+      <siteMapNode url="~/PriorityGroupDetail.aspx" title="PriorityGroup Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/Users.aspx" title="Users" description="View/edit all items">
+      <siteMapNode url="~/NewUser.aspx" title="New User" description="Add new item" />
+      <siteMapNode url="~/UserDetail.aspx" title="User Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/Admins.aspx" title="Admins" description="View/edit all items">
+      <siteMapNode url="~/NewAdmin.aspx" title="New Admin" description="Add new item" />
+      <siteMapNode url="~/AdminDetail.aspx" title="Admin Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

@@ -1,0 +1,5 @@
+MMSC=http://mms.vinaphone.vnn.vn:8002
+WAPGateway=10.1.10.46
+APN=m3-mms
+APNAccount=mms
+APNPassword=mms

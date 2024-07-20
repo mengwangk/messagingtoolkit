@@ -1,0 +1,5 @@
+MMSC=http://100.1.201.171:10021/mmsc
+WAPGateway=100.1.201.172
+APN=airtelmms.com
+APNAccount=
+APNPassword=

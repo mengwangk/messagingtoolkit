@@ -1,0 +1,5 @@
+MMSC=http://mmsc.omanmobile.om:10021/mmsc
+WAPGateway=192.168.203.035
+APN=mms
+APNAccount=mms
+APNPassword=mms

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>SMSLib v3.4.2 - Release Notes</title>
+</head>
+
+<body style="font-family:Segoe UI; font-size:0.8em;">
+
+<h1>SMSLib v3.4.3 (Oct 13, 2009)<br />Release Notes</h1>
+
+<h3>Upgrading from v3.4.2</h3>
+<p><b>There are some compatibility issues that need to be addressed!</b> Check the following list of fixes for details.</p>
+
+<h3>Enhancements / Fixes</h3>
+<ol>
+<li>The IP Modem Gateway now starts with the BINARY protocol set as default.</li>
+<li>The IP Modem Gateway now supports secure IP connections (<a href="http://code.google.com/p/smslib/issues/detail?id=237">#237</a>).</li>
+<li>Fixed error in Wavecom AT Handler (<a href="http://code.google.com/p/smslib/issues/detail?id=115">#115</a>).</li>
+<li>Annoying debug error appearing in log (<a href="http://code.google.com/p/smslib/issues/detail?id=248">#248</a>).</li>
+<li>Incorrent thread shutdown, leading to stopService() call being stalled.</li>
+<li><b style="color:red;">Compatibility Issue</b>: The xxxInboundNotification() methods have been renamed to xxxInboundMessageNotification().
+<li><b style="color:red;">Compatibility Issue</b>: The xxxOutboundNotification() methods have been renamed to xxxOutboundMessageNotification().
+<li>Decoupling of notification methods. Events are still serialized, but the invokation code is moved outside the main processing thread (<a href="http://code.google.com/p/smslib/issues/detail?id=251">#251</a>).</li>
+<li>Now using prepared statements for frequent SQLs in the SMSServer/DB interface (<a href="http://code.google.com/p/smslib/issues/detail?id=247">#247</a>).</li>
+<li><b style="color:orange;">Possible Compatibility Issue</b>: International originator numbers in inbound messages are now prefixed with "+" (<a href="http://code.google.com/p/smslib/issues/detail?id=253">#253</a>).</li>
+<li>Changed the detection of storage locations in the default AT handler (<a href="http://code.google.com/p/smslib/issues/detail?id=255">#255</a>).</li>
+<li>Null pointer exception upon failure to start gateway (<a href="http://code.google.com/p/smslib/issues/detail?id=256">#256</a>).</li>
+<li>Handling incomplete multipart messages: New logic added for identifying "orphaned" messages and a new callback handler has been introduced. (<a href="http://code.google.com/p/smslib/issues/detail?id=254">#254</a>).</li>
+<li>Clickatell handler was broken in latest release. (<a href="http://code.google.com/p/smslib/issues/detail?id=267">#267</a>).</li>
+<li>Implementation of the CMMS command which increases the GSM throughput. (<a href="http://code.google.com/p/smslib/issues/detail?id=257">#257</a>).</li>
+</ol>
+
+<h3>That's it!</h3>
+<p>For more information, visit the <a href="http://www.smslib.org">SMSLib Web Site.</a></p>
+</body>
+
+</html>

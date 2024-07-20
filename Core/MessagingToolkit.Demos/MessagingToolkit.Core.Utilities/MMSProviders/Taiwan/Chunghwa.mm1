@@ -1,0 +1,5 @@
+MMSC=http://mms.emome.net:8002/
+WAPGateway=10.1.1.1
+APN=emome
+APNAccount=
+APNPassword=

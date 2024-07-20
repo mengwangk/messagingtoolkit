@@ -1,0 +1,5 @@
+MMSC=http://mms.digi.com.my/servlets/mms
+WAPGateway=203.92.128.160
+APN=digimms
+APNAccount=mms
+APNPassword=mms

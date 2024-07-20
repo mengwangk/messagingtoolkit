@@ -1,0 +1,5 @@
+MMSC=http://mmsc.cyta.com.cy
+WAPGateway=212.31.96.161
+APN=cytamobile
+APNAccount=user
+APNPassword=pass

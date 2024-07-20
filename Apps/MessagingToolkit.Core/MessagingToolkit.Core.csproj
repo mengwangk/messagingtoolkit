@@ -1,0 +1,665 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF6A5065-82AA-4815-9553-89B220664B4E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MessagingToolkit.Core</RootNamespace>
+    <AssemblyName>MessagingToolkit.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationIcon>modern-install.ico</ApplicationIcon>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>MessagingToolkit.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\output\debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\output\debug\MessagingToolkit.Core.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\output\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>..\output\debug\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+    <DocumentationFile>..\output\debug\MessagingToolkit.Core.XML</DocumentationFile>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>..\output\release\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\output\debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>..\output\debug\MessagingToolkit.Core.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\output\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Log">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Solution Items\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Base\BaseClass.cs" />
+    <Compile Include="Collections\ConcurrentPriorityQueue.cs" />
+    <Compile Include="Collections\IProducerConsumerCollection.cs" />
+    <Compile Include="Collections\Priority.cs" />
+    <Compile Include="Collections\SyncQueue.cs" />
+    <Compile Include="CustomSerialPort.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Definition.cs" />
+    <Compile Include="Helper\APIError.cs" />
+    <Compile Include="Helper\AsciiArt.cs" />
+    <Compile Include="Helper\GatewayHelper.cs" />
+    <Compile Include="Helper\PersistenceHelper.cs" />
+    <Compile Include="Helper\RestServiceHelper.cs" />
+    <Compile Include="Helper\SerialPortHelper.cs" />
+    <Compile Include="MessageGatewayService.cs" />
+    <Compile Include="Mm1\MmsConfig.cs" />
+    <Compile Include="Mm1\MmsHttpClient.cs" />
+    <Compile Include="Mm1\MmsHttpException.cs" />
+    <Compile Include="Mobile\BaseGatewayConfiguration.cs" />
+    <Compile Include="Mobile\BatteryCharge.cs" />
+    <Compile Include="Mobile\CallInformation.cs" />
+    <Compile Include="Mobile\CurrentCallInformation.cs" />
+    <Compile Include="Mobile\Feature\CallControlFeature.cs" />
+    <Compile Include="Mobile\Feature\ClccFeature.cs" />
+    <Compile Include="Mobile\Feature\GetCurrentCallsFeature.cs" />
+    <Compile Include="Mobile\Feature\RetrieveMmsV2Feature.cs" />
+    <Compile Include="Mobile\Feature\SendMmsV2Feature.cs" />
+    <Compile Include="Mobile\Http\BaseMessage.cs" />
+    <Compile Include="Mobile\Http\CdmaCellLocation.cs" />
+    <Compile Include="Mobile\Http\DefaultHttpGateway.cs" />
+    <Compile Include="Mobile\DefaultMobileGateway.cs" />
+    <Compile Include="Mobile\DelayedMessageQueue.cs" />
+    <Compile Include="Mobile\Event\ConnectionEventArgs.cs" />
+    <Compile Include="Mobile\Event\IncomingCallEventArgs.cs" />
+    <Compile Include="Mobile\Event\OutgoingCallEventArgs.cs" />
+    <Compile Include="Mobile\Event\UssdReceivedEventArgs.cs" />
+    <Compile Include="Mobile\Event\WatchDogEventArgs.cs" />
+    <Compile Include="Mobile\Extension\HuaweiE160Gateway.cs" />
+    <Compile Include="Mobile\Extension\HuaweiE173Gateway.cs" />
+    <Compile Include="Mobile\Extension\HuaweiE226Gateway.cs" />
+    <Compile Include="Mobile\Extension\HuaweiGateway.cs" />
+    <Compile Include="Mobile\Extension\MultiTechGateway.cs" />
+    <Compile Include="Mobile\Extension\SiemensHC25Gateway.cs" />
+    <Compile Include="Mobile\Extension\SiemensM55Gateway.cs" />
+    <Compile Include="Mobile\Extension\SiemensMc35iGateway.cs" />
+    <Compile Include="Mobile\Extension\SiemensMc35iFdGateway.cs" />
+    <Compile Include="Mobile\Extension\SiemensS55Gateway.cs" />
+    <Compile Include="Mobile\Extension\SonyEricssonGc89Gateway.cs" />
+    <Compile Include="Mobile\Extension\TeltonikaModemUsbGateway.cs" />
+    <Compile Include="Mobile\Extension\UbineticsGdc201Gateway.cs" />
+    <Compile Include="Mobile\Extension\WaveComGateway.cs" />
+    <Compile Include="Mobile\Extension\WavecommFxt009.cs" />
+    <Compile Include="Mobile\Extension\WavecommQ2438F.cs" />
+    <Compile Include="Mobile\Extension\WavecommStk.cs" />
+    <Compile Include="Mobile\Extension\WavecomSunTravellerGateway.cs" />
+    <Compile Include="Mobile\Extension\WavecomWisMoqCdmaGateway.cs" />
+    <Compile Include="Mobile\Feature\AcknowledgeMessageFeature.cs" />
+    <Compile Include="Mobile\Feature\AddPhoneBookEntryFeature.cs" />
+    <Compile Include="Mobile\Feature\AnswerCallFeature.cs" />
+    <Compile Include="Mobile\Feature\CancelUssdSessionFeature.cs" />
+    <Compile Include="Mobile\Feature\ColpFeature.cs" />
+    <Compile Include="Mobile\Feature\DeletePhoneBookEntryFeature.cs" />
+    <Compile Include="Mobile\Feature\DialFeature.cs" />
+    <Compile Include="Mobile\Feature\FindPhoneBookEntriesFeature.cs" />
+    <Compile Include="Mobile\Feature\GetBatteryChargeFeature.cs" />
+    <Compile Include="Mobile\Feature\GetCurrentCharacterSetFeature.cs" />
+    <Compile Include="Mobile\Feature\GetMessageServiceFeature.cs" />
+    <Compile Include="Mobile\Feature\GetMessageStorageFeature.cs" />
+    <Compile Include="Mobile\Feature\GetMessageStorageLocationFeature.cs" />
+    <Compile Include="Mobile\Feature\GetMessageStorageStatusFeature.cs" />
+    <Compile Include="Mobile\Feature\GetNetworkOperatorFeature.cs" />
+    <Compile Include="Mobile\Feature\GetPhoneBookEntriesFeature.cs" />
+    <Compile Include="Mobile\Feature\GetPhoneBookMemoryStatusFeature.cs" />
+    <Compile Include="Mobile\Feature\GetPhoneBookSizeFeature.cs" />
+    <Compile Include="Mobile\Feature\GetPhoneBookStorageFeature.cs" />
+    <Compile Include="Mobile\Feature\GetSubscriberFeature.cs" />
+    <Compile Include="Mobile\Feature\GetSupportedCharacterSetsFeature.cs" />
+    <Compile Include="Mobile\Feature\GetSupportedDtmfFeature.cs" />
+    <Compile Include="Mobile\Feature\GetSupportedNetworkOperatorsFeature.cs" />
+    <Compile Include="Mobile\Feature\HangUpFeature.cs" />
+    <Compile Include="Mobile\Feature\RetrieveMmsFeature.cs" />
+    <Compile Include="Mobile\Feature\SaveMessageFeature.cs" />
+    <Compile Include="Mobile\Feature\SendDtmfFeature.cs" />
+    <Compile Include="Mobile\Feature\SendMmsFeature.cs" />
+    <Compile Include="Mobile\Feature\SendRawSmsFeature.cs" />
+    <Compile Include="Mobile\Feature\SetCharacterSetFeature.cs" />
+    <Compile Include="Mobile\Feature\SetGprsAttachFeature.cs" />
+    <Compile Include="Mobile\Feature\SetMessageServiceFeature.cs" />
+    <Compile Include="Mobile\Feature\SetPdpIpConnectionFeature.cs" />
+    <Compile Include="Mobile\Feature\SetPhoneBookStorageFeature.cs" />
+    <Compile Include="Mobile\Feature\SetRasConnectionFeature.cs" />
+    <Compile Include="Mobile\Feature\SetServiceCentreAddressFeature.cs" />
+    <Compile Include="Mobile\Feature\SetTextProtocolFeature.cs" />
+    <Compile Include="Mobile\Http\Definition.cs" />
+    <Compile Include="Mobile\Http\DeleteMessageResponse.cs" />
+    <Compile Include="Mobile\Http\Event\NewMessageReceivedEventArgs.cs" />
+    <Compile Include="Mobile\Http\Feature\DeleteMessageByIdFeature.cs" />
+    <Compile Include="Mobile\Http\Feature\DeleteMessageByThreadIdFeature.cs" />
+    <Compile Include="Mobile\Http\Feature\GetBatteryInfoFeature.cs" />
+    <Compile Include="Mobile\Http\Feature\GetMessagesFeature.cs" />
+    <Compile Include="Mobile\Http\Feature\GetMessageStatusFeature.cs" />
+    <Compile Include="Mobile\Http\Feature\GetNetworkInfoFeature.cs" />
+    <Compile Include="Mobile\Http\Feature\PostMessageFeature.cs" />
+    <Compile Include="Mobile\Http\Feature\UpdateMessageToReadFeature.cs" />
+    <Compile Include="Mobile\Http\GetMessageQuery.cs" />
+    <Compile Include="Mobile\Http\GetMessageStatusResponse.cs" />
+    <Compile Include="Mobile\Http\HttpDelegateEngine.cs" />
+    <Compile Include="Mobile\Http\DeviceBatteryInformation.cs" />
+    <Compile Include="Mobile\Http\DeviceNetworkInformation.cs" />
+    <Compile Include="Mobile\Http\DeviceSignalStrength.cs" />
+    <Compile Include="Mobile\Http\Feature\BaseHttpFeature.cs" />
+    <Compile Include="Mobile\Http\Feature\IHttpFeature.cs" />
+    <Compile Include="Mobile\Http\GetBatteryInfoResponse.cs" />
+    <Compile Include="Mobile\Http\GetNetworkInfoResponse.cs" />
+    <Compile Include="Mobile\Http\GsmCellLocation.cs" />
+    <Compile Include="Mobile\Http\HttpGateway.cs" />
+    <Compile Include="Mobile\Http\HttpGatewayConfiguration.cs" />
+    <Compile Include="Mobile\Http\HttpGatewayFactory.cs" />
+    <Compile Include="Mobile\Http\BaseResponse.cs" />
+    <Compile Include="Mobile\Http\GetMessagesResponse.cs" />
+    <Compile Include="Mobile\Http\IHttpGateway.cs" />
+    <Compile Include="Mobile\Http\Message.cs" />
+    <Compile Include="Mobile\Http\OutboundMessageQueue.cs" />
+    <Compile Include="Mobile\Http\MessageStatusInformation.cs" />
+    <Compile Include="Mobile\Http\PostMessage.cs" />
+    <Compile Include="Mobile\Http\PostMessageResponse.cs" />
+    <Compile Include="Mobile\Http\DeviceMessage.cs" />
+    <Compile Include="Mobile\Http\PutMessageResponse.cs" />
+    <Compile Include="Mobile\Message\BaseWapMms.cs" />
+    <Compile Include="Mobile\Message\MmsAttachment.cs" />
+    <Compile Include="Mobile\Feature\SignalQualityFeature.cs" />
+    <Compile Include="Mobile\Feature\UssdFeature.cs" />
+    <Compile Include="Mobile\IPGatewayConfiguration.cs" />
+    <Compile Include="Mobile\MemoryStatus.cs" />
+    <Compile Include="Mobile\MemoryStatusWithStorage.cs" />
+    <Compile Include="Mobile\MessageMemoryStatus.cs" />
+    <Compile Include="Mobile\MessageService.cs" />
+    <Compile Include="Mobile\MessageStorageInfo.cs" />
+    <Compile Include="Mobile\Message\BaseMms.cs" />
+    <Compile Include="Mobile\Message\Mms.cs" />
+    <Compile Include="Mobile\Message\MmsDeliveryNotification.cs" />
+    <Compile Include="Mobile\Message\MmsNotification.cs" />
+    <Compile Include="Mobile\Message\MmsReadReport.cs" />
+    <Compile Include="Mobile\Message\PictureSms.cs" />
+    <Compile Include="Mobile\Message\QRCodeSms.cs" />
+    <Compile Include="Mobile\MmsConstants.cs" />
+    <Compile Include="Mobile\Message\MmsSlide.cs" />
+    <Compile Include="Mobile\Message\OperatorLogo.cs" />
+    <Compile Include="Mobile\Message\OtaBitmap.cs" />
+    <Compile Include="Mobile\Message\Ringtone.cs" />
+    <Compile Include="Mobile\NumberInformation.cs" />
+    <Compile Include="Mobile\CallIndicationHandlers.cs" />
+    <Compile Include="Mobile\DelegateEngine.cs" />
+    <Compile Include="Mobile\DeviceInformation.cs" />
+    <Compile Include="Mobile\Event\MessageErrorEventArgs.cs" />
+    <Compile Include="Mobile\Event\MessageEventArgs.cs" />
+    <Compile Include="Mobile\Event\MessageReceivedEventArgs.cs" />
+    <Compile Include="Mobile\Extension\NokiaFBusGateway.cs" />
+    <Compile Include="Mobile\Extension\SonyEricssoneGateway.cs" />
+    <Compile Include="Mobile\Feature\BatchSmsFeature.cs" />
+    <Compile Include="Mobile\Feature\ClipFeature.cs" />
+    <Compile Include="Mobile\Feature\ClirFeature.cs" />
+    <Compile Include="Mobile\Feature\EnterPinFeature.cs" />
+    <Compile Include="Mobile\Feature\GetMessageByIndexFeature.cs" />
+    <Compile Include="Mobile\Feature\GetSupportedMessageIndicationFeature.cs" />
+    <Compile Include="Mobile\Feature\NetworkRegistrationFeature.cs" />
+    <Compile Include="Mobile\Feature\SetMessageIndicationsFeature.cs" />
+    <Compile Include="Mobile\Feature\SetPduProtocolFeature.cs" />
+    <Compile Include="Mobile\Feature\DeleteMessageFeature.cs" />
+    <Compile Include="Mobile\Feature\DeviceInformationFeature.cs" />
+    <Compile Include="Mobile\Feature\DiagnosticFeature.cs" />
+    <Compile Include="Mobile\Feature\DummyFeature.cs" />
+    <Compile Include="Mobile\Feature\EchoFeature.cs" />
+    <Compile Include="Mobile\Feature\GetMessageFeature.cs" />
+    <Compile Include="Mobile\Feature\ExecuteFeature.cs" />
+    <Compile Include="Mobile\Feature\GetSimStatusFeature.cs" />
+    <Compile Include="Mobile\Feature\MessageStorageFeature.cs" />
+    <Compile Include="Mobile\Feature\SendSmsFeature.cs" />
+    <Compile Include="Mobile\Feature\SendSmsFromStorageFeature.cs" />
+    <Compile Include="Mobile\Feature\GetScaFeature.cs" />
+    <Compile Include="Mobile\Feature\SetVerboseErrorFeature.cs" />
+    <Compile Include="Mobile\Feature\WatchDogFeature.cs" />
+    <Compile Include="Mobile\ICommand.cs" />
+    <Compile Include="Mobile\IIndicationObject.cs" />
+    <Compile Include="Mobile\MemoryLocation.cs" />
+    <Compile Include="Mobile\MessageIndicationSettings.cs" />
+    <Compile Include="Mobile\MessageIndicationSupport.cs" />
+    <Compile Include="Mobile\Message\BaseSms.cs" />
+    <Compile Include="Mobile\Message\QuotedPrintable.cs" />
+    <Compile Include="Mobile\NetworkRegistration.cs" />
+    <Compile Include="Mobile\NetworkOperator.cs" />
+    <Compile Include="Mobile\PdpConnection.cs" />
+    <Compile Include="Mobile\PduLibrary\PduDecoder.cs" />
+    <Compile Include="Mobile\PduLibrary\PduFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Mobile\Message\EmsReceived.cs" />
+    <Compile Include="Mobile\Message\EmsSubmit.cs" />
+    <Compile Include="Mobile\Message\InfoElement.cs" />
+    <Compile Include="Mobile\Message\MessageInformation.cs" />
+    <Compile Include="Mobile\Message\ServiceIndication.cs" />
+    <Compile Include="Mobile\Message\Wappush.cs" />
+    <Compile Include="Mobile\Message\Sms.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Mobile\Message\SmsReceived.cs" />
+    <Compile Include="Mobile\Message\SmsStatusReport.cs" />
+    <Compile Include="Mobile\Message\SmsSubmit.cs" />
+    <Compile Include="Mobile\Message\vCalendar.cs" />
+    <Compile Include="Mobile\Message\vCard.cs" />
+    <Compile Include="Mobile\PhoneBookEntry.cs" />
+    <Compile Include="Mobile\PhoneBookSize.cs" />
+    <Compile Include="Mobile\PriorityQueue.cs" />
+    <Compile Include="Mobile\IncomingDataQueue.cs" />
+    <Compile Include="Mobile\ReceivedMessage.cs" />
+    <Compile Include="Mobile\ReceivedMessageFromPhone.cs" />
+    <Compile Include="Mobile\ResultParser.cs" />
+    <Compile Include="Mobile\SignalQuality.cs" />
+    <Compile Include="Mobile\Statistics.cs" />
+    <Compile Include="Mobile\PduLibrary\PduUtils.cs" />
+    <Compile Include="Mobile\MessageIndicationHandlers.cs" />
+    <Compile Include="Mobile\Subscriber.cs" />
+    <Compile Include="Mobile\SupportedNetworkOperator.cs" />
+    <Compile Include="Mobile\UssdDatagram.cs" />
+    <Compile Include="Mobile\UssdDcs.cs" />
+    <Compile Include="Mobile\UssdRequest.cs" />
+    <Compile Include="Mobile\UssdResponse.cs" />
+    <Compile Include="Mobile\UssdResponseQueue.cs" />
+    <Compile Include="Mobile\UssdResultPresentation.cs" />
+    <Compile Include="Mobile\UssdSessionStatus.cs" />
+    <Compile Include="ObjectXmlSerializer.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ras\CredentialPromptDialog.cs" />
+    <Compile Include="Ras\Design\RasCollection.cs" />
+    <Compile Include="Ras\Design\RasComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ras\Design\RasOwnedCollection.cs" />
+    <Compile Include="Ras\DialCompletedEventArgs.cs" />
+    <Compile Include="Ras\GlobalSuppressions.cs" />
+    <Compile Include="Ras\Internal\BufferedPInvokeParams.cs" />
+    <Compile Include="Ras\Internal\IRasHelper.cs" />
+    <Compile Include="Ras\Internal\ISafeNativeMethods.cs" />
+    <Compile Include="Ras\Internal\IUnsafeNativeMethods.cs" />
+    <Compile Include="Ras\Internal\NativeMethods.cs" />
+    <Compile Include="Ras\Internal\RasGetAutodialAddressParams.cs" />
+    <Compile Include="Ras\Internal\RasGetAutodialEnableParams.cs" />
+    <Compile Include="Ras\Internal\RasGetAutodialParamParams.cs" />
+    <Compile Include="Ras\Internal\RasGetEapUserDataParams.cs" />
+    <Compile Include="Ras\Internal\RasHelper.cs" />
+    <Compile Include="Ras\Internal\SafeNativeMethods.cs" />
+    <Compile Include="Ras\Internal\SRCategoryAttribute.cs" />
+    <Compile Include="Ras\Internal\SRDescriptionAttribute.cs" />
+    <Compile Include="Ras\Internal\StructBufferedPInvokeParams.cs" />
+    <Compile Include="Ras\Internal\ThrowHelper.cs" />
+    <Compile Include="Ras\Internal\UnsafeNativeMethods.cs" />
+    <Compile Include="Ras\Internal\Utilities.cs" />
+    <Compile Include="Ras\InvalidHandleException.cs" />
+    <Compile Include="Ras\Luid.cs" />
+    <Compile Include="Ras\RasAmbInfo.cs" />
+    <Compile Include="Ras\RasAutoDialAddress.cs" />
+    <Compile Include="Ras\RasAutoDialAddressCollection.cs" />
+    <Compile Include="Ras\RasAutoDialEntry.cs" />
+    <Compile Include="Ras\RasAutoDialManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ras\RasAutoDialParameter.cs" />
+    <Compile Include="Ras\RasCcpInfo.cs" />
+    <Compile Include="Ras\RasCompressionOptions.cs" />
+    <Compile Include="Ras\RasCompressionType.cs" />
+    <Compile Include="Ras\RasConnection.cs" />
+    <Compile Include="Ras\RasConnectionEventArgs.cs" />
+    <Compile Include="Ras\RasConnectionOptions.cs" />
+    <Compile Include="Ras\RasConnectionState.cs" />
+    <Compile Include="Ras\RasConnectionStatus.cs" />
+    <Compile Include="Ras\RasConnectionSubState.cs" />
+    <Compile Include="Ras\RasConnectionWatcher.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ras\RasCountry.cs" />
+    <Compile Include="Ras\RasDevice.cs" />
+    <Compile Include="Ras\RasDeviceType.cs" />
+    <Compile Include="Ras\RasDialer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ras\RasDialException.cs" />
+    <Compile Include="Ras\RasDialMode.cs" />
+    <Compile Include="Ras\RasDialogStyle.cs" />
+    <Compile Include="Ras\RasDialOptions.cs" />
+    <Compile Include="Ras\RasDialOptionsConverter.cs" />
+    <Compile Include="Ras\RasEapInfo.cs" />
+    <Compile Include="Ras\RasEapOptions.cs" />
+    <Compile Include="Ras\RasEapOptionsConverter.cs" />
+    <Compile Include="Ras\RasEncryptionType.cs" />
+    <Compile Include="Ras\RasEntry.cs" />
+    <Compile Include="Ras\RasEntryCollection.cs" />
+    <Compile Include="Ras\RasEntryNameValidator.cs" />
+    <Compile Include="Ras\RasEntryOptions.cs" />
+    <Compile Include="Ras\RasEntryType.cs" />
+    <Compile Include="Ras\RasErrorEventArgs.cs" />
+    <Compile Include="Ras\RasException.cs" />
+    <Compile Include="Ras\RasFramingProtocol.cs" />
+    <Compile Include="Ras\RasHandle.cs" />
+    <Compile Include="Ras\RasIdleDisconnectTimeout.cs" />
+    <Compile Include="Ras\RasIkeV2AuthenticationType.cs" />
+    <Compile Include="Ras\RasIkeV2Info.cs" />
+    <Compile Include="Ras\RasIkeV2Options.cs" />
+    <Compile Include="Ras\RasIPInfo.cs" />
+    <Compile Include="Ras\RasIPOptions.cs" />
+    <Compile Include="Ras\RasIPSecEncryptionType.cs" />
+    <Compile Include="Ras\RasIPv6Info.cs" />
+    <Compile Include="Ras\RasIpxInfo.cs" />
+    <Compile Include="Ras\RasIsolationState.cs" />
+    <Compile Include="Ras\RasLcpAuthenticationDataType.cs" />
+    <Compile Include="Ras\RasLcpAuthenticationType.cs" />
+    <Compile Include="Ras\RasLcpInfo.cs" />
+    <Compile Include="Ras\RasLcpOptions.cs" />
+    <Compile Include="Ras\RasLinkStatistics.cs" />
+    <Compile Include="Ras\RasNapStatus.cs" />
+    <Compile Include="Ras\RasNbfInfo.cs" />
+    <Compile Include="Ras\RasNetworkProtocols.cs" />
+    <Compile Include="Ras\RasPhoneBook.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ras\RasPhoneBookType.cs" />
+    <Compile Include="Ras\RasPppInfo.cs" />
+    <Compile Include="Ras\RasPreSharedKey.cs" />
+    <Compile Include="Ras\RasProjectionType.cs" />
+    <Compile Include="Ras\RasSlipInfo.cs" />
+    <Compile Include="Ras\RasSubEntry.cs" />
+    <Compile Include="Ras\RasSubEntryCollection.cs" />
+    <Compile Include="Ras\RasUpdateCredential.cs" />
+    <Compile Include="Ras\RasVpnStrategy.cs" />
+    <Compile Include="Ras\StateChangedEventArgs.cs" />
+    <Compile Include="Service\BaseGatewayService.cs" />
+    <Compile Include="Service\Definition.cs" />
+    <Compile Include="Service\Group.cs" />
+    <Compile Include="Service\IGatewayService.cs" />
+    <Compile Include="Service\LoadBalancer.cs" />
+    <Compile Include="Service\NumberRouter.cs" />
+    <Compile Include="Service\RoundRobinLoadBalancer.cs" />
+    <Compile Include="Service\Router.cs" />
+    <Compile Include="Smpp\ASyncSocketClient.cs" />
+    <Compile Include="Smpp\DefaultSmppGateway.cs" />
+    <Compile Include="Smpp\Definition.cs" />
+    <Compile Include="Smpp\EventObject\AlertEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\BindEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\BindRespEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\CancelEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\CancelSmEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\CancelSmRespEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\CommonErrorEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\DataSmEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\DataSmRespEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\DeliverSmEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\DeliverSmRespEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\EnquireLinkEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\EnquireLinkRespEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\GenericNackEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\QuerySmEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\QuerySmRespEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\ReplaceSmEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\ReplaceSmRespEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\SmppEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\SubmitMultiEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\SubmitMultiRespEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\SubmitSmEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\SubmitSmRespEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\UnbindEventArgs.cs" />
+    <Compile Include="Smpp\EventObject\UnbindRespEventArgs.cs" />
+    <Compile Include="Smpp\ISmppGateway.cs" />
+    <Compile Include="Smpp\Packet\PDU.cs" />
+    <Compile Include="Smpp\Packet\Request\MessageLcd2.cs" />
+    <Compile Include="Smpp\Packet\Request\MessageLcd3.cs" />
+    <Compile Include="Smpp\Packet\Request\MessageLcd4.cs" />
+    <Compile Include="Smpp\Packet\Request\MessageLcd6.cs" />
+    <Compile Include="Smpp\Packet\Request\SmppAlertNotification.cs" />
+    <Compile Include="Smpp\Packet\Request\SmppBind.cs" />
+    <Compile Include="Smpp\Packet\Request\SmppCancelSm.cs" />
+    <Compile Include="Smpp\Packet\Request\SmppDataSm.cs" />
+    <Compile Include="Smpp\Packet\Request\SmppDeliverSm.cs" />
+    <Compile Include="Smpp\Packet\Request\SmppEnquireLink.cs" />
+    <Compile Include="Smpp\Packet\Request\SmppGenericNack.cs" />
+    <Compile Include="Smpp\Packet\Request\SmppOutbind.cs" />
+    <Compile Include="Smpp\Packet\Request\SmppQuerySm.cs" />
+    <Compile Include="Smpp\Packet\Request\SmppReplaceSm.cs" />
+    <Compile Include="Smpp\Packet\Request\SmppSubmitMulti.cs" />
+    <Compile Include="Smpp\Packet\Request\SmppSubmitSm.cs" />
+    <Compile Include="Smpp\Packet\Request\SmppUnbind.cs" />
+    <Compile Include="Smpp\Packet\Response\SmppBindResp.cs" />
+    <Compile Include="Smpp\Packet\Response\SmppCancelSmResp.cs" />
+    <Compile Include="Smpp\Packet\Response\SmppDataSmResp.cs" />
+    <Compile Include="Smpp\Packet\Response\SmppDeliverSmResp.cs" />
+    <Compile Include="Smpp\Packet\Response\SmppEnquireLinkResp.cs" />
+    <Compile Include="Smpp\Packet\Response\SmppGenericNackResp.cs" />
+    <Compile Include="Smpp\Packet\Response\SmppQuerySmResp.cs" />
+    <Compile Include="Smpp\Packet\Response\SmppReplaceSmResp.cs" />
+    <Compile Include="Smpp\Packet\Response\SmppSubmitMultiResp.cs" />
+    <Compile Include="Smpp\Packet\Response\SmppSubmitSmResp.cs" />
+    <Compile Include="Smpp\Packet\Response\SmppUnbindResp.cs" />
+    <Compile Include="Smpp\SmppGateway.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Smpp\SmppGatewayConfiguration.cs" />
+    <Compile Include="Smpp\SmppGatewayFactory.cs" />
+    <Compile Include="Smpp\Utility\DestinationAddress.cs" />
+    <Compile Include="Smpp\Utility\PduFactory.cs" />
+    <Compile Include="Smpp\Utility\PduUtil.cs" />
+    <Compile Include="Smpp\Utility\SmppStringUtil.cs" />
+    <Compile Include="Smpp\Utility\TlvTable.cs" />
+    <Compile Include="Smpp\Utility\UnsignedNumConverter.cs" />
+    <Compile Include="Smpp\Utility\UnsuccessAddress.cs" />
+    <Compile Include="Stk\StkConfirmationPrompt.cs" />
+    <Compile Include="Stk\StkMenu.cs" />
+    <Compile Include="Stk\StkMenuItem.cs" />
+    <Compile Include="Stk\StkNotification.cs" />
+    <Compile Include="Stk\StkPrompt.cs" />
+    <Compile Include="Stk\StkRequest.cs" />
+    <Compile Include="Stk\StkRequestBase.cs" />
+    <Compile Include="Stk\StkResponse.cs" />
+    <Compile Include="Stk\StkValuePrompt.cs" />
+    <Compile Include="StringEnum.cs" />
+    <Compile Include="Log\Logger.cs" />
+    <Compile Include="Mobile\BaseFeature.cs" />
+    <Compile Include="Base\BaseConfiguration.cs" />
+    <Compile Include="Base\BaseException.cs" />
+    <Compile Include="Base\BaseGateway.cs" />
+    <Compile Include="Base\BaseGatewayFactory.cs" />
+    <Compile Include="Base\BaseMessage.cs" />
+    <Compile Include="Mobile\BaseContext.cs" />
+    <Compile Include="Mobile\Command.cs" />
+    <Compile Include="Mobile\Context.cs" />
+    <Compile Include="Mobile\IFeature.cs" />
+    <Compile Include="Base\IConfiguration.cs" />
+    <Compile Include="Base\IGateway.cs" />
+    <Compile Include="Base\IGatewayFactory.cs" />
+    <Compile Include="Mobile\IContext.cs" />
+    <Compile Include="Base\IMessage.cs" />
+    <Compile Include="GatewayException.cs" />
+    <Compile Include="License.cs" />
+    <Compile Include="MessageGateway.cs" />
+    <Compile Include="Mobile\BaseMobileGateway.cs" />
+    <Compile Include="Mobile\Definition.cs" />
+    <Compile Include="Mobile\IMobileGateway.cs" />
+    <Compile Include="Mobile\MobileGateway.cs" />
+    <Compile Include="Mobile\MobileGatewayConfiguration.cs" />
+    <Compile Include="Mobile\MobileGatewayFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MessagingToolkit.snk" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MessagingToolkit.Barcode\MessagingToolkit.Barcode_NET40.csproj">
+      <Project>{41b9b025-2aa7-41ce-b8a6-cd540aebd3ed}</Project>
+      <Name>MessagingToolkit.Barcode_NET40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MessagingToolkit.MMS\MessagingToolkit.MMS.csproj">
+      <Project>{40336858-5147-4C38-ACFD-6281B79CF371}</Project>
+      <Name>MessagingToolkit.MMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MessagingToolkit.Pdu\MessagingToolkit.Pdu.csproj">
+      <Project>{606E4BD6-402F-4E43-B695-18C23D8E363D}</Project>
+      <Name>MessagingToolkit.Pdu</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MessagingToolkit.Wap\MessagingToolkit.Wap.csproj">
+      <Project>{6C058D53-126C-4400-BD8D-2E296904AE21}</Project>
+      <Name>MessagingToolkit.Wap</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="modern-install.ico" />
+    <Content Include="Ras\CredentialPromptDialog.bmp" />
+    <Content Include="Ras\RasAutoDialManager.bmp" />
+    <Content Include="Ras\RasConnectionWatcher.bmp" />
+    <Content Include="Ras\RasDialDialog.bmp" />
+    <Content Include="Ras\RasDialer.bmp" />
+    <Content Include="Ras\RasEntryDialog.bmp" />
+    <Content Include="Ras\RasPhoneBook.bmp" />
+    <Content Include="Ras\RasPhoneBookDialog.bmp" />
+    <Content Include="ChangeLog.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mm7\" />
+    <Folder Include="Social\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

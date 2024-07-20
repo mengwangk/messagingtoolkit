@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.1//EN" "http://www.wapforum.org/DTD/wml_1_1.dtd">
+<wml><head><meta content="max-age=0" forua="true" http-equiv="Cache-Control"/></head><card id="start" ontimer="http://wap.jamba.de/dem/indexnew.jsp"><timer value="20"/><p align="center"><img align="bottom" alt="Willkommen bei Jamba!" hspace="0" src="http://wap.jamba.de/storage/view/de/de/wap/i/logo-de.wbmp" vspace="0"/><br/></p></card></wml>

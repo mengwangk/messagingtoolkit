@@ -1,0 +1,5 @@
+MMSC=http://mms.ctimovil.com.ar
+WAPGateway=170.51.255.240
+APN=mms.ctimovil.com.ar
+APNAccount=ctimms
+APNPassword=ctimms999

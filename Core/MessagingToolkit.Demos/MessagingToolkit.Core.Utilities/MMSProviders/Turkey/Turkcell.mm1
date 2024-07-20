@@ -1,0 +1,5 @@
+MMSC=http://mms.turkcell.com.tr/servlets/mms
+WAPGateway=212.252.169.217
+APN=mms
+APNAccount=mms
+APNPassword=mms

@@ -1,0 +1,5 @@
+MMSC=http://192.168.17.7/servlets/mms
+WAPGateway=192.168.17.1
+APN=wap.beeline.ru
+APNAccount=beeline
+APNPassword=beeline

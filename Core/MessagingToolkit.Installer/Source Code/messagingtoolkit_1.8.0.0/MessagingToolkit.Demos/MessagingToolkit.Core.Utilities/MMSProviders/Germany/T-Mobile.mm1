@@ -1,0 +1,5 @@
+MMSC=http://mms.t-mobile.de/servlets/mms
+WAPGateway=193.254.160.3
+APN=mms.t-d1.de
+APNAccount=t-mobil
+APNPassword=mms

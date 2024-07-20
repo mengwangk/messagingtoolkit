@@ -1,0 +1,1572 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MessagingToolkit.MMS</name>
+    </assembly>
+    <members>
+        <member name="T:MessagingToolkit.MMS.PreambleInfo">
+            <summary>
+            Helper class to store information about encodings
+            with a preamble
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.PreambleInfo.Encoding">
+            <summary>
+            Property Encoding (Encoding).
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.PreambleInfo.Preamble">
+            <summary>
+            Property Preamble (byte[]).
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.PreambleInfo.#ctor(System.Text.Encoding,System.Byte[])">
+            <summary>
+            Constructor with preamble and encoding
+            </summary>
+            <param name="encoding"></param>
+            <param name="preamble"></param>
+        </member>
+        <member name="T:MessagingToolkit.MMS.MultimediaMessageHelper">
+            <summary>
+            Helper class
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageHelper.GetBytes(System.String)">
+            <summary>
+            Converts a string to an array of bytes
+            </summary>
+            <param name="sourceString">The string to be converted</param>
+            <returns>The new array of bytes</returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageHelper.GetString(System.Byte[])">
+            <summary>
+            Converts a byte array to string
+            </summary>
+            <param name="sourceBytes">The source bytes.</param>
+            <returns>The new array of bytes</returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageHelper.IsUnicode(System.String)">
+            <summary>
+            Determines whether the specified text is Unicode.
+            </summary>
+            <param name="text">The text.</param>
+            <returns>
+            	<c>true</c> if the specified text is Unicode; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageHelper.ReadAllText(System.String,System.Text.Encoding,System.Text.Encoding@)">
+            <summary>
+            Read the contents of a text file as a string. Scan for a preamble first.
+            If a preamble is found, the corresponding encoding is used.
+            If no preamble is found, the supplied defaultEncoding is used.
+            </summary>
+            <param name="filename">The name of the file to read</param>
+            <param name="defaultEncoding">The encoding to use if no preamble present</param>
+            <param name="usedEncoding">The actual encoding used</param>
+            <returns>The contents of the file as a string</returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageHelper.DetectEncoding(System.Byte[])">
+            <summary>
+            Detect the encoding in an array of bytes.
+            </summary>
+            <param name="bytes"></param>
+            <returns>The encoding found, or null</returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageHelper.DetectEncoding(System.String)">
+            <summary>
+            Detect the encoding of a file. Reads just enough of
+            the file to be able to detect a preamble.
+            </summary>
+            <param name="filename">The path name of the file</param>
+            <returns>The encoding detected, or null if no preamble found</returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageHelper.ScanEncodings">
+            <summary>
+            Loop over all available encodings and store those
+            with a preamble in the _preambles list.
+            The list is sorted by preamble length,
+            longest preamble first. This prevents
+            a short preamble 'masking' a longer one
+            later in the list.
+            </summary>
+        </member>
+        <member name="T:MessagingToolkit.MMS.MultimediaMessage">
+            <summary>
+            The MultimediaMessage class represents a Multimedia Message.
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagMultipartRelated">
+            <summary>
+            Multipart related indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagBccAvailable">
+            <summary>
+            BCC available indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagCcAvailable">
+            <summary>
+            CC available indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagContentTypeAvailable">
+            <summary>
+            Content type available indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagDateAvailable">
+            <summary>
+            Date available indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagDeliveryReportAvailable">
+            <summary>
+            Delivery report available indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagDeliveryTimeAvailable">
+            <summary>
+            Delivery time available indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagDeliveryTimeAbsolute">
+            <summary>
+            Absolute delivery time indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagExpiryAvailable">
+            <summary>
+            Expiry available indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagExpiryAbsolute">
+            <summary>
+            Expiry indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagFromAvailable">
+            <summary>
+            From indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagMessageClassAvailable">
+            <summary>
+            Message class indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagMessageIdAvailable">
+            <summary>
+            Message id indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagMessageTypeAvailable">
+            <summary>
+            Message type indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagMMSVersionAvailable">
+            <summary>
+            MMS version indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagPriorityAvailable">
+            <summary>
+            Priority indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagReadReplyAvailable">
+            <summary>
+            Read reply indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagSenderVisibilityAvailable">
+            <summary>
+            Sender visibility indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagStatusAvailable">
+            <summary>
+            Status indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagSubjectAvailable">
+            <summary>
+            Subject indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagToAvailable">
+            <summary>
+            To indication flag
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.flagTransactionIdAvailable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hMessageType">
+            <summary>
+            Message type header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hTransactionId">
+            <summary>
+            Transaction id header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hMessageId">
+            <summary>
+            Message id header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hVersion">
+            <summary>
+            Version header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hTo">
+            <summary>
+            To address header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hCc">
+            <summary>
+            CC address header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hBcc">
+            <summary>
+            Bcc address header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hReceivedDate">
+            <summary>
+            Received date header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hFrom">
+            <summary>
+            From address 
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hSubject">
+            <summary>
+            Subject header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hMessageClass">
+            <summary>
+            Message class header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hExpiry">
+            <summary>
+            Expiry header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hDeliveryReport">
+            <summary>
+            Delivery report header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hReadReply">
+            <summary>
+            Read reply header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hSenderVisibility">
+            <summary>
+            Sender visibility header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hDeliveryTime">
+            <summary>
+            Delivery time header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hPriority">
+            <summary>
+            Priority header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hContentType">
+            <summary>
+            Content type header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.hStatus">
+            <summary>
+            Status header
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.multipartRelatedType">
+            <summary>
+            Multipart related type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.presentationId">
+            <summary>
+            Presentation id
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessage.tableOfContents">
+            <summary>
+            Message content
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessage.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.PresentationAvailable">
+            <summary> 
+            Check if the presentation part is available.
+            return true if availale.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.MessageTypeAvailable">
+            <summary> 
+            Check if the message type field is available.
+            return true if availale.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.DeliveryReportAvailable">
+            <summary> 
+            Check if the Delivery-Report field is available.
+            return true if availale.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.SenderVisibilityAvailable">
+            <summary> 
+            Check if the Sender-Visibility field is available. 
+            return true if availale.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.ReadReplyAvailable">
+            <summary> 
+            Check if the Read-Reply field is available.
+            return true if availale.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.StatusAvailable">
+            <summary> 
+            Check if the Status field is available.
+            return true if availale.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.TransactionIdAvailable">
+            <summary> 
+            Check if the transaction ID field is available.
+            return true if availale.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.MessageIdAvailable">
+            <summary> 
+            Check if the message ID field is available.
+            return true if availale.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.VersionAvailable">
+            <summary> 
+            Check if the version field is available.
+            return true if availale.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.DateAvailable">
+            <summary> 
+            Check if the date field is available.
+            return true if availale.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.FromAvailable">
+            <summary> 
+            Check if sender address field is available.
+            return true if availale.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.SubjectAvailable">
+            <summary> 
+            Check if the subject field is available.
+            return true if availale.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.MessageClassAvailable">
+            <summary> 
+            Check if the message class field is available.
+            return true if availale.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.ExpiryAvailable">
+            <summary> 
+            Check if the expiry date/time field is available.
+            return true if availale.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.DeliveryTimeAvailable">
+            <summary> 
+            Check if the delivery date/time field is available.
+            return true if availale.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.PriorityAvailable">
+            <summary> 
+            Check if the priority date/time field is available.
+            return true if availale.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.ContentTypeAvailable">
+            <summary> 
+            Check if the content type field is available. 
+            return true if availale.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.ToAvailable">
+            <summary> 
+            Check if there is at least one receiver is specified.
+            return true if at least one receiver is specified.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.BccAvailable">
+            <summary>
+            Check if there is at least one BCC receiver is specified.
+            return true if at least one BCC receiver is specified.
+            </summary>
+            <value><c>true</c> if [BCC available]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.CcAvailable">
+            <summary>
+            Check if there is at least one CC receiver is specified.
+            return true if at least one CC receiver is specified.
+            </summary>
+            <value><c>true</c> if [cc available]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.MessageType">
+            <summary>
+            Returns or sets the type of the message (Mandatory).
+            Supported values are
+            - MultimediaMessageConstants.MESSAGE_TYPE_M_SEND_REQ.
+            - MultimediaMessageConstants.MESSAGE_TYPE_M_DELIVERY_IND.
+            </summary>
+            <value>The type of the message.</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.MessageId">
+            <summary>
+            Retrieves the Message ID (Mandatory).
+            Identifier of the message. From Send request, 
+            connects delivery report to sent message in MS.
+            </summary>
+            <value>The message id.</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.MessageStatus">
+            <summary> 
+            Retrieves the Message Status (Mandatory).
+            The status of the message.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.TransactionId">
+            <summary> 
+            Retrieves and Sets the transaction ID (Mandatory).
+            It is a unique identifier for the message and it identifies the M-Send.req
+            and the corresponding reply only.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.VersionAsString">
+            <summary>
+            Retrieves the MMS version number as a String(Mandatory).
+            return the version as a String. The only supported value are "1.0" and "1.1".
+            </summary>
+            <value>The version as string.</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.Version">
+            <summary>
+            Retrieves and sets the MMS version number (Mandatory).
+            The only supported value are
+            MultimediaMessageConstants.MMS_VERSION_10
+            </summary>
+            <value>The version.</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.To">
+            <summary>
+            Retrieve all the receivers of the Multimedia Message.
+            </summary>
+            <value>Receiver list</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.Cc">
+            <summary>
+            Retrieve all the CC receivers of the Multimedia Message.
+            </summary>
+            <value>CC list</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.Bcc">
+            <summary>
+            Retrieve all the BCC receivers of the Multimedia Message.
+            </summary>
+            <value>BCC list</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.Date">
+            <summary>
+            Retrieves the arrival time of the message at the MMS Proxy-Relay (Optional).
+            MMS Proxy-Relay will generate this field when not supplied by terminal.
+            </summary>
+            <value>Message arrival time.</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.Subject">
+            <summary>
+             Retrieves the subject of the Multimedia Message (Optional).
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.MessageClass">
+            <summary> 
+            Retrieves and sets the message class of the Multimedia Message (Optional).
+            Supported values are
+            MESSAGE_CLASS_PERSONAL, MESSAGE_CLASS_ADVERTISEMENT,
+            MESSAGE_CLASS_INFORMATIONAL, MESSAGE_CLASS_AUTO
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.ContentType">
+            <summary>
+            Retrieves and sets the content type of the Multimedia Message (Mandatory).
+            Supported values are CONTENT_TYPE_APPLICATION_MULTIPART_MIXED,
+            CONTENT_TYPE_APPLICATION_MULTIPART_RELATED
+            </summary>
+            <value>The type of the content.</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.NumContents">
+            <summary>
+            Retrieves the number of contents of of the Multimedia Message (Mandatory).
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.PresentationId">
+            <summary> 
+            Retrieves the content ID referring to the presentation part.
+            Sets the content ID of the content containing the presentation part of the
+            Multimedia Message (Mandatory when the content type of the Multimedia Message is 
+            CONTENT_TYPE_APPLICATION_MULTIPART_RELATED).
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.MultipartRelatedType">
+            <summary>
+            Retrieves the type of the presentation part.
+            Sets the type of the presentation part.(Mandatory when the content type of 
+            the Multimedia Message is CONTENT_TYPE_APPLICATION_MULTIPART_RELATED).
+            </summary>
+            <value>
+            The type of the multipart related. he standard for interoperability supports
+            only the  value: CONTENT_TYPE_APPLICATION_SMIL
+            </value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.Presentation">
+            <summary>
+            Retrieves the content referring to the presentation part.
+            </summary>
+            <value>The presentation content</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.Expiry">
+            <summary>
+            Retrieves the expiry date of the message (Optional).
+            Sets the length of time the message will be stored in the MMS Proxy-Relay
+            or time to delete the message (Optional). This field can have two format,
+            either absolute or interval depending on how it is set with the method
+            setExpiryAbsolute().
+            </summary>
+            <value>Message expiry date</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.ExpiryAbsolute">
+            <summary>
+            Returns information about the format of the expiry date/time.
+            Return true if the expiry date/time is absolute,
+            false if it is intended as an interval.
+            Sets the format of the expiry date/time. If true the expiry date is absolute, else is
+            intended as an interval.
+            </summary>
+            <value><c>true</c> if [expiry absolute]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.DeliveryReport">
+            <summary>
+            Retrieves the delivery-report flag (Optional).
+            Return  true if the user wants the delivery report.
+            Specify whether the user wants a delivery report from each recipient (Optional).
+            true if the user wants the delivery report.
+            </summary>
+            <value><c>true</c> if [delivery report]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.SenderVisibility">
+            <summary>
+            Retrieves the sender-visibility flag (Optional).
+            Return  0x80 if the user wants the sender visibility setting to Hide.
+            0x81 if the user wants the sender visibility setting to Show.
+            Specify whether the user wants sender visibility (Optional).
+            return  0x80 if the user wants the sender visibility setting to Hide.
+            0x81 if the user wants the sender visibility setting to Show.
+            </summary>
+            <value>The sender visibility.</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.ReadReply">
+            <summary>
+            Retrieves the read reply flag (Optional).
+            return  true if the user wants the read reply.
+            </summary>
+            <value><c>true</c> if [read reply]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.DeliveryTime">
+            <summary>
+            Retrieves the delivery date/time of the message (Optional).
+            Sets the date/time of the desired delivery(Optional).
+            Indicates the earliest possible delivery of the message to the recipient.
+            This field can have two format,
+            either absolute or interval depending on how it is set with the method
+            setDeliveryTimeAbsolute().
+            </summary>
+            <value>The delivery time.</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.DeliveryTimeAbsolute">
+            <summary>
+            Returns information about the format of the delivery date/time.
+            true if the delivery date/time is absolute,
+            false if it is intended as an interval.
+            Sets the format of the delivery date/time.
+            true the delivery date/time is absolute, else is
+            intended as an interval.
+            </summary>
+            <value>
+            	<c>true</c> if [delivery time absolute]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessage.Priority">
+            <summary>
+            Retrieves or sets the priority of the message for the recipient (Optional).
+            It can be one of the following the values:
+            PRIORITY_LOW, PRIORITY_NORMAL, PRIORITY_HIGH
+            </summary>
+            <value>The priority.</value>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessage.DecodeAddress(System.String)">
+            <summary>
+            Decodes the address.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessage.AddToAddress(System.String)">
+            <summary>
+            Adds a new receiver of the Multimedia Message. The message can have
+            more than one receiver but at least one.
+            param value is the string representing the address of the receiver. It has
+            to be specified in the full format i.e.: +358990000005/TYPE=PLMN or
+            joe@user.org or 1.2.3.4/TYPE=IPv4.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessage.AddCcAddress(System.String)">
+            <summary>
+            Adds a new receiver in the CC (Carbon Copy) field of the Multimedia Message. The message can have
+            more than one receiver in the CC field.
+            param value is the string representing the address of the CC receiver. It has
+            to be specified in the full format i.e.: +358990000005/TYPE=PLMN or
+            joe@user.org or 1.2.3.4/TYPE=IPv4.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessage.AddBccAddress(System.String)">
+            <summary>
+            Adds a new receiver in the BCC (Blind Carbon Copy) field of the Multimedia Message. The message can have
+            more than one receiver in the BCC field.
+            </summary>
+            <param name="value">value is the string representing the address of the BCC receiver. It has
+            to be specified in the full format i.e.: +358990000005/TYPE=PLMN or
+            joe@user.org or 1.2.3.4/TYPE=IPv4.</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessage.ClearTo">
+            <summary>
+            Clears all the receivers of the Multimedia Message.
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessage.ClearCc">
+            <summary>
+            Clears all the carbon copy receivers of the Multimedia Message.
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessage.ClearBcc">
+            <summary>
+            Clears all the blind carbon copy receivers of the Multimedia Message.
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessage.GetFrom">
+            <summary>
+            Retrieves the address of the message sender (Mandatory).
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessage.SetFrom(System.String)">
+            <summary>
+            Sets the address of the message sender (Mandatory).
+            </summary>
+            <param name="value">value is the string representing the address of the sender. It has
+            to be specified in the full format i.e.: +358990000005/TYPE=PLMN or
+            joe@user.org or 1.2.3.4/TYPE=IPv4..</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessage.AddContent(MessagingToolkit.MMS.MultimediaMessageContent)">
+            <summary>
+            Adds a content to the message.
+            </summary>
+            <param name="mmc">Message content</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessage.GetContent(System.String)">
+            <summary>
+            Retrieves the content having the specified id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns>Multimedia message content</returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessage.GetContent(System.Int32)">
+            <summary>
+            Retrieves the content at the position index.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>Multimedia message content</returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessage.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:MessagingToolkit.MMS.MultimediaMessageAddress">
+            <summary>
+            The MultimediaMessageAddress class represents a
+            generic address for a sender or a receiver
+            of a Multimedia Message.
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageAddress.#ctor">
+            <summary>
+            Creates a new and empty multimedia address
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageAddress.#ctor(System.String,System.Byte)">
+            <summary>
+            Creates a MM address specifying the address and the type.
+            param addr the string representing the address
+            param type the type of the address. 
+            
+            It can be:
+            AddressTypeUnknown, 
+            AddressTypePlmn, 
+            AddressTypeIPv4,
+            AddressTypeIPv6, 
+            AddressTypeEmail
+            </summary>
+            <param name="addr">The addr.</param>
+            <param name="type">The type.</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageAddress.#ctor(MessagingToolkit.MMS.MultimediaMessageAddress)">
+            <summary> Creates a new MM address initialising it to the value passed as parameter. </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessageAddress.FullAddress">
+            <summary>
+            Retrieves the MM address value in the full format.
+            For example: +358990000066/TYPE=PLMN,
+            joe@user.org, 1.2.3.4/TYPE=IPv4
+            </summary>
+            <value>The full address.</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessageAddress.Type">
+            <summary>
+            Retrieves the MM address type.
+            
+            It can be:
+            AddressTypeUnknown, 
+            AddressTypePlmn, 
+            AddressTypeIPv4,
+            AddressTypeIPv6, 
+            AddressTypeEmail
+            </summary>
+            <value>Address type</value>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageAddress.SetAddress(System.String,System.Byte)">
+             <summary>
+             Sets MM address value specifying the address and the type.
+             param addr the string representing the address
+             param type the type of the address.   
+            
+             It can be:
+             AddressTypeUnknown, 
+             AddressTypePlmn, 
+             AddressTypeIPv4,
+             AddressTypeIPv6, 
+             AddressTypeEmail
+             </summary>
+             <param name="addr">The addr.</param>
+             <param name="type">The type.</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageAddress.GetAddress">
+            <summary> Retrieves the MM address value. 
+            
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageAddress.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:MessagingToolkit.MMS.MultimediaMessageConstants">
+            <summary>
+            The MultimediaMessageConstants interface contains
+            all the constants that are useful
+            for the management of a Multimedia Message.
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.MmsVersion10">
+            <summary>
+            MMS version 1.0
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.MmsVersion11">
+            <summary>
+            MMS version 1.1
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.MmsVersion12">
+            <summary>
+            MMS version 1.2
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNameBcc">
+            <summary>
+            BCC field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNameCc">
+            <summary>
+            CC field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNameContentType">
+            <summary>
+            Content type field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNameDate">
+            <summary>
+            Date field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNameDeliveryReport">
+            <summary>
+            Delivery report field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNameDeliveryTime">
+            <summary>
+            Delivery time field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNameExpiry">
+            <summary>
+            Expiry field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNameFrom">
+            <summary>
+            From field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNameMessageClass">
+            <summary>
+            Message class field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNameMessageId">
+            <summary>
+            Message ID field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNameMessageType">
+            <summary>
+            Message type field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNameMmsVersion">
+            <summary>
+            MMS version field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNamePriority">
+            <summary>
+            Priority field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldReadReply">
+            <summary>
+            Read reply field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNameSenderVisibility">
+            <summary>
+            Sender visibility field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNameStatus">
+            <summary>
+            Status field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNameSubject">
+            <summary>
+            Subject field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNameTo">
+            <summary>
+            To field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.FieldNameTransactionId">
+            <summary>
+            Transaction id field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.AddressTypeUnknown">
+            <summary>
+            Unknown address type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.AddressTypePlmn">
+            <summary>
+            PLMN address type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.AddressTypeIpv4">
+            <summary>
+            IPV4 address type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.AddressTypeIpv6">
+            <summary>
+            IPV6 address type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.AddressTypeEmail">
+            <summary>
+            Email address type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.MessageTypeMSendReq">
+            <summary>
+            Send request message type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.MessageTypeMReceived">
+            <summary>
+            Received message type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.MessageTypeMDeliveryInd">
+            <summary>
+            Delivery indication message type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.MessageStatusExpired">
+            <summary>
+            Expired message status
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.MessageStatusRetrieved">
+            <summary>
+            Retrieved message status
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.MessageStatusRejected">
+            <summary>
+            Rejected message status
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.MessageStatusDeferred">
+            <summary>
+            Deferred message status
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.MessageStatusUnrecognised">
+            <summary>
+            Unrecognised message status
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.SenderVisibilityHide">
+            <summary>
+            Hide sender visibility
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.SenderVisibilityShow">
+            <summary>
+            Show sender visibility
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.MessageClassPersonal">
+            <summary>
+            Personal message class
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.MessageClassAdvertisement">
+            <summary>
+            Advertisement message class
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.MessageClassInformational">
+            <summary>
+            Informational message class
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.MessageClassAuto">
+            <summary>
+            Auto message class
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.PriorityLow">
+            <summary>
+            Low priority
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.PriorityNormal">
+            <summary>
+            Normal priority
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.PriorityHigh">
+            <summary>
+            High priority
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.HeaderFieldNameContentLocation">
+            <summary>
+            Content location header field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.HeaderFieldNameContentId">
+            <summary>
+            Content id header field name
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.WkpaType">
+            <summary>
+            Well known parameter type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.WkpaStart">
+            <summary>
+            Well known parameter start
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeTextHtml">
+            <summary>
+            HTML text content type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeTextPlain">
+            <summary>
+            Plain text content type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypevCalendar">
+            <summary>
+            vCalendar content ype
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypevCard">
+            <summary>
+            vCard content ype
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeMpeg">
+            <summary>
+            MPEG video
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeAvi">
+            <summary>
+            AVI
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeQuicktime">
+            <summary>
+            Quicktime
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeWav">
+            <summary>
+            WAV
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeAu">
+            <summary>
+            WAV
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeAiff">
+            <summary>
+            AIFF
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeMp3">
+            <summary>
+            MP3
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeOgg">
+            <summary>
+            OGG
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeTextWml">
+            <summary>
+            WML text content type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeImageGif">
+            <summary>
+            GIF image content type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeImageJpeg">
+            <summary>
+            JPEG image content type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeImageTiff">
+            <summary>
+            TIFF image content type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeImagePng">
+            <summary>
+            PNG image content type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeImageWbmp">
+            <summary>
+            WBMP image content type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeAudioAmr">
+            <summary>
+            AMR audio content type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeaAudioIMelody">
+            <summary>
+            IMelody content type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeAudioMidi">
+            <summary>
+            MIDI content type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeApplicationMultipartMixed">
+            <summary>
+            Multipart mixed application content type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeApplicationMultipartRelated">
+            <summary>
+            Multipart related application content type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.ContentTypeApplicationSmil">
+            <summary>
+            SMIL application content type
+            </summary>
+        </member>
+        <member name="F:MessagingToolkit.MMS.MultimediaMessageConstants.Ticks1970">
+            <summary>
+            Ticks for 1970
+            </summary>
+        </member>
+        <member name="T:MessagingToolkit.MMS.MultimediaMessageContent">
+            <summary>
+            The MultimediaMessageContent class represent a generic entry of a Multimedia Message.
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageContent.#ctor">
+            <summary>
+            Constructor. Creates the object representing the content.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessageContent.Type">
+            <summary>
+            Retrieves the type of the entry. Examples are: text/plain, image/jpeg, image/gif, etc.
+            return the type of the entry.
+            </summary>
+            <value>
+            It's a valid content types. See WAP-203-WSP (WAP Forum)
+            Examples are: text/plain, image/jpeg, image/gif, etc.
+            You can use also some constants like:
+            CONTENT_TYPE_TEXT_HTML, CONTENT_TYPE_TEXT_PLAIN, CONTENT_TYPE_TEXT_WML,
+            CONTENT_TYPE_IMAGE_GIF, CONTENT_TYPE_IMAGE_JPEG, CONTENT_TYPE_IMAGE_WBMP,
+            CONTENT_TYPE_APPLICATION_SMIL, etc.
+            (these constants are defined in the interface MultimediaMessageConstants)
+            </value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessageContent.ContentId">
+            <summary>
+            Retrieves or sets the ID of the entry.
+            </summary>
+            <value>The content id.</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessageContent.Length">
+            <summary>
+            Retrieves the length in bytes of the entry.
+            </summary>
+            <value>The length.</value>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessageContent.ContentAsString">
+            <summary>
+            Retrieves the String representing the entry.
+            </summary>
+            <value>The content as string.</value>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageContent.SetContent(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Writes <code>len</code> bytes from the specified byte array starting at offset off.
+            </summary>
+            <param name="buf">the data</param>
+            <param name="off">the start offset in the data</param>
+            <param name="len">the number of bytes to write</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageContent.SetContent(System.String)">
+            <summary>
+            Sets the content from file
+            </summary>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageContent.GetContent">
+            <summary>
+            Retrieves the array of byte representing the entry.
+            </summary>
+            <returns>Byte array content</returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageContent.SaveToFile(System.String)">
+            <summary>
+            Saves to file.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageContent.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:MessagingToolkit.MMS.MultimediaMessageDecoder">
+            <summary> 
+            The MultimediaMessageDecoder class decodes an array of bytes representing a Multimedia Message (MM)
+            according with the specification.
+            The class can be used to obtain a MultimediaMessage object from which you can access
+            to each field and content of the message 
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageDecoder.#ctor(System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:MessagingToolkit.MMS.MultimediaMessageDecoder"/> class.
+            </summary>
+            <param name="buf">The buf.</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageDecoder.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MessagingToolkit.MMS.MultimediaMessageDecoder"/> class.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageDecoder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MessagingToolkit.MMS.MultimediaMessageDecoder"/> class.
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageDecoder.ReadTextString">
+            <summary>
+            Reads the text string.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageDecoder.DecodeByte(System.Byte)">
+            <summary>
+            Decodes the byte.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageDecoder.UnsignedByte(System.Byte)">
+            <summary>
+            Unsigneds the byte.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageDecoder.Reset">
+            <summary>
+            Resets the Decoder object.
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageDecoder.SetMessage(System.Byte[])">
+            <summary>
+            Sets the buffer representing the Multimedia Message to be decoded.
+            </summary>
+            <param name="buf">The buf.</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageDecoder.SetMessage(System.String)">
+            <summary>
+            Sets the buffer representing the Multimedia Message to be decoded.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageDecoder.DecodeHeader">
+            <summary>
+            Decodes the header of the Multimedia Message. After calling this method
+            a MultimediaMessage object, containing just the information related to the header and
+            without the contents, can be obtained by calling getMessage().
+            This method has to be called after setMessage(byte buf[).
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageDecoder.DecodeBody">
+            <summary>
+            Decodes the body of the Multimedia Message. This method has to be called
+            after the method decodeHeader()
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageDecoder.DecodeMessage">
+            <summary>
+            Decodes the whole Multimedia Message. After calling this method
+            a MultimediaMessage object, containing the information related to the header and
+            the all contents, can be obtained by calling the method GetMessage().
+            This method has to be called after SetMessage(byte buf[).
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageDecoder.GetMessage">
+            <summary>
+            Retrieves the MultimediaMessage object. This method has to be called after the calling
+            of methods DecodeMessage() or DecodeHeader().
+            </summary>
+            <returns>
+            An object representing the decoded Multimedia Message
+            </returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageDecoder.ReadFile(System.String)">
+            <summary>
+            Reads the file.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <returns>Byte array content</returns>
+        </member>
+        <member name="T:MessagingToolkit.MMS.MultimediaMessageDecoderException">
+            <summary>
+            Thrown when an error occurs decoding a buffer representing a
+            Multimedia Message
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageDecoderException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MessagingToolkit.MMS.MultimediaMessageDecoderException"/> class.
+            </summary>
+            <param name="errormsg">The error msg.</param>
+        </member>
+        <member name="T:MessagingToolkit.MMS.MultimediaMessageEncoder">
+            <summary>
+            The MultimediaMessageEncoder class encodes Multimedia Message object (MultimediaMessage)
+            into an array of bytes according to the specification WAP-209-MMSEncapsulation
+            (WAP Forum).
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageEncoder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MessagingToolkit.MMS.MultimediaMessageEncoder"/> class.
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageEncoder.Reset">
+            <summary>
+            Resets the Decoder object.
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageEncoder.SetMessage(MessagingToolkit.MMS.MultimediaMessage)">
+            <summary>
+            Sets the Multimedia Message to be encoded.
+            </summary>
+            <param name="msg">Multimedia message.</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageEncoder.GetMessage">
+            <summary>
+            Retrieve the buffer of byte representing the encoded Multimedia Message.
+            This method has to be called after the calling to encodeMessasge()
+            </summary>
+            <returns>
+            the array of bytes representing the Multmedia Message
+            </returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageEncoder.EncodeContentType(System.String)">
+            <summary>
+            Encode known content type assignments.
+            List of the content type assignments can be found from WAP-203-WSP, Table 40
+            This version is compliant with Approved version 4-May-2000
+            </summary>
+            <param name="sContentType">Type of the s content.</param>
+            <returns>assigned number</returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageEncoder.EncodeMessage">
+            <summary>
+            Encodes the Multimedia Message set by calling SetMessage(MultimediaMessage msg)
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageEncoder.SaveToFile(System.String)">
+            <summary>
+            Saves to file.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <member name="T:MessagingToolkit.MMS.MultimediaMessageEncoderException">
+            <summary>
+            Thrown when an error
+            occurs encoding a buffer representing a
+            Multimedia Message
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageEncoderException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MessagingToolkit.MMS.MultimediaMessageEncoderException"/> class.
+            </summary>
+            <param name="errormsg">The error message.</param>
+        </member>
+        <member name="T:MessagingToolkit.MMS.MultimediaMessageResponse">
+            <summary>
+             The MultimediaMessageResponse class provides methods to get the response returned by the MMSC.
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MessagingToolkit.MMS.MultimediaMessageResponse"/> class.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessageResponse.HeadersList">
+            <summary>
+            Returns an all the field (key) contained in the response header
+            </summary>
+            <value>The headers list.</value>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageResponse.GetResponseCode">
+            <summary>
+            Gets the response code returned by the MMSC
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageResponse.GetResponseMessage">
+            <summary>
+            Gets the response message returned by the MMSC
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageResponse.GetHeaderValue(System.String)">
+            <summary>
+            This method returns an header value contained in the response returned by the MMSC
+            param key the name of the header field
+            </summary>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageResponse.GetContentType">
+            <summary>
+            This method returns the content type of the response
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageResponse.GetContentLength">
+            <summary>
+            This method returns the content length of the response
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageResponse.SetContent(System.Byte[])">
+            <summary>
+            Sets the content.
+            </summary>
+            <param name="buf">The buf.</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageResponse.GetContent">
+            <summary>
+            This method returns the content of the response
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MessagingToolkit.MMS.MultimediaMessageSender">
+            <summary> 
+            The MultimediaMessageSender class provides methods to send 
+            Multimedia Messages to a predefined Multimedia Service Center (MMSC).
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageSender.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MessagingToolkit.MMS.MultimediaMessageSender"/> class.
+            </summary>
+        </member>
+        <member name="P:MessagingToolkit.MMS.MultimediaMessageSender.MMSCURL">
+            <summary>
+            Gets the Multimedia Messaging Service Center address.
+            </summary>
+            <value>MMSC URL</value>
+            <returns> the address
+            </returns>
+            <param name="value">the URL </param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageSender.AddHeader(System.String,System.String)">
+            <summary>
+            Add a new Header and Value in the HTTP Header
+            </summary>
+            <param name="header">header name</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageSender.ClearHeader">
+            <summary>
+            Clear the HTTP Header
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageSender.Send(MessagingToolkit.MMS.MultimediaMessage)">
+            <summary>
+            Sends a Multimedia Message having a MMMessage object
+            </summary>
+            <param name="multimediaMsg">the Multimedia Message object</param>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageSender.Send(System.Byte[])">
+            <summary>
+            Sends a Multimedia Message having an array of bytes representing the message.
+            </summary>
+            <param name="buf">the array of bytes representing the Multimedia Message.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageSender.Send(System.Byte[],System.Int32)">
+            <summary>
+            Sends a Multimedia Message having an array of bytes representing the message
+            and specifying the success code returned by the MMSC.
+            </summary>
+            <param name="buf">the array of bytes representing the Multimedia Message.</param>
+            <param name="successcode">the success code returned by the MMSC. Generally it is 204.</param>
+            <returns></returns>
+        </member>
+        <member name="T:MessagingToolkit.MMS.MultimediaMessageSenderException">
+            <summary> 
+            Thrown when an error occurs sending a Multimedia Message
+            </summary>
+        </member>
+        <member name="M:MessagingToolkit.MMS.MultimediaMessageSenderException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MessagingToolkit.MMS.MultimediaMessageSenderException"/> class.
+            </summary>
+            <param name="errorMsg">The error message.</param>
+        </member>
+    </members>
+</doc>

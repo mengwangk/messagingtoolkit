@@ -1,0 +1,5 @@
+MMSC=http://172.16.74.100:10021/mmsc
+WAPGateway=202.75.133.49
+APN=net
+APNAccount=maxis
+APNPassword=wap

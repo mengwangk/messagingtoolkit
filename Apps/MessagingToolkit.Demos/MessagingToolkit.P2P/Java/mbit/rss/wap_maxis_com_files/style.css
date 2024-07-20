@@ -1,0 +1,21 @@
+BODY {
+	FONT-SIZE: 8pt; FONT-FAMILY: Arial
+}
+TABLE {
+	FONT-SIZE: 4pt; FONT-FAMILY: Arial
+}
+P {
+	FONT-SIZE: 8pt; FONT-FAMILY: Arial
+}
+A:active {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+A:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: red; TEXT-DECORATION: none
+}

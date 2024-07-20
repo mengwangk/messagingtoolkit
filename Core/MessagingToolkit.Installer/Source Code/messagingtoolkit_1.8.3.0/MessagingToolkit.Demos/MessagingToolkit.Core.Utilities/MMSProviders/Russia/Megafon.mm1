@@ -1,0 +1,5 @@
+MMSC=http://mmsc:8002/
+WAPGateway=10.10.10.10
+APN=mms
+APNAccount=
+APNPassword=

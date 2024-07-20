@@ -1,0 +1,12 @@
+128=No-cache
+129=No-store
+130=Max-age
+131=Max-stale
+132=Min-fresh
+133=Only-if-cached
+134=Public
+135=Private
+136=No-transform
+137=Must-revalidate
+138=Proxy-revalidate
+139=S-maxage

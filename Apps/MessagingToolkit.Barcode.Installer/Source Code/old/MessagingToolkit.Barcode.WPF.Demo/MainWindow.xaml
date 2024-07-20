@@ -1,0 +1,213 @@
+﻿<Window x:Class="MessagingToolkit.Barcode.WPF.Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MessagingToolkit Barcode Demo" Height="601" Width="769" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended">
+    <Grid Height="570" Width="749">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="618*" />
+            <ColumnDefinition Width="58*" />
+            <ColumnDefinition Width="73*" />
+        </Grid.ColumnDefinitions>
+        <TabControl Height="544" HorizontalAlignment="Left" Margin="10,10,0,0" Name="tabControl1" VerticalAlignment="Top" Width="715" Grid.ColumnSpan="3">
+            <TabItem Header="QR Code" Name="tabItem1">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="538" Width="745">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="122*" />
+                        <ColumnDefinition Width="473*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Data" Margin="14,46,9,471" Name="label1" />
+                    <TextBox AcceptsReturn="True" AcceptsTab="True" Height="82" HorizontalAlignment="Left" HorizontalScrollBarVisibility="Auto" Margin="31,6,0,0" Name="txtQRCodeData" Text="MessagingToolkit Barcode" TextWrapping="Wrap" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" Width="343" Grid.Column="1" />
+                    <Button Content="Encode" Height="23" HorizontalAlignment="Left" Margin="8,455,0,0" Name="btnEncodeQRCode" VerticalAlignment="Top" Width="75" Click="btnEncodeQRCode_Click" Grid.Column="1" />
+                    <Button Content="Save" Height="23" HorizontalAlignment="Right" Margin="0,455,429,0" Name="btnSaveQRCode" VerticalAlignment="Top" Width="75" Click="btnSaveQRCode_Click" Grid.Column="1" />
+                    <Label Content="Width" Height="28" Margin="14,91,619,419" Name="label2" Grid.ColumnSpan="2" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="31,94,0,0" Name="txtQRCodeWidth" VerticalAlignment="Top" Width="79" Text="250" Grid.Column="1" />
+                    <Label Content="Height" Height="28" Margin="166,94,338,0" Name="label3" VerticalAlignment="Top" Grid.Column="1" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,94,232,0" Name="txtQRCodeHeight" VerticalAlignment="Top" Width="79" Text="250" Grid.Column="1" />
+                    <Label Content="Error Correction Level" Height="28" Margin="14,124,611,386" Name="label4" Grid.ColumnSpan="2" />
+                    <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,124,443,0" Name="cboQRCodeErrorCorrectionLevel" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                    <Label Content="Character Set" Height="28" Margin="165,126,0,384" Name="label5" HorizontalAlignment="Left" Width="119" Grid.Column="1" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="281,126,0,0" Name="cboQRCodeCharacterSet" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                    <Label Content="Quiet Zone" Height="28" Margin="14,152,619,358" Name="label6" Grid.ColumnSpan="2" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="31,153,0,0" Name="txtQRCodeQuietZone" VerticalAlignment="Top" Width="79" Text="4" Grid.Column="1" />
+                    <Label Content="Fore Color" Height="28" Margin="14,180,9,330" Name="label7" />
+                    <Label Content="Back Color" Height="28" Margin="165,181,366,329" Name="label8" Grid.Column="1" />
+                    <extToolkit:ColorPicker HorizontalAlignment="Left" Margin="31,181,0,0" Name="btnQRCodeForeColor" VerticalAlignment="Top" Grid.Column="1" />
+                    <extToolkit:ColorPicker HorizontalAlignment="Right" Margin="0,181,235,0" Name="btnQRCodeBackColor" VerticalAlignment="Top" Foreground="White" SelectedColor="White" Grid.Column="1" />
+                    <ScrollViewer Height="206" HorizontalAlignment="Left" Margin="28,231,0,0" Name="scrollViewer1" VerticalAlignment="Top" Width="546" Grid.ColumnSpan="2">
+                        <Image Name="picEncodedQRCode" Stretch="None"/>
+                    </ScrollViewer>
+                    <Label Content="Logo" Height="28" HorizontalAlignment="Left" Margin="166,153,0,357" Name="label40" Width="79" Grid.Column="1" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="281,153,0,0" Name="txtQRCodeLogoFileName" VerticalAlignment="Top" Width="130" Grid.Column="1" />
+                    <Button Content="..." Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="417,152,0,0" Name="btnBrowseQRCodeLogo" VerticalAlignment="Top" Width="40" Click="btnBrowseQRCodeLogo_Click" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="QR Code - Misc">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="538" Width="745">
+                    <Label Content="Content Type" Height="28" HorizontalAlignment="Left" Margin="16,18,0,492" Name="label9" Width="119" />
+                    <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,21,470,0" Name="cboQRCodeContentType" VerticalAlignment="Top" Width="120" IsSynchronizedWithCurrentItem="True" DropDownClosed="cboQRCodeContentType_DropDownClosed" />
+                    <Label Content="Data" Height="28" Margin="16,63,610,447" Name="label10" />
+                    <TextBox AcceptsReturn="True" AcceptsTab="True" Height="82" HorizontalAlignment="Left" HorizontalScrollBarVisibility="Auto" Margin="155,50,0,0" Name="txtQRCodeMiscData" Text="" TextWrapping="Wrap" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" Width="343" />
+                    <Button Content="Encode" Height="23" HorizontalAlignment="Left" Margin="136,473,0,0" Name="btnQRCodeMiscEncode" VerticalAlignment="Top" Width="75" Click="btnQRCodeMiscEncode_Click" />
+                    <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="238,473,0,0" Name="btnQRCodeMiscSave" VerticalAlignment="Top" Width="75" Click="btnQRCodeMiscSave_Click" />
+                    <Label Content="Width" Height="28" Margin="16,133,610,377" Name="label11" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="155,138,0,0" Name="txtQRCodeMiscWidth" VerticalAlignment="Top" Width="79" Text="250" />
+                    <Label Content="Height" Height="28" Margin="290,138,336,0" Name="label12" VerticalAlignment="Top" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,138,252,0" Name="txtQRCodeMiscHeight" VerticalAlignment="Top" Width="79" Text="250" />
+                    <Label Content="Error Correction Level" Height="28" Margin="16,163,0,347" Name="label13" HorizontalAlignment="Left" Width="119" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="155,168,0,0" Name="cboQRCodeMiscErrorCorrectionLevel" VerticalAlignment="Top" Width="120" />
+                    <Label Content="Character Set" Height="28" HorizontalAlignment="Left" Margin="290,168,0,342" Name="label14" Width="119" />
+                    <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,168,210,0" Name="cboQRCodeMiscCharacterSet" VerticalAlignment="Top" Width="120" />
+                    <Label Content="Quiet Zone" Height="28" Margin="16,194,610,316" Name="label15" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="155,196,0,0" Name="txtQRCodeMiscQuietZone" VerticalAlignment="Top" Width="79" Text="4" />
+                    <Label Content="Fore Color" Height="28" Margin="16,220,610,290" Name="label16" />
+                    <Label Content="Back Color" Height="28" Margin="290,224,336,286" Name="label17" />
+                    <extToolkit:ColorPicker HorizontalAlignment="Left" Margin="155,225,0,0" Name="btnQRCodeMiscForeColor" VerticalAlignment="Top" />
+                    <extToolkit:ColorPicker Foreground="White" HorizontalAlignment="Right" Margin="0,220,254,0" Name="btnQRCodeMiscBackColor" SelectedColor="White" VerticalAlignment="Top" />
+                    <ScrollViewer Height="182" HorizontalAlignment="Left" Margin="28,272,0,0" Name="scrollViewer2" VerticalAlignment="Top" Width="556">
+                        <Image Name="picEncodedQRCodeMisc" Stretch="None" />
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+            <TabItem Header="One Dimension">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="314*" />
+                        <ColumnDefinition Width="391*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Data" Height="28" Margin="12,16,0,467" Name="label18" HorizontalAlignment="Left" Width="79" />
+                    <TextBox AcceptsReturn="True" AcceptsTab="True" Height="43" HorizontalAlignment="Left" HorizontalScrollBarVisibility="Auto" Margin="149,10,0,0" Name="txtOneDBarcodeData" Text="" TextWrapping="Wrap" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" Width="343" Grid.ColumnSpan="2" />
+                    <Label Content="Width" Height="28" Margin="10,57,225,426" Name="label19" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="149,59,0,0" Name="txtOneDBarcodeWidth" VerticalAlignment="Top" Width="79" Text="300" />
+                    <Label Content="Height" Height="28" Margin="301,59,325,0" Name="label20" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,59,236,0" Name="txtOneDBarcodeHeight" VerticalAlignment="Top" Width="79" Text="150" Grid.Column="1" />
+                    <Label Content="Barcode Format" Height="28" Margin="10,90,185,393" Name="label21" />
+                    <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,88,45,0" Name="cboOneDBarcodeFormat" VerticalAlignment="Top" Width="120" />
+                    <Label Content="Label Location" Height="28" HorizontalAlignment="Left" Margin="301,86,0,397" Name="label22" Width="96" Grid.ColumnSpan="2" />
+                    <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,88,195,0" Name="cboOneDBarcodeLabelLocation" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                    <Label Content="Fore Color" Height="28" Margin="10,117,225,0" Name="label23" VerticalAlignment="Top" />
+                    <Label Content="Back Color" Height="28" Margin="301,116,325,367" Name="label24" Grid.ColumnSpan="2" />
+                    <Label Content="Alignment" Height="28" Margin="11,144,184,339" Name="label25" />
+                    <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,143,46,0" Name="cboOneDBarcodeAlignment" VerticalAlignment="Top" Width="120" />
+                    <CheckBox Content="Generate Label" Height="16" HorizontalAlignment="Left" Margin="306,151,0,0" Name="chkOneDBarcodeGeneralLabel" VerticalAlignment="Top" Width="128" Grid.ColumnSpan="2" />
+                    <Button Content="Encode" Height="23" HorizontalAlignment="Left" Margin="133,419,0,0" Name="btnEncodeOneDBarcode" VerticalAlignment="Top" Width="75" Click="btnEncodeOneDBarcode_Click" />
+                    <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="243,419,0,0" Name="btnSaveOneDBarcode" VerticalAlignment="Top" Width="75" Click="btnSaveOneDBarcode_Click" Grid.ColumnSpan="2" />
+                    <extToolkit:ColorPicker HorizontalAlignment="Left" Margin="148,117,0,0" Name="btnOneDBarcodeForeColor" VerticalAlignment="Top" />
+                    <extToolkit:ColorPicker Foreground="White" HorizontalAlignment="Right" Margin="0,117,239,0" Name="btnOneDBarcodeBackColor" SelectedColor="White" VerticalAlignment="Top" Grid.Column="1" />
+                    <ScrollViewer Height="182" HorizontalAlignment="Left" Margin="24,199,0,0" Name="scrollViewer3" VerticalAlignment="Top" Width="556" Grid.ColumnSpan="2">
+                        <Image Name="picEncodedOneDBarcode" Stretch="None" />
+                    </ScrollViewer>
+                    <Label Content="Margin" Height="25" HorizontalAlignment="Left" Margin="12,168,0,0" Name="lblMargin" VerticalAlignment="Top" Width="87" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="148,170,0,0" Name="txtOneDBarcodeMargin" Text="" VerticalAlignment="Top" Width="79" />
+                    <Label Content="Custom Label" Height="25" HorizontalAlignment="Left" Margin="302,168,0,0" Name="label41" VerticalAlignment="Top" Width="87" Grid.ColumnSpan="2" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,168,125,0" Name="txtOneDBarcodeCustomLabel" Text="" VerticalAlignment="Top" Width="190" Grid.Column="1" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Data Matrix">
+                <Grid>
+                    <Label Content="Data" Height="28" HorizontalAlignment="Left" Margin="12,16,0,467" Name="label26" Width="79" />
+                    <TextBox AcceptsReturn="True" AcceptsTab="True" Height="43" HorizontalAlignment="Left" HorizontalScrollBarVisibility="Auto" Margin="149,10,0,0" Name="txtDataMatrixData" Text="" TextWrapping="Wrap" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" Width="343" />
+                    <Label Content="Module Size" Height="28" Margin="10,57,0,426" Name="label27" HorizontalAlignment="Left" Width="79" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="149,59,0,0" Name="txtDataMatrixModuleSize" VerticalAlignment="Top" Width="79" Text="5" />
+                    <Label Content="Margin Size" Height="28" Margin="301,59,325,0" Name="label28" VerticalAlignment="Top" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,59,236,0" Name="txtDataMatrixMarginSize" VerticalAlignment="Top" Width="79" Text="10" />
+                    <Label Content="Fore Color" Height="28" Margin="10,88,616,0" Name="label31" VerticalAlignment="Top" />
+                    <Label Content="Back Color" Height="28" Margin="301,87,325,396" Name="label32" />
+                    <Button Content="Encode" Height="23" HorizontalAlignment="Left" Margin="133,419,0,0" Name="btnEncodeDataMatrix" VerticalAlignment="Top" Width="75" Click="btnEncodeDataMatrix_Click" />
+                    <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="243,419,0,0" Name="btnSaveDataMatrix" VerticalAlignment="Top" Width="75" Click="btnSaveDataMatrix_Click" />
+                    <extToolkit:ColorPicker HorizontalAlignment="Left" Margin="149,88,0,0" Name="btnDataMatrixForeColor" VerticalAlignment="Top" />
+                    <extToolkit:ColorPicker Foreground="White" HorizontalAlignment="Right" Margin="0,88,239,0" Name="btnDataMatrixBackColor" SelectedColor="White" VerticalAlignment="Top" />
+                    <ScrollViewer Height="235" HorizontalAlignment="Left" Margin="24,146,0,0" Name="scrollViewer4" VerticalAlignment="Top" Width="556">
+                        <Image Name="picEncodedDataMatrix" Stretch="None" />
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+            <TabItem Header="PDF417">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Label Content="Data" Height="28" HorizontalAlignment="Left" Margin="12,16,0,467" Name="label29" Width="79" />
+                    <TextBox AcceptsReturn="True" AcceptsTab="True" Height="43" HorizontalAlignment="Left" HorizontalScrollBarVisibility="Auto" Margin="149,10,0,0" Name="txtPdf417Data" Text="" TextWrapping="Wrap" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" Width="343" />
+                    <Label Content="Width" Height="28" HorizontalAlignment="Left" Margin="10,57,0,426" Name="label30" Width="79" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="149,59,0,0" Name="txtPdf417Width" VerticalAlignment="Top" Width="79" Text="400" />
+                    <Label Content="Height" Height="28" Margin="301,59,325,0" Name="label33" VerticalAlignment="Top" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,59,236,0" Name="txtPdf417Height" VerticalAlignment="Top" Width="79" Text="250" />
+                    <Label Content="Fore Color" Height="28" Margin="10,88,616,0" Name="label34" VerticalAlignment="Top" />
+                    <Label Content="Back Color" Height="28" Margin="301,87,336,396" Name="label35" />
+                    <Button Content="Encode" Height="23" HorizontalAlignment="Left" Margin="133,419,0,0" Name="btnEncodePDF417" VerticalAlignment="Top" Width="75" Click="btnEncodePDF417_Click" />
+                    <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="243,419,0,0" Name="btnSavePDF417" VerticalAlignment="Top" Width="75" Click="btnSavePDF417_Click" />
+                    <Label Content="Compaction" Height="28" HorizontalAlignment="Left" Margin="10,117,0,366" Name="label36" Width="119" />
+                    <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,120,436,0" Name="cboPdf417Compaction" VerticalAlignment="Top" Width="120" />
+                    <extToolkit:ColorPicker HorizontalAlignment="Left" Margin="149,89,0,0" Name="btnPdf417ForeColor" VerticalAlignment="Top" />
+                    <extToolkit:ColorPicker Foreground="White" HorizontalAlignment="Right" Margin="0,87,239,0" Name="btnPdf417BackColor" SelectedColor="White" VerticalAlignment="Top" />
+                    <ScrollViewer Height="216" HorizontalAlignment="Left" Margin="24,165,0,0" Name="scrollViewer5" VerticalAlignment="Top" Width="556">
+                        <Image Name="picEncodedPdf417" Stretch="None" />
+                    </ScrollViewer>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Decoder">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Label Content="Image" Height="28" HorizontalAlignment="Left" Margin="10,10,0,473" Name="label37" Width="79" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="95,12,0,0" Name="txtFile" VerticalAlignment="Top" Width="272" />
+                    <Button Height="23" HorizontalAlignment="Left" Margin="373,12,0,0" Name="btnBrowseFile" VerticalAlignment="Top" Width="40" Content="..." Click="btnBrowseFile_Click" />
+                    <Label Content="Type" Height="28" HorizontalAlignment="Left" Margin="10,321,0,162" Name="label38" Width="79" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,326,363,0" Name="txtBarcodeType" VerticalAlignment="Top" Width="272" />
+                    <Label Content="Data" Height="28" HorizontalAlignment="Left" Margin="10,369,0,114" Name="label39" Width="79" />
+                    <TextBox AcceptsReturn="True" AcceptsTab="True" Height="78" HorizontalAlignment="Left" HorizontalScrollBarVisibility="Auto" Margin="70,355,0,0" Name="txtBarcodeContent" Text="" TextWrapping="Wrap" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" Width="343" />
+                    <Label Content="Time: 0000 ms" Height="28" HorizontalAlignment="Left" Margin="70,440,0,43" Name="lblTime" Width="208" />
+                    <Button Content="Decode" Height="23" HorizontalAlignment="Left" Margin="70,470,0,0" Name="btnDecode" VerticalAlignment="Top" Width="75" Click="btnDecode_Click" />
+                    <GroupBox Header="2D Barcode" Height="132" HorizontalAlignment="Left" Margin="496,5,0,0" Name="groupBox1" VerticalAlignment="Top" Width="187">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="18*" />
+                                <ColumnDefinition Width="10*" />
+                                <ColumnDefinition Width="52*" />
+                                <ColumnDefinition Width="74*" />
+                                <ColumnDefinition Width="21*" />
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Content="QR Code" Grid.Column="1" Grid.ColumnSpan="2" Height="16" HorizontalAlignment="Left" Margin="0,6,0,0" Name="chkQRCode" VerticalAlignment="Top" IsChecked="True" />
+                            <CheckBox Content="Data Matrix" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="0,28,0,69" Name="chkDataMatrix" Grid.Column="1" IsChecked="True" Width="89" />
+                            <CheckBox Content="PDF417" Grid.ColumnSpan="2" Height="16" HorizontalAlignment="Left" Margin="0,47,0,0" Name="chkPdf417" VerticalAlignment="Top" Grid.Column="1" IsChecked="True" />
+                            <CheckBox Content="Aztec" Grid.ColumnSpan="2" Height="16" HorizontalAlignment="Left" Margin="0,69,0,0" Name="chkAztec" VerticalAlignment="Top" Grid.Column="1" IsChecked="True" />
+                            <CheckBox Content="Maxicode" Grid.ColumnSpan="2" Height="16" HorizontalAlignment="Left" Margin="0,91,0,0" Name="chkMaxiCode" VerticalAlignment="Top" Grid.Column="1" IsChecked="True" Checked="chkMaxiCode_Checked" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="1D Barcode" Height="225" HorizontalAlignment="Left" Margin="493,143,0,0" Name="groupBox2" VerticalAlignment="Top" Width="200">
+                        <Grid Height="196">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="12*" />
+                                <ColumnDefinition Width="80*" />
+                                <ColumnDefinition Width="96*" />
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Content="UPC E" Height="16" HorizontalAlignment="Left" IsChecked="True" Margin="9,6,0,0" Name="chkUpcE" VerticalAlignment="Top" Grid.Column="1" />
+                            <CheckBox Content="RSS Expanded" Height="16" HorizontalAlignment="Left" IsChecked="True" Margin="10,153,0,0" Name="chkRssExpanded" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2" Width="110" />
+                            <CheckBox Content="RSS 14" Height="16" HorizontalAlignment="Left" IsChecked="True" Margin="9,137,0,0" Name="chkRss14" VerticalAlignment="Top" Grid.Column="1" />
+                            <CheckBox Content="Interleaved 2 of 5" HorizontalAlignment="Left" IsChecked="True" Margin="9,117,0,53" Name="chkItf" Grid.Column="1" Grid.ColumnSpan="2" Width="125" />
+                            <CheckBox Content="Code 128" HorizontalAlignment="Left" IsChecked="True" Margin="9,99,0,71" Name="chkCode128" Grid.Column="1" />
+                            <CheckBox Content="Code 39" HorizontalAlignment="Left" IsChecked="True" Margin="9,80,0,90" Name="chkCode39" Grid.Column="1" />
+                            <CheckBox Content="EAN 13" Height="16" HorizontalAlignment="Left" IsChecked="True" Margin="9,62,0,0" Name="chkEan13" VerticalAlignment="Top" Grid.Column="1" />
+                            <CheckBox Content="EAN 8" Height="16" HorizontalAlignment="Left" IsChecked="True" Margin="9,43,0,0" Name="chkEan8" VerticalAlignment="Top" Grid.Column="1" />
+                            <CheckBox Content="UPC A" Height="16" HorizontalAlignment="Left" IsChecked="True" Margin="9,24,0,0" Name="chkUpcA" VerticalAlignment="Top" Grid.Column="1" />
+                            <CheckBox Content="CodaBar" Grid.ColumnSpan="2" Height="18" HorizontalAlignment="Left" IsChecked="True" Margin="9,170,0,0" Name="chkCodaBar" VerticalAlignment="Top" Width="110" Grid.Column="1" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Options" Height="100" HorizontalAlignment="Left" Margin="493,374,0,0" Name="groupBox3" VerticalAlignment="Top" Width="200">
+                        <Grid>
+                            <CheckBox Content="Try Harder" Height="16" HorizontalAlignment="Left" IsChecked="True" Margin="21,8,0,0" Name="chkTryHarder" VerticalAlignment="Top" />
+                            <CheckBox Content="Try All Formats" Height="16" HorizontalAlignment="Left" IsChecked="True" Margin="21,24,0,0" Name="chkTryAllFormats" VerticalAlignment="Top" />
+                            <CheckBox Content="Pure Barcode" Height="16" HorizontalAlignment="Left" IsChecked="False" Margin="21,42,0,0" Name="chkPureBarcode" VerticalAlignment="Top" />
+                        </Grid>
+                    </GroupBox>
+                    <ScrollViewer Height="253" HorizontalAlignment="Left" Margin="24,46,0,0" Name="scrollViewer6" VerticalAlignment="Top" Width="389">
+                        <Image Name="picBoxDecode" Stretch="None" />
+                    </ScrollViewer>
+                    <CheckBox Content="  Multiple Barcodes" Height="21" HorizontalAlignment="Left" IsChecked="False" Margin="70,304,0,0" Name="chkMultipleBarcodes" VerticalAlignment="Top" Width="126" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="About" Name="tabAbout" GotFocus="tabAbout_GotFocus">
+                <Grid>
+                    <Label Content="Label" Name="lblAbout" Width="443" Margin="117,165,145,314" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" />
+                    <Label Content="Label" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="117,203,145,276" Name="lblVersion" Width="443" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

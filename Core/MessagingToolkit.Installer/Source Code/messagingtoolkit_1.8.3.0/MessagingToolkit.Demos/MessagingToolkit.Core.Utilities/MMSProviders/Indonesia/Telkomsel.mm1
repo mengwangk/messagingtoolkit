@@ -1,0 +1,5 @@
+MMSC=http://mms.telkomsel.com/
+WAPGateway=10.1.89.150
+APN=mms
+APNAccount=wap
+APNPassword=wap123

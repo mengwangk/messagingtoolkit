@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{570A19A0-ED37-499C-88C6-DF29359AC083}"
+	ProjectSection(SolutionItems) = preProject
+		MessagingToolkit.snk = MessagingToolkit.snk
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessagingToolkit.MMS", "MessagingToolkit.MMS\MessagingToolkit.MMS.csproj", "{40336858-5147-4C38-ACFD-6281B79CF371}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release (9.0)|Any CPU = Release (9.0)|Any CPU
+		Release (9.0)|Mixed Platforms = Release (9.0)|Mixed Platforms
+		Release (9.0)|x64 = Release (9.0)|x64
+		Release (9.0)|x86 = Release (9.0)|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Debug|Mixed Platforms.Build.0 = Debug|x64
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Debug|x64.ActiveCfg = Debug|x64
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Debug|x64.Build.0 = Debug|x64
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Debug|x86.ActiveCfg = Debug|x64
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Release (9.0)|Any CPU.ActiveCfg = Release|Any CPU
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Release (9.0)|Any CPU.Build.0 = Release|Any CPU
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Release (9.0)|Mixed Platforms.ActiveCfg = Release|x64
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Release (9.0)|Mixed Platforms.Build.0 = Release|x64
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Release (9.0)|x64.ActiveCfg = Release|x64
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Release (9.0)|x64.Build.0 = Release|x64
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Release (9.0)|x86.ActiveCfg = Release|x64
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Release|Mixed Platforms.ActiveCfg = Release|x64
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Release|Mixed Platforms.Build.0 = Release|x64
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Release|x64.ActiveCfg = Release|x64
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Release|x64.Build.0 = Release|x64
+		{40336858-5147-4C38-ACFD-6281B79CF371}.Release|x86.ActiveCfg = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TextTemplating) = postSolution
+		TextTemplating = 1
+	EndGlobalSection
+EndGlobal

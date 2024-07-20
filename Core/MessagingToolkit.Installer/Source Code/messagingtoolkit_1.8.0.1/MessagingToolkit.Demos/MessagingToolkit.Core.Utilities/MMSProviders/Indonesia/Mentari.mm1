@@ -1,0 +1,5 @@
+MMSC=http://mmsc.indosat.com
+WAPGateway=10.19.19.19
+APN=indosatmms
+APNAccount=indosat
+APNPassword=indosat

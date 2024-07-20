@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Chm">
+    <PropertyGroup>
+        <Name>MessagingToolkit.Core</Name>
+        <TopicStyle>vs2005</TopicStyle>
+        <LanguageId>1033</LanguageId>
+    </PropertyGroup>
+    <ItemGroup>
+        <Dlls Include="C:\My Space\2009\MessagingToolkit\MessagingToolkit.Core\bin\Debug\MessagingToolkit.Core.dll" />
+        <Comments Include="C:\My Space\2009\MessagingToolkit\MessagingToolkit.Core\bin\Debug\MessagingToolkit.Core.XML" />
+        <Dependents Include="C:\My Space\2009\MessagingToolkit\MessagingToolkit.Core\bin\Release\MessagingToolkit.Pdu.dll" />
+        <Dependents Include="C:\My Space\2009\MessagingToolkit\MessagingToolkit.Core\bin\Release\nunit.framework.dll" />
+    </ItemGroup>
+    <Import Project="$(DXROOT)\Examples\Generic\generic.targets" />
+</Project>

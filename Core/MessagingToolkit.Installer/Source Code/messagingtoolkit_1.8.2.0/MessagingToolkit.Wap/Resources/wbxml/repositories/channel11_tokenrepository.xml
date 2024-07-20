@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codepages>
+<codepage number="0" publicID="-//WAPFORUM//DTD CHANNEL 1.1//EN" 
+wbxmlVersion="1.3" default_encoding="utf-8">
+   <tag-tokens>
+      <tag name="channel" token-value="5" />
+      <tag name="title" token-value="6" />
+      <tag name="abstract" token-value="7" />
+      <tag name="resource" token-value="8" />
+    
+   </tag-tokens>
+   <attribute-start-tokens>
+      <attribute-start name="maxspace" token-value="5" />
+      <attribute-start name="base" token-value="6" />
+      <attribute-start name="href" token-value="7" />
+      <attribute-start name="href" prefix="http://" token-value="8" />
+      <attribute-start name="href" prefix="https://" token-value="9" />
+      <attribute-start name="lastmod" token-value="A" />
+      <attribute-start name="etag" token-value="B" />
+      <attribute-start name="md5" token-value="C" />
+      <attribute-start name="success" token-value="D" />
+      <attribute-start name="success" prefix="http://" token-value="E" />
+      <attribute-start name="success" prefix="https://" token-value="F" />
+      <attribute-start name="failure" token-value="10" />
+      <attribute-start name="failure" prefix="http://" token-value="11" />
+      <attribute-start name="failure" prefix="https://" token-value="12" />
+      <attribute-start name="EventId" token-value="13" />
+   </attribute-start-tokens>
+   <attribute-value-tokens>
+   </attribute-value-tokens>
+</codepage>
+</codepages>

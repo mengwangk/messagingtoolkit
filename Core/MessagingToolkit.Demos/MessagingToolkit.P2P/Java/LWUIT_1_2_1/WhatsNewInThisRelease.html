@@ -1,0 +1,779 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml/DTD/xhtml-transitional.dtd">
+
+<html>
+
+	<head><meta name="collection" content="reference"> 
+		<title>What's new in this drop - LWUIT</title>
+		<link href="document.css" type="text/css" rel="stylesheet">
+	</head>
+
+	<body>
+		<a name="_top"></a>
+		<table summary="This table is for formatting purposes only." width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+				<tr valign="top">
+					<td class="sun-darkblue">&nbsp;</td>
+				</tr>
+				<tr valign="top">
+					<td class="sun-darkblue">
+						<h1>What's New In This Release</h1>
+                                                <h2>Lightweight User Interface Toolkit 1.2.1</h2>
+						<h4>July 2009</h4>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td class="sun-lightblue">&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2><p>This document summarizes new features in this release.</p></h2>
+		<h3>Overview</h3>
+
+               
+		<h3>Highlights</h3>
+		<b>
+                    <ul>
+		    <li>
+		    	New Styling concept added selected and unselected styles.
+			</li>
+		    <li>
+		    	New LWUIT Designer with support for new styles, gradients, exporting ant task, Copy &amp; Paste, complex
+                image borders, improved preview and much more
+			</li>
+			<li>
+                Support for setUIID in Component allows customizing the component style selector
+			</li>
+			<li>
+                More options for background painting (gradients, tiling hints, centering).
+			</li>
+			<li>
+                Support for more elaborate scrolling use cases and nested scrolling
+			</li>
+			<li>
+                Initial support for SVG used everywhere in LWUIT including backgrounds and as icons seamlessly and ability to fallback gracefully when JSR 226 isn't supported on the device.
+			</li>
+			<li>
+                Initial support for upcoming MIDP 3 features when available such as truetype fonts.
+			</li>
+			<li>
+                Removed the resource builder Ant task and replaced it with a new Ant task based on the code of the LWUIT Designer for
+                improved support/compatibility
+			</li>
+			<li>
+			New calendar component implementation featuring improved customizability and touch support
+			</li>
+			<li>
+			Initial resource file specification
+			</li>
+			<li>
+			Bug fixes and stability
+			</li>
+			<li>
+			Performance improvements 
+			</li>
+			
+			</ul>
+                </b>
+		
+		<h3>Full List</h3>
+
+                <h4>LWUIT Library</h4>
+                <ul>
+
+<li>
+Added ability to access the data of the encoded image
+</li>
+
+<li>
+Fix for image borders to work with 8 images (no center)
+</li>
+
+<li>
+Fix for a background painting when the Component is not visible
+</li>
+
+<li>
+Feature allowing text field not to scroll to the right useful for limited length input fields
+</li>
+
+<li>
+Removed automation classes from the library
+</li>
+
+<li>
+Added support for application minimize/restore
+</li>
+
+<li>
+Added easier support for List of commands
+</li>
+
+<li>
+Added ability to disable bitmap font loading and fallback to system fonts when using the new resource files
+</li>
+
+<li>
+Fix for issue 167, checkbox and radio button sizes were calculated based on component height and not based on font height
+</li>
+
+<li>
+Fixed scrolling width height/miscalculations that caused many hidden rendering issues
+</li>
+
+<li>
+Styles are now more modular and powerful however compatibility mode is enabled by default which is blocking some of the new features from being utilized.
+</li>
+
+<li>
+Major refactoring in the resource files preparing for a major resource editor revision and an official resource file specification.
+</li>
+
+<li>
+Deeper SVG integration allowing the native platform to implement SVG support thus abstracting it completely from the developer.
+</li>
+
+<li>
+Support for elaborate background painting such as gradients and complex image alignments arrangements
+</li>
+
+<li>
+Support for nested scrolling and more elaborate scrolling use cases
+</li>
+
+<li>
+Added support for more advanced Font lookups and true type fonts in platforms that would support such features (such as CDC).
+</li>
+
+<li>
+Improved image architecture and unified images and animations further
+</li>
+
+<li>
+Border constructor is now protected
+</li>
+
+<li>
+Fix for issue #125: Selected item of combobox not appearing in dropdown
+</li>
+
+<li>
+Fix for issue #137: UIManager.getComponentCustomStyle() works incorrect, it returns defaultStyle
+</li>
+
+<li>
+Fix for issue #87: Ticker in radiobutton is not enabled if one letter or 2(few) are just beyond the screen width
+</li>
+
+<li>
+Fix for issue#79: For TextField overwrite mode does not work properly (in situ edit)
+</li>
+
+<li>
+Fix for issue #67: Added a check if the TextArea column are lesser then 2 throw illegalArgumentException
+</li>
+
+<li>
+Fix for issue #56: Scrolling a form with both focusable and non-focusable items is not correct
+</li>
+
+<li>
+Fix for issue #27: Applying a bgPainter to UIManager.componentStyle fails
+</li>
+
+<li>
+Improved memory handling (reduced allocations) when edt loop is running
+</li>
+
+<li>
+Fix for button focus behavior where Component didn't get the internal focus event resulting in ticker label for buttons not working.
+</li>
+
+<li>
+Made exceptions for null encoded images easier to understand by throwing them in the proper location rather than later from LWUIT internally.
+</li>
+
+<li>
+Fixed a bug in the spacing for the image border in uneven image borders.
+</li>
+
+<li>
+Allowing single line text areas to grow by adding a boolean single line text area flag which is initialized by default based on the number of rows.
+</li>
+
+<li>
+Fixed clear key in TextField qwerty mode
+</li>
+
+<li>
+Workaround for a fillRect issue on newer s60 devices where the fillRect method doesn't span the full size of the painted region
+</li>
+
+<li>
+Get component index for form didn't work as expected
+</li>
+
+<li>
+Fix for regression in dialog showPacked that caused an exception for a negative margin size.
+</li>
+
+<li>
+Fixed an issue with dialog tinting
+</li>
+
+<li>
+Fixed flushEDT to return if the thread is not the EDT
+</li>
+
+<li>
+Fix for null pointer exception in combo box occurring in some edge cases of the 3 softbutton mode.
+</li>
+
+<li>
+Changes to the Resources class required by the resource editor.
+</li>
+
+<li>
+Fix for isssue #118: a timeout issue in dialogs
+</li>
+
+<li>
+Fix for issues 82 and 120: Clear key doesn't make a text field enter "edit" mode
+</li>
+
+<li>
+Fix for regression issue #119: Pressing and holding numeric key in TextField no longer enters a numeric key
+</li>
+
+<li>
+Support for long click on the clear key to delete the content of a text field
+</li>
+
+<li>
+Enhancement to resolve issue #113 allowing left/right key to trigger editing mode based on the users choice
+</li>
+
+<li>
+Allowing static dialogs not to scroll by using a global flag
+</li>
+
+<li>
+Fix for list selection issue in touch screens, setScrollX/Y was blocked when called from a non-scrollable list even if the list was previously scrollable
+</li>
+
+<li>
+Fix for menu command appearing on a different forms
+</li>
+
+<li>
+Fix for TextArea line wrap to not cut words if scroll is visible
+</li>
+
+<li>
+Fix for issue where a container on the screen that grows in its component count won't scroll since it never registered itself as animatable
+</li>
+
+<li>
+Fix for issue #117: TextField didn't commit on focus lost causing issues with the password field. handlesInput was set to false but the commit didn't yet occur.
+</li>
+
+<li>
+A few changes to the TextField default look and feel behavior mostly related to the display of the textfiled mode.
+</li>
+
+<li>
+Improved the ability to customize the popup of a combo box in relation to RFE 104
+</li>
+
+<li>
+Workaround for typing text quickly and pressing two keys at the same time the text field ignores the second key issue 108
+</li>
+
+<li>
+Fix for a null pointer exception in form for a minor edge case issue 105
+</li>
+
+<li>
+Fix for regression in text field issue 109
+</li>
+
+<li>
+Fixed a softbutton padding issue - relevant for touch devices
+</li>
+
+<li>
+Added performance improvement by removing usage of Enumeration
+</li>
+
+<li>
+Modularized the look and feel further by refactoring some elements out of it
+</li>
+
+<li>
+Added support for binding labels to components allowing labels to ticker when an adjoining component is selected
+</li>
+
+<li>
+Fixed ComboBox popup to use the cyclic behavior of the combo box itself
+</li>
+
+<li>
+Improved pointer hover support for lists and general usability, especially when related to drag events
+</li>
+
+<li>
+Improved virtual keyboard support
+</li>
+
+<li>
+Dialogs now have the ability to automatically adjust their height in case of screen size change while a dialog is showing.
+</li>
+
+<li>
+Fix for call serially potential race condition from Telmap
+</li>
+
+<li>
+Fix for sizeChanged(int,int) callback which allowed the user to avoid calling super and inadvertantly (or otherwise) prevent LWUIT size change behavior from occuring.
+</li>
+
+<li>
+Added support for a special case 3 button mode in touch screen devices that have a physical menu button.
+</li>
+
+<li>
+Fix for community issue with system.getProperty("microedition.platform") failing on a device.
+</li>
+
+<li>
+Minor improvement to ticker starting logic.
+</li>
+
+<li>
+Added some tests to prevent setSelectedItem from failing
+</li>
+
+<li>
+Exposed the media component video control for some use cases on some devices.
+</li>
+
+<li>
+Improved the style event handling by using the default event handler.
+</li>
+
+<li>
+Community fix for text area margin calculation which probably shouldn't be in the text area itself.
+</li>
+
+<li>
+TextField now goes into edit mode when clicked in a touch screen device
+</li>
+
+<li>
+Minor enhancement for the mirror effect in the Effects.java class
+</li>
+
+<li>
+Fixe for issue #100: translate should have been reset before painting the glaspane
+</li>
+
+<li>
+Fixed multiple concurrent transitions using Container.replace
+</li>
+
+<li>
+Fixed a synchronization regression in Display
+</li>
+
+<li>
+Move the select/cancel Command creation to protected methods
+</li>
+
+<li>
+Improved keyRepeat handling implementation
+</li>
+
+<li>
+Fixed a TextArea inner scrolling issue
+</li>
+
+<li>
+Fixed painters for dialog
+</li>
+
+<li>
+Fixed a Dialog reuse issue
+</li>
+
+<li>
+Removed the font protected constructor
+</li>
+
+<li>
+Made the common and 3D transitions more robust so they will handle failure better, this might be a valid case for replace calls in some situations.
+</li>
+
+<li>
+Fix for regression in radio buttons due to some recent changes to selection.
+</li>
+
+<li>
+Fix for command equality when only an icon is set without text
+</li>
+
+<li>
+Added the ability to flush ongoing replace operations to prevent multiple replace operations from colliding, this helps solve issues in the tabbed pane with transitions.
+</li>
+
+<li>
+Fix for type issues in dialog allowing the default dialog audio to apply to a dialog.
+</li>
+
+<li>
+Added the ability for rectangle to derive an intersecting rectangle
+</li>
+
+<li>
+Fix for translate issues in fill/draw polygon
+</li>
+
+<li>
+Performance improvement for fill rect
+</li>
+
+<li>
+Support for affine transform on platforms that would allow exposing an affine transform
+</li>
+
+<li>
+Initial work for refactoring images to a different package, this would allow a more scalable image architecture. As part of this work the indexed image is now deprecated in favor of the
+more future friendly Image.createIndexed
+</li>
+
+<li>
+Improved image opacity detection for better performance
+</li>
+
+<li>
+Set the default list element height to 0 to restore the original behavior of a list
+</li>
+
+<li>
+Changed the text area column count to default to 3 rather than 1 which solves a state where the layout manager and the text area loop to create an out of memory error.
+</li>
+
+<li>
+Fix for issue in text field clear functionality event handling
+</li>
+
+<li>
+Factory method to create text field/text area based on platform support for in-place editing
+</li>
+
+<li>
+Fix for overwrite mode from Biswajit
+</li>
+
+<li>
+Fixed bug that draws a missing section of a polygon if a horizontal line is part of the shape
+</li>
+
+<li>
+Fix for bitmap Font drawing from signal3
+</li>
+
+<li>
+Removed a few gc calls
+</li>
+
+<li>
+Improved images scaling caching
+</li>
+
+<li>
+Fixed a minor focus painting issue in List
+</li>
+
+<li>
+Fixed showPacked to behave better
+</li>
+
+<li>
+Fixed List to support better null focus elements
+</li>
+
+<li>
+Updated TextField cursor paint to the end of the TextField
+</li>
+
+<li>
+Removed Enumeration creation from paint (from signal3)
+</li>
+
+<li>
+Added hide and notify callbacks
+</li>
+
+<li>
+Fixed a cache issue in bitmap fonts
+</li>
+
+<li>
+Minor fixes for LWUIT to simplify working without softbuttons (touch devices) also fix for a touch menu regression.
+</li>
+
+<li>
+Fix for Combobox left right navigation
+</li>
+
+<li>
+Fix for Container's replaceAndWait method that didn't give enough processor time to other threads
+</li>
+
+<li>
+MediaComponent now passes the visible flag to its parent
+</li>
+
+<li>
+Fix for issue 74: lighterColor and darkerColor in graphics had a small typo (from rdtorres)
+</li>
+
+<li>
+Refactored EventDispatcher into a public API and made DefaultListModel use it for its event broadcasting making it the standard for event dispatching in LWUIT.
+</li>
+
+<li>
+Fix for race condition caused on some devices when the GameCanvasImplementation caused a resize before the implementation class was initialized
+</li>
+
+<li>
+Fix for missing callback to handle exceptions in Display.java
+</li>
+
+<li>
+Fix for cursor positioning in password text fields
+</li>
+
+<li>
+Additional touch screen fixes for the calendar component from Bisjwit
+</li>
+
+<li>
+Fix for a condition that would always result in a null pointer within text field issue 73
+</li>
+
+<li>
+Fix for issue #70: callSeriallyAndWait might "miss" the notify call and get stuck in wait
+</li>
+
+<li>
+Fix for drawChar which didn't work for bitmap fonts
+</li>
+
+<li>
+Text field now supports poping up the virtual keyboard from the implementation.
+</li>
+
+<li>
+Fix for issue 69: from Biswajit set handles input for the single input mode is appropriate for list but not for its subclass combo box.
+</li>
+
+<li>
+Fixed a scrolling issue in the Log and formatting in the Implementation class
+</li>
+
+<li>
+Improved support for nested scrolling containers by incorporating scroll size which is distinct from preferred size
+</li>
+
+<li>
+Fix for text field issues with grow by content and touch navigation.
+</li>
+
+<li>
+Fix for clear physical button on devices in text field when soft button commands are set to false.
+</li>
+
+<li>
+Fix for a focus issue in the replace method
+</li>
+
+<li>
+Fixed a painting issue in calendar
+</li>
+
+<li>
+Game canvas implementation now stores the midp graphics locally which works better on some devices (contributed by ofir).
+</li>
+
+<li>
+Performance improvement for the common transition fade functionality on platforms that support alpha.
+</li>
+
+<li>
+Fix commands that have only icons and no text.
+</li>
+
+<li>
+Performance improvement for invokeAndBlock
+</li>
+
+<li>
+Fix allowing for dialogs to dispose dialogs and handle commands
+</li>
+
+<li>
+Exposed some aspects of the implementation API through the display api
+</li>
+
+<li>
+Moved indexed image creation to the implementation class to allow optimized image creation
+</li>
+
+<li>
+Moved opacity and media component support into the implementation class
+</li>
+
+<li>
+Fix for dialog exception
+</li>
+
+<li>
+Patch for BlackBerry menu key from Thorsten issue 65
+</li>
+
+<li>
+List now allows defining the minimum height
+</li>
+
+<li>
+Fix for bug in text field where entering editing and then returning to a Dialog caused commands to missfire...
+</li>
+
+
+<li>
+Fixed spelling error in getKeyboardType
+</li>
+
+<li>
+Fix for issue 157 text field implementation code shouldn't take input mode order into consideration for a short text field where it won't appear anyway, code that doesn't make sense in the DefaultLookAndFeel was removed.
+</li>
+
+<li>
+Fix for issue 155, space wasn't placed into a variable where an unsupported character was inserted
+</li>
+
+<li>
+Fix for issue 158 scrolling list to selection didn't work in some cases
+</li>
+
+<li>
+Fix for combo box which shouldn't allow touch screen based modifications while it is disabled
+</li>
+
+<li>
+Fix for minor bug in text field when inserting more than one character
+</li>
+
+<li>
+Fix for issue 159 changed style events to use callSerially rather than callSeriallyAndWait, to prevent changes to style attributes from a different threads from causing a delay
+</li>
+
+<li>
+Fix for TextArea width calculation when placed within a tab pane
+</li>
+
+<li>
+Fix for display returning to the lwuit canvas when the midlet was in background
+</li>
+
+<li>
+Fix for text field overwrite mode
+</li>
+
+<li>
+QWERTY keyboards should not show the input mode indication in the text area
+</li>
+
+<li>
+Fix for style compatibility mode bgSelectionColor issue 147 from bsarkar
+</li>
+
+<li>
+Modified getRGB to work according to its contract based on feedback from the list, created a new caching version of getRGB that is now used in most places in the code.
+</li>
+
+<li>
+Added method to manipulate transparency while maintaining translucency information.
+</li>
+
+<li>
+Potential performance improvement for translucent fillRect calls that only calls drawRGB within the clipping area.
+</li>
+
+<li>
+Fixed the GridLayout JavaDoc to remove features that are not actually supported by LWUIT
+</li>
+
+<li>
+Fixed issue #68 - LWUIT Designer: Themes: unable to set native font to non-def
+</li>
+<li>
+Fixed issue #112 - Constant recreation of new Rectangle/Dimension objects cause...
+</li>
+<li>
+Fixed issue #141 - Dialog enhancement to handle Commands attached to Components
+</li>
+<li>
+Fixed issue #165 - z-ordering of components not working over lists
+</li>
+<li>
+Fixed issue #172 - Calendar does not display all months fully
+</li>
+<li>
+Fixed issue #174 - new form method: setTitleComponent(Label)
+</li>
+<li>
+Fixed issue #177 - In Calendar the selected day is not being focused initially.
+</li>
+<li>
+Fixed issue #178 - Bug in drawing Label with icon but no text
+</li>
+<li>
+Fixed issue #179 - Components above List don't paint their background properly
+</li>
+<li>
+Fixed issue #181 - In Style class setBgSelectionColor in a new style throws NPE
+</li>
+<li>
+Fixed issue #183 - Border Def. in LWUIT Designer fail
+</li>
+<li>
+Fixed issue #184 - some components return static result in getUIID()
+</li>
+<li>
+Fixed issue #186 - Pointer events to be passed up the chain
+</li>
+<li>
+Fixed issue #189 - left/right padding in label are touching one in another
+</li>
+<li>
+Fixed issue #186 - Pointer events to be passed up the chain
+</li>
+<li>
+Fixed issue #186 - Pointer events to be passed up the chain
+</li>
+<li>
+Fixed issue #195 - replace Display.dragActivationCounter
+</li>
+
+
+                </ul>
+
+
+        <p>
+			<hr class="pHr">
+		</p>
+		<p class="copyright"><a href="copyright.html">Copyright &copy; 2008</a> Sun Microsystems, Inc. All rights reserved. Use is subject to the license terms.</p>
+	</body>
+
+</html>

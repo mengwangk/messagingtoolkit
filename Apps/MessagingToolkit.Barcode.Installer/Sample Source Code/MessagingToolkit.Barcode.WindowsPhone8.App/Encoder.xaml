@@ -1,0 +1,59 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="MessagingToolkit.Barcode.WindowsPhone8.App.Encoder"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="MessagingToolkit Barcode Demo" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Encoder" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="383*" />
+                <ColumnDefinition Width="73*" />
+            </Grid.ColumnDefinitions>
+            <HyperlinkButton Content="Back" Height="24" HorizontalAlignment="Left" Margin="10,565,0,0" Name="lnkBack" VerticalAlignment="Top" Width="144" Click="lnkBack_Click" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="23,34,0,0" Name="textBlock1" Text="Data" VerticalAlignment="Top" RenderTransformOrigin="-0.073,0" />
+            <ListBox Height="270" HorizontalAlignment="Right" Margin="0,94,53,0" Name="lstBarcodeType" VerticalAlignment="Top" Width="316" Grid.ColumnSpan="2" FontSize="16">
+                <ListBoxItem Content="QR Code" />
+                <ListBoxItem Content="Data Matrix" />
+                <ListBoxItem Content="PDF417" />
+                <ListBoxItem Content="Aztec" />
+                <ListBoxItem Content="Code 128" />
+                <ListBoxItem Content="Code 39" />
+                <ListBoxItem Content="EAN-13" />
+                <ListBoxItem Content="EAN-8" />
+                <ListBoxItem Content="ITF-14" />
+                <ListBoxItem Content="UPC-A" />
+                <ListBoxItem Content="MSI Mod 10" />
+                <ListBoxItem Content="Plessey" />
+            </ListBox>
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="23,159,0,0" Name="textBlock2" Text="Type" VerticalAlignment="Top" />
+            <Button Content="Encode" Height="72" HorizontalAlignment="Left" Margin="123,364,0,0" Name="btnEncode" VerticalAlignment="Top" Width="160" Click="btnEncode_Click" />
+            <Image Height="124" HorizontalAlignment="Left" Margin="84,436,0,0" Name="picEncodedBarcode" Stretch="Fill" VerticalAlignment="Top" Width="329" Grid.ColumnSpan="2" />
+            <TextBox Height="100" HorizontalAlignment="Left" Margin="69,-6,0,0" Name="txtBarcodeData" Text="MessagingToolkit Barcode Demo" VerticalAlignment="Top" Width="377" TextWrapping="Wrap" Grid.ColumnSpan="2" />
+        </Grid>
+    </Grid>
+
+
+</phone:PhoneApplicationPage>

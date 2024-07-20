@@ -1,0 +1,5 @@
+MMSC=http://mms.vodafone.hu/servlets/mms
+WAPGateway=80.244.97.2
+APN=mms.vodafone.net
+APNAccount=mms
+APNPassword=mms

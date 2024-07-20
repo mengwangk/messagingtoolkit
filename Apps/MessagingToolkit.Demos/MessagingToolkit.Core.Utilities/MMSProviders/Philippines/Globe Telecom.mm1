@@ -1,0 +1,5 @@
+MMSC=http://192.40.100.22:10021/mmsc
+WAPGateway=192.40.100.20
+APN=mms.globe.com.ph
+APNAccount=
+APNPassword=1

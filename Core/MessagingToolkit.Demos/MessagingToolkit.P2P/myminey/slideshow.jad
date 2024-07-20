@@ -1,0 +1,16 @@
+MIDlet-1: Slideshow, /icon.png, com.astrientlabs.fotomica.Slideshow
+MIDlet-Jar-Size: 30320
+MIDlet-Jar-URL: slideshow.jar
+MIDlet-Name: Slideshow
+MIDlet-Permissions: javax.microedition.io.Connector.http,javax.microedition.io.Connector.comm,javax.microedition.io.Connector.socket
+MIDlet-Vendor: Astrient Labs
+MIDlet-Version: 0.5.2
+MicroEdition-Configuration: CLDC-1.0
+MicroEdition-Profile: MIDP-2.0
+MIDlet-Install-Notify: http://j2me.astrientlabs.com/notify?appid=5&opid=1
+MIDlet-Delete-Notify: http://j2me.astrientlabs.com/notify?appid=5&opid=2
+client.guid: 1234567890
+fotomica.host: http://fotomica.astrientlabs.com
+fotomica.cachesize: 5
+astrientlabs-build-date: Mon Oct 31 2005 12:37:48 GMT-0500 (EST)
+astrientlabs-build-bid: rashid

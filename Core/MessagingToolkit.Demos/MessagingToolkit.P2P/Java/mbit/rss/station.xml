@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<opml version="1.1">
+<head><title>Stations</title><dateCreated>2006-04-02T00:20:14Z</dateCreated>
+<dateModified>2006-04-02T00:20:14Z</dateModified>
+<ownerName>Innity</ownerName>
+<ownerEmail>mengwangk@gmail.com</ownerEmail>
+<expansionState></expansionState>
+<vertScrollState></vertScrollState>
+<windowTop></windowTop><windowLeft></windowLeft><windowBottom></windowBottom><windowRight></windowRight>
+</head>
+<body>
+<outline id="1" name="The Stars" image="star.png" channel="star.xml" />
+<outline id="2" name="The Edge"  image="edge.png" channel="edge.xml" />
+<outline id="3" name="星洲日報"  image="sinchew.png" channel="sinchew.xml"/>
+<outline id="4" name="The Sun"  image="sun.png" channel="sun.xml" />
+</body></opml>

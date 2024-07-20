@@ -1,0 +1,5 @@
+MMSC=http://mms.avea.com.tr/servlets/mms
+WAPGateway=213.161.151.201
+APN=mms
+APNAccount=mms
+APNPassword=mms

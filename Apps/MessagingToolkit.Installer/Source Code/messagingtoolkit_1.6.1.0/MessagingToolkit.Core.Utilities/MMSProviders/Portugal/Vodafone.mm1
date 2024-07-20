@@ -1,0 +1,5 @@
+MMSC=http:mms/servlets/mms
+WAPGateway=213.30.27.63
+APN=vas.vodafone.pt
+APNAccount=vas
+APNPassword=vas

@@ -1,0 +1,5 @@
+MMSC=http://mmsc.t-mobile.co.uk:8002/
+WAPGateway=149.254.211.10
+APN=general.t-mobile.uk
+APNAccount=user
+APNPassword=one2one

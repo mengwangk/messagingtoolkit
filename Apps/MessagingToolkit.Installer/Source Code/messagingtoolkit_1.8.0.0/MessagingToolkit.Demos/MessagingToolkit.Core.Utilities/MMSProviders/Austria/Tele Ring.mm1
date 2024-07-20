@@ -1,0 +1,5 @@
+MMSC=http://relay.mms.telering.at
+WAPGateway=212.95.31.50
+APN=mms
+APNAccount=wap@telering.at
+APNPassword=wap

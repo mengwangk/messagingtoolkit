@@ -1,0 +1,5 @@
+MMSC=mmsc.mms.o2.co.uk:8002
+WAPGateway=193.113.200.195
+APN=wap.o2.co.uk
+APNAccount=o2wap
+APNPassword=password

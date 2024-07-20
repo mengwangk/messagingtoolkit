@@ -1,0 +1,300 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./package_files/filelist.xml">
+<title>The Networking Toolkit provides classes that simplify the development of
+network aware applications</title>
+<style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoList2, li.MsoList2, div.MsoList2
+	{font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-right:0in;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:292297889;
+	mso-list-template-ids:716102364;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoBodyText>NOTE: The Networking Toolkit is being made available in
+Alpha form only, to support the RMS Toolkit’s network store capability
+(example: ExpensePad.)<span style="mso-spacerun: yes">  </span>The Networking
+Toolkit API is likely to change.<span style="mso-spacerun: yes"> 
+</span>Documentation is being provided for those features required by the RMS
+Toolkit.</p>
+
+<h3>Classes</h3>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>The
+Networking Toolkit API consists of classes and interfaces found in the
+com.nextel.net package.<span style="mso-spacerun: yes">  </span>Two test
+drivers are included in the toolkit for use with the HTTP service.<span
+style="mso-spacerun: yes">  </span>The test drivers reference the com.nextel.util.Debug.UNIT_TEST
+attribute.<span style="mso-spacerun: yes">  </span>When running the test
+drivers, this attribute should be set to true.<span style="mso-spacerun: yes"> 
+</span>Below are descriptions of the classes and interfaces found in the
+com.nextel.net package.</p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.45in;text-indent:-.25in;mso-list:l0 level1 lfo2;tab-stops:list .45in .5in'><![if !supportLists]>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]><b>HttpRequest</b>
+– A class that implements HTTP requests synchronously.<span
+style="mso-spacerun: yes">  </span>Methods of this class will directly return
+the InputStream that results from successful HTTP requests with network
+resources.</p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.45in;text-indent:-.25in;mso-list:l0 level1 lfo2;tab-stops:list .45in .5in'><![if !supportLists]>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]><b>HttpRequestDriver</b>
+– A test class for unit testing the HttpRequestClass.<span style="mso-spacerun:
+yes">  </span>This class provides the HttpRequest with testing the correctness
+of its methods apart from network dependencies.<span style="mso-spacerun:
+yes">  </span>To use this class, first set the Debug.UNIT_TEST attribute in
+com.nextel.util to true.</p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.45in;text-indent:-.25in;mso-list:l0 level1 lfo2;tab-stops:list .45in .5in'><![if !supportLists]>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]><b>OInputStream</b>
+– A Timeable class that represents an extended InputStream that is monitored
+for timeout conditions during read operations.<span style="mso-spacerun: yes"> 
+</span>This class is bound to a RequestTimer.<span style="mso-spacerun: yes"> 
+</span>The HttpRequest and HttpAsyncRequest class will use instances of
+OInputStream if a timeout value greater than 0 is used.</p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.45in;text-indent:-.25in;mso-list:l0 level1 lfo2;tab-stops:list .45in .5in'><![if !supportLists]>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]><b>Request</b>
+– A base class for request objects.</p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.45in;text-indent:-.25in;mso-list:l0 level1 lfo2;tab-stops:list .45in .5in'><![if !supportLists]>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]><b>RequestListener</b>
+– An interface that describes the behavior of classes that respond to request
+progress.<span style="mso-spacerun: yes">   </span>It would be common for a
+MIDlet class to implement this interface so that it will be notified of
+completed requests or problems encountered during the request transmission.</p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.45in;text-indent:-.25in;mso-list:l0 level1 lfo2;tab-stops:list .45in .5in'><![if !supportLists]>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]><b>RequestTimer</b>
+– A class that monitors operations for timeout conditions.<span
+style="mso-spacerun: yes">  </span>RequestTimers are used to monitor latency
+while making connections, obtaining streams, and during stream operations. </p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.45in;text-indent:-.25in;mso-list:l0 level1 lfo2;tab-stops:list .45in .5in'><![if !supportLists]>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]><b>Timeable</b>
+– An interface that describes the behavior of a class that requires monitoring
+of timeout conditions.<span style="mso-spacerun: yes">  </span>These are
+specifically classes that initialize RequestTimer instances.<span
+style="mso-spacerun: yes">  </span>HttpRequest, UDPReliableRequest and
+OInputStream implement the Timeable interface.</p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.45in;text-indent:-.25in;mso-list:l0 level1 lfo2;tab-stops:list .45in .5in'><![if !supportLists]>8.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]><b>TimeoutException</b>
+– An exception class that signifies a timeout condition.<span
+style="mso-spacerun: yes">  </span>Instances of this class are typically
+communicated to RequestListeners through the RequestListener.exception(Exception,
+Request) method.</p>
+
+<h3>Requests and RequestListeners</h3>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>The
+RequestListener interface describes classes that respond to request activity.
+Not all request classes require a RequestListener.<span style="mso-spacerun:
+yes">  </span>The HttpRequest class performs its operations synchronously as
+called.<span style="mso-spacerun: yes">  </span>In using the HttpRequest class,
+an InputStream is returned from get() and post() calls.<span
+style="mso-spacerun: yes">  </span>Programmatically, execution will continue
+once the InputStream is returned and operations on the stream are
+performed.<span style="mso-spacerun: yes">  </span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>The
+completed() method on the RequestListener provides a mechanism for indicating
+that the request has finished transmitting the request.<span
+style="mso-spacerun: yes">  </span>The completed method is provided a copy of
+the Request that invoked the method.<span style="mso-spacerun: yes"> 
+</span>With this instance, attributes of the Request can be retrieved for
+further processing.<span style="mso-spacerun: yes">  </span>An example of this
+would be to use the passed in Request to retrieve the InputStream which then
+could be read from to retrieve data from the network resource that was
+requested.<span style="mso-spacerun: yes">  </span>The completed() method can
+serve as a control mechanism for sending multiple requests if each subsequent
+send is only initiated once the completed() has been called.<span
+style="mso-spacerun: yes">  </span>In this manner, requests will not be sent
+until the previous request has completed thereby reducing the risk of
+exhausting socket resources.</p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>The
+exception() method on the RequestListener provides notification about request
+failure.<span style="mso-spacerun: yes">  </span>Similar to the completed()
+method, exception() is a chained method between bound instances of
+RequestListeners.<span style="mso-spacerun: yes">  </span>This method gets
+invoked from within Request objects once it has been determined that the
+request cannot be successfully completed.<span style="mso-spacerun: yes"> 
+</span>For Requests that support latency timeouts and retries, the exception()
+method would only be invoked once the number of retries has been reached.<span
+style="mso-spacerun: yes">  </span>The exception method, is called with an
+instance of the Request that the RequestListener is monitoring and the
+exception resulting from the failed transmission.<span style="mso-spacerun:
+yes">  </span></p>
+
+<h3>Requests and RequestTimers</h3>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>Request
+types can be instantiated with an optional timeout value.<span
+style="mso-spacerun: yes">  </span>This value, if greater than 0, causes the
+request to use a RequestTimer for monitoring of timeout conditions during
+request handling.<span style="mso-spacerun: yes">  </span>The RequestTimer is
+instantiated with the Timeable instance that it monitors.<span
+style="mso-spacerun: yes">  </span>The request will then call into the
+RequestTimer before and after critical operations that need monitoring for
+latency.<span style="mso-spacerun: yes">  </span>Such operations in the request
+are obtaining the Connection and InputStream.<span style="mso-spacerun: yes"> 
+</span>If these operations succeed without incurring a timeout, the
+RequestTimer is terminated.<span style="mso-spacerun: yes">  </span>Because of
+the high probability of latency timeouts while reading from an InputStream, the
+returned stream is configured with a RequestTimer.<span style="mso-spacerun:
+yes">  </span>This timeable InputStream is the OInputStream class.<span
+style="mso-spacerun: yes">  </span>In the OInputStream, read calls are embedded
+with start and stop calls to the RequestTimer to enable detection of
+timeouts.<span style="mso-spacerun: yes">  </span>This allows the program using
+the InputStream to benefit from not permitting blocked reads to occur.<span
+style="mso-spacerun: yes">  </span>If a timeout is set, the RequestTimer will
+call the OInputStream timeout method if such a condition is warranted, allowing
+the stream class to terminate the blocked read condition.<span
+style="mso-spacerun: yes">  </span>If this occurs, the application will need to
+reissue the request.<span style="mso-spacerun: yes">  </span>The reason for
+this is that programmatically the only way to interrupt the blocked stream is
+to close both the stream and connection involved.</p>
+
+<h3>TimeoutException</h3>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>If
+the KVM times out and throws an exception it throws a TimeoutException that is
+a subclass of java.io.IOException.<span style="mso-spacerun: yes">  </span>For
+the toolkit to be consistent with these timeouts, timeout conditions detected
+through a RequestTimer throw com.nextel.net.TimeoutException which also is a
+subclass of java.io.IOException.<span style="mso-spacerun: yes"> 
+</span>Timeout conditions occur when a RequestTimer detects a set period of
+latency and calls the timeout() method on the timeable instance to which it is
+bound.<span style="mso-spacerun: yes">  </span>The timeout() method is
+responsible for implementing the necessary actions for that type of request to
+terminate the current transmission.<span style="mso-spacerun: yes">  </span>The
+timeout method then creates a com.nextel.net.TimeoutException and passes it up
+through the associated RequestListeners through the RequestListener exception()
+method.</p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>There
+are two places where this course of action is incurred.<span
+style="mso-spacerun: yes">  </span>The first is from within the Request object
+itself.<span style="mso-spacerun: yes">  </span>Requests that are Timeable
+objects, by definition will contain the timeout() method that the RequestTimer
+invokes once the timeout condition has occurred.<span style="mso-spacerun:
+yes">  </span>The RequestTimer is activated from within the Request during
+creation of, and transmission over, the network connection.<span
+style="mso-spacerun: yes">  </span>If a timeout occurs during this use of the
+connection, the timeout method will be invoked.<span style="mso-spacerun:
+yes">  </span>Inside the timeout method, the current request attempt will be
+checked to determine if more retries are available.<span style="mso-spacerun:
+yes">  </span>If more retries exist, a timeout exception is not created, and the
+timeout method exits.<span style="mso-spacerun: yes">  </span>Within the
+Request, an IOException will occur due to the timeout method having closed the
+connection.<span style="mso-spacerun: yes">  </span>The exception will get
+caught and being that there are more retries available, the request will get
+initiated again.<span style="mso-spacerun: yes">  </span>If there are no
+additional retries, the TimeoutException is created and sent up the exception()
+method of the RequestListener.</p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>The
+second place where timeout occur is while performing stream operations.<span
+style="mso-spacerun: yes">  </span>If the Request was created with a timeout
+option greater than 0, the resulting InputStream available from the Request is
+an instance of OInputStream.<span style="mso-spacerun: yes"> 
+</span>OInputStream is a timeable object and its operations become monitored by
+a RequestTimer.<span style="mso-spacerun: yes">  </span>If an operation upon
+the OInputStream incurs a timeout, the OInputStream timeout() method will
+become invoked.<span style="mso-spacerun: yes">  </span>Inside this method, the
+underlying DataInputStream and Connection are closed and an internal timeout
+flag is set.<span style="mso-spacerun: yes">  </span>With the stream and connection
+closed, subsequent operations on the OInputStream will result in an IOException.<span
+style="mso-spacerun: yes">  </span>The timeout flag is used to determine if the
+impending IOException is a result of a timeout.<span style="mso-spacerun:
+yes">  </span>To make this determination, all operations are checked for
+IOExceptions and should one occur, the flag is checked.<span
+style="mso-spacerun: yes">  </span>If the timeout flag is set, the IOException
+is a result of the timeout, resulting in the creation and handling of a
+TimeoutException through the RequestListener exception() method.<span
+style="mso-spacerun: yes">  </span>This handling is particularly necessary
+since the timeout() method and OInputStream read operations occur on different
+threads.</p>
+
+<h3>Resources</h3>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>It
+is important to be aware of the limited resources available to the developer
+when creating applications for the handset.<span style="mso-spacerun: yes"> 
+</span>With respect to networking applications the critical resource constraint
+is with sockets.<span style="mso-spacerun: yes">  </span>At the time of
+developing this toolkit the handset only supported the use of two concurrent
+sockets.<span style="mso-spacerun: yes">  </span>This constraint does not
+affect the developer’s use of the HttpRequest class since this class provides a
+synchronous service. </p>
+
+<h3>Examples</h3>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>The
+<span style='mso-bidi-font-family:Arial'>previously mentioned expense pad
+example in </span><span style='font-family:"Courier New"'>com.nextel.examples.expensepad.ExpensePad</span><span
+style='mso-bidi-font-family:Arial'> utilizes the network toolkit support for
+http connections.<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

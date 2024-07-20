@@ -1,0 +1,5 @@
+MMSC=http://mms.sonera.fi:8002/
+WAPGateway=195.156.25.33
+APN=wap.sonera.net
+APNAccount=
+APNPassword=

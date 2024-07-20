@@ -1,0 +1,7 @@
+MIDlet-Version: 1.0.0
+MIDlet-Vendor: twit88.com
+MIDlet-Jar-URL: p2pclient.jar
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Profile: MIDP-2.0
+MIDlet-1: MIDlet-1,,messagingtoolkit.p2pclient.StartApp
+MIDlet-Name: P2P Client

@@ -1,0 +1,50 @@
+﻿March 3, 2017
+-------------
+Added +CLCC feature.
+
+Feb 21, 2017
+-------------
+Add +CLCC=1. Work in progress.
+
+Feb 12, 2017
+------------
+1. Added CLCC support
+2. Added CHLD support
+
+
+Sept 13, 2011
+-------------
+1. Modify BaseMobileGateway.cs to reset the memory location to original after a status report is read from the memory.
+2. Fix Core.Utilitiy Scheduled Sent Message date to include time component.
+3. Fix BaseMobileGateway.cs so that USSD response event is triggered without adding MessageReceived event handler.
+4. Fix ConfigureGateway to set the MessageoStorage correctly
+
+Jan 13, 2012
+-------------
+1. Fixed USSD command encoding issue with Huawei modem.
+2. Added configurations for controlling header and data compression control for MMS data connection.
+3. Fixed a message decoding bug in MMS library.
+4. Added a configuration to control the "Profile" header while establishing data connection to MMSC.
+
+Jan 16, 2012
+-------------
+1. Fixed the demo to catch PDU encoding exception.
+
+
+Jan 19, 2012
+------------
+1. To fix OnRawMessageReceived so that Trigger mode also allows concatenated messages.
+
+
+May 19, 2013
+------------
+1. Added SIM Toolkit classes under MessagingToolkit.Core.Stk
+
+
+
+Sept 29th 2014
+--------------
+1. Fixed log name format error.
+
+
+

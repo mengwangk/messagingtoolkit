@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>The Star Online: Technology</title>
+<link>http://star-techcentral.com/</link>
+<description>Update: Friday, January 27, 2006 MYT 6:05:02 PM</description>
+<image>
+<title>The Star Online</title>
+<url>http://localhost/news/images/404.jpg</url>
+<link>http://thestar.com.my/</link>
+<width>88</width>
+<height>31</height>
+</image>
+<item>
+<title>Siemens to set up IMS lab</title>
+<link>http://star-techcentral.com/tech/story.asp?file=/2006/1/27/technology/13246865&amp;sec=technology</link>
+<description>&lt;B&gt;PETALING JAYA:&lt;/B&gt; Siemens Malaysia Sdn Bhd plans to open an IMS (Internet Protocol Multimedia Subsystem) applications testing laboratory in Malaysia soon.</description>
+</item>
+<item>
+<title>Kompakar wins ITIL certification</title>
+<link>http://star-techcentral.com/tech/story.asp?file=/2006/1/27/technology/13246944&amp;sec=technology</link>
+<description>&lt;B&gt;PETALING JAYA: &lt;/B&gt;Kompakar eRetail Sdn Bhd, a subsidiary of Kompakar Inc Bhd, has been successfully awarded the Information Technology Infrastructure Library (ITIL) certification.</description>
+</item>
+<item>
+<title>MCMC, Mynic seek domain name feedback</title>
+<link>http://star-techcentral.com/tech/story.asp?file=/2006/1/27/technology/13246885&amp;sec=technology</link>
+<description>&lt;B&gt;PETALING JAYA:&lt;/B&gt; Mynic, Malaysia&#8217;s designated country-code top level domain name managing organisation, and the Malaysian Communications and Multimedia Commission (MCMC) are seeking a second round of public feedback on their plan to bring back second-level domain names.</description>
+</item>
+</channel>
+</rss>
+

@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C4AAAC0-2891-4C1D-AFBF-8CBEEF6CE661}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MessagingToolkit.Core.Utilities</RootNamespace>
+    <AssemblyName>MessagingToolkit.Core.Utilities</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>MessagingToolkit.Core.Utilities.Program</StartupObject>
+    <ApplicationIcon>modern-install.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\output\debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\output\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>..\..\output\debug\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>..\..\output\release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\output\debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\output\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Solution Items\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="frmHttp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHttp.Designer.cs">
+      <DependentUpon>frmHttp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMM1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMM1.Designer.cs">
+      <DependentUpon>frmMM1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMM7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMM7.Designer.cs">
+      <DependentUpon>frmMM7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSMPP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSMPP.Designer.cs">
+      <DependentUpon>frmSMPP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSMS.Designer.cs">
+      <DependentUpon>frmSMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageContent.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmHttp.resx">
+      <DependentUpon>frmHttp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMM1.resx">
+      <DependentUpon>frmMM1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMM7.resx">
+      <DependentUpon>frmMM7.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSMPP.resx">
+      <DependentUpon>frmSMPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSMS.resx">
+      <DependentUpon>frmSMS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="MMSProviders\Albania\AMC.mm1" />
+    <EmbeddedResource Include="MMSProviders\Albania\Vodafone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Algeria\Djezzy.mm1" />
+    <EmbeddedResource Include="MMSProviders\Algeria\Nedjma.mm1" />
+    <EmbeddedResource Include="MMSProviders\Andorra\STA.mm1" />
+    <EmbeddedResource Include="MMSProviders\Anguilla\Cable and Wireless.mm1" />
+    <EmbeddedResource Include="MMSProviders\Antigua&amp;Barbuda\Cable and Wireless.mm1" />
+    <EmbeddedResource Include="MMSProviders\Antigua&amp;Barbuda\Digicel.mm1" />
+    <EmbeddedResource Include="MMSProviders\Argentina\CTI Movil.mm1" />
+    <EmbeddedResource Include="MMSProviders\Argentina\Personal.mm1" />
+    <EmbeddedResource Include="MMSProviders\Argentina\Unifon.mm1" />
+    <EmbeddedResource Include="MMSProviders\Arub\Digicel.mm1" />
+    <EmbeddedResource Include="MMSProviders\Arub\Setar.mm1" />
+    <EmbeddedResource Include="MMSProviders\Australia\Optus.mm1" />
+    <EmbeddedResource Include="MMSProviders\Australia\Telstra.mm1" />
+    <EmbeddedResource Include="MMSProviders\Australia\Three.mm1" />
+    <EmbeddedResource Include="MMSProviders\Australia\Vodafone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Austria\Drei.mm1" />
+    <EmbeddedResource Include="MMSProviders\Austria\MobilKom.mm1" />
+    <EmbeddedResource Include="MMSProviders\Austria\One.mm1" />
+    <EmbeddedResource Include="MMSProviders\Austria\T-Mobile.mm1" />
+    <EmbeddedResource Include="MMSProviders\Austria\Tele Ring.mm1" />
+    <EmbeddedResource Include="MMSProviders\Azerbaijan\Azercell.mm1" />
+    <EmbeddedResource Include="MMSProviders\Azerbaijan\Bakcell.mm1" />
+    <EmbeddedResource Include="MMSProviders\Bahrain\Batelco.mm1" />
+    <EmbeddedResource Include="MMSProviders\Bangladesh\Aktel.mm1" />
+    <EmbeddedResource Include="MMSProviders\Barbados\Digicel.mm1" />
+    <EmbeddedResource Include="MMSProviders\Belgium\Base.mm1" />
+    <EmbeddedResource Include="MMSProviders\Belgium\Mobistar.mm1" />
+    <EmbeddedResource Include="MMSProviders\Belgium\Proximus.mm1" />
+    <EmbeddedResource Include="MMSProviders\Belgium\Tempo.mm1" />
+    <EmbeddedResource Include="MMSProviders\Bosnia&amp;Herzegowina\Mobis.mm1" />
+    <EmbeddedResource Include="MMSProviders\Brazil\Brazil Telecom.mm1" />
+    <EmbeddedResource Include="MMSProviders\Brazil\Claro.mm1" />
+    <EmbeddedResource Include="MMSProviders\Brazil\Oi.mm1" />
+    <EmbeddedResource Include="MMSProviders\Brazil\TIM.mm1" />
+    <EmbeddedResource Include="MMSProviders\Brunei\DST.mm1" />
+    <EmbeddedResource Include="MMSProviders\Bulgaria\Globul.mm1" />
+    <EmbeddedResource Include="MMSProviders\Bulgaria\Mtel.mm1" />
+    <EmbeddedResource Include="MMSProviders\Cambodia\Hello.mm1" />
+    <EmbeddedResource Include="MMSProviders\Canada\Rogers.mm1" />
+    <EmbeddedResource Include="MMSProviders\Cayman Islands\Cable and Wireless.mm1" />
+    <EmbeddedResource Include="MMSProviders\Chile\Entel PCS.mm1" />
+    <EmbeddedResource Include="MMSProviders\Chile\Telefonica.mm1" />
+    <EmbeddedResource Include="MMSProviders\China\China Mobile.mm1" />
+    <EmbeddedResource Include="MMSProviders\Croatia\VIPNet.mm1" />
+    <EmbeddedResource Include="MMSProviders\Cyprus\Areeba.mm1" />
+    <EmbeddedResource Include="MMSProviders\Cyprus\CytaMobile VodaFone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Czech Republic\Eurotel.mm1" />
+    <EmbeddedResource Include="MMSProviders\Czech Republic\O2.mm1" />
+    <EmbeddedResource Include="MMSProviders\Czech Republic\Oskar.mm1" />
+    <EmbeddedResource Include="MMSProviders\Czech Republic\T-Mobile.mm1" />
+    <EmbeddedResource Include="MMSProviders\Denmark\Sonofon.mm1" />
+    <EmbeddedResource Include="MMSProviders\Denmark\Tele Denamrk.mm1" />
+    <EmbeddedResource Include="MMSProviders\Denmark\Telia.mm1" />
+    <EmbeddedResource Include="MMSProviders\Denmark\Tre.mm1" />
+    <EmbeddedResource Include="MMSProviders\Dominica\Cable and Wireless.mm1" />
+    <EmbeddedResource Include="MMSProviders\Egypt\MobilNil.mm1" />
+    <EmbeddedResource Include="MMSProviders\Egypt\Vodafone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Estonia\Elisa.mm1" />
+    <EmbeddedResource Include="MMSProviders\Estonia\EMT.mm1" />
+    <EmbeddedResource Include="MMSProviders\Estonia\Tele 2.mm1" />
+    <EmbeddedResource Include="MMSProviders\Finland\Alands.mm1" />
+    <EmbeddedResource Include="MMSProviders\Finland\DNA.mm1" />
+    <EmbeddedResource Include="MMSProviders\Finland\Elisa.mm1" />
+    <EmbeddedResource Include="MMSProviders\Finland\Go Mobile.mm1" />
+    <EmbeddedResource Include="MMSProviders\Finland\PGFree.mm1" />
+    <EmbeddedResource Include="MMSProviders\Finland\Sonera.mm1" />
+    <EmbeddedResource Include="MMSProviders\France\Bouygues.mm1" />
+    <EmbeddedResource Include="MMSProviders\France\Orange.mm1" />
+    <EmbeddedResource Include="MMSProviders\France\SFR.mm1" />
+    <EmbeddedResource Include="MMSProviders\Georgia\Magti.mm1" />
+    <EmbeddedResource Include="MMSProviders\Germany\E-Plus.mm1" />
+    <EmbeddedResource Include="MMSProviders\Germany\O2.mm1" />
+    <EmbeddedResource Include="MMSProviders\Germany\T-Mobile.mm1" />
+    <EmbeddedResource Include="MMSProviders\Germany\VodaFone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Greece\Cosmote.mm1" />
+    <EmbeddedResource Include="MMSProviders\Greece\Q-Telecom.mm1" />
+    <EmbeddedResource Include="MMSProviders\Greece\TIM.mm1" />
+    <EmbeddedResource Include="MMSProviders\Greece\Vodafone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Grenada\Cable and Wireless.mm1" />
+    <EmbeddedResource Include="MMSProviders\Hong Kong\CSL.mm1" />
+    <EmbeddedResource Include="MMSProviders\Hong Kong\New World.mm1" />
+    <EmbeddedResource Include="MMSProviders\Hong Kong\Orange.mm1" />
+    <EmbeddedResource Include="MMSProviders\Hong Kong\Peoples.mm1" />
+    <EmbeddedResource Include="MMSProviders\Hong Kong\SmartOne.mm1" />
+    <EmbeddedResource Include="MMSProviders\Hong Kong\Sunday.mm1" />
+    <EmbeddedResource Include="MMSProviders\Hong Kong\Three.mm1" />
+    <EmbeddedResource Include="MMSProviders\Hungary\PannonGSM.mm1" />
+    <EmbeddedResource Include="MMSProviders\Hungary\T-Mobile.mm1" />
+    <EmbeddedResource Include="MMSProviders\Hungary\Vodafone.mm1" />
+    <EmbeddedResource Include="MMSProviders\India\Airtel.mm1" />
+    <EmbeddedResource Include="MMSProviders\India\BPL.mm1" />
+    <EmbeddedResource Include="MMSProviders\India\CellOne.mm1" />
+    <EmbeddedResource Include="MMSProviders\India\Hutch.mm1" />
+    <EmbeddedResource Include="MMSProviders\India\VodaFone.MM1" />
+    <EmbeddedResource Include="MMSProviders\Indonesia\IM3.mm1" />
+    <EmbeddedResource Include="MMSProviders\Indonesia\Mentari.mm1" />
+    <EmbeddedResource Include="MMSProviders\Indonesia\ProXL.mm1" />
+    <EmbeddedResource Include="MMSProviders\Indonesia\Sat-C.mm1" />
+    <EmbeddedResource Include="MMSProviders\Indonesia\Telkomsel.mm1" />
+    <EmbeddedResource Include="MMSProviders\Ireland\Vodafone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Israel\Orange.mm1" />
+    <EmbeddedResource Include="MMSProviders\Italy\TIM.mm1" />
+    <EmbeddedResource Include="MMSProviders\Italy\Tre.mm1" />
+    <EmbeddedResource Include="MMSProviders\Italy\Vodafone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Italy\Wind.mm1" />
+    <EmbeddedResource Include="MMSProviders\Jamaica\Cable and Wireless.mm1" />
+    <EmbeddedResource Include="MMSProviders\Jamaica\Digicell.mm1" />
+    <EmbeddedResource Include="MMSProviders\Jordan\MobileCom.mm1" />
+    <EmbeddedResource Include="MMSProviders\Kazakhstan\K Mobile.mm1" />
+    <EmbeddedResource Include="MMSProviders\Kazakhstan\Kcell.mm1" />
+    <EmbeddedResource Include="MMSProviders\Kuwait\MTC.mm1" />
+    <EmbeddedResource Include="MMSProviders\Kuwait\Wataniya.mm1" />
+    <EmbeddedResource Include="MMSProviders\Liechtenstein\MobilKom.mm1" />
+    <EmbeddedResource Include="MMSProviders\Lithuania\Omnitel.mm1" />
+    <EmbeddedResource Include="MMSProviders\Luxembourg\Lux GSM.mm1" />
+    <EmbeddedResource Include="MMSProviders\Luxembourg\Tango.mm1" />
+    <EmbeddedResource Include="MMSProviders\Luxembourg\VOX.mm1" />
+    <EmbeddedResource Include="MMSProviders\Macau\CTM.mm1" />
+    <EmbeddedResource Include="MMSProviders\Macedonia\Cosmofon.mm1" />
+    <EmbeddedResource Include="MMSProviders\Malaysia\Celcom.mm1" />
+    <EmbeddedResource Include="MMSProviders\Malaysia\DiGi.mm1" />
+    <EmbeddedResource Include="MMSProviders\Malaysia\Maxis.mm1" />
+    <EmbeddedResource Include="MMSProviders\Malta\Vodafone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Mexico\Telcel.mm1" />
+    <EmbeddedResource Include="MMSProviders\Moldova\MoldCell.mm1" />
+    <EmbeddedResource Include="MMSProviders\Monaco\Monacell.mm1" />
+    <EmbeddedResource Include="MMSProviders\Montserrat\Cable and Wireless.mm1" />
+    <EmbeddedResource Include="MMSProviders\Morocco\IAM.mm1" />
+    <EmbeddedResource Include="MMSProviders\Morocco\MarocTelecom.mm1" />
+    <EmbeddedResource Include="MMSProviders\Netherlands\KPN.mm1" />
+    <EmbeddedResource Include="MMSProviders\Netherlands\Orange.mm1" />
+    <EmbeddedResource Include="MMSProviders\Netherlands\T-Mobile.mm1" />
+    <EmbeddedResource Include="MMSProviders\Netherlands\Telfort.mm1" />
+    <EmbeddedResource Include="MMSProviders\Netherlands\Vodafone.mm1" />
+    <EmbeddedResource Include="MMSProviders\New Zealand\Vodafone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Nigeria\Globacom.mm1" />
+    <EmbeddedResource Include="MMSProviders\Nigeria\Glomobile.mm1" />
+    <EmbeddedResource Include="MMSProviders\Norway\Netcom.mm1" />
+    <EmbeddedResource Include="MMSProviders\Norway\Telenor.mm1" />
+    <EmbeddedResource Include="MMSProviders\Oman\Nawras.mm1" />
+    <EmbeddedResource Include="MMSProviders\Oman\Oman Mobile.mm1" />
+    <EmbeddedResource Include="MMSProviders\Pakistan\Telenor.mm1" />
+    <EmbeddedResource Include="MMSProviders\Pakistan\Ufone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Panama\Cable and Wireless.mm1" />
+    <EmbeddedResource Include="MMSProviders\Paraguay\VOX.mm1" />
+    <EmbeddedResource Include="MMSProviders\Philippines\Digitell.mm1" />
+    <EmbeddedResource Include="MMSProviders\Philippines\Globe Telecom.mm1" />
+    <EmbeddedResource Include="MMSProviders\Philippines\Smart.mm1" />
+    <EmbeddedResource Include="MMSProviders\Philippines\SUN.mm1" />
+    <EmbeddedResource Include="MMSProviders\Poland\ERA.mm1" />
+    <EmbeddedResource Include="MMSProviders\Poland\Heyah.mm1" />
+    <EmbeddedResource Include="MMSProviders\Poland\Idea.mm1" />
+    <EmbeddedResource Include="MMSProviders\Poland\Orange.mm1" />
+    <EmbeddedResource Include="MMSProviders\Poland\Plus.mm1" />
+    <EmbeddedResource Include="MMSProviders\Poland\Sami Swoi.mm1" />
+    <EmbeddedResource Include="MMSProviders\Portugal\Optimus.mm1" />
+    <EmbeddedResource Include="MMSProviders\Portugal\TMN.mm1" />
+    <EmbeddedResource Include="MMSProviders\Portugal\Vodafone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Qatar\Qtel.mm1" />
+    <EmbeddedResource Include="MMSProviders\Romania\Connex-Vodafone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Romania\Orange.mm1" />
+    <EmbeddedResource Include="MMSProviders\Russia\A Mobile.mm1" />
+    <EmbeddedResource Include="MMSProviders\Russia\Beeline.mm1" />
+    <EmbeddedResource Include="MMSProviders\Russia\Megafon.mm1" />
+    <EmbeddedResource Include="MMSProviders\Russia\Motiv.mm1" />
+    <EmbeddedResource Include="MMSProviders\Russia\Smarts.mm1" />
+    <EmbeddedResource Include="MMSProviders\Russia\USI.mm1" />
+    <EmbeddedResource Include="MMSProviders\Saint Kitts and Nevis\Cable and Wireless.mm1" />
+    <EmbeddedResource Include="MMSProviders\Saint Lucia\Cable and Wireless.mm1" />
+    <EmbeddedResource Include="MMSProviders\Saint Vincent and the Grenadines\Cable and Wireless.mm1" />
+    <EmbeddedResource Include="MMSProviders\Saudi Arabia\STC.mm1" />
+    <EmbeddedResource Include="MMSProviders\Singapore\M1.mm1" />
+    <EmbeddedResource Include="MMSProviders\Singapore\SingTel.mm1" />
+    <EmbeddedResource Include="MMSProviders\Singapore\Starhub.mm1" />
+    <EmbeddedResource Include="MMSProviders\Slovakia\T-Mobile.mm1" />
+    <EmbeddedResource Include="MMSProviders\South Africa\Cell C.mm1" />
+    <EmbeddedResource Include="MMSProviders\South Africa\MTN.mm1" />
+    <EmbeddedResource Include="MMSProviders\South Africa\VodaCom.mm1" />
+    <EmbeddedResource Include="MMSProviders\Spain\Amena.mm1" />
+    <EmbeddedResource Include="MMSProviders\Spain\Movistar.mm1" />
+    <EmbeddedResource Include="MMSProviders\Spain\Vodafone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Sri Lanka\Dialog.mm1" />
+    <EmbeddedResource Include="MMSProviders\Sweden\Tele2.mm1" />
+    <EmbeddedResource Include="MMSProviders\Sweden\Telia.mm1" />
+    <EmbeddedResource Include="MMSProviders\Sweden\Tre.mm1" />
+    <EmbeddedResource Include="MMSProviders\Sweden\Vodafone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Switzerland\Orange.mm1" />
+    <EmbeddedResource Include="MMSProviders\Switzerland\Sunrise.mm1" />
+    <EmbeddedResource Include="MMSProviders\Switzerland\Swisscom.mm1" />
+    <EmbeddedResource Include="MMSProviders\Syria\Syriatel.mm1" />
+    <EmbeddedResource Include="MMSProviders\Taiwan\Chunghwa.mm1" />
+    <EmbeddedResource Include="MMSProviders\Taiwan\ForEasTone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Taiwan\KG Telcom.mm1" />
+    <EmbeddedResource Include="MMSProviders\Taiwan\Mobitai.mm1" />
+    <EmbeddedResource Include="MMSProviders\Taiwan\TransAsia.mm1" />
+    <EmbeddedResource Include="MMSProviders\Taiwan\TWN.mm1" />
+    <EmbeddedResource Include="MMSProviders\Taiwan\Vibo.mm1" />
+    <EmbeddedResource Include="MMSProviders\Thailand\AIS.mm1" />
+    <EmbeddedResource Include="MMSProviders\Thailand\DTAC.mm1" />
+    <EmbeddedResource Include="MMSProviders\Thailand\Mobilelife.mm1" />
+    <EmbeddedResource Include="MMSProviders\Thailand\Orange.mm1" />
+    <EmbeddedResource Include="MMSProviders\Tunisia\Tuntel.mm1" />
+    <EmbeddedResource Include="MMSProviders\Turkey\Avea.mm1" />
+    <EmbeddedResource Include="MMSProviders\Turkey\Telsim.mm1" />
+    <EmbeddedResource Include="MMSProviders\Turkey\Turkcell.mm1" />
+    <EmbeddedResource Include="MMSProviders\Turks and Caicos Islands\Cable and Wireless.mm1" />
+    <EmbeddedResource Include="MMSProviders\Ukraine\Kyivstar.mm1" />
+    <EmbeddedResource Include="MMSProviders\Ukraine\Life.mm1" />
+    <EmbeddedResource Include="MMSProviders\Ukraine\UMC.mm1" />
+    <EmbeddedResource Include="MMSProviders\United Arab Emirates\Etisalat.MM1" />
+    <EmbeddedResource Include="MMSProviders\United Arab Emir\Etisalat.mm1" />
+    <EmbeddedResource Include="MMSProviders\United Kingdom\BT.mm1" />
+    <EmbeddedResource Include="MMSProviders\United Kingdom\O2.mm1" />
+    <EmbeddedResource Include="MMSProviders\United Kingdom\Orange.mm1" />
+    <EmbeddedResource Include="MMSProviders\United Kingdom\T-Mobile.mm1" />
+    <EmbeddedResource Include="MMSProviders\United Kingdom\Tesco.mm1" />
+    <EmbeddedResource Include="MMSProviders\United Kingdom\Three.mm1" />
+    <EmbeddedResource Include="MMSProviders\United Kingdom\Virgin.mm1" />
+    <EmbeddedResource Include="MMSProviders\United Kingdom\Vodafone.mm1" />
+    <EmbeddedResource Include="MMSProviders\United States\AT&amp;T Wireless.mm1" />
+    <EmbeddedResource Include="MMSProviders\United States\Cingular.mm1" />
+    <EmbeddedResource Include="MMSProviders\United States\Orange.mm1" />
+    <EmbeddedResource Include="MMSProviders\United States\T-Mobile.mm1" />
+    <EmbeddedResource Include="MMSProviders\Uruguay\Ancel.mm1" />
+    <EmbeddedResource Include="MMSProviders\Uruguay\Movistar.mm1" />
+    <EmbeddedResource Include="MMSProviders\Uzbekistan\Beeline.mm1" />
+    <EmbeddedResource Include="MMSProviders\Uzbekistan\Unitel.mm1" />
+    <EmbeddedResource Include="MMSProviders\Vietnam\Mobifone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Vietnam\Vinafone.mm1" />
+    <EmbeddedResource Include="MMSProviders\Yemen\Sabafon.mm1" />
+    <EmbeddedResource Include="MMSProviders\Yugoslavia\Mobtel.mm1" />
+    <EmbeddedResource Include="MMSProviders\Yugoslavia\Monet.mm1" />
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="modern-install.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MessagingToolkit.Barcode\MessagingToolkit.Barcode_NET35.csproj">
+      <Project>{2a0d71ee-8ab8-44d2-8299-aae97281c698}</Project>
+      <Name>MessagingToolkit.Barcode_NET35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MessagingToolkit.Core\MessagingToolkit.Core.csproj">
+      <Project>{df6a5065-82aa-4815-9553-89b220664b4e}</Project>
+      <Name>MessagingToolkit.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MessagingToolkit.MMS\MessagingToolkit.MMS.csproj">
+      <Project>{40336858-5147-4c38-acfd-6281b79cf371}</Project>
+      <Name>MessagingToolkit.MMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MessagingToolkit.Pdu\MessagingToolkit.Pdu.csproj">
+      <Project>{606e4bd6-402f-4e43-b695-18c23d8e363d}</Project>
+      <Name>MessagingToolkit.Pdu</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MessagingToolkit.Wap\MessagingToolkit.Wap.csproj">
+      <Project>{6c058d53-126c-4400-bd8d-2e296904ae21}</Project>
+      <Name>MessagingToolkit.Wap</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

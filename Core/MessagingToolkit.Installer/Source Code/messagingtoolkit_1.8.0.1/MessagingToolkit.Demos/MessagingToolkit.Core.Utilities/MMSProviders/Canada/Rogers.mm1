@@ -1,0 +1,5 @@
+MMSC=http://mms.gprs.rogers.com
+WAPGateway=172.25.0.107
+APN=media.com
+APNAccount=media
+APNPassword=mda01

@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="yes"?>
+<parameters>
+<parameter id="1" name="news-server-base-url" value="http://lightspeedleader.com/mbit/" />
+<parameter id="2" name="station-update-file" value="station.xml" />
+<parameter id="3" name="news-update-interval" value="360" />
+<parameter id="4" name="last-updated" value="2006-06-28" />
+</parameters>

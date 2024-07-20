@@ -1,0 +1,5 @@
+MMSC=http://mmsc.dnafinland.fi
+WAPGateway=10.1.1.2
+APN=mms
+APNAccount=dna
+APNPassword=mms

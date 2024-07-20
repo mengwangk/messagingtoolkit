@@ -1,0 +1,5 @@
+MMSC=http://mms.gloworld.com/mmsc
+WAPGateway=10.100.82.4
+APN=glo_mms
+APNAccount=mms
+APNPassword=

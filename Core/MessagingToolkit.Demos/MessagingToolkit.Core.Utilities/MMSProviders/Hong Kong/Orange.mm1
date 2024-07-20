@@ -1,0 +1,5 @@
+MMSC=http://10.30.15.51:10021/mmsc
+WAPGateway=10.30.15.53
+APN=mms.orangehk.com
+APNAccount=orange
+APNPassword=1234

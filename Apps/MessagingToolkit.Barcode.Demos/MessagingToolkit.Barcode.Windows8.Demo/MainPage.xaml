@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="MessagingToolkit.Barcode.Windows8.Demo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MessagingToolkit.Barcode.Windows8.Demo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="0">
+            <RadioButton Content="Encoder"
+                         Click="RadioButton_Click_1"
+                         Tag="0"
+                         Margin="10"
+                         IsChecked="True" />
+            <RadioButton Content="Decoder"
+                         Click="RadioButton_Click_1"
+                         Tag="1"
+                         Margin="10" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <FlipView x:Name="myflipVw"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Grid.Row="1">
+            
+            <FlipViewItem>
+                <Grid Background="Green" Margin="0,-34,0,34">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="339*"/>
+                        <RowDefinition Height="374*"/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="txtQRCode" HorizontalAlignment="Left" Height="79" Margin="240,50,0,0" TextWrapping="Wrap" Text="MessagingToolkit Barcode" VerticalAlignment="Top" Width="440"/>
+                    <Button x:Name="btnEncode" Content="Encode" HorizontalAlignment="Left" Height="65" Margin="240,76,0,0" VerticalAlignment="Top" Width="176" RenderTransformOrigin="0.49,0.999" Click="btnEncode_Click" Grid.Row="1"/>
+                    <Image x:Name="imgQRCode" HorizontalAlignment="Left" Height="162" Margin="240,143,0,0" VerticalAlignment="Top" Width="440"/>
+                    <TextBlock HorizontalAlignment="Left" Height="30" Margin="126,75,0,0" TextWrapping="Wrap" Text="Data" VerticalAlignment="Top" Width="93"/>
+                    <TextBlock HorizontalAlignment="Left" Height="30" Margin="126,189,0,0" TextWrapping="Wrap" Text="Image" VerticalAlignment="Top" Width="93"/>
+                    <Button x:Name="btnSaveQRCode" Content="Save" HorizontalAlignment="Left" Margin="487,76,0,0" Grid.Row="1" VerticalAlignment="Top" Height="65" Width="165" Click="btnSaveQRCode_Click"/>
+                </Grid>
+            </FlipViewItem>
+            <FlipViewItem>
+                <Grid Background="Purple">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="339*"/>
+                        <RowDefinition Height="374*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Left" Height="30" Margin="19,33,0,0" TextWrapping="Wrap" Text="Image" VerticalAlignment="Top" Width="93"/>
+                    <Image x:Name="imgDecodeImage" HorizontalAlignment="Left" Height="153" Margin="137,10,0,0" VerticalAlignment="Top" Width="375"/>
+                    <TextBox x:Name="txtDecodedResult" HorizontalAlignment="Left" Height="120" Margin="137,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385"/>
+                    <TextBlock HorizontalAlignment="Left" Height="30" Margin="19,193,0,0" TextWrapping="Wrap" Text="Result" VerticalAlignment="Top" Width="93"/>
+                    <Button x:Name="btnLoad" Content="Load" HorizontalAlignment="Left" Height="55" Margin="137,39,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Click="btnLoad_Click"/>
+                    <Button x:Name="btnDecode" Content="Decode" HorizontalAlignment="Left" Margin="312,39,0,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="140" Click="btnDecode_Click"/>
+                </Grid>
+            </FlipViewItem>
+          
+        </FlipView>
+
+    </Grid>
+</Page>

@@ -1,0 +1,5 @@
+MMSC=http://172.24.120.135/mms/wapenc
+WAPGateway=172.24.128.5
+APN=mms.smarts.ru
+APNAccount=wap
+APNPassword=wap

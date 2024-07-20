@@ -1,0 +1,5 @@
+MMSC=http://mms.plusgsm.pl:8002
+WAPGateway=212.2.96.16
+APN=mms.plusgsm.pl
+APNAccount=brak
+APNPassword=brak

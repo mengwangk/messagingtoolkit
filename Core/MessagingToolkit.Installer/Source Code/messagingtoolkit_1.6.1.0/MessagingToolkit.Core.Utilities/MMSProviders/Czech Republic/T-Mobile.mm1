@@ -1,0 +1,5 @@
+MMSC=http://mms
+WAPGateway=10.0.0.10
+APN=mms.t-mobile.cz
+APNAccount=mms
+APNPassword=mms

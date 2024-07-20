@@ -1,0 +1,5 @@
+MMSC=http://t-mobilemms
+WAPGateway=10.10.10.11
+APN=mms
+APNAccount=tmobilemms
+APNPassword=tmobilemms

@@ -1,0 +1,5 @@
+MMSC=http://mmsc.vodafone.es/servlets/mms
+WAPGateway=212.73.32.10
+APN=mms.vodafone.net
+APNAccount=wap@wap
+APNPassword=wap125

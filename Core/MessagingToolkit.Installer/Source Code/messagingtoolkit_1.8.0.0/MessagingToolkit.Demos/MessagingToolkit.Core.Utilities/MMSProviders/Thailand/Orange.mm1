@@ -1,0 +1,5 @@
+MMSC=http://mms.orange.co.th:8002/
+WAPGateway=10.4.7.39
+APN=mms
+APNAccount=orange
+APNPassword=orange

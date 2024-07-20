@@ -1,0 +1,5 @@
+MMSC=http://mms.orange.fr/
+WAPGateway=192.168.10.200
+APN=orange.acte
+APNAccount=orange
+APNPassword=orange

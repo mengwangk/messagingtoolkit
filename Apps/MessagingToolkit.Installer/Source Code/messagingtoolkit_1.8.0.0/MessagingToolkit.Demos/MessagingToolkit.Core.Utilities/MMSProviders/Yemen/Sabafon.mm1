@@ -1,0 +1,5 @@
+MMSC=http://mms.sabafon.com/
+WAPGateway=192.168.30.174
+APN=mms
+APNAccount=wap
+APNPassword=wap

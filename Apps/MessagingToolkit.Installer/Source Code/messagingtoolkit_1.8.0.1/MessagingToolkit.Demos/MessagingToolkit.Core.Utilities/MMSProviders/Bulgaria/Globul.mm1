@@ -1,0 +1,5 @@
+MMSC=http://mmsc1.mms.globul.bg:8002
+WAPGateway=192.168.87.11
+APN=mms.globul.bg
+APNAccount=mms
+APNPassword=

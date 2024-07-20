@@ -1,0 +1,82 @@
+<project name="slideshow" default="compile" basedir=".">
+
+	<buildnumber/>
+	<property name="midp_lib" value="j2melib/midpapi20.jar;j2melib/cldcapi11.jar"/>
+	<property name="server" value="http://fotomica.astrientlabs.com" />
+	<property name="appname" value="slideshow" />
+
+
+	<target name="compile">
+
+		<script language="javascript">
+			<![CDATA[
+			importClass(java.lang.Integer);
+			
+			var bn = slideshow.getProperty("build.number");
+			var ver = new Integer((bn / 100)) + "." + new Integer((bn / 10)) + "." + (bn % 10);			
+			slideshow.setProperty("version",ver);
+		    ]]>
+		</script>
+		
+	    <delete dir="classes" />
+		<mkdir dir="classes" />
+			
+		<javac destdir="classes" srcdir="src" source="1.3" target="1.1">
+			<bootclasspath>
+				<fileset dir="j2melib">
+					<include name="cldcapi11.jar" />
+					<include name="midpapi20.jar" />
+				</fileset>
+			</bootclasspath>
+		</javac>
+
+		<mkdir dir="builds" />
+		
+		<copy file="template/MANIFEST.MF" tofile="builds/MANIFEST.MF" overwrite="true"/>
+		<replace file="builds/MANIFEST.MF" token="@version" value="${version}"/>
+		
+		<jar jarfile="builds/${appname}.jar" compress="true" update="false" manifest="builds/MANIFEST.MF">
+			<fileset dir="classes" includes="**/*.class" />
+			<fileset dir="res" includes="**/*.*" />
+		</jar>
+		
+		<delete file="builds/MANIFEST.MF" />
+
+		<java fork="yes" classname="proguard.ProGuard" classpath="j2melib/proguard.jar">
+			<arg line="-libraryjars ${midp_lib}" />
+			<arg line="-injars builds/${appname}.jar" />
+			<arg line="-outjar builds/${appname}-obs.jar" />
+			<arg line="	-dontusemixedcaseclassnames" />
+			<arg line="	-overloadaggressively" />
+			<arg line="	-defaultpackage ''" />
+			<arg line="	-allowaccessmodification" />
+			<arg line="-keep 'public class * extends javax.microedition.midlet.MIDlet'" />
+		</java>
+
+		<move file="builds/${appname}-obs.jar" tofile="builds/${appname}.jar" />
+		
+		<exec executable="bin/preverify1.1.exe">
+			<arg line="-classpath ${midp_lib}" />
+			<arg line="-d builds" />
+			<arg line="builds/${appname}.jar" />
+		</exec> 
+
+		<script language="javascript">
+			<![CDATA[
+		    importClass(java.io.File);
+
+			var file = new File("builds/slideshow.jar");
+			slideshow.setProperty("jarsize",file.length());
+			slideshow.setProperty("jardate",new Date(file.lastModified()));
+		    ]]>
+		</script>
+
+		<copy file="template/${appname}.jad" tofile="builds/${appname}.jad" overwrite="true"/>
+		<replace file="builds/${appname}.jad" token="@size" value="${jarsize}"/>
+		<replace file="builds/${appname}.jad" token="@date" value="${jardate}"/>
+		<replace file="builds/${appname}.jad" token="@bid" value="${user.name}"/>
+		<replace file="builds/${appname}.jad" token="@version" value="${version}"/>
+		<replace file="builds/${appname}.jad" token="@server" value="${server}"/>
+
+	</target>
+</project>

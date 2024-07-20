@@ -1,0 +1,5 @@
+MMSC=http://pxt.vodafone.net.nz/pxtsend
+WAPGateway=172.30.38.3
+APN=live.vodafone.com
+APNAccount=
+APNPassword=

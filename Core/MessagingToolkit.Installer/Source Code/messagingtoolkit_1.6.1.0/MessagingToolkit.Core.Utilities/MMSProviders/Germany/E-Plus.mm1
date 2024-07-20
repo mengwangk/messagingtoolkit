@@ -1,0 +1,5 @@
+MMSC=http://mms/eplus
+WAPGateway=212.23.97.153
+APN=internet.eplus.de
+APNAccount=mms
+APNPassword=eplus

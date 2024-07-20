@@ -1,0 +1,5 @@
+MMSC=http://mmsc
+WAPGateway=10.111.2.16
+APN=mmsc.tmn.pt
+APNAccount=tmn
+APNPassword=tmnnet

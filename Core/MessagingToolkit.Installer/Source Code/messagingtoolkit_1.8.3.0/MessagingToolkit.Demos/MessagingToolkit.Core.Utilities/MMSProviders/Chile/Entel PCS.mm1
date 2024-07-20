@@ -1,0 +1,5 @@
+MMSC=http://mmsc.entelpcs.cl
+WAPGateway=10.99.0.10
+APN=mms.entelpcs.cl
+APNAccount=entelmms
+APNPassword=entelpcs

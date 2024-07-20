@@ -1,0 +1,5 @@
+MMSC=http://mms.vodafone.gr/
+WAPGateway=213.249.019.049
+APN=mms.vodafone.net
+APNAccount=user
+APNPassword=pass

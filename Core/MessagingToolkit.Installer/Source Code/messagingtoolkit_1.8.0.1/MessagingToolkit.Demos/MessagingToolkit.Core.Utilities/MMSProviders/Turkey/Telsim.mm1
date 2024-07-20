@@ -1,0 +1,5 @@
+MMSC=http://mms:6001/MM1Servlet
+WAPGateway=217.31.233.18
+APN=mms
+APNAccount=mms
+APNPassword=mms

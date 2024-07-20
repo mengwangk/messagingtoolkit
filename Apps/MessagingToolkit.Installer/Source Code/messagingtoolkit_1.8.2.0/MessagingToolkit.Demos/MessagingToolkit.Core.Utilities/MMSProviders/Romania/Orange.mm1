@@ -1,0 +1,5 @@
+MMSC=http://wap.mms.orange.ro:8002
+WAPGateway=62.217.247.252
+APN=mms
+APNAccount=mms
+APNPassword=mms

@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Argument_EapOptionsRequireInteractiveMode" xml:space="preserve">
+    <value>{0} contained a non-interactive flag, however the authentication protocol  must display a UI to obtain the required identity information.</value>
+  </data>
+  <data name="Argument_EmptyEntryNameAndPhoneNumber" xml:space="preserve">
+    <value>The phone number cannot be an empty string if the entry name has not been provided.</value>
+  </data>
+  <data name="Argument_EntryAlreadyExists" xml:space="preserve">
+    <value>'{0}' already exists in the phone book.</value>
+  </data>
+  <data name="Argument_IncorrectAddressFamily" xml:space="preserve">
+    <value>{0} contains an incorrect address family.</value>
+  </data>
+  <data name="Argument_InvalidEntryName" xml:space="preserve">
+    <value>The {0} '{1}' is invalid. Ensure the entry does not already exist in the phone book, and does not contain invalid characters.</value>
+  </data>
+  <data name="Argument_InvalidFileName" xml:space="preserve">
+    <value>'{0}' contains an invalid file name.</value>
+  </data>
+  <data name="Argument_InvalidHandle" xml:space="preserve">
+    <value>'{0}' was not a valid handle.</value>
+  </data>
+  <data name="Argument_MissingRequiredInfo" xml:space="preserve">
+    <value>'{0}' must have the PhoneNumber, DeviceType, DeviceName, FramingProtocol, and EntryType properties set as a minimum.</value>
+  </data>
+  <data name="Argument_StringCannotBeNullOrEmpty" xml:space="preserve">
+    <value>'{0}' cannot be a null reference or empty string.</value>
+  </data>
+  <data name="Argument_ValueCannotBeLessThanOrEqualToZero" xml:space="preserve">
+    <value>{0} must be greater than zero.</value>
+  </data>
+  <data name="Argument_ValueCannotBeLessThanZero" xml:space="preserve">
+    <value>{0} cannot be less than zero.</value>
+  </data>
+  <data name="Argument_ValueLongerThanString" xml:space="preserve">
+    <value>'{0}' specified is longer than the string.</value>
+  </data>
+  <data name="CatBehavior" xml:space="preserve">
+    <value>Behavior</value>
+  </data>
+  <data name="CatData" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="CatLayout" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="CommandException" xml:space="preserve">
+    <value>Error in sending command {0}: {1}</value>
+  </data>
+  <data name="DecodingException" xml:space="preserve">
+    <value>Error decoding SMS PDU: {0}</value>
+  </data>
+  <data name="DiagnosticCommand" xml:space="preserve">
+    <value>AT+GMM
+AT
+AT+CGSN</value>
+  </data>
+  <data name="EPBEDEntryNameDesc" xml:space="preserve">
+    <value>The name of the phone book entry to modify.</value>
+  </data>
+  <data name="ErrorDescriptionNotFound" xml:space="preserve">
+    <value>Unable to find any descripton for error code {0}. Exception: {1}</value>
+  </data>
+  <data name="Exception_AccessDeniedBySecurity" xml:space="preserve">
+    <value>The caller does not have the required permission to perform the action requested.</value>
+  </data>
+  <data name="Exception_EntryNotInPhoneBook" xml:space="preserve">
+    <value>The entry is not associated with a phone book.</value>
+  </data>
+  <data name="Exception_HandleNotNapCapable" xml:space="preserve">
+    <value>The handle is not network access protection (NAP) capable.</value>
+  </data>
+  <data name="Exception_InvalidOrClosedHandle" xml:space="preserve">
+    <value>The handle is invalid or closed.</value>
+  </data>
+  <data name="Exception_NotSupportedOnPlatform" xml:space="preserve">
+    <value>Not supported on the current platform.</value>
+  </data>
+  <data name="Exception_OperationTimedOut" xml:space="preserve">
+    <value>The operation has timed out.</value>
+  </data>
+  <data name="Exception_PhonebookCorrupted" xml:space="preserve">
+    <value>The phone book is corrupted or missing components.</value>
+  </data>
+  <data name="Exception_PhoneBookNotOpened" xml:space="preserve">
+    <value>The phone book must be opened prior to performing this operation.</value>
+  </data>
+  <data name="Exception_PhoneNumberOrEntryNameRequired" xml:space="preserve">
+    <value>The phone number or entry name is required to dial an entry.</value>
+  </data>
+  <data name="Exception_UnexpectedSizeReturned" xml:space="preserve">
+    <value>The size of the object returned was not expected.</value>
+  </data>
+  <data name="ExecutionException" xml:space="preserve">
+    <value>Unable to execute feature: {0}</value>
+  </data>
+  <data name="GatewayDisconnectedException" xml:space="preserve">
+    <value>Gateway is unplugged from {0}. Please connect it again before attempt to disconnect</value>
+  </data>
+  <data name="GatewayFactoryNotFound" xml:space="preserve">
+    <value>Unable to find gateway factory</value>
+  </data>
+  <data name="InvalidComPort" xml:space="preserve">
+    <value>COM port is invalid</value>
+  </data>
+  <data name="LicenseCopyright" xml:space="preserve">
+    <value>Copyright 2009@twit88.com</value>
+  </data>
+  <data name="LicenseException" xml:space="preserve">
+    <value>This is a community copy. Please purchase a license to remove this exception</value>
+  </data>
+  <data name="MaximumGatewayException" xml:space="preserve">
+    <value>Community copy can only have a maximum of {0} gateways</value>
+  </data>
+  <data name="MessageIndexNotFound" xml:space="preserve">
+    <value>Message index must be passed in if deletion is by index</value>
+  </data>
+  <data name="MessageTooLong" xml:space="preserve">
+    <value>SMS message is &gt; 280 characters</value>
+  </data>
+  <data name="NoCommandDefined" xml:space="preserve">
+    <value>No command defined for this feature:{0}</value>
+  </data>
+  <data name="NoRouteFoundException" xml:space="preserve">
+    <value>No route found for message. Gateway id: {0}, destination address: {1}, content: {2} </value>
+  </data>
+  <data name="NotConnectedException" xml:space="preserve">
+    <value>Gateway is not connected</value>
+  </data>
+  <data name="NotRegisteredToNetworkException" xml:space="preserve">
+    <value>Gateway is not registered to operator network</value>
+  </data>
+  <data name="NotSupported_ItemsCannotBeSet" xml:space="preserve">
+    <value>Items within the collection cannot be set directly.</value>
+  </data>
+  <data name="PhoneBookFileFilter" xml:space="preserve">
+    <value>Phone Book Files (*.pbk)|*.pbk|All Files (*.*)|*.*</value>
+  </data>
+  <data name="PortNotExistException" xml:space="preserve">
+    <value>{0} port does not exist</value>
+  </data>
+  <data name="RADMConnectionQueryTimeoutDesc" xml:space="preserve">
+    <value>The length of time (in seconds) before the connection attempt is aborted.</value>
+  </data>
+  <data name="RADMDisableConnectionQueryDesc" xml:space="preserve">
+    <value>Indicates whether AutoDial displays a dialog box to query the user before creating a connection.</value>
+  </data>
+  <data name="RADMFailedConnectionTimeoutDesc" xml:space="preserve">
+    <value>The length of time (in seconds) between AutoDial connection attempts.</value>
+  </data>
+  <data name="RADMLogOnSessionDisableDesc" xml:space="preserve">
+    <value>Indicates whether the system disables all AutoDial connections for the current session.</value>
+  </data>
+  <data name="RADMSavedAddressesLimitDesc" xml:space="preserve">
+    <value>The maximum number of addresses that AutoDial stores in the registry.</value>
+  </data>
+  <data name="RCDErrorDesc" xml:space="preserve">
+    <value>Occurs when the dialog has encountered an error.</value>
+  </data>
+  <data name="RCDLocationDesc" xml:space="preserve">
+    <value>The coordinates of the upper-left corner of the dialog box.</value>
+  </data>
+  <data name="RCSyncObjectDesc" xml:space="preserve">
+    <value>The object used to marshal event-handler calls.</value>
+  </data>
+  <data name="RCWBandwidthAddedDesc" xml:space="preserve">
+    <value>Occurs when a remote access connection subentry has connected.</value>
+  </data>
+  <data name="RCWBandwidthRemovedDesc" xml:space="preserve">
+    <value>Occurs when a remote access connection subentry has disconnected.</value>
+  </data>
+  <data name="RCWConnectedDesc" xml:space="preserve">
+    <value>Occurs when a remote access connection is established.</value>
+  </data>
+  <data name="RCWDisconnectedDesc" xml:space="preserve">
+    <value>Occurs when a remote access connection is disconnected.</value>
+  </data>
+  <data name="RCWEnableRaisingEventsDesc" xml:space="preserve">
+    <value>Indicates whether the component will be enabled.</value>
+  </data>
+  <data name="RDCallbackNumberDesc" xml:space="preserve">
+    <value>The callback number for the remote server to dial.</value>
+  </data>
+  <data name="RDDialCompletedDesc" xml:space="preserve">
+    <value>Occurs when the asynchronous dial operation has completed.</value>
+  </data>
+  <data name="RDDPhoneNumberDesc" xml:space="preserve">
+    <value>The phone number to dial (overriding the entry phone number).</value>
+  </data>
+  <data name="RDEapOptionsDesc" xml:space="preserve">
+    <value>The extensible authentication protocol (EAP) options.</value>
+  </data>
+  <data name="RDEntryOptionsDesc" xml:space="preserve">
+    <value>The entry options.</value>
+  </data>
+  <data name="RDOwnerDesc" xml:space="preserve">
+    <value>The parent window used for dialog box creation and centering.</value>
+  </data>
+  <data name="RDPhoneBookPathDesc" xml:space="preserve">
+    <value>The full path (including file name) of the phone book.</value>
+  </data>
+  <data name="RDStateChangedDesc" xml:space="preserve">
+    <value>Occurs when the connection state changes.</value>
+  </data>
+  <data name="RDSubEntryIdDesc" xml:space="preserve">
+    <value>The zero-based index of the subentry to dial.</value>
+  </data>
+  <data name="RDTimeoutDesc" xml:space="preserve">
+    <value>The length of time (in milliseconds) until the asynchronous connection attempt times out.</value>
+  </data>
+  <data name="REDEntryNameDesc" xml:space="preserve">
+    <value>The name of the entry.</value>
+  </data>
+  <data name="REDNoRenameDesc" xml:space="preserve">
+    <value>Indicates whether entries cannot be renamed while in edit mode.</value>
+  </data>
+  <data name="REDPhoneBookPathDesc" xml:space="preserve">
+    <value>The full path (including file name) of the phone book to modify.</value>
+  </data>
+  <data name="REDPhoneNumberDesc" xml:space="preserve">
+    <value>The phone number to dial.</value>
+  </data>
+  <data name="REDRasDialogStyleDesc" xml:space="preserve">
+    <value>The style of dialog box to display.</value>
+  </data>
+  <data name="RPBChangedDesc" xml:space="preserve">
+    <value>Occurs when the phone book has changed.</value>
+  </data>
+  <data name="RPBDAddedEntryDesc" xml:space="preserve">
+    <value>Occurs when the user creates a new entry or copies an existing entry.</value>
+  </data>
+  <data name="RPBDChangedEntryDesc" xml:space="preserve">
+    <value>Occurs when the user changes an existing phone book entry.</value>
+  </data>
+  <data name="RPBDDialedEntryDesc" xml:space="preserve">
+    <value>Occurs when the user successfully dials an entry.</value>
+  </data>
+  <data name="RPBDeletedDesc" xml:space="preserve">
+    <value>Occurs when the phone book has been deleted.</value>
+  </data>
+  <data name="RPBDEntryNameDesc" xml:space="preserve">
+    <value>The name of the entry to initially highlight.</value>
+  </data>
+  <data name="RPBDRemovedEntryDesc" xml:space="preserve">
+    <value>Occurs when the user removes a phone book entry.</value>
+  </data>
+  <data name="RPBEnableFileWatcherDesc" xml:space="preserve">
+    <value>Indicates whether the phone book file will be monitored for external changes.</value>
+  </data>
+  <data name="RPBRenamedDesc" xml:space="preserve">
+    <value>Occurs when the phone book has been renamed.</value>
+  </data>
+  <data name="SimPinNotSetException" xml:space="preserve">
+    <value>SIM PIN is required but is not given</value>
+  </data>
+  <data name="UnsupportedCommand" xml:space="preserve">
+    <value>Error in command {0}: {1}</value>
+  </data>
+  <data name="UnsupportedFeature" xml:space="preserve">
+    <value>Unsupported feature: {0} ({1})</value>
+  </data>
+  <data name="MmsSlideFileDoesNotExist" xml:space="preserve">
+    <value>MMS slide file {0} does not exist</value>
+  </data>
+  <data name="MmsSlideDataNotValid" xml:space="preserve">
+    <value>Invalid MMS slide data for {0}</value>
+  </data>
+  <data name="MmsFileNotExist" xml:space="preserve">
+    <value>MMS file {0} does not exist</value>
+  </data>
+  <data name="MmsLoadException" xml:space="preserve">
+    <value>Error loading MMS file {0}: {1}</value>
+  </data>
+  <data name="MmsSaveException" xml:space="preserve">
+    <value>Error saving MMS to file {0}: {1}</value>
+  </data>
+  <data name="DeviceNameNotProvidedException" xml:space="preserve">
+    <value>Device name is compulsory and cannot be empty</value>
+  </data>
+  <data name="MmsRetrievalException" xml:space="preserve">
+    <value>Unable to retrieve MMS. URL is blank.</value>
+  </data>
+  <data name="UssdResponseException" xml:space="preserve">
+    <value>Unable to get a USSD response for {0}</value>
+  </data>
+  <data name="UnlicensedMessagePrefix" xml:space="preserve">
+    <value>[Trial] </value>
+  </data>
+  <data name="MessageNoException" xml:space="preserve">
+    <value>No exception/error</value>
+  </data>
+  <data name="Argument_InvalidOrConflictingEntrySettings" xml:space="preserve">
+    <value>'{0}' contains invalid or conflicting settings. Please verify the settings are correct and try again.</value>
+  </data>
+  <data name="Exception_SetCredentialsAccessDenied" xml:space="preserve">
+    <value>The application attempted to set default credentials for a per-user connection, or the user does not have the correct privileges to set pre-shared keys or credentials for all users.</value>
+  </data>
+  <data name="NoMessageIDException" xml:space="preserve">
+    <value>Unable to send MMS. Blank message id from MMSC.</value>
+  </data>
+  <data name="Exception_STKMenuItemNotFoundException" xml:space="preserve">
+    <value>SIM Toolkit menu item not found</value>
+  </data>
+  <data name="Exception_STKNotSupported" xml:space="preserve">
+    <value>SIM Toolkit is not supported</value>
+  </data>
+  <data name="Exception_STKParseException" xml:space="preserve">
+    <value>SIM Toolkit parsing exception: {0}</value>
+  </data>
+  <data name="UnknownDeviceMessageSendingException" xml:space="preserve">
+    <value>Unknown error in sending message through the device</value>
+  </data>
+  <data name="GetMessageStatusException" xml:space="preserve">
+    <value>Unable to check message status. Id is empty.</value>
+  </data>
+  <data name="MessageSendingException" xml:space="preserve">
+    <value>Message sending failed with error code [{0}]</value>
+  </data>
+</root>

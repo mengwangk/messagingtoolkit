@@ -1,0 +1,13 @@
+org.smslib
+org.smslib.balancing
+org.smslib.crypto
+org.smslib.helper
+org.smslib.http
+org.smslib.modem
+org.smslib.modem.athandler
+org.smslib.queues
+org.smslib.routing
+org.smslib.smsserver
+org.smslib.smsserver.gateways
+org.smslib.smsserver.interfaces
+org.smslib.threading

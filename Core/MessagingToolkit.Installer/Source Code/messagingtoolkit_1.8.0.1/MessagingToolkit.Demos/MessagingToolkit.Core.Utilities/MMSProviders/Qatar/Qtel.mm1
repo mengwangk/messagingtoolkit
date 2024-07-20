@@ -1,0 +1,5 @@
+MMSC=http://mmsr.qtelmms.qa
+WAPGateway=10.23.8.3
+APN=mms.qtel
+APNAccount=mms
+APNPassword=mms

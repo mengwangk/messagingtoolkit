@@ -1,0 +1,5 @@
+MMSC=http://mms.dialog.lk:3130/mmsc
+WAPGateway=192.168.122.2
+APN=www.dialogsl.com
+APNAccount=
+APNPassword=

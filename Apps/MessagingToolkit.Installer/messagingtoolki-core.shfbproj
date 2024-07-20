@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <!-- The configuration and platform will be used to determine which
+         assemblies to include from solution and project documentation
+         sources -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{41719b69-7f0b-4035-9d3d-a74b101c8255}</ProjectGuid>
+    <SHFBSchemaVersion>1.9.9.0</SHFBSchemaVersion>
+    <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual
+         Studio adds them anyway -->
+    <AssemblyName>Documentation</AssemblyName>
+    <RootNamespace>Documentation</RootNamespace>
+    <Name>Documentation</Name>
+    <!-- SHFB properties -->
+    <OutputPath>.\Help\</OutputPath>
+    <HtmlHelpName>MessagingToolkit</HtmlHelpName>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="..\output\debug\MessagingToolkit.Core.dll" />
+      <DocumentationSource sourceFile="..\output\debug\MessagingToolkit.Core.xml" />
+    </DocumentationSources>
+    <CopyrightHref>http://www.twit88.com</CopyrightHref>
+    <CopyrightText>Copyright %402016 TWIT88.COM</CopyrightText>
+    <FeedbackEMailAddress>admin%40twit88.com</FeedbackEMailAddress>
+    <HelpTitle>MessagingToolkit</HelpTitle>
+    <HelpFileFormat>HtmlHelp1</HelpFileFormat>
+    <FrameworkVersion>.NET Framework 4.0</FrameworkVersion>
+    <MissingTags>Parameter, Returns, AutoDocumentCtors, TypeParameter</MissingTags>
+    <NamespaceSummaries>
+      <NamespaceSummaryItem name="MessageToolkit.Core.Test" isDocumented="False" />
+      <NamespaceSummaryItem name="MessagingToolkit.Core.Test" isDocumented="False" />
+      <NamespaceSummaryItem name="MessagingToolkit.Core.Ras" isDocumented="False" />
+      <NamespaceSummaryItem name="MessagingToolkit.Core.Ras.Design" isDocumented="False" />
+      <NamespaceSummaryItem name="MessagingToolkit.Core.Log" isDocumented="False" />
+      <NamespaceSummaryItem name="MessagingToolkit.Core.Helper" isDocumented="False" />
+      <NamespaceSummaryItem name="MessagingToolkit.Core.Smpp.Utility" isDocumented="False" />
+    </NamespaceSummaries>
+    <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
+    <IndentHtml>False</IndentHtml>
+    <KeepLogFile>True</KeepLogFile>
+    <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
+    <CppCommentsFixup>False</CppCommentsFixup>
+    <CleanIntermediates>True</CleanIntermediates>
+    <MaximumGroupParts>2</MaximumGroupParts>
+    <NamespaceGrouping>False</NamespaceGrouping>
+    <SyntaxFilters>Standard</SyntaxFilters>
+    <SdkLinkTarget>Blank</SdkLinkTarget>
+    <RootNamespaceContainer>False</RootNamespaceContainer>
+    <PresentationStyle>VS2013</PresentationStyle>
+    <Preliminary>False</Preliminary>
+    <NamingMethod>Guid</NamingMethod>
+    <Language>en-US</Language>
+    <ContentPlacement>AboveNamespaces</ContentPlacement>
+  </PropertyGroup>
+  <!-- There are no properties for these two groups but they need to appear in
+       order for Visual Studio to perform the build. -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MessagingToolkit.Pdu">
+      <HintPath>..\output\debug\MessagingToolkit.Pdu.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <!-- Import the SHFB build targets -->
+  <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" />
+</Project>

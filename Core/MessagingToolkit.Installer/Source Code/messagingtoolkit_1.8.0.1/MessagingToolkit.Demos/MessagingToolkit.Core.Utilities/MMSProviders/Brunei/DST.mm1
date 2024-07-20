@@ -1,0 +1,5 @@
+MMSC=http://mms.dst.com.bn/mmsc
+WAPGateway=10.100.6.101
+APN=dst.mms
+APNAccount=mms
+APNPassword=mms

@@ -1,0 +1,5 @@
+MMSC=http://mmsgw:8002/
+WAPGateway=172.16.14.10
+APN=miworld
+APNAccount=65
+APNPassword=user123

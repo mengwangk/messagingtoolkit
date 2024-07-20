@@ -1,0 +1,5 @@
+MMSC=http://192.168.200.95/servlets/mms
+WAPGateway=192.168.200.11
+APN=mnet.b-online.gr
+APNAccount=wap
+APNPassword=wap

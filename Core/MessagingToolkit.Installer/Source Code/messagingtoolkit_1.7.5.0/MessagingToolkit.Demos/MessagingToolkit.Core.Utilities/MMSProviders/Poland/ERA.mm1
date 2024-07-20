@@ -1,0 +1,5 @@
+MMSC=http://mms.era.pl/servlets/mms
+WAPGateway=213.158.194.057
+APN=eramms
+APNAccount=eramms
+APNPassword=eramms

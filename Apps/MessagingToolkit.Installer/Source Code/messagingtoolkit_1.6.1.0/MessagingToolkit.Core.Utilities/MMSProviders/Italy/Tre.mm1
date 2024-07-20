@@ -1,0 +1,5 @@
+MMSC=http://10.216.59.240:10021/mmsc
+WAPGateway=62.13.171.3
+APN=tre.it
+APNAccount=tre
+APNPassword=tre

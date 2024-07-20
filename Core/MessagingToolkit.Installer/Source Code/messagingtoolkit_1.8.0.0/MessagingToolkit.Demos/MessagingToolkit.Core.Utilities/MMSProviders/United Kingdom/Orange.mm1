@@ -1,0 +1,5 @@
+MMSC=mms.orange.co.uk/
+WAPGateway=192.168.224.10
+APN=orangemms
+APNAccount=orange
+APNPassword=multimedia

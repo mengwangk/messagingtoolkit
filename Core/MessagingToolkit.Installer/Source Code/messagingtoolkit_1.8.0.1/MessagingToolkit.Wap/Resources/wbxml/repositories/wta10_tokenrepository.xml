@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codepages>
+<codepage number="0" publicID="-//WAPFORUM//DTD WTA 1.0//EN" 
+wbxmlVersion="1.3" default_encoding="utf-8">
+   <tag-tokens>
+      <tag name="event" token-value="5" />
+      <tag name="eventtable" token-value="6" />
+      <tag name="type" token-value="7" />
+      <tag name="url" token-value="8" />
+      <tag name="wtai" token-value="9" />
+   </tag-tokens>
+
+   <attribute-start-tokens>
+      <attribute-start name="name" token-value="5" />
+
+      <attribute-start name="value" token-value="6" />
+
+   </attribute-start-tokens>
+
+   <attribute-value-tokens>
+   </attribute-value-tokens>
+</codepage>
+</codepages>

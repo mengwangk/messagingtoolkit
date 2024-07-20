@@ -1,0 +1,5 @@
+MMSC=http://multimedia/servlets/mms
+WAPGateway=193.230.161.231
+APN=mms.connex.ro
+APNAccount=mms.connex.ro
+APNPassword=connex

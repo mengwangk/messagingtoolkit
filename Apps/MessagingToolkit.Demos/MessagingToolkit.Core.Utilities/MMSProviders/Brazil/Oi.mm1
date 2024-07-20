@@ -1,0 +1,5 @@
+MMSC=http://200.222.42.204:8002/
+WAPGateway=192.168.10.50
+APN=mmsgprs.oi.com.br
+APNAccount=oimms
+APNPassword=oioioi

@@ -1,0 +1,5 @@
+MMSC=http://203.162.21.114/mmsc
+WAPGateway=203.162.21.114
+APN=m-wap
+APNAccount=mms
+APNPassword=mms

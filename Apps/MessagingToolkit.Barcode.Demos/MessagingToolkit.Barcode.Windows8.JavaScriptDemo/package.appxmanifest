@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="15d962ab-75c8-472e-adc5-35bc1b32d63e" Version="1.0.0.1" Publisher="CN=mengwangk" />
+  <Properties>
+    <DisplayName>MessagingToolkit.Barcode.Windows8.JavaScriptDemo</DisplayName>
+    <PublisherDisplayName>mengwangk</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="default.html">
+      <VisualElements DisplayName="MessagingToolkit.Barcode.Windows8.JavaScriptDemo" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="MessagingToolkit.Barcode.Windows8.JavaScriptDemo" ForegroundText="light" BackgroundColor="#464646">
+        <DefaultTile ShowName="allLogos" />
+        <SplashScreen Image="images\splashscreen.png" />
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.fileTypeAssociation">
+          <FileTypeAssociation Name="image">
+            <DisplayName>image</DisplayName>
+            <EditFlags OpenIsSafe="true" />
+            <SupportedFileTypes>
+              <FileType>.png</FileType>
+              <FileType>.jpg</FileType>
+              <FileType>.gif</FileType>
+              <FileType>.svg</FileType>
+              <FileType>.eps</FileType>
+            </SupportedFileTypes>
+          </FileTypeAssociation>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="musicLibrary" />
+    <Capability Name="picturesLibrary" />
+    <Capability Name="documentsLibrary" />
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

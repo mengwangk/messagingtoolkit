@@ -1,0 +1,5 @@
+MMSC=http://mms.heyah.pl/ servlets/mms
+WAPGateway=213.158.194.057
+APN=heyahmms
+APNAccount=heyah
+APNPassword=heyah

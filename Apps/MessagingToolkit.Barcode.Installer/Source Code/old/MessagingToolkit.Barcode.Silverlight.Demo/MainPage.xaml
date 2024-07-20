@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="MessagingToolkit.Barcode.Silverlight.Demo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="562" d:DesignWidth="817" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" Loaded="UserControl_Loaded" xmlns:my="clr-namespace:SilverlightContrib.Controls;assembly=SilverlightContrib.Controls">
+
+    <Grid x:Name="LayoutRoot" Background="White" Height="541" Width="787">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="495*" />
+            <ColumnDefinition Width="229*" />
+            <ColumnDefinition Width="45*" />
+            <ColumnDefinition Width="18*" />
+        </Grid.ColumnDefinitions>
+        <sdk:TabControl Height="523" HorizontalAlignment="Left" Margin="8,10,0,0" Name="tabMain" VerticalAlignment="Top" Width="732" Grid.ColumnSpan="3">
+            <sdk:TabItem Header="QRCode" Name="tabQRCode">
+                <Grid>
+                    <TextBox Height="49" HorizontalAlignment="Left" Margin="118,6,0,0" Name="txtQRCode" VerticalAlignment="Top" Width="394" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" />
+                    <ScrollViewer Height="152" HorizontalAlignment="Left" Margin="69,277,0,0" Name="scrollViewer1" VerticalAlignment="Top" Width="492">
+                        <Image Name="picQRCode" Stretch="Fill"/>
+                    </ScrollViewer>
+                    <Button Content="Encode" Height="37" HorizontalAlignment="Left" Margin="74,435,0,0" Name="btnEncodeQRCode" VerticalAlignment="Top" Width="99" Click="btnEncodeQRCode_Click" />
+                    <sdk:Label Content="Data" Height="17" HorizontalAlignment="Left" Margin="6,22,0,0" Name="label2" VerticalAlignment="Top" Width="66" />
+                    <sdk:Label Height="14" HorizontalAlignment="Left" Margin="6,71,0,0" Name="label5" VerticalAlignment="Top" Width="66" Content="Width" />
+                    <sdk:Label Content="Height" Height="14" HorizontalAlignment="Left" Margin="328,71,0,0" Name="label6" VerticalAlignment="Top" Width="48" />
+                    <TextBox Height="26" HorizontalAlignment="Left" Margin="118,64,0,0" Name="txtQRCodeWidth" VerticalAlignment="Top" Width="112" Text="250" />
+                    <TextBox Height="26" HorizontalAlignment="Left" Margin="382,64,0,0" Name="txtQRCodeHeight" VerticalAlignment="Top" Width="112" Text="250" />
+                    <ComboBox Height="26" HorizontalAlignment="Left" Margin="118,97,0,0" Name="cboQRCodeErrorCorrection" VerticalAlignment="Top" Width="129" />
+                    <ComboBox Height="24" HorizontalAlignment="Left" Margin="382,99,0,0" Name="cboQRCodeCharacterSet" VerticalAlignment="Top" Width="155" />
+                    <sdk:Label Content="Error Correction" Height="24" HorizontalAlignment="Left" Margin="6,99,0,0" Name="label7" VerticalAlignment="Top" Width="88" />
+                    <sdk:Label Content="Character Set" Height="24" HorizontalAlignment="Left" Margin="278,102,0,0" Name="label8" VerticalAlignment="Top" Width="88" />
+                    <sdk:Label Content="Quiet Zone" Height="14" HorizontalAlignment="Left" Margin="6,134,0,0" Name="label9" VerticalAlignment="Top" Width="66" />
+                    <TextBox Height="26" HorizontalAlignment="Left" Margin="118,127,0,0" Name="txtQRCodeQuietZone" VerticalAlignment="Top" Width="112" Text="4" />
+                    <my:ColorPicker Height="116" HorizontalAlignment="Left" Margin="117,155,0,0" Name="colorQRCodeForeColor" VerticalAlignment="Top" Width="195" AllowDrop="True" SelectedColor="Black" />
+                    <my:ColorPicker AllowDrop="True" Height="116" HorizontalAlignment="Right" Margin="0,155,150,0" Name="colorQRCodeBackColor" VerticalAlignment="Top" Width="188" SelectedColor="White" />
+                    <sdk:Label Content="Fore Color" Height="14" HorizontalAlignment="Left" Margin="6,176,0,0" Name="label10" VerticalAlignment="Top" Width="66" />
+                    <sdk:Label Content="Back Color" Height="14" HorizontalAlignment="Right" Margin="0,178,345,0" Name="label11" VerticalAlignment="Top" Width="66" />
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="PDF417" Name="tabPdf417">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <TextBox Height="55" HorizontalAlignment="Right" HorizontalScrollBarVisibility="Auto" Margin="0,6,236,0" Name="txtPdf417" TextWrapping="Wrap" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" Width="356" AcceptsReturn="True" />
+                    <ScrollViewer Height="219" HorizontalAlignment="Left" Margin="128,159,0,0" Name="scrollViewer2" VerticalAlignment="Top" Width="434">
+                        <Image Name="picPdf417" Stretch="None" />
+                    </ScrollViewer>
+                    <Button Content="Encode" Height="37" HorizontalAlignment="Left" Margin="129,407,0,0" Name="btnEncodePdf417" VerticalAlignment="Top" Width="99" Click="btnEncodePdf417_Click" />
+                    <sdk:Label Height="18" HorizontalAlignment="Left" Margin="16,26,0,0" Name="label1" VerticalAlignment="Top" Width="70" Content="Data" />
+                    <sdk:Label Content="Width" Height="14" HorizontalAlignment="Left" Margin="16,81,0,0" Name="label12" VerticalAlignment="Top" Width="66" />
+                    <sdk:Label Content="Height" Height="14" HorizontalAlignment="Left" Margin="310,81,0,0" Name="label13" VerticalAlignment="Top" Width="48" />
+                    <TextBox Height="26" HorizontalAlignment="Left" Margin="128,74,0,0" Name="txtPdf417Width" Text="250" VerticalAlignment="Top" Width="112" />
+                    <TextBox Height="26" HorizontalAlignment="Left" Margin="372,77,0,0" Name="txtPdf417Height" Text="250" VerticalAlignment="Top" Width="112" />
+                    <ComboBox Height="26" HorizontalAlignment="Left" Margin="128,107,0,0" Name="cboPdf417Compaction" VerticalAlignment="Top" Width="129" />
+                    <sdk:Label Content="Compaction" Height="24" HorizontalAlignment="Left" Margin="16,110,0,0" Name="label14" VerticalAlignment="Top" Width="88" />
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="One Dimensional" Name="tabOneDimensional">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <TextBox AcceptsReturn="True" Height="43" HorizontalAlignment="Left" HorizontalScrollBarVisibility="Auto" Margin="123,10,0,0" Name="txtOneD" TextWrapping="Wrap" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" Width="286" />
+                    <ScrollViewer Height="219" HorizontalAlignment="Left" Margin="121,129,0,0" Name="scrollViewer4" VerticalAlignment="Top" Width="434">
+                        <Image Name="picOneD" Stretch="Fill" />
+                    </ScrollViewer>
+                    <sdk:Label Content="Data" Height="27" HorizontalAlignment="Left" Margin="10,26,0,0" Name="label4" VerticalAlignment="Top" Width="97" />
+                    <Button Content="Encode" Height="37" HorizontalAlignment="Left" Margin="121,365,0,0" Name="btnEncodeOneD" VerticalAlignment="Top" Width="99" Click="btnEncodeOneD_Click" />
+                    <ComboBox Height="24" HorizontalAlignment="Left" Margin="123,59,0,0" Name="cboOneDFormat" VerticalAlignment="Top" Width="267" />
+                    <sdk:Label Content="Width" Height="14" HorizontalAlignment="Left" Margin="9,94,0,0" Name="label17" VerticalAlignment="Top" Width="66" />
+                    <sdk:Label Content="Height" Height="14" HorizontalAlignment="Left" Margin="285,96,0,0" Name="label18" VerticalAlignment="Top" Width="48" />
+                    <TextBox Height="26" HorizontalAlignment="Left" Margin="121,89,0,0" Name="txtOneDWidth" Text="250" VerticalAlignment="Top" Width="112" />
+                    <TextBox Height="26" HorizontalAlignment="Left" Margin="339,89,0,0" Name="txtOneDHeight" Text="250" VerticalAlignment="Top" Width="112" />
+                    <sdk:Label Content="Barcode Format" Height="18" HorizontalAlignment="Left" Margin="10,59,0,0" Name="label19" VerticalAlignment="Top" Width="87" />
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="Decoder" Name="tabDecoder">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <ScrollViewer Height="223" HorizontalAlignment="Left" Margin="58,6,0,0" Name="scrollViewer5" VerticalAlignment="Top" Width="434">
+                        <Image Name="picDecode" Stretch="None" />
+                    </ScrollViewer>
+                    <Button Content="Decode" Height="47" HorizontalAlignment="Right" Margin="0,364,344,0" Name="btnDecode" VerticalAlignment="Top" Width="124" Click="btnDecode_Click" />
+                    <TextBox AcceptsReturn="True" Height="92" HorizontalAlignment="Left" HorizontalScrollBarVisibility="Auto" Margin="58,235,0,0" Name="txtDecodeResults" TextWrapping="Wrap" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" Width="434" />
+                    <Button Content="Open" Height="47" HorizontalAlignment="Left" Margin="113,364,0,0" Name="btnOpenFile" VerticalAlignment="Top" Width="108" Click="btnOpenFile_Click" />
+                    <sdk:Label Content="Result:" Height="21" HorizontalAlignment="Left" Margin="7,239,0,0" Name="label15" VerticalAlignment="Top" Width="47" />
+                </Grid>
+            </sdk:TabItem>
+        </sdk:TabControl>
+    </Grid>
+</UserControl>

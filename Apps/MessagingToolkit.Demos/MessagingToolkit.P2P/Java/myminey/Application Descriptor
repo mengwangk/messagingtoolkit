@@ -1,0 +1,11 @@
+MIDlet-2: MIDlet-2,/myminey.png,com.myminey.uidemo.UIDemoMIDlet
+myminey-host: http://fotomica.astrientlabs.com
+MIDlet-1: MIDlet-1,/myminey.png,com.myminey.Slideshow
+myminey-cachesize: 5
+MIDlet-Jar-URL: myminey.jar
+MicroEdition-Configuration: CLDC-1.0
+MIDlet-Version: 1.0.0
+MIDlet-Vendor: MyMiney
+MIDlet-Name: myminey
+MicroEdition-Profile: MIDP-2.1
+MIDlet-Permissions: javax.microedition.io.Connector.http,javax.microedition.io.Connector.comm,javax.microedition.io.Connector.socket

@@ -1,0 +1,5 @@
+MMSC=http://mms.moldcell.md/cmmsc/post
+WAPGateway=10.0.10.10
+APN=mms
+APNAccount=
+APNPassword=

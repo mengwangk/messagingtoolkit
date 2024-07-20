@@ -1,0 +1,5 @@
+MMSC=http://mms/servlets/mms
+WAPGateway=10.12.0.30
+APN=mms
+APNAccount=
+APNPassword=

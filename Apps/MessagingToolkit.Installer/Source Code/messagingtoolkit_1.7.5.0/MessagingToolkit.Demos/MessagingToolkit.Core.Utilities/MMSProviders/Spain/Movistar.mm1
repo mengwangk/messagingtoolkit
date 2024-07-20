@@ -1,0 +1,5 @@
+MMSC=http://mms.movistar.com
+WAPGateway=10.138.255.1
+APN=mms.movistar.es
+APNAccount=movistar@mms
+APNPassword=movistar

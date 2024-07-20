@@ -1,0 +1,5 @@
+MMSC=http://mmsc.mms.o2.co.uk:8002
+WAPGateway=193.113.200.195
+APN=prepay.tesco-mobile.com
+APNAccount=tescowap
+APNPassword=password

@@ -1,0 +1,5 @@
+MMSC=http://mms.kartel.kz/mms/wapenc
+WAPGateway=172.27.6.93
+APN=mms.k-mobile
+APNAccount=@mms.k-mobile
+APNPassword=k-mobile

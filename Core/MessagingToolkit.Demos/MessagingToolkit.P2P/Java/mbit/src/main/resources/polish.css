@@ -1,0 +1,508 @@
+/**
+  * The polish.css files contains all
+  * design information about a project.
+  * It can be adjusted for specific devices
+  * or device groups by putting it in the
+  * appropriate sub-folder.
+  * If you want to adjust a design for all
+  * Nokia devices, define it in "resources/Nokia/polish.css"
+  * and so on. Only new and different settings
+  * need to be specified in such polish.css files.
+  */
+
+/**
+  * the colors which are defined in
+  * the colors section can later be referenced.
+  * This makes changes easy, since the color
+  * just needs to be changed in one position.
+  * Even default colors (like blue, green, lime, etc)
+  * can be changed here.
+  */
+colors {
+
+    bgColor:  rgb(132,143,96);
+    fontColor: rgb( 30, 85, 86 );
+    brightFontColor: rgb(238,241,229);
+    blackColor: rgb( 0, 0, 0 );
+    translucentBgColor:  argb(130, 238,241,229);
+    brightBgColor:  rgb(238,241,229);
+    /*bgColor: white;*/
+	highlightedBgColor: silver;
+	titleColor: #6262d4;
+	titleShadowColor: silver;
+	screenBgColor: white;
+	/*fontColor: black;*/
+	focusedFontColor: black;
+	inactiveFontColor: white;
+	/*menubarColor: #6262d4;*/
+	/*menubarColor: black;*/
+    menubarColor: #6262d4;
+    activeTabColor: rgb(0,0,255);
+	/*inactiveTabColor: silver;*/
+	inactiveTabColor: rgb(37,16,101);
+	/*menuBarColor: rgb(33,206,9);*/
+	menuBarColor: #6262d4;
+
+}
+
+/**
+  * the menu style is a predefined style for
+  * designing the fullscreen-menu.
+  * The font-settings (font-color,
+  * font-face, font-style and font-size)
+  * are used to design the menu-texts
+  * (like Options, Select, or Cancel).
+  * With the focused-style attribute
+  * another style than the default "focused"
+  * style is used for the menu.
+  * The menubar-color can be set to any
+  * color. When "transparent" is used,
+  * the background shines through.
+  */
+menu {
+	margin-left: 2;
+	padding: 2;
+	background {
+		type: round-rect;
+		color: brightBgColor;
+		border-width: 2;
+		border-color: bgColor;
+	}
+	focused-style: .menuFocused;
+	font-color: brightFontColor;
+	font-style: bold;
+	menubar-color: menuBarColor;
+}
+
+/**
+  * The menuItem style is a predefined style
+  * for the actual commands in a fullscreen-menu.
+  * When the menuItem style is not defined,
+  * the menu style will be used instead.
+  */
+menuItem {
+	margin-top: 0;
+	padding: 2;
+	padding-left: 5;
+	font {
+		color: fontColor;
+		size: medium;
+		style: bold;
+	}
+	layout: left;
+}
+
+/**
+  * This is a custom style for selected
+  * menu items. It is used, because it has
+  * been defined in the menu style.
+  */
+.menuFocused extends .menuItem {
+	background-color: bgColor;
+	font-color: brightFontColor;
+	layout: left | horizontal-expand;
+}
+
+/**
+  * The title style is a predefined style which is used
+  * for all screen-titles.
+  */
+/*
+title {
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	font-face: proportional;
+	font-size: large;
+	font-style: bold;
+	font-color: white;
+	background-color: bgColor;
+	border: none;
+	layout: horizontal-center | horizontal-expand;
+}
+*/
+title {
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	font-face: proportional;
+	font-size: medium;
+	font-style: bold;
+	font-color: white;
+	background-color: black;
+	border: none;
+	layout: horizontal-center  | horizontal-expand;
+    background {
+        type: image;
+		color: transparent;
+		image: url( top.png );
+        layout: left;
+    }
+}
+
+/**
+  * The focused style is a predefined style which
+  * is used by lists, forms, choice-groups and so on.
+  * This style will be used for highlighting the currently
+  * focused item.
+  */
+focused {
+	padding: 0;
+	background {
+		type: round-rect;
+		arc: 0;
+		color: brightBgColor;
+		border-color: black;
+		border-width: 1;
+	}
+	font {
+		style: bold;
+		color: black;
+		size: medium;
+	}
+	layout: expand | left;
+}
+
+/**
+  * The .mainScreen style is a static style, which
+  * is set in the MIDlet source-code with the //#style directive.
+  * If the source-code would not have defined this
+  * style, we could use the dynamic style "list" to design all
+  * list-screens.
+  * An interesting attribute is the "columns" attribute which
+  * is used to use a table with two columns instead of the default
+  * layout.
+  */
+.mainScreen {
+	padding: 0;
+	padding-left: 15;
+	padding-right: 15;
+	background {
+		color: brightBgColor;
+	}
+	layout: horizontal-expand | horizontal-center | vertical-center;
+	columns: 2;
+	columns-width: equal;
+	/*
+	show-text-in-title: true;
+	*/
+}
+
+/**
+  * The .mainCommand style is also a static style, which
+  * is set in the MIDlet source-code with the //#style directive.
+  * If the source-code would not have defined this
+  * style, we could use the dynamic style "listitem" to design all
+  * items on the list-screens.
+  * An interesting attribute is the "icon-image" URL, which uses
+  * the %INDEX% keyword. The first list-item will use the image
+  * "icon0.png", the second "icon1.png" and so on.
+  */
+.mainCommand {
+	margin: 2; /* for the missing border of the focused style */
+	padding: 5;
+	background: none;
+	font-color: fontColor;
+	font-style: bold;
+	font-size: small;
+	layout: center;
+	icon-image: url( icon%INDEX%.png );
+	icon-image-align: top;
+}
+
+alert extends .mainScreen {
+}
+
+alertcontent {
+	font-color: fontColor;
+	font-size: small;
+	font-style: bold;
+}
+
+.loadGameAlert {
+	margin: 20;
+	padding: 5;
+	padding-left: 15;
+	padding-right: 15;
+	layout: horizontal-expand | horizontal-center | vertical-center;
+	background-color: argb( 150, 255, 255, 255 ); /*translucentBgColor; */
+	show-dismiss-command: false;
+}
+
+
+.displayScreen {
+    margin-top:0;
+    padding: 0;
+    padding-top:0;
+    padding-left: 0;
+	padding-right: 0;
+	background {
+		color: white;
+	}
+	layout: horizontal-expand | horizontal-center ;
+	columns: 1;
+	columns-width: equal;
+    scrollindicator-color: white;
+    /*
+    show-text-in-title: false;
+    */
+}
+
+.mainList {
+	margin: 1; /* for the missing border of the focused style */
+	padding: 1;
+	background: none;
+	font-color: black;
+	font-style: bold;
+	font-size: medium;
+	layout: left | expand;
+	icon-image: url( main%INDEX%.gif );
+	icon-image-align: left;
+   /* border-stroke-style: dotted;
+    border-type: bottom;
+    border-color: black;
+    border-width: 1;*/
+}
+
+bigFocused {
+	padding: 1;
+	margin: 0;
+    margin-left: 0;
+	margin-right: 0;
+    background {
+		type: round-rect;
+		arc: 0;
+		color: brightBgColor;
+		border-color: black;
+		border-width: 1;
+	}
+	font {
+		style: bold;
+		color: black;
+		size: large;
+	}
+	layout: expand | left;
+}
+
+
+smallFocused {
+	padding: 1;
+	margin: 0;
+    margin-left: 0;
+	margin-right: 0;
+    background {
+		type: round-rect;
+		arc: 0;
+		color: brightBgColor;
+		border-color: black;
+		border-width: 1;
+	}
+	font {
+		style: plain;
+		color: black;
+		size: medium;
+	}
+	layout: left | horizontal-expand;
+}
+
+ .stationScreen {
+    margin-top:36;
+    padding: 0;
+    padding-top:0;
+    padding-left: 0;
+	padding-right: 0;
+	background {
+		color: white;
+	}
+	layout: horizontal-expand | horizontal-center ;
+	columns: 1;
+	columns-width: equal;
+    /*title-style:stationTitle;*/
+    foreground-image: url( stationBanner.png );
+    foreground-x: 0;
+    foreground-y: 0;
+    scrollindicator-color: white;
+}
+/*
+stationTitle {
+	background {
+        type: image;
+		color: transparent;
+		image: url( stationBanner.png );
+	}
+	border: none;
+    font-face: proportional;
+	font-size: medium;
+	font-style: bold;
+	font-color: white;
+}
+*/
+
+
+.stationBanner {
+	margin: 0; /* for the missing border of the focused style */
+	padding: 0;
+	background: none;
+	font-color: fontColor;
+	font-style: bold;
+	font-size: medium;
+	layout: horizontal-center | horizontal-expand;
+	icon-image: url( stationBanner.png );
+	icon-image-align: center;
+}
+
+.stationList {
+	margin: 0; /* for the missing border of the focused style */
+	padding: 1;
+    margin-left: 0;
+	margin-right: 0;
+    background: none;
+	font-color: black;
+	font-style: bold;
+	font-size: large;
+	layout: left | expand;
+	/*icon-image: url( station%INDEX%.png );*/
+	icon-image-align: left;
+    focused-style: bigFocused;
+   /* border-stroke-style: dotted;
+    border-type: bottom;
+    border-color: black;
+    border-width: 1;*/
+}
+
+.channelList {
+	margin: 0; /* for the missing border of the focused style */
+	padding: 1;
+    margin-left: 0;
+	margin-right: 0;
+    background: none;
+	font-color: black;
+	font-style: plain;
+	font-size: medium;
+	layout: left | expand;
+	icon-image-align: left;
+    focused-style: smallFocused;
+    border-stroke-style: dotted;
+    border-type: bottom;
+    border-color: black;
+    border-width: 1;
+}
+
+.tabbedForm {
+	padding: 0;
+    margin:0;
+    layout: horizontal-expand | expand;
+    background-color: screenBgColor;
+	/*background-image: url( flames.png ); */
+	background-anchor: left | bottom;
+	background-top: title;
+	background-bottom: menubar;
+	menubar-color: menuBarColor;
+    scrollindicator-color: white;
+}
+
+tabbar {
+	background-color: inactiveTabColor;
+	layout: horizontal-expand | expand;
+	padding-bottom: 0;
+    tabbar-scrolling-indicator-color: black;
+    tabbar-left-arrow: url( left.png );
+	tabbar-right-arrow: url( right.png );
+	tabbar-arrow-y-offset: 0;
+	tabbar-roundtrip: true;
+}
+
+activetab {
+	padding: 0;
+	padding-left: 3;
+	padding-right: 3;
+	padding-top: 0;
+    margin-left: 0;
+	margin-right: 0;
+    background-type: round-rect;
+	background-color: activeTabColor;
+	background-arc: 0;
+	font-color: white;
+	font-style: bold;
+}
+
+inactivetab {
+	padding: 0;
+	padding-left: 3;
+	padding-right: 3;
+	margin-left: 0;
+	margin-right: 0;
+	background-type: round-rect;
+	background-color: inactiveTabColor;
+	background-arc: 0;
+	font-color: white;
+}
+
+.progressScreen {
+    margin-top:0;
+    padding: 0;
+    padding-top:0;
+    padding-left: 0;
+	padding-right: 0;
+	background {
+		color: white;
+	}
+    layout: horizontal-expand | horizontal-center | vcenter ;
+	columns: 1;
+	columns-width: equal;
+}
+
+.gaugeStyle {
+    padding: 2;
+    border-color: white;
+    /*gauge-image: url( indicator.png );*/
+    gauge-color: rgb( 86, 165, 255 );
+    /*gauge-width: 60;*/
+    gauge-gap-color: rgb( 38, 95, 158 );
+    /* these setting are ignored, since an image is provided:
+    gauge-height: 8;
+    gauge-mode: chunked;
+    gauge-gap-width: 5;
+    gauge-chunk-width: 10;
+   */
+}
+
+.newsScreen {
+	padding: 0;
+	padding-left: 0;
+	padding-right: 0;
+	background {
+		color: white;
+    }
+	columns: 1;
+	columns-width: equal;
+    scrollindicator-color: white;
+}
+
+newsItem {
+	margin: 1; /* for the missing border of the focused style */
+	padding: 1;
+	background: none;
+	font-color: black;
+	font-style: plain;
+	font-size: medium;
+	layout: horizontal-expand | left;
+	icon-image-align: left;
+    focused-style: smallFocused;
+}
+
+.imageBanner {
+	margin: 0; /* for the missing border of the focused style */
+	padding: 0;
+	background: none;
+	font-color: fontColor;
+	font-style: bold;
+	font-size: medium;
+	layout: horizontal-center | horizontal-expand;
+	icon-image-align: center;
+}
+

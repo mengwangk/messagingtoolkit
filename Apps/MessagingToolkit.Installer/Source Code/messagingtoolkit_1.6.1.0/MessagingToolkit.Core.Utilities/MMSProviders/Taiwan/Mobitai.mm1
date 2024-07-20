@@ -1,0 +1,5 @@
+MMSC=http://mms.mobeelife.net/mms/wapenc
+WAPGateway=192.168.77.5
+APN=gprs1
+APNAccount=gprs
+APNPassword=gprs

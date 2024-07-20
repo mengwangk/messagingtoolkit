@@ -1,0 +1,200 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="doc-files/filelist.xml">
+<title>The Record Management System toolkit contains classes for accessing the
+persistent store capabilities of the javax</title>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+Nextel's Record Management System toolkit contains classes for
+accessing the persistent store capabilities of the </code>javax.microedition.rms</code> package.
+<div class=Section1>
+
+<p class=MsoNormal><span style="mso-spacerun:
+yes"></span>With the RMS toolkit, persistent store operations are performed
+via record objects built on top of the more primitive byte array operations that
+are provided in <code>javax.microedition.rms</code>.
+</p>
+
+<p class=MsoNormal>The RMS toolkit also provides the ability to cache record
+stores in-memory. Caching a record store in-memory can significantly increase
+the performance of persistent-store intensive applications, although at the
+obvious cost of additional memory use.</p>
+
+<p class=MsoNormal>Additionally, the RMS toolkit allows a vector or array of
+records to be written to, or retrieved from, a persistent store via a single
+method call.</p>
+
+
+
+<p class=MsoNormal>The RMS toolkit also offers the capability of uploading (export)
+or downloading (import) records to or from a networked source.</p>
+
+
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:Arial'>If your
+applications require more sophisticated access to persistent storage and/or
+additional capabilities for synchronizing with external data sources you might
+investigate commercial packages such as PointBase (</span><a
+href="http://www.pointbase.com/">http://www.pointbase.com</a><span
+style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:Arial'>). PointBase
+supports a handset-resident relational database and a subset of JDBC (the Java
+Database Connectivity APIs, which support SQL) that can substantially increase
+the sophistication and power of your applications and decrease their
+development time. PointBase also provides mechanisms for synchronizing a
+database on the handset with a database on a remote server. <o:p></o:p></span></p>
+
+
+
+<p class=MsoNormal>Other commercial products that might warrant investigation
+include vaultus (<a href="http://www.vaultus.com/">http://www.vaultus.com</a>),
+and Sybase’s iAnywhere (<a href="http://www.sybase.com/products/mobilewireless">http://www.sybase.com/products/mobilewireless</a>).
+
+
+
+<hr><h3>OAbstractStore and OAbstractRecord</h3>
+
+
+
+<p class=MsoNormal><span style='font-family:Arial'>{@link com.nextel.rms.OAbstractStore}</span> is an abstraction
+for accessing a <span style='font-family:"Courier New"'>javax.microedition.rms.RecordStore</span>.
+With <span style='font-family:Arial'>{@link com.nextel.rms.OAbstractStore}</span> you access
+persistent data via <span style='font-family:Arial'>{@link com.nextel.rms.OAbstractRecord}s</span>,
+whereas with <span style='font-family:"Courier New"'>RecordStore</span> you
+access persistent data as byte arrays. Thus, <span style='font-family:Arial'>{@link com.nextel.rms.OAbstractStore}</span>
+and <span style='font-family:Arial'>{@link com.nextel.rms.OAbstractRecord}</span> provide the ability
+to deal with persistent data as records rather than byte arrays. </p>
+
+
+
+<p class=MsoNormal>You need to extend <span style='font-family:Arial'>{@link com.nextel.rms.OAbstractStore}</span>
+and <span style='font-family:Arial'>{@link com.nextel.rms.OAbstractRecord}</span> for each unique
+persistent store. You implement {@link com.nextel.rms.OAbstractRecord#populate} to populate the record
+from a <span style='font-family:"Courier New"'>java.io.DataStream</span>, and
+{@link com.nextel.rms.OAbstractRecord#writeStream} to write the record to a <span style='font-family:
+"Courier New"'>DataStream</span>.<span style="mso-spacerun: yes">  </span>You
+must also implement {@link com.nextel.rms.OAbstractStore#createRecord} to create an instance of the record
+that the subclass of {@link com.nextel.rms.OAbstractStore} is to store.</p>
+
+
+
+<hr><h3>Data Caching</h3>
+
+
+
+<p class=MsoNormal>The RMS toolkit provides an optional in-memory data caching
+mechanism, which uses the {@link com.nextel.rms.ODataCache} interface. Caching is enabled by setting
+the boolean flag enableCache to true in the constructor for {@link com.nextel.rms.OAbstractStore} or by
+passing in the name of a custom cache class. A default cache, {@link com.nextel.rms.ODataCache}Impl, is
+used if a custom cache is not supplied.</p>
+
+
+<p class=MsoHeader style='tab-stops:.5in'>Because data caches are instantiated
+via <code>Class.forName(classname
+).newInstance()</code>, if your MIDlet
+uses caching the cache class name must be supplied in the JAD file as property </span>
+<code>iDEN-Install-Class-n</code>, which is discussed in more detail in the<i>
+Motorola Multi-Communication Device J2ME Developers Guide</i>. Additionally, if
+you are obfuscating your MIDlet your obfuscator may require that you
+specifically identify and configure any class instantiated via <code>forName.newInstance</code>,
+which would include the cache class.</span><span
+style='mso-bidi-font-family:Arial'><o:p></o:p></span></p>
+
+
+
+<p class=MsoNormal><span style='mso-bidi-font-family:Arial'>Instantiation of
+the cache via </span><code>forName.newInstance</code> has an added benefit of allowing the
+decision of whether or not to cache to be made when the MIDlet is
+packaged.<span style="mso-spacerun: yes">  </span>If a MIDlet enables data
+caching but the cache class is omitted from the JAD file the MIDlet will still
+run successfully, only all i/o to persistent store will be made directly to and
+from the underlying </span><span style='font-family:"Courier New"'>javax.microedition.rms</span><span
+style='mso-bidi-font-family:Arial'> file system, without going to and
+intermediate, in-memory cache. This allows you to change whether caching is
+used simply by repackaging the MIDlet, to include or not include the cache
+class, rather than having to change the code to enable or disable cache. An
+example of a benefit of this is if after testing you decide that the
+performance benefit of caching is not worth the additional dynamic memory
+required, you can eliminate the caching memory penalty simply by removing the
+cache class from the MIDlet jar.</span><span style='font-family:Arial'><o:p></o:p></span></p>
+
+
+
+<hr><h3>Persistent Collections</h3>
+
+
+
+<p class=MsoNormal>{@link com.nextel.rms.OPersistentVector} and {@link com.nextel.rms.OPersistentArray} simplify the persistence
+of collections of records. These classes each have store and retrieve methods
+that allow the entire collection of records to be written to or read from the
+persistent data store.</p>
+
+<hr><h3>Synchronized Data Stores</h3>
+
+
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='mso-bidi-font-size:10.0pt;font-family:Arial'>{@link com.nextel.rms.OSynchStore} and
+{@link com.nextel.rms.OSynchRecord} provided </span><span style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:
+Arial'>a mechanism for exporting persistent data to or importing persistent
+data from an enternal source. <span style="mso-spacerun: yes"> </span>These
+classes implement </span><span style='mso-bidi-font-size:10.0pt;font-family:
+"Courier New"'>{@link com.nextel.io.OExtern}</span><span style='mso-bidi-font-size:
+10.0pt;font-family:Arial'>, which </span><span style='mso-bidi-font-size:10.0pt;
+mso-bidi-font-family:Arial'>defines two methods, readExternal and writeExternal,
+for expressing the exchanged data as a byte array. The implementer can then use
+any mechanism agreed upon by the sender and the receiver for defining the
+structure of the data within the byte array. <o:p></o:p></span></p>
+
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:Arial'>For example, one
+approach would be to insert XML tags within the byte array before sending, and
+then use the appropriate APIs on the receiving side to parse the received data.
+For a receiver that is a J2EE application (as when uploading from the handset) the
+J2EE package </span><span style='mso-bidi-font-size:10.0pt;font-family:"Courier New"'>javax.xml
+(</span><span style='mso-bidi-font-size:10.0pt;font-family:Arial'><a
+href="http://java.sun.com/xml/jaxp-1.1/docs/api/">http://java.sun.com/xml/jaxp-1.1/docs/api/</a></span><span
+style='mso-bidi-font-size:10.0pt;font-family:"Courier New"'>) </span><span
+style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:Arial'>defines the XML
+APIs, and a receiver on the handset (when downloading) could use a package such
+as kxml (<a href="http://www.kxml.org/">http://www.kxml.org/</a>), nanoXML (<a
+href="http://nanoxml.sourceforge.net/">http://nanoxml.sourceforge.net/</a>), or
+tinyXML (<a href="http://www.gibaradunn.srac.org/tiny/index.shtml">http://www.gibaradunn.srac.org/tiny/index.shtml</a>).
+<o:p></o:p></span></p>
+
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:Arial'>The {@link com.nextel.rms.OSynchStore}
+methods {@link com.nextel.rms.OSynchStore#upload} and
+{@link com.nextel.rms.OSynchStore#download} initiate the transfer of the data via HTTP.<o:p></o:p></span></p>
+
+
+<hr><h3>Examples</h3>
+
+
+<p class=MsoNormal><span style='mso-bidi-font-family:Arial'>MIDlet </span><span
+style='font-family:"Courier New"'>{@link com.nextel.examples.rms.SalaryKeeper com.nextel.examples.rms.SalaryKeeper} </span><span
+style='font-family:Arial'>provides a simple example of using some of the RMS
+toolkit classes. </span><span style='mso-bidi-font-family:Arial'><span
+style="mso-spacerun: yes"> </span>A more extensive example, including uploading
+and downloading of persistent data to/from an HTTP address, is provided in the
+previously-mentioned expense pad example in </span><span style='font-family:
+"Courier New"'>{@link com.nextel.examples.expensepad.ExpensePad com.nextel.examples.expensepad.ExpensePad}</span><span
+style='mso-bidi-font-family:Arial'>.</span><span style='font-family:Arial'><o:p></o:p></span></p>
+
+
+</div>
+
+</body>
+
+</html>

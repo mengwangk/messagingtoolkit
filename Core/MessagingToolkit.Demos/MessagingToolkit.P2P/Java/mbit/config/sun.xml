@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<opml version="1.1">
+<head><title>Channels</title>
+<dateCreated>2006-04-02T00:20:26Z</dateCreated>
+<dateModified>2006-04-02T00:20:26Z</dateModified>
+<ownerName>Innity</ownerName>
+<ownerEmail>mengwangk@gmail.com</ownerEmail>
+<expansionState></expansionState>
+<vertScrollState></vertScrollState>
+<windowTop></windowTop>
+<windowLeft></windowLeft>
+<windowBottom></windowBottom>
+<windowRight></windowRight>
+</head>
+<body>
+
+<outline id="1" name="LifeStyles"
+url="http://www.voanews.com/english/customCF/RecentStoriesRSS.cfm?keyword=Lifestyles" adUrl="ad.xml" 
+image="sun_style.jpg"/>
+
+
+<outline id="2" name="Science and Technology"
+url="http://www.voanews.com/english/customCF/RecentStoriesRSS.cfm?keyword=Science%20and%20Technology" adUrl="ad.xml" 
+image="sun_tech.jpg"/>
+
+
+
+
+</body>
+
+</opml>
